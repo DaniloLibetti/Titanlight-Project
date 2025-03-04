@@ -24,6 +24,8 @@ public class Controle : MonoBehaviour
     [Header("Referências")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Animator animator;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private Ui_Inventory uiInventory;
 
     private bool isDashing = false;
     private bool canDash = true;
@@ -32,6 +34,13 @@ public class Controle : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lastDirection = Vector2.right;
     private areaLimiter areaLimiter;
+
+
+    private void Awake()
+    {
+        inventory = new Inventory(); 
+        uiInventory.SetInventory(inventory);
+    }
 
     void Start()
     {
