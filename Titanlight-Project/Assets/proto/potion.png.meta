@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc8b38955e645af4aa8712b18ba27124
+guid: 3d2d4894accaf9a4ca28960b6afa7075
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8089934386641194789
-    second: png-transparent-rust-scrap-recycling-material-metal-others-miscellaneous-blueprint-rolloff-thumbnail_0
+      213: 731806605160617493
+    second: potion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: png-transparent-rust-scrap-recycling-material-metal-others-miscellaneous-blueprint-rolloff-thumbnail_0
+      name: potion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd0b804a987cabf80800000000000000
-      internalID: -8089934386641194789
+      spriteID: 51612e8ea36e72a00800000000000000
+      internalID: 731806605160617493
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      potion_0: 731806605160617493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

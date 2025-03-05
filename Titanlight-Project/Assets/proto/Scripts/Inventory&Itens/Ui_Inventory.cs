@@ -3,14 +3,14 @@ using UnityEngine;
 public class Ui_Inventory : MonoBehaviour
 {
     private Inventory inventory;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    [SerializeField] private Transform itemSlotContainer;
+    [SerializeField] private Transform itemSlotTemplate;
 
-    private void Awake()
+    /*private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = transform.Find("itemSlotTemplate");
-    }
+    }*/
 
     public void SetInventory(Inventory inventory)
     {
