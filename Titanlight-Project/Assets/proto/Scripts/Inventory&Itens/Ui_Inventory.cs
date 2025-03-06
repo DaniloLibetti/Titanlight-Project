@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ui_Inventory : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Ui_Inventory : MonoBehaviour
 
     /*private void Awake()
     {
-        itemSlotContainer = transform.Find("itemSlotContainer");
+        itemSlotContainer = transform.Find("itemSlotContainer");    
         itemSlotTemplate = transform.Find("itemSlotTemplate");
     }*/
 
@@ -28,7 +29,10 @@ public class Ui_Inventory : MonoBehaviour
         {
           RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
           itemSlotRectTransform.gameObject.SetActive(true);
+
           itemSlotRectTransform.anchoredPosition = new Vector2(x + itemSlotCellSize, y + itemSlotCellSize);
+          Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
+          image.sprite = item.GetSprite();
           x++;
           if(x > 4)
             {
