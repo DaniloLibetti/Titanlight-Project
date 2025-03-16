@@ -1,13 +1,26 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InventoryUi : MonoBehaviour
 {
     [SerializeField] private UIInventoryItem itemPrefab;
     [SerializeField] private RectTransform contentPanel;
+    [SerializeField] private MouseFollowe mouseFollower;
 
     List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
+
+    public Sprite image, image2;
+    public int quantity;
+
+    private int currentlyDraggedItemIndex = -1;
+
+    private void Awake()
+    {
+        Hide();
+        mouseFollower.Toggle(false);
+    }
 
     public void InitializeInventoryUI(int inventorysize)
     {
@@ -24,34 +37,55 @@ public class InventoryUi : MonoBehaviour
         }
     }
 
-    private void HandleShowItemActions(UIInventoryItem item)
+    private void HandleShowItemActions(UIInventoryItem inventoryItemUI)
     {
         
     }
 
-    private void HandleEndDrag(UIInventoryItem item)
+    private void HandleEndDrag(UIInventoryItem inventoryItemUI)
     {
-        
+        mouseFollower.Toggle(false);
     }
 
-    private void HandleSwap(UIInventoryItem item)
+    private void HandleSwap(UIInventoryItem inventoryItemUI)
     {
-        
+        int index = listOfUIItems.IndexOf(inventoryItemUI);
+        if (index == -1)
+        {
+            mouseFollower.Toggle(false);
+            currentlyDraggedItemIndex = -1;
+            return;
+        }
+        listOfUIItems[currentlyDraggedItemIndex].SetData(index == 0 ? image : image2, quantity);
+        listOfUIItems[index].SetData(currentlyDraggedItemIndex == 0 ? image : image2, quantity);
+        mouseFollower.Toggle(false);
+        currentlyDraggedItemIndex = -1;
     }
 
-    private void HandleBeginDrag(UIInventoryItem item)
+    private void HandleBeginDrag(UIInventoryItem inventoryItemUI)
     {
-        
+        int index = listOfUIItems.IndexOf(inventoryItemUI);
+        if (index == -1)
+        {
+            return;
+        }
+        currentlyDraggedItemIndex = index;
+
+        mouseFollower.Toggle(true);
+        mouseFollower.SetData(index == 0 ? image : image2, quantity);
     }
 
-    private void HandleItemSelection(UIInventoryItem item)
+    private void HandleItemSelection(UIInventoryItem inventoryItemUI)
     {
-        Debug.Log(item.name);
+        listOfUIItems[0].Select();
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+
+        listOfUIItems[0].SetData(image, quantity);
+        listOfUIItems[1].SetData(image2, quantity);
     }
 
     public void Hide()
