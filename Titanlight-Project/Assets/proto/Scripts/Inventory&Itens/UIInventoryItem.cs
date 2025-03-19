@@ -26,7 +26,7 @@ public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHa
         empty = true;
     }
 
-    private void Deselect()
+    public void Deselect()
     {
         borderImage.enabled = false;
     }
@@ -47,10 +47,7 @@ public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHa
 
     public void OnPointerClick(PointerEventData pointerData)
     {
-        if (empty)
-        {
-            return;
-        }
+
         if (pointerData.button == PointerEventData.InputButton.Right)
         {
             OnRightMouseButtonClick?.Invoke(this);
