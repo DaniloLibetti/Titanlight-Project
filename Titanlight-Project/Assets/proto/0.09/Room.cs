@@ -9,7 +9,7 @@ public class Room : MonoBehaviour
     public float RoomHeight { get; private set; }
 
     private List<DoorState> _doorStates = new List<DoorState>();
-    private List<DoorTrigger> _doorTriggers = new List<DoorTrigger>(); // Armazena os triggers das portas
+    private List<DoorTrigger> _doorTriggers = new List<DoorTrigger>();
 
     public void Initialize(Vector2Int coord, float width, float height)
     {
@@ -17,42 +17,46 @@ public class Room : MonoBehaviour
         RoomWidth = width;
         RoomHeight = height;
         SetupDoors();
-        Debug.Log($"[Room] Sala {coord} inicializada com largura {width} e altura {height}.");
+    }
+
+    void SetupDoors()
+    {
+        Vector2Int gridSize = GameManager.Instance.gridSize;
+
+        // Cria as portas com base na posição da sala na grade
+        if (GridCoord.y < gridSize.y - 1)
+            CreateDoor(DoorDirection.Up, new Vector2(0, RoomHeight / 2));
+
+        if (GridCoord.y > 0)
+            CreateDoor(DoorDirection.Down, new Vector2(0, -RoomHeight / 2));
+
+        if (GridCoord.x > 0)
+            CreateDoor(DoorDirection.Left, new Vector2(-RoomWidth / 2, 0));
+
+        if (GridCoord.x < gridSize.x - 1)
+            CreateDoor(DoorDirection.Right, new Vector2(RoomWidth / 2, 0));
+
+        // Inicializa o estado de cada porta (30% chance de estar trancada)
+        InitializeDoorStates();
+    }
+
+    void InitializeDoorStates()
+    {
+        foreach (DoorState door in _doorStates)
+        {
+            door.isLocked = Random.value < 0.3f;
+            door.isOpen = !door.isLocked;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Movendo a câmera para a posição do cameraSlot
+            // Movimenta a câmera para a posição e rotação definidas pelo cameraSlot da sala
             Camera.main.transform.position = cameraSlot.position;
             Camera.main.transform.rotation = cameraSlot.rotation;
         }
-    }
-
-    void SetupDoors()
-    {
-        Vector2Int potentialCoord;
-
-        // Porta para cima
-        potentialCoord = GridCoord + Vector2Int.up;
-        if (potentialCoord.y < GameManager.Instance.gridSize.y)
-            CreateDoor(DoorDirection.Up, new Vector2(0, RoomHeight / 2));
-
-        // Porta para baixo
-        potentialCoord = GridCoord + Vector2Int.down;
-        if (potentialCoord.y >= 0)
-            CreateDoor(DoorDirection.Down, new Vector2(0, -RoomHeight / 2));
-
-        // Porta para a esquerda
-        potentialCoord = GridCoord + Vector2Int.left;
-        if (potentialCoord.x >= 0)
-            CreateDoor(DoorDirection.Left, new Vector2(-RoomWidth / 2, 0));
-
-        // Porta para a direita
-        potentialCoord = GridCoord + Vector2Int.right;
-        if (potentialCoord.x < GameManager.Instance.gridSize.x)
-            CreateDoor(DoorDirection.Right, new Vector2(RoomWidth / 2, 0));
     }
 
     void CreateDoor(DoorDirection dir, Vector2 localPosition)
@@ -68,7 +72,7 @@ public class Room : MonoBehaviour
         DoorTrigger trigger = door.AddComponent<DoorTrigger>();
         trigger.roomCoord = GridCoord;
         trigger.direction = dir;
-        _doorTriggers.Add(trigger); // Guarda a referência do trigger
+        _doorTriggers.Add(trigger);
 
         GameManager.Instance.RegisterDoor(GridCoord, dir);
         _doorStates.Add(new DoorState { direction = dir });
@@ -79,7 +83,7 @@ public class Room : MonoBehaviour
         return _doorStates.Find(d => d.direction == dir);
     }
 
-    // Ativa ou desativa todos os triggers desta sala
+    // Ativa ou desativa os triggers das portas desta sala
     public void SetActiveDoors(bool active)
     {
         foreach (DoorTrigger trigger in _doorTriggers)
@@ -87,4 +91,6 @@ public class Room : MonoBehaviour
             trigger.enabled = active;
         }
     }
+
+    // Restante dos métodos mantidos conforme necessário
 }

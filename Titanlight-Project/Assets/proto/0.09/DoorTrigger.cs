@@ -5,15 +5,54 @@ public class DoorTrigger : MonoBehaviour
     public Vector2Int roomCoord;
     public DoorDirection direction;
     public KeyCode interactKey = KeyCode.E;
+    public float hackDistance = 1f;
+
+    public DoorState State { get; private set; }
     private bool _isPlayerInTrigger = false;
+
+    private void Start()
+    {
+        InitializeDoorState();
+    }
+
+    void InitializeDoorState()
+    {
+        if (!ValidateGameManager() || !ValidateCoordinates()) return;
+
+        Room room = GameManager.Instance.GetRoom(roomCoord);
+        if (room != null)
+        {
+            State = room.GetDoorState(direction);
+        }
+        else
+        {
+            Debug.LogError($"Sala {roomCoord} não encontrada!");
+            gameObject.SetActive(false);
+        }
+    }
+
+    bool ValidateGameManager()
+    {
+        if (GameManager.Instance != null) return true;
+        Debug.LogError("GameManager não encontrado!");
+        return false;
+    }
+
+    bool ValidateCoordinates()
+    {
+        if (roomCoord.x >= 0 && roomCoord.x < GameManager.Instance.gridSize.x &&
+            roomCoord.y >= 0 && roomCoord.y < GameManager.Instance.gridSize.y)
+            return true;
+
+        Debug.LogError($"Coordenada inválida: {roomCoord}");
+        gameObject.SetActive(false);
+        return false;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             _isPlayerInTrigger = true;
-            Debug.Log($"[DoorTrigger] Jogador entrou no trigger da porta {direction} na sala {roomCoord}");
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -21,50 +60,57 @@ public class DoorTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _isPlayerInTrigger = false;
-            Debug.Log($"[DoorTrigger] Jogador saiu do trigger da porta {direction} na sala {roomCoord}");
+            SafeUpdateUI(false);
         }
     }
 
     private void Update()
     {
-        if (_isPlayerInTrigger && Input.GetKeyDown(interactKey))
+        if (_isPlayerInTrigger && State != null)
         {
-            Debug.Log($"[DoorTrigger] Interação detectada na porta {direction} na sala {roomCoord}");
-            if (GameManager.Instance == null)
-            {
-                Debug.LogError("GameManager.Instance é nulo!");
-                return;
-            }
-
-            if (Player.Instance == null)
-            {
-                Debug.LogError("Player.Instance é nulo!");
-                return;
-            }
-
-            Room room = GameManager.Instance.GetRoom(roomCoord);
-            if (room == null)
-            {
-                Debug.LogError($"Sala {roomCoord} não encontrada!");
-                return;
-            }
-
-            DoorState state = room.GetDoorState(direction);
-            if (state == null)
-            {
-                Debug.LogError($"Porta {direction} não existe na sala {roomCoord}!");
-                return;
-            }
-
-            if (state.isOpen && !state.isLocked)
-            {
-                Debug.Log($"[DoorTrigger] Passando pela porta {direction} na sala {roomCoord}");
-                GameManager.Instance.TryMoveToRoom(direction.ToVector(), Player.Instance.transform);
-            }
-            else
-            {
-                Debug.Log($"[DoorTrigger] Porta {direction} na sala {roomCoord} está fechada ou trancada.");
-            }
+            UpdateInteractionUI();
+            HandleInput();
         }
+    }
+
+    void UpdateInteractionUI()
+    {
+        if (GameUI.Instance == null) return;
+
+        string text = State.isLocked ? "Porta Trancada (H para hackear)" :
+                      !State.isOpen ? "Porta Quebrada" :
+                      "Pressione E para entrar";
+
+        SafeUpdateUI(true, text);
+    }
+
+    void SafeUpdateUI(bool show, string text = "")
+    {
+        if (GameUI.Instance == null) return;
+
+        // Utiliza o método ToggleInteractionText conforme corrigido
+        GameUI.Instance.ToggleInteractionText(show);
+        if (!string.IsNullOrEmpty(text))
+            GameUI.Instance.SetInteractionText(text);
+    }
+
+    void HandleInput()
+    {
+        if (Input.GetKeyDown(interactKey))
+            TryInteractWithDoor();
+    }
+
+    void TryInteractWithDoor()
+    {
+        if (State.isOpen && !State.isLocked)
+            GameManager.Instance.TryMoveToRoom(direction.ToVector(), Player.Instance.transform);
+    }
+
+    public void UnlockDoor()
+    {
+        if (State == null) return;
+        State.isLocked = false;
+        State.wasHacked = true;
+        State.isOpen = true;
     }
 }

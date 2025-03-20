@@ -3,32 +3,50 @@ using TMPro;
 
 public class GameUI : MonoBehaviour
 {
-    [Header("UI References")]
     public TextMeshProUGUI roomNameText;
     public TextMeshProUGUI interactionText;
 
-    private void Start()
+    public static GameUI Instance;
+
+    private void Awake()
     {
-        GameManager.Instance.OnRoomChanged += UpdateRoomName;
-        UpdateRoomName(GameManager.Instance.GetCurrentRoomCoord());
-        interactionText.gameObject.SetActive(false);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnDisable()
+    private void Start()
     {
-        GameManager.Instance.OnRoomChanged -= UpdateRoomName;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnRoomChanged += UpdateRoomName;
+            UpdateRoomName(GameManager.Instance.GetCurrentRoomCoord());
+        }
+        ToggleInteractionText(false);
     }
 
     public void UpdateRoomName(Vector2Int coord)
     {
-        // Converte X para letra e Y para número (base 1)
-        char xChar = (char)('A' + coord.x);
-        int yNumber = coord.y + 1;
-        roomNameText.text = $"{xChar}{yNumber}";
+        if (roomNameText == null) return;
+        roomNameText.text = $"{(char)('A' + coord.x)}{coord.y + 1}";
     }
 
-    public void ShowInteractionText(bool show)
+    // Método renomeado para ToggleInteractionText
+    public void ToggleInteractionText(bool show)
     {
-        interactionText.gameObject.SetActive(show);
+        if (interactionText != null)
+            interactionText.gameObject.SetActive(show);
+    }
+
+    public void SetInteractionText(string text)
+    {
+        if (interactionText != null)
+            interactionText.text = text;
     }
 }

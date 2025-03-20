@@ -8,3 +8,4 @@ public class DebugCommands : MonoBehaviour
         Debug.Log($"[Debug] Sala atual: {currentCoord}");
     }
 }
+

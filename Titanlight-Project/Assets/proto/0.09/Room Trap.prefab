@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1018832425852142229}
   - component: {fileID: 917450578302383996}
   - component: {fileID: 173726193443932422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door DOWN
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: -1}
   direction: 1
-  interactKey: 101
+  hackDuration: 1
+  roomCoord: {x: 0, y: -1}
 --- !u!58 &173726193443932422
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8819853635550695457}
   - component: {fileID: 6695319731512757159}
+  - component: {fileID: 5197445263786551854}
   - component: {fileID: 6323430952707927894}
   m_Layer: 0
   m_Name: Room Trap
@@ -133,6 +134,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSlot: {fileID: 3207309266149554143}
+--- !u!114 &5197445263786551854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591430054707244790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1499c57f23d830d49a8011de49ba3081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &6323430952707927894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -503,7 +516,7 @@ GameObject:
   - component: {fileID: 7730409760158677212}
   - component: {fileID: 8858477178808693113}
   - component: {fileID: 5664735918331604897}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -537,9 +550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 1, y: 0}
   direction: 3
-  interactKey: 101
+  hackDuration: 1
+  roomCoord: {x: 1, y: 0}
 --- !u!58 &5664735918331604897
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -587,7 +600,7 @@ GameObject:
   - component: {fileID: 5961383359700145075}
   - component: {fileID: 1745448377413300031}
   - component: {fileID: 633474866999690671}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door LEFT
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -621,9 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 1, y: 0}
   direction: 2
-  interactKey: 101
+  hackDuration: 1
+  roomCoord: {x: 1, y: 0}
 --- !u!58 &633474866999690671
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -671,7 +684,7 @@ GameObject:
   - component: {fileID: 6030402829321370165}
   - component: {fileID: 2329026395536026705}
   - component: {fileID: 6522439114006123077}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door UP
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -705,9 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: 1}
   direction: 0
-  interactKey: 101
+  hackDuration: 1
+  roomCoord: {x: 0, y: 1}
 --- !u!58 &6522439114006123077
 CircleCollider2D:
   m_ObjectHideFlags: 0
