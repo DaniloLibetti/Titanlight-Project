@@ -52,7 +52,7 @@ namespace Inventory.Model
             {
                 if (inventoryItems[i].isEmpty)
                 {
-                    inventoryItems[i] = new InventoryItem()
+                    inventoryItems[i] = new InventoryItem
                     {
                         item = item, quantity = quantity
                     };
@@ -65,14 +65,29 @@ namespace Inventory.Model
         {
             AddItem(item.item, item.quantity);
         }
+
+        public InventoryItem GetItemAt(int itemIndex)
+        {
+            return inventoryItems[itemIndex];
+        }
+
+        public void SwapItems(int itemIndex1, int itemIndex2)
+        {
+            InventoryItem item1 = inventoryItems[itemIndex1];
+            inventoryItems[itemIndex1] = inventoryItems[itemIndex2];
+            inventoryItems[itemIndex2 ] = item1;
+            InformAboutChange();
+        }
     }
+
+    
 
     [Serializable]
     public struct InventoryItem
     {
         public int quantity;
         public ItemSO item;
-        public bool isEmpty => item != null;
+        public bool isEmpty => item == null;
 
         public InventoryItem ChangeQuantity(int newQuantity)
         {

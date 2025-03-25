@@ -47,6 +47,29 @@ namespace Inventory
         private void PrepareUI()
         {
             inventoryUi.InitializeInventoryUI(inventoryData.Size);
+            this.inventoryUi.OnSwapItems += HandleSwapItems;
+            this.inventoryUi.OnStartDragging += HandleDragging;
+            this.inventoryUi.OnItemActionRequested += HandleItemAcrtionRequest;
+        }
+
+        private void HandleItemAcrtionRequest(int itemIndex)
+        {
+            
+        }
+
+        private void HandleDragging(int itemIndex)
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.isEmpty)
+            {
+                return;
+            }
+            inventoryUi.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
+        }
+
+        private void HandleSwapItems(int itemIndex1, int itemIndex2)
+        {
+            inventoryData.SwapItems(itemIndex1, itemIndex2);
         }
 
         public void Update()

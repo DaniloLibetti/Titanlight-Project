@@ -22,18 +22,21 @@ namespace Inventory.UI
             Deselect();
         }
 
+        //Reseta os dados
         public void ResetData()
         {
             itemImage.gameObject.SetActive(false);
             empty = true;
         }
 
+        //Desseleciona o item no inventario
         public void Deselect()
         {
             borderImage.enabled = false;
         }
 
-        public void SetData(int ibdex, Sprite sprite, int quantity)
+        //Define os dados do item
+        public void SetData(Sprite sprite, int quantity)
         {
             itemImage.gameObject.SetActive(true);
             itemImage.sprite = sprite;
@@ -41,6 +44,7 @@ namespace Inventory.UI
             empty = false;
         }
 
+        //Seleciona o item no inventario
         public void Select()
         {
             borderImage.enabled = true;
