@@ -46,19 +46,76 @@ namespace Inventory.Model
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
 
-        public void AddItem(ItemSO item, int quantity)
+        public int AddItem(ItemSO item, int quantity)
         {
+            if(item.IsStackable == false)
+            {
+                for (int i = 0; i < inventoryItems.Count; i++)
+                {
+                    while(quantity > 0)
+                    {
+                        quantity -= AddItemToFirstFreeSlot(item, 1);
+                    }
+                    InformAboutChange();
+                    return quantity;
+                }
+            }
+            quantity = AddStackbleItem(item, quantity);
+            InformAboutChange();
+            return quantity;
+        }
+
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
+        {
+            InventoryItem newItem = new InventoryItem
+            {
+                item = item,
+                quantity = quantity
+            };
+
             for(int i = 0; i < inventoryItems.Count; i++)
             {
                 if (inventoryItems[i].isEmpty)
                 {
-                    inventoryItems[i] = new InventoryItem
-                    {
-                        item = item, quantity = quantity
-                    };
-                    return;
+                    inventoryItems[i] = newItem;
+                    return quantity;
                 }
             }
+            return 0;
+        }
+
+        private int AddStackbleItem(ItemSO item, int quantity)
+        {
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (!inventoryItems[i].isEmpty)
+                {
+                    continue;
+                }
+                if (inventoryItems[i].item.ID == item.ID)
+                {
+                    int amountPossibleToTake = inventoryItems[i].item.MaxStackSize - inventoryItems[i].quantity;
+
+                    if(quantity > amountPossibleToTake)
+                    {
+                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].item.MaxStackSize);
+                        quantity -= amountPossibleToTake;
+                    }
+                    else
+                    {
+                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].quantity + quantity);
+                        InformAboutChange();
+                        return 0;
+                    }
+                }
+            }
+            while(quantity > 0)
+            {
+                int newQuantity = Math.Clamp(quantity, 0, item.MaxStackSize);
+                quantity -= newQuantity;
+                AddItemToFirstFreeSlot(item, newQuantity);
+            }
+            return quantity;
         }
 
         public void AddItem(InventoryItem item)

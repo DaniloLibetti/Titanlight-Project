@@ -22,7 +22,7 @@ public class Controle : MonoBehaviour
     private float currentHealth;
 
     [Header("Referências")]
-    [SerializeField] private CharacterController controller;
+    //[SerializeField] private CharacterController controller;
     [SerializeField] private Animator animator;
     
 
@@ -38,7 +38,7 @@ public class Controle : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        if (controller == null) controller = GetComponent<CharacterController>();
+        //if (controller == null) controller = GetComponent<CharacterController>();
         if (animator == null) animator = GetComponentInChildren<Animator>();
         areaLimiter = FindObjectOfType<areaLimiter>();
     }
@@ -67,7 +67,7 @@ public class Controle : MonoBehaviour
     void MoveCharacter()
     {
         Vector3 move = new Vector3(moveInput.x, moveInput.y, 0) * moveSpeed * Time.deltaTime;
-        controller.Move(move);
+        //controller.Move(move);
         LimitPlayerMovement();
     }
 
