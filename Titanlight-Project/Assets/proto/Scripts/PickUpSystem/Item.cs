@@ -10,8 +10,8 @@ public class Item : MonoBehaviour
     [field: SerializeField]
     public int Quantity { get; set; } = 1;
 
-    [SerializeField]
-    private AudioSource audioSource;
+    /*[SerializeField]
+    private AudioSource audioSource;*/
 
     [SerializeField]
     private float duration = 0.3f;
@@ -29,7 +29,7 @@ public class Item : MonoBehaviour
 
     private IEnumerator AnimateItemPickup()
     {
-        audioSource.Play();
+        //audioSource.Play();
         Vector3 startScale = transform.localScale;
         Vector3 endScale = Vector3.zero;
         float currentTime = 0;

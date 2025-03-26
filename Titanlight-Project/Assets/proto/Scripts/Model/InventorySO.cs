@@ -88,7 +88,7 @@ namespace Inventory.Model
         {
             for (int i = 0; i < inventoryItems.Count; i++)
             {
-                if (!inventoryItems[i].isEmpty)
+                if (inventoryItems[i].isEmpty)
                 {
                     continue;
                 }
