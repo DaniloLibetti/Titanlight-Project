@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599a050847572e5498d42f44781ed9e3, type: 3}
   m_Name: Sandwich
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 0
+  <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 10
   <SellValue>k__BackingField: 15
   <Name>k__BackingField: Sandwich
   <ItemImage>k__BackingField: {fileID: -5211771596868668710, guid: 6854ae5d09086a64c89cfe414d85ba74, type: 3}
+  <DefaultParameterList>k__BackingField: []
   modifiersData: []

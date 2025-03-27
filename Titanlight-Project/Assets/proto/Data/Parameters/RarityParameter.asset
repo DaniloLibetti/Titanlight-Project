@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b41fda284387ff409af1491d3371228, type: 3}
   m_Name: RarityParameter
   m_EditorClassIdentifier: 
-  <ParameterName>k__BackingField: 
+  <ParameterName>k__BackingField: Rarity
