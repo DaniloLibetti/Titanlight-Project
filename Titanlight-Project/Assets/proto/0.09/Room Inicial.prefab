@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: 0}
   direction: 1
   interactKey: 101
-  hackDistance: 1
+  hackKey: 104
+  moveDistance: 1
+  hackTimeReduction: 10
+  timer: {fileID: 0}
 --- !u!58 &173726193443932422
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -538,10 +540,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: 0}
   direction: 3
   interactKey: 101
-  hackDistance: 1
+  hackKey: 104
+  moveDistance: 1.5
+  hackTimeReduction: 10
+  timer: {fileID: 0}
 --- !u!58 &5664735918331604897
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -623,10 +627,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: 0}
   direction: 2
   interactKey: 101
-  hackDistance: 1
+  hackKey: 104
+  moveDistance: 1.5
+  hackTimeReduction: 10
+  timer: {fileID: 0}
 --- !u!58 &633474866999690671
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -708,10 +714,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a761d0718be0b0418d93c117c41c318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCoord: {x: 0, y: 0}
   direction: 0
   interactKey: 101
-  hackDistance: 1
+  hackKey: 104
+  moveDistance: 1
+  hackTimeReduction: 10
+  timer: {fileID: 0}
 --- !u!58 &6522439114006123077
 CircleCollider2D:
   m_ObjectHideFlags: 0

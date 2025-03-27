@@ -19,11 +19,14 @@ public class CountdownTimer : MonoBehaviour
 
     private float currentTime;
     private bool timerRunning = false;
+    private Color originalColor;
 
     void Start()
     {
         currentTime = startTime;
         timerRunning = true;
+        if (timerText != null)
+            originalColor = timerText.color;
     }
 
     void Update()
@@ -53,10 +56,12 @@ public class CountdownTimer : MonoBehaviour
         currentTime -= amount;
         currentTime = Mathf.Max(currentTime, 0f);
         AtualizaTextoTimer(currentTime);
-
         Debug.Log("Tempo reduzido em: -" + amount + "s");
 
-        // Se o tempo zerar após a redução, iniciar a invasão imediatamente
+        // Flash vermelho no timer
+        StartCoroutine(FlashTimerRed());
+
+        // Se o tempo zerar após a redução, iniciar o evento
         if (currentTime <= 0f)
         {
             timerRunning = false;
@@ -69,7 +74,19 @@ public class CountdownTimer : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(time / 60f);
         int seconds = Mathf.FloorToInt(time % 60f);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if (timerText != null)
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    // Coroutine para piscar o timer em vermelho
+    IEnumerator FlashTimerRed()
+    {
+        if (timerText == null)
+            yield break;
+
+        timerText.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        timerText.color = originalColor;
     }
 
     // Método chamado ao terminar a contagem para iniciar o evento Invasion
@@ -77,7 +94,10 @@ public class CountdownTimer : MonoBehaviour
     {
         Debug.Log("Invasion iniciada!");
         Invasion.Invoke();
+        // Chama o efeito de alerta (caso exista na cena)
+        if (AlertScreenEffect.Instance != null)
+        {
+            AlertScreenEffect.Instance.TriggerAlert("O tempo acabou! Perigo iminente!");
+        }
     }
 }
-
-

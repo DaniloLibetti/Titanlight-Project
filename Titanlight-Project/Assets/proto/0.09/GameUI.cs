@@ -37,7 +37,6 @@ public class GameUI : MonoBehaviour
         roomNameText.text = $"{(char)('A' + coord.x)}{coord.y + 1}";
     }
 
-    // Método renomeado para ToggleInteractionText
     public void ToggleInteractionText(bool show)
     {
         if (interactionText != null)

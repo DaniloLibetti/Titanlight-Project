@@ -2,115 +2,119 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    public Vector2Int roomCoord;
     public DoorDirection direction;
     public KeyCode interactKey = KeyCode.E;
-    public float hackDistance = 1f;
+    public KeyCode hackKey = KeyCode.H;
 
-    public DoorState State { get; private set; }
-    private bool _isPlayerInTrigger = false;
+    [Tooltip("Distância que o jogador se moverá ao usar esta porta (pode ser personalizada para cada direção).")]
+    public float moveDistance = 3f;
+
+    [Tooltip("Tempo a ser reduzido no timer ao hackear esta porta.")]
+    public float hackTimeReduction = 10f;
+
+    // Se não atribuído no Inspector, será procurado automaticamente
+    public CountdownTimer timer;
+
+    private DoorState _state;
+    private bool _isPlayerInRange;
 
     private void Start()
     {
-        InitializeDoorState();
-    }
+        // Tenta encontrar o timer caso não tenha sido atribuído manualmente
+        if (timer == null)
+        {
+            timer = FindObjectOfType<CountdownTimer>();
+            if (timer == null)
+            {
+                Debug.LogWarning("CountdownTimer não encontrado na cena!");
+            }
+        }
 
-    void InitializeDoorState()
-    {
-        if (!ValidateGameManager() || !ValidateCoordinates()) return;
-
-        Room room = GameManager.Instance.GetRoom(roomCoord);
+        // Obtém o estado da porta a partir da sala (componente pai)
+        Room room = GetComponentInParent<Room>();
         if (room != null)
         {
-            State = room.GetDoorState(direction);
+            _state = room.GetDoorState(direction);
         }
         else
         {
-            Debug.LogError($"Sala {roomCoord} não encontrada!");
-            gameObject.SetActive(false);
+            Debug.LogError("Room não encontrada no pai da porta!");
         }
     }
 
-    bool ValidateGameManager()
+    private void Update()
     {
-        if (GameManager.Instance != null) return true;
-        Debug.LogError("GameManager não encontrado!");
-        return false;
+        if (!_isPlayerInRange) return;
+
+        UpdateUI();
+        HandleInput();
     }
 
-    bool ValidateCoordinates()
+    private void UpdateUI()
     {
-        if (roomCoord.x >= 0 && roomCoord.x < GameManager.Instance.gridSize.x &&
-            roomCoord.y >= 0 && roomCoord.y < GameManager.Instance.gridSize.y)
-            return true;
+        if (_state.isLocked)
+        {
+            GameUI.Instance.SetInteractionText("[H] Hackear Porta");
+        }
+        else if (!_state.isOpen)
+        {
+            GameUI.Instance.SetInteractionText("Porta Quebrada");
+        }
+        else
+        {
+            GameUI.Instance.SetInteractionText("[E] Entrar");
+        }
+    }
 
-        Debug.LogError($"Coordenada inválida: {roomCoord}");
-        gameObject.SetActive(false);
-        return false;
+    private void HandleInput()
+    {
+        if (Input.GetKeyDown(hackKey) && _state.isLocked)
+        {
+            UnlockDoor();
+        }
+        else if (Input.GetKeyDown(interactKey))
+        {
+            TryPassThroughDoor();
+        }
+    }
+
+    private void TryPassThroughDoor()
+    {
+        if (_state.isOpen && !_state.isLocked)
+        {
+            // Chama o método do GameManager e passa a distância configurada para esta porta
+            GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
+        }
+    }
+
+    public void UnlockDoor()
+    {
+        _state.isLocked = false;
+        _state.isOpen = true;
+        GameUI.Instance.SetInteractionText("Porta Hackeada!");
+        Debug.Log("Porta hackeada com sucesso!");
+        // Reduz o tempo no timer, se houver referência
+        if (timer != null)
+        {
+            timer.ReduceTime(hackTimeReduction);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-            _isPlayerInTrigger = true;
+        {
+            _isPlayerInRange = true;
+            GameUI.Instance.ToggleInteractionText(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            _isPlayerInTrigger = false;
-            SafeUpdateUI(false);
+            _isPlayerInRange = false;
+            GameUI.Instance.ToggleInteractionText(false);
         }
-    }
-
-    private void Update()
-    {
-        if (_isPlayerInTrigger && State != null)
-        {
-            UpdateInteractionUI();
-            HandleInput();
-        }
-    }
-
-    void UpdateInteractionUI()
-    {
-        if (GameUI.Instance == null) return;
-
-        string text = State.isLocked ? "Porta Trancada (H para hackear)" :
-                      !State.isOpen ? "Porta Quebrada" :
-                      "Pressione E para entrar";
-
-        SafeUpdateUI(true, text);
-    }
-
-    void SafeUpdateUI(bool show, string text = "")
-    {
-        if (GameUI.Instance == null) return;
-
-        // Utiliza o método ToggleInteractionText conforme corrigido
-        GameUI.Instance.ToggleInteractionText(show);
-        if (!string.IsNullOrEmpty(text))
-            GameUI.Instance.SetInteractionText(text);
-    }
-
-    void HandleInput()
-    {
-        if (Input.GetKeyDown(interactKey))
-            TryInteractWithDoor();
-    }
-
-    void TryInteractWithDoor()
-    {
-        if (State.isOpen && !State.isLocked)
-            GameManager.Instance.TryMoveToRoom(direction.ToVector(), Player.Instance.transform);
-    }
-
-    public void UnlockDoor()
-    {
-        if (State == null) return;
-        State.isLocked = false;
-        State.wasHacked = true;
-        State.isOpen = true;
     }
 }

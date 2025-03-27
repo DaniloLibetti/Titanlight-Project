@@ -21,7 +21,7 @@ public class Room : MonoBehaviour
 
     void SetupDoors()
     {
-        Vector2Int gridSize = GameManager.Instance.gridSize;
+        Vector2Int gridSize = GameManager.Instance.GridSize; // Corrigido para GridSize
 
         // Cria as portas com base na posição da sala na grade
         if (GridCoord.y < gridSize.y - 1)
@@ -33,10 +33,9 @@ public class Room : MonoBehaviour
         if (GridCoord.x > 0)
             CreateDoor(DoorDirection.Left, new Vector2(-RoomWidth / 2, 0));
 
-        if (GridCoord.x < gridSize.x - 1)
+        if (GridCoord.x < gridSize.x - 1) // Usando gridSize corrigido
             CreateDoor(DoorDirection.Right, new Vector2(RoomWidth / 2, 0));
 
-        // Inicializa o estado de cada porta (30% chance de estar trancada)
         InitializeDoorStates();
     }
 
@@ -44,18 +43,8 @@ public class Room : MonoBehaviour
     {
         foreach (DoorState door in _doorStates)
         {
-            door.isLocked = Random.value < 0.3f;
-            door.isOpen = !door.isLocked;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Movimenta a câmera para a posição e rotação definidas pelo cameraSlot da sala
-            Camera.main.transform.position = cameraSlot.position;
-            Camera.main.transform.rotation = cameraSlot.rotation;
+            door.isLocked = true;
+            door.isOpen = false;
         }
     }
 
@@ -70,7 +59,6 @@ public class Room : MonoBehaviour
         collider.size = new Vector2(1f, 1f);
 
         DoorTrigger trigger = door.AddComponent<DoorTrigger>();
-        trigger.roomCoord = GridCoord;
         trigger.direction = dir;
         _doorTriggers.Add(trigger);
 
@@ -83,7 +71,6 @@ public class Room : MonoBehaviour
         return _doorStates.Find(d => d.direction == dir);
     }
 
-    // Ativa ou desativa os triggers das portas desta sala
     public void SetActiveDoors(bool active)
     {
         foreach (DoorTrigger trigger in _doorTriggers)
@@ -91,6 +78,4 @@ public class Room : MonoBehaviour
             trigger.enabled = active;
         }
     }
-
-    // Restante dos métodos mantidos conforme necessário
 }
