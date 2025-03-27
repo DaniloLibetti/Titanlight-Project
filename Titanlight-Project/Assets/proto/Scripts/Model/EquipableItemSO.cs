@@ -1,16 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipableItemSO : MonoBehaviour
+namespace Inventory.Model
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class EquipableItemSO : ItemSO, IDestroyableItem, IItemAction
     {
-        
-    }
+        public string ActionName => "Equip";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

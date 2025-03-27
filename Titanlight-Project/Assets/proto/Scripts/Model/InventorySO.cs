@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using Inventory.UI;
+using Unity.VisualScripting;
 
 namespace Inventory.Model
 {
@@ -46,7 +47,7 @@ namespace Inventory.Model
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
 
-        public int AddItem(ItemSO item, int quantity)
+        public int AddItem(ItemSO item, int quantity, List<ItemParameter> itemState = null)
         {
             if(item.IsStackable == false)
             {
@@ -54,7 +55,7 @@ namespace Inventory.Model
                 {
                     while(quantity > 0)
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1);
+                        quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
                     }
                     InformAboutChange();
                     return quantity;
@@ -65,12 +66,13 @@ namespace Inventory.Model
             return quantity;
         }
 
-        private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, List<ItemParameter> itemState = null)
         {
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
-                quantity = quantity
+                quantity = quantity,
+                itemState = new List<ItemParameter>(itemState == null ? item.DefaultParameterList : itemState)
             };
 
             for(int i = 0; i < inventoryItems.Count; i++)
@@ -135,6 +137,27 @@ namespace Inventory.Model
             inventoryItems[itemIndex2 ] = item1;
             InformAboutChange();
         }
+
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if(inventoryItems.Count > itemIndex)
+            {
+                if (inventoryItems[itemIndex].isEmpty)
+                {
+                    return;
+                }
+                int reminder = inventoryItems[itemIndex].quantity - amount;
+                if(reminder <= 0)
+                {
+                    inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
+                }
+                else
+                {
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);
+                }
+                InformAboutChange();
+            }
+        }
     }
 
     
@@ -144,6 +167,7 @@ namespace Inventory.Model
     {
         public int quantity;
         public ItemSO item;
+        public List<ItemParameter> itemState;
         public bool isEmpty => item == null;
 
         public InventoryItem ChangeQuantity(int newQuantity)
@@ -151,14 +175,16 @@ namespace Inventory.Model
             return new InventoryItem
             {
                 item = this.item,
-                quantity = newQuantity
+                quantity = newQuantity,
+                itemState = new List<ItemParameter>(this.itemState)
             };
         }
 
         public static InventoryItem GetEmptyItem() => new InventoryItem
         {
             item = null,
-            quantity = 0
+            quantity = 0,
+            itemState = new List<ItemParameter>()
         };
     }
 }
