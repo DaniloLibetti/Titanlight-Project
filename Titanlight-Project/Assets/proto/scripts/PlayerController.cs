@@ -22,40 +22,65 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
 
     [Header("Ataque à Distância")]
-    [SerializeField] private GameObject normalProjectilePrefab;
-    [SerializeField] private GameObject chargedProjectilePrefab;
-    [SerializeField] private float projectileSpeed = 10f;
-    [SerializeField] private float chargeTime = 1f;
-    [SerializeField] private float shootCooldown = 0.5f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float projectileSpeed = 25f;
+    [SerializeField] private float projectileLifetime = 0.5f;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private LayerMask collisionLayers;
 
-    private float chargeTimer = 0f;
-    private bool isCharging = false;
-    private bool canShoot = true;
+    // Chaves para alternar tipos de ataque à distância
+    [Header("Controles de Armas à Distância")]
+    [SerializeField] private KeyCode attackKey = KeyCode.O; // Para ataque normal ou melee
+    [SerializeField] private KeyCode shotgunKey = KeyCode.K;  // Ataque shotgun
+    [SerializeField] private KeyCode machineGunKey = KeyCode.M; // Ataque metralhadora
+
+    // Cooldowns específicos para cada tipo de disparo (configuráveis no inspetor)
+    [Header("Configurações - Ataque Normal")]
+    [SerializeField] private float normalCooldown = 0.5f;
+
+    [Header("Configurações - Ataque Shotgun")]
+    [SerializeField] private float shotgunCooldown = 0.7f;
+
+    [Header("Configurações - Ataque Metralhadora")]
+    [SerializeField] private float machineGunCooldown = 0.2f;
 
     [Header("Vida")]
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private Vector2 respawnPoint;
     private float currentHealth;
 
+    [Header("Controles Gerais")]
+    [SerializeField] private KeyCode dashKey = KeyCode.Space;
+    [SerializeField] private KeyCode switchModeKey = KeyCode.Q;
+
     [Header("Componentes")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer; // Referência ao SpriteRenderer
 
     private bool isDashing = false;
     private bool canDash = true;
     private bool canAttack = true;
     private bool isAttacking = false;
+    private bool canShoot = true;
     private Vector2 moveInput;
     private Vector2 lastDirection = Vector2.right;
-    private AreaLimiter areaLimiter;
 
     private enum AttackMode
     {
         Melee,
         Ranged
     }
-
     [SerializeField] private AttackMode attackMode = AttackMode.Melee;
+
+    // Tipos de ataque à distância
+    private enum RangedAttackType
+    {
+        Normal,
+        Shotgun,
+        MachineGun
+    }
+    private RangedAttackType currentRangedAttackType = RangedAttackType.Normal;
 
     void Start()
     {
@@ -65,7 +90,7 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0;
         if (animator == null) animator = GetComponentInChildren<Animator>();
-        areaLimiter = FindObjectOfType<AreaLimiter>();
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -74,19 +99,39 @@ public class PlayerController : MonoBehaviour
 
         GetMovementInput();
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(switchModeKey))
         {
-            attackMode = attackMode == AttackMode.Melee ? AttackMode.Ranged : AttackMode.Melee;
+            ToggleAttackMode();
         }
 
-        if (attackMode == AttackMode.Melee)
+        // Modo Melee
+        if (attackMode == AttackMode.Melee && Input.GetKeyDown(attackKey) && canAttack)
         {
-            HandleDash();
-            HandleMeleeAttack();
+            StartCoroutine(MeleeAttack());
         }
-        else
+        // Modo Ranged
+        else if (attackMode == AttackMode.Ranged && canAttack)
         {
-            HandleRangedAttack();
+            if (Input.GetKeyDown(attackKey))
+            {
+                currentRangedAttackType = RangedAttackType.Normal;
+                StartCoroutine(RangedAttack());
+            }
+            else if (Input.GetKeyDown(shotgunKey))
+            {
+                currentRangedAttackType = RangedAttackType.Shotgun;
+                StartCoroutine(RangedAttack());
+            }
+            else if (Input.GetKeyDown(machineGunKey))
+            {
+                currentRangedAttackType = RangedAttackType.MachineGun;
+                StartCoroutine(RangedAttack());
+            }
+        }
+
+        if (Input.GetKeyDown(dashKey) && canDash && lastDirection != Vector2.zero)
+        {
+            StartCoroutine(Dash());
         }
 
         UpdateAnimations();
@@ -100,6 +145,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Altera o modo de ataque e atualiza a cor do SpriteRenderer
+    void ToggleAttackMode()
+    {
+        attackMode = attackMode == AttackMode.Melee ? AttackMode.Ranged : AttackMode.Melee;
+        if (spriteRenderer != null)
+        {
+            if (attackMode == AttackMode.Ranged)
+            {
+                spriteRenderer.color = Color.green;
+            }
+            else
+            {
+                spriteRenderer.color = Color.white;
+            }
+        }
+        Debug.Log($"Modo de Ataque: {attackMode}");
+    }
+
     void GetMovementInput()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -109,33 +172,28 @@ public class PlayerController : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             lastDirection = moveInput;
+            UpdateShootPointDirection();
         }
     }
 
-    void LimitPlayerMovement()
+    void UpdateShootPointDirection()
     {
-        if (areaLimiter == null) return;
-        rb.position = areaLimiter.ClampPosition(rb.position);
+        if (shootPoint != null)
+        {
+            shootPoint.localPosition = lastDirection * 0.5f;
+        }
     }
 
     void MoveCharacter()
     {
-        Vector2 newPosition = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(areaLimiter.ClampPosition(newPosition));
-    }
-
-    void HandleDash()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && canDash && lastDirection != Vector2.zero)
-        {
-            StartCoroutine(Dash());
-        }
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
     IEnumerator Dash()
     {
         isDashing = true;
         canDash = false;
+        int originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("Dashing");
 
         float startTime = Time.time;
@@ -145,7 +203,7 @@ public class PlayerController : MonoBehaviour
         while (Time.time < startTime + dashDuration)
         {
             Vector2 newPos = rb.position + dashDirection * dashSpeed * Time.fixedDeltaTime;
-            rb.MovePosition(areaLimiter.ClampPosition(newPos));
+            rb.MovePosition(newPos);
 
             Collider2D[] enemies = Physics2D.OverlapCircleAll(rb.position, dashAttackRadius, enemyLayer);
             foreach (Collider2D enemy in enemies)
@@ -163,20 +221,76 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        gameObject.layer = LayerMask.NameToLayer("Default");
-        rb.linearVelocity = Vector2.zero;
+        gameObject.layer = originalLayer;
         isDashing = false;
-
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
-    void HandleMeleeAttack()
+    IEnumerator RangedAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && canAttack)
+        isAttacking = true;
+        canShoot = false;
+        animator.SetTrigger("RangedAttack");
+
+        switch (currentRangedAttackType)
         {
-            StartCoroutine(MeleeAttack());
+            case RangedAttackType.Normal:
+                if (shootPoint != null && projectilePrefab != null)
+                {
+                    GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+                    Projectile projectileScript = projectile.GetComponent<Projectile>();
+                    if (projectileScript != null)
+                    {
+                        projectileScript.Initialize(lastDirection, projectileSpeed, collisionLayers, this);
+                        Destroy(projectile, projectileLifetime);
+                    }
+                }
+                yield return new WaitForSeconds(normalCooldown);
+                break;
+
+            case RangedAttackType.Shotgun:
+                int pelletCount = 5;
+                float spreadAngle = 30f;
+                for (int i = 0; i < pelletCount; i++)
+                {
+                    float angleOffset = Random.Range(-spreadAngle / 2f, spreadAngle / 2f);
+                    Quaternion rotationOffset = Quaternion.Euler(0, 0, angleOffset);
+                    Vector2 pelletDirection = rotationOffset * lastDirection;
+                    GameObject pellet = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+                    Projectile pelletScript = pellet.GetComponent<Projectile>();
+                    if (pelletScript != null)
+                    {
+                        pelletScript.Initialize(pelletDirection, projectileSpeed, collisionLayers, this);
+                        Destroy(pellet, projectileLifetime);
+                    }
+                }
+                yield return new WaitForSeconds(shotgunCooldown);
+                break;
+
+            case RangedAttackType.MachineGun:
+                if (shootPoint != null && projectilePrefab != null)
+                {
+                    GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+                    Projectile projectileScript = projectile.GetComponent<Projectile>();
+                    if (projectileScript != null)
+                    {
+                        projectileScript.Initialize(lastDirection, projectileSpeed, collisionLayers, this);
+                        Destroy(projectile, projectileLifetime);
+                    }
+                }
+                yield return new WaitForSeconds(machineGunCooldown);
+                break;
         }
+
+        isAttacking = false;
+        canShoot = true;
+    }
+
+    // Método chamado quando um projétil é destruído (caso o projétil chame essa função)
+    public void ProjectileDestroyed()
+    {
+        canShoot = true;
     }
 
     IEnumerator MeleeAttack()
@@ -202,63 +316,11 @@ public class PlayerController : MonoBehaviour
         canAttack = true;
     }
 
-    void HandleRangedAttack()
-    {
-        if (attackMode != AttackMode.Ranged || !canShoot) return;
-
-        if (Input.GetKeyDown(KeyCode.Mouse1)) // Botão direito do mouse
-        {
-            isCharging = true;
-            chargeTimer = 0f;
-        }
-
-        if (isCharging)
-        {
-            chargeTimer += Time.deltaTime;
-
-            if (Input.GetKeyUp(KeyCode.Mouse1)) // Botão direito do mouse
-            {
-                isCharging = false;
-                if (chargeTimer >= chargeTime)
-                {
-                    ShootProjectile(chargedProjectilePrefab);
-                }
-                else
-                {
-                    ShootProjectile(normalProjectilePrefab);
-                }
-            }
-        }
-    }
-
-    void ShootProjectile(GameObject projectilePrefab)
-    {
-        GameObject projectile = Instantiate(projectilePrefab, (Vector3)rb.position + (Vector3)lastDirection * 0.5f, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetDirection(lastDirection);
-        projectile.GetComponent<Projectile>().SetSpeed(projectileSpeed);
-
-        StartCoroutine(RangedCooldown());
-    }
-
-    IEnumerator RangedCooldown()
-    {
-        canShoot = false;
-        yield return new WaitForSeconds(shootCooldown);
-        canShoot = true;
-    }
-
     void UpdateAnimations()
     {
-        if (moveInput != Vector2.zero)
-        {
-            animator.SetBool("IsWalking", true);
-            animator.SetFloat("MoveX", moveInput.x);
-            animator.SetFloat("MoveY", moveInput.y);
-        }
-        else
-        {
-            animator.SetBool("IsWalking", false);
-        }
+        animator.SetBool("IsWalking", moveInput != Vector2.zero);
+        animator.SetFloat("MoveX", moveInput.x);
+        animator.SetFloat("MoveY", moveInput.y);
     }
 
     public void TakeDamage(float amount)
@@ -274,10 +336,5 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = respawnPoint;
         currentHealth = maxHealth;
-    }
-
-    public void ProjectileDestroyed()
-    {
-        canShoot = true; // Permite disparar novamente após destruição do projétil
     }
 }

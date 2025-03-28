@@ -2,81 +2,56 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public PlayerController playerController;
-    public AreaLimiter areaLimiter;
-
     private Vector2 direction;
     private float speed;
-    private Rigidbody2D rb;
+    private LayerMask collisionLayers;
+    private PlayerController playerController;
 
-    void Start()
+    public void Initialize(Vector2 newDirection, float newSpeed, LayerMask layers, PlayerController controller)
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (rb == null) rb = gameObject.AddComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
-        rb.linearVelocity = direction * speed; // Usando rb.velocity
+        direction = newDirection.normalized;
+        speed = newSpeed;
+        collisionLayers = layers;
+        playerController = controller;
+        RotateProjectile();
     }
 
     void Update()
     {
-        if (areaLimiter != null)
-        {
-            // Verifica se o projétil está fora dos limites
-            if (IsOutOfBounds(rb.position))
-            {
-                Destroy(gameObject); // Destroi o projétil se estiver fora dos limites
-                return;
-            }
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+    }
 
-            // Mantém o projétil dentro dos limites
-            Vector2 clampedPosition = areaLimiter.ClampPosition(rb.position);
-            rb.position = clampedPosition;
+    void RotateProjectile()
+    {
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 
-    // Verifica se o projétil está fora dos limites
-    private bool IsOutOfBounds(Vector2 position)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        return position.x < areaLimiter.MinBounds.x || position.x > areaLimiter.MaxBounds.x ||
-               position.y < areaLimiter.MinBounds.y || position.y > areaLimiter.MaxBounds.y;
-    }
-
-    public void SetDirection(Vector2 dir)
-    {
-        direction = dir;
-        if (rb != null)
-            rb.linearVelocity = direction * speed; // Usando rb.velocity
-    }
-
-    public void SetSpeed(float projectileSpeed)
-    {
-        speed = projectileSpeed;
-        if (rb != null)
-            rb.linearVelocity = direction * speed; // Usando rb.velocity
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Projétil colidiu com: " + collision.gameObject.name);
-
-        if (collision.gameObject.CompareTag("Enemy"))
+        if ((collisionLayers.value & (1 << other.gameObject.layer)) != 0)
         {
-            Health health = collision.gameObject.GetComponent<Health>();
-            if (health != null)
+            if (other.CompareTag("Enemy"))
             {
-                health.TakeDamage(10);
+                Health health = other.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.TakeDamage(10);
+                }
             }
+            DestroyProjectile();
         }
-
-        Destroy(gameObject);
     }
 
-    private void OnDestroy()
+    void DestroyProjectile()
     {
-        Debug.Log("Projétil destruído!");
         if (playerController != null)
         {
             playerController.ProjectileDestroyed();
         }
+        Destroy(gameObject);
     }
 }

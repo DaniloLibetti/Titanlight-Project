@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7776739613336437450}
   - component: {fileID: 5820701445083616723}
-  - component: {fileID: 1697442098506704718}
   - component: {fileID: 6814573408717443173}
   - component: {fileID: 4484730766618276341}
   - component: {fileID: 7949238528057395143}
@@ -49,22 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  areaLimiter: {fileID: 1697442098506704718}
---- !u!114 &1697442098506704718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9192490774628815525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f444cca34d730624aba6278d3a26ac07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minBounds: {x: -2.874, y: -1.553}
-  maxBounds: {x: 2.874, y: 1.553}
-  boundaryBuffer: 0
+  areaLimiter: {fileID: 0}
 --- !u!212 &6814573408717443173
 SpriteRenderer:
   m_ObjectHideFlags: 0

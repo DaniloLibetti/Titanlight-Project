@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1998412305262688619}
   - component: {fileID: 5652777522927589502}
   - component: {fileID: 6727351883274950852}
-  - component: {fileID: 3617189571823443885}
   - component: {fileID: 5375163663833395546}
   - component: {fileID: 8682271409958267375}
   m_Layer: 0
@@ -79,9 +78,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 039d426553a9cc64186fbab04c4769d8, type: 3}
-  m_Color: {r: 0.7699377, g: 0, b: 0.9685534, a: 1}
+  m_Color: {r: 0.6835879, g: 0.1918831, b: 0.9685534, a: 0.92941177}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,23 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c96edd6f262be42b7cc1a825ffd1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  areaLimiter: {fileID: 3617189571823443885}
---- !u!114 &3617189571823443885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6118543610015448874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f444cca34d730624aba6278d3a26ac07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minBounds: {x: -2.874, y: -1.553}
-  maxBounds: {x: 2.874, y: 1.553}
-  boundaryBuffer: 0
 --- !u!58 &5375163663833395546
 CircleCollider2D:
   m_ObjectHideFlags: 0
