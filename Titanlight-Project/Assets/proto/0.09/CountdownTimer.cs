@@ -6,62 +6,61 @@ using System.Collections;
 public class CountdownTimer : MonoBehaviour
 {
     [Header("Configurações do Timer")]
-    [Tooltip("Tempo inicial em segundos para a contagem regressiva.")]
-    public float startTime = 60f;
+    public float startTime = 60f; // Tempo inicial em segundos
 
     [Header("Componentes")]
-    [Tooltip("Referência para o TextMeshProUGUI que exibirá a contagem.")]
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText; // Onde mostra o tempo
 
     [Header("Eventos")]
-    [Tooltip("Evento que será invocado quando o tempo acabar.")]
-    public UnityEvent Invasion;
+    public UnityEvent Invasion; // O que acontece quando o tempo zera
 
-    private float currentTime;
-    private bool timerRunning = false;
-    private Color originalColor;
+    // Variáveis privadas
+    private float currentTime; // Tempo atual
+    private bool timerRunning = false; // Se o timer está contando
+    private Color originalColor; // Cor normal do texto
 
     void Start()
     {
         currentTime = startTime;
         timerRunning = true;
         if (timerText != null)
-            originalColor = timerText.color;
+            originalColor = timerText.color; // Guarda a cor original
     }
 
     void Update()
     {
         if (timerRunning)
         {
+            // Diminui o tempo a cada frame
             currentTime -= Time.deltaTime;
+
             if (currentTime <= 0f)
             {
+                // Quando chega em zero
                 currentTime = 0f;
                 timerRunning = false;
                 AtualizaTextoTimer(0f);
-                IniciaInvasion();
+                IniciaInvasion(); // Chama o evento
             }
             else
             {
-                AtualizaTextoTimer(currentTime);
+                AtualizaTextoTimer(currentTime); // Atualiza display
             }
         }
     }
 
-    // Método público para permitir que outros scripts reduzam o tempo
+    // Método para outros scripts tirarem tempo
     public void ReduceTime(float amount)
     {
         if (!timerRunning || currentTime <= 0f) return;
 
         currentTime -= amount;
-        currentTime = Mathf.Max(currentTime, 0f);
+        currentTime = Mathf.Max(currentTime, 0f); // Não deixa negativo
         AtualizaTextoTimer(currentTime);
-        Debug.Log("Tempo reduzido em: -" + amount + "s");
 
-        // Flash vermelho no timer
+        // Faz piscar vermelho
         StartCoroutine(FlashTimerRed());
 
-        // Se o tempo zerar após a redução, iniciar o evento
         if (currentTime <= 0f)
         {
             timerRunning = false;
@@ -69,7 +68,7 @@ public class CountdownTimer : MonoBehaviour
         }
     }
 
-    // Atualiza o componente TextMeshPro com o tempo formatado (MM:SS)
+    // Formata o tempo em minutos e segundos
     void AtualizaTextoTimer(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60f);
@@ -78,23 +77,24 @@ public class CountdownTimer : MonoBehaviour
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    // Coroutine para piscar o timer em vermelho
+    // Faz o timer piscar em vermelho
     IEnumerator FlashTimerRed()
     {
         if (timerText == null)
             yield break;
 
-        timerText.color = Color.red;
-        yield return new WaitForSeconds(0.3f);
-        timerText.color = originalColor;
+        timerText.color = Color.red; // Muda para vermelho
+        yield return new WaitForSeconds(0.3f); // Espera um pouco
+        timerText.color = originalColor; // Volta para cor normal
     }
 
-    // Método chamado ao terminar a contagem para iniciar o evento Invasion
+    // Quando acaba o tempo
     void IniciaInvasion()
     {
         Debug.Log("Invasion iniciada!");
-        Invasion.Invoke();
-        // Chama o efeito de alerta (caso exista na cena)
+        Invasion.Invoke(); // Dispara eventos
+
+        // Se tiver efeito de alerta na tela
         if (AlertScreenEffect.Instance != null)
         {
             AlertScreenEffect.Instance.TriggerAlert("O tempo acabou! Perigo iminente!");

@@ -7,6 +7,9 @@ public class Projectile : MonoBehaviour
     private LayerMask collisionLayers;
     private PlayerController playerController;
 
+    // Campo para multiplicador de dano
+    public float damageMultiplier = 1f;
+
     public void Initialize(Vector2 newDirection, float newSpeed, LayerMask layers, PlayerController controller)
     {
         direction = newDirection.normalized;
@@ -39,7 +42,8 @@ public class Projectile : MonoBehaviour
                 Health health = other.GetComponent<Health>();
                 if (health != null)
                 {
-                    health.TakeDamage(10);
+                    // Aqui você pode aplicar o dano base multiplicado pelo damageMultiplier
+                    health.TakeDamage(10 * damageMultiplier);
                 }
             }
             DestroyProjectile();

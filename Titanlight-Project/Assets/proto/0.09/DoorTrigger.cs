@@ -2,55 +2,47 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    public DoorDirection direction;
-    public KeyCode interactKey = KeyCode.E;
-    public KeyCode hackKey = KeyCode.H;
+    // Configurações básicas da porta
+    public DoorDirection direction; // Direção que a porta está virada
+    public KeyCode interactKey = KeyCode.E; // Tecla para usar porta destrancada
+    public KeyCode hackKey = KeyCode.H; // Tecla para hackear porta trancada
 
-    [Tooltip("Distância que o jogador se moverá ao usar esta porta (pode ser personalizada para cada direção).")]
-    public float moveDistance = 3f;
+    // Valores ajustáveis
+    public float moveDistance = 3f; // Quanto o jogador se move ao passar
+    public float hackTimeReduction = 10f; // Tempo perdido ao hackear
 
-    [Tooltip("Tempo a ser reduzido no timer ao hackear esta porta.")]
-    public float hackTimeReduction = 10f;
-
-    // Se não atribuído no Inspector, será procurado automaticamente
+    // Referência para o timer (pode ser arrastado no Inspector)
     public CountdownTimer timer;
 
+    // Estado atual da porta
     private DoorState _state;
-    private bool _isPlayerInRange;
+    private bool _isPlayerInRange; // Se jogador está perto
 
-    private void Start()
+    void Start()
     {
-        // Tenta encontrar o timer caso não tenha sido atribuído manualmente
+        // Tenta achar o timer automaticamente se não tiver
         if (timer == null)
         {
             timer = FindObjectOfType<CountdownTimer>();
-            if (timer == null)
-            {
-                Debug.LogWarning("CountdownTimer não encontrado na cena!");
-            }
         }
 
-        // Obtém o estado da porta a partir da sala (componente pai)
+        // Pega o estado da porta da sala pai
         Room room = GetComponentInParent<Room>();
         if (room != null)
         {
             _state = room.GetDoorState(direction);
         }
-        else
-        {
-            Debug.LogError("Room não encontrada no pai da porta!");
-        }
     }
 
-    private void Update()
+    void Update()
     {
-        if (!_isPlayerInRange) return;
+        if (!_isPlayerInRange) return; // Só funciona com jogador perto
 
-        UpdateUI();
-        HandleInput();
+        AtualizaInterface(); // Mostra textos na UI
+        VerificaInputs(); // Checa teclas pressionadas
     }
 
-    private void UpdateUI()
+    void AtualizaInterface()
     {
         if (_state.isLocked)
         {
@@ -66,55 +58,59 @@ public class DoorTrigger : MonoBehaviour
         }
     }
 
-    private void HandleInput()
+    void VerificaInputs()
     {
+        // Tecla H para hackear porta trancada
         if (Input.GetKeyDown(hackKey) && _state.isLocked)
         {
-            UnlockDoor();
+            HackearPorta();
         }
+        // Tecla E para usar porta destrancada
         else if (Input.GetKeyDown(interactKey))
         {
-            TryPassThroughDoor();
+            TentarPassarPorta();
         }
     }
 
-    private void TryPassThroughDoor()
+    void TentarPassarPorta()
     {
         if (_state.isOpen && !_state.isLocked)
         {
-            // Chama o método do GameManager e passa a distância configurada para esta porta
+            // Manda o jogador se mover
             GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
         }
     }
 
-    public void UnlockDoor()
+    public void HackearPorta()
     {
-        _state.isLocked = false;
-        _state.isOpen = true;
-        GameUI.Instance.SetInteractionText("Porta Hackeada!");
-        Debug.Log("Porta hackeada com sucesso!");
-        // Reduz o tempo no timer, se houver referência
+        _state.isLocked = false; // Destranca
+        _state.isOpen = true; // Abre
+        GameUI.Instance.SetInteractionText("Porta Hackeada!"); // Feedback
+
+        // Reduz tempo se tiver timer
         if (timer != null)
         {
             timer.ReduceTime(hackTimeReduction);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // Quando jogador entra na área
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             _isPlayerInRange = true;
-            GameUI.Instance.ToggleInteractionText(true);
+            GameUI.Instance.ToggleInteractionText(true); // Mostra texto
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    // Quando jogador sai da área
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             _isPlayerInRange = false;
-            GameUI.Instance.ToggleInteractionText(false);
+            GameUI.Instance.ToggleInteractionText(false); // Esconde texto
         }
     }
 }
