@@ -62,12 +62,32 @@ namespace Inventory
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if(itemAction != null)
             {
-                itemAction.PerformAction(gameObject, null);
+                inventoryUi.ShowItemAction(itemIndex);
+                inventoryUi.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
             }
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if(destroyableItem != null)
+            if (destroyableItem != null)
             {
                 inventoryData.RemoveItem(itemIndex, 1);
+            }
+        }
+
+        public void PerformAction(int itemIndex)
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.isEmpty)
+            {
+                return;
+            }
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject, inventoryItem.itemState);
             }
         }
 

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Health : MonoBehaviour
 {
@@ -7,12 +9,19 @@ public class Health : MonoBehaviour
 
     private float currentHealth;
 
-    void Start() => currentHealth = maxHealth;
+    private void Start() => currentHealth = 1;
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0) Die();
+    }
+
+    public void AddHealth(int healthBoost)
+    {
+        int health = Mathf.RoundToInt(currentHealth * maxHealth);
+        int val = health + healthBoost;
+        currentHealth = (val > maxHealth ? maxHealth : val / maxHealth);
     }
 
     private void Die()

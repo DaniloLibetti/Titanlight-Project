@@ -18,4 +18,6 @@ MonoBehaviour:
   <Name>k__BackingField: Sandwich
   <ItemImage>k__BackingField: {fileID: -5211771596868668710, guid: 6854ae5d09086a64c89cfe414d85ba74, type: 3}
   <DefaultParameterList>k__BackingField: []
-  modifiersData: []
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: e798394eec861964685c9cc6f292f191, type: 2}
+    value: 10
