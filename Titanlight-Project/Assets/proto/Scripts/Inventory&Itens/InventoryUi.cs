@@ -8,20 +8,21 @@ namespace Inventory.UI
 {
     public class InventoryUi : MonoBehaviour
     {
-        [SerializeField] private UIInventoryItem itemPrefab;
-        [SerializeField] private RectTransform contentPanel;
-        [SerializeField] private MouseFollowe mouseFollower;
+        [SerializeField] private UIInventoryItem itemPrefab;//prefab do item na UI
+        [SerializeField] private RectTransform contentPanel;//painel aonde fica os itens
+        [SerializeField] private MouseFollowe mouseFollower;//sprite do item q esta sendo arrastado
+        [SerializeField] private RectTransform equipmentPanel;//painel aonde fica os equipamentos
 
-        List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
+        List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();//lista do q esta no inventario do jogador
 
-        private int currentlyDraggedItemIndex = -1;
+        private int currentlyDraggedItemIndex = -1;//index do item q esta sendo arrastado
 
-        public event Action<int> OnItemActionRequested, OnStartDragging;
+        public event Action<int> OnItemActionRequested, OnStartDragging;//
 
-        public event Action<int, int> OnSwapItems;
+        public event Action<int, int> OnSwapItems;//
 
         [SerializeField]
-        private ItemActionPanel actionPanel;
+        private ItemActionPanel actionPanel;//painel de açoes do item
 
         private void Awake()
         {
@@ -44,7 +45,7 @@ namespace Inventory.UI
             }
         }
 
-        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity)
+        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity) //atualiza a informaçao do item
         {
             if (listOfUIItems.Count > itemIndex)
             {
@@ -110,18 +111,18 @@ namespace Inventory.UI
             }
         }
 
-        public void Show()
+        public void Show() //ativa a interface do inventario
         {
             gameObject.SetActive(true);
             ResetSelection();
         }
 
-        public void ResetSelection()
+        public void ResetSelection() //reseta a seleçao de itens
         {
             DeselectAllItems();
         }
 
-        private void DeselectAllItems()
+        private void DeselectAllItems() //desseleciona todos os itens
         {
             foreach (UIInventoryItem item in listOfUIItems)
             {
@@ -135,20 +136,20 @@ namespace Inventory.UI
             actionPanel.AddButon(actionName, performAction);
         }
 
-        public void ShowItemAction(int itemIndex)
+        public void ShowItemAction(int itemIndex) //mostra o painel de açoes do item
         {
             actionPanel.Toggle(true);
             actionPanel.transform.position = listOfUIItems[itemIndex].transform.position;
         }
 
-        public void Hide()
+        public void Hide() //desativa a interface do inventario
         {
             actionPanel.Toggle(false);
             gameObject.SetActive(false);
             ResetDraggedItem();
         }
 
-        public void ResetAllItems()
+        public void ResetAllItems() //reseta todos os itens
         {
             foreach (var item in listOfUIItems)
             {
@@ -156,5 +157,18 @@ namespace Inventory.UI
                 item.Deselect();
             }    
         }
+
     }
+
+
+    public enum ItemType
+    {
+        Consumable,
+        Throwable,
+        Weapon,
+        Chip,
+        Selling,
+        None,
+    };
+
 }

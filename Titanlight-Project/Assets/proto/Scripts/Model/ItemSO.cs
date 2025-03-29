@@ -9,24 +9,24 @@ namespace Inventory.Model
     public abstract class ItemSO : ScriptableObject
     {
         [field: SerializeField]
-        public bool IsStackable { get; set; }
+        public bool IsStackable { get; set; } //determina se é empilhavel ou nao
 
-        public int ID => GetInstanceID();
-
-        [field: SerializeField]
-        public int MaxStackSize { get; set; } = 1;
+        public int ID => GetInstanceID(); //ID do item
 
         [field: SerializeField]
-        public int SellValue { get; set; } = 1;
+        public int MaxStackSize { get; set; } = 1;//valor maximo do item empilhavel
 
         [field: SerializeField]
-        public string Name { get; set; }
+        public int SellValue { get; set; } = 1;//valor do venda do item
 
         [field: SerializeField]
-        public Sprite ItemImage { get; set; }
+        public string Name { get; set; }//nome do item
 
         [field: SerializeField]
-        public List<ItemParameter> DefaultParameterList { get; set; }
+        public Sprite ItemImage { get; set; }//imagem do item
+
+        [field: SerializeField]
+        public List<ItemParameter> DefaultParameterList { get; set; }//lista de parametros do item
     }
 
     [Serializable]  

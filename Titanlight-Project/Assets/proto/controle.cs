@@ -40,7 +40,7 @@ public class Controle : MonoBehaviour
         currentHealth = maxHealth;
         //if (controller == null) controller = GetComponent<CharacterController>();
         if (animator == null) animator = GetComponentInChildren<Animator>();
-        areaLimiter = FindObjectOfType<areaLimiter>();
+        //areaLimiter = FindObjectOfType<areaLimiter>();
     }
 
     void Update()
