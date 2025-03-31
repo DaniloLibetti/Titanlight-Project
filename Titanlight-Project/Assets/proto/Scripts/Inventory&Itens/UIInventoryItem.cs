@@ -16,6 +16,8 @@ namespace Inventory.UI
 
         private bool empty = true;
 
+        public ItemType itemType;
+
         private void Awake()
         {
             ResetData();
