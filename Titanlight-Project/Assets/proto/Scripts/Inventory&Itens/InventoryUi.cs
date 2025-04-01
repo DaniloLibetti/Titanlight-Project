@@ -12,6 +12,7 @@ namespace Inventory.UI
         [SerializeField] private RectTransform contentPanel;//painel aonde fica os itens
         [SerializeField] private MouseFollowe mouseFollower;//sprite do item q esta sendo arrastado
         [SerializeField] private RectTransform equipmentPanel;//painel aonde fica os equipamentos
+        [SerializeField] private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
         List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();//lista do q esta no inventario do jogador
 
@@ -164,12 +165,12 @@ namespace Inventory.UI
 
     public enum ItemType
     {
-        Consumable,
-        Throwable,
-        Weapon,
-        Enhancement,
-        Selling,
-        None,
+        consumable,
+        throwable,
+        weapon,
+        upgrades,
+        selling,
+        none,
     };
 
 }

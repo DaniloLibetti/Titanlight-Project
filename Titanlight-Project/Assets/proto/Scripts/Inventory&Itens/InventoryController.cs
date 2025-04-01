@@ -40,7 +40,7 @@ namespace Inventory
             inventoryUi.ResetAllItems();
             foreach (var item in inventoryState)
             {
-                inventoryUi.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity, ItemType.None);
+                inventoryUi.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity, ItemType.none);
             }
         }
 
@@ -115,7 +115,7 @@ namespace Inventory
                     inventoryUi.Show();
                     foreach (var item in inventoryData.GetCurrentInventoryState())
                     {
-                        inventoryUi.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity, ItemType.None);
+                        inventoryUi.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity, ItemType.none);
                     }
                 }
                 else

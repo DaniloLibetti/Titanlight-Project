@@ -187,7 +187,7 @@ namespace Inventory.Model
             item = null,
             quantity = 0,
             itemState = new List<ItemParameter>(),
-            itemType = ItemType.None,
+            itemType = ItemType.none,
         };
     }
 }
