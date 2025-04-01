@@ -38,11 +38,12 @@ namespace Inventory.UI
         }
 
         //Define os dados do item
-        public void SetData(Sprite sprite, int quantity)
+        public void SetData(Sprite sprite, int quantity, ItemType itemType)
         {
             itemImage.gameObject.SetActive(true);
             itemImage.sprite = sprite;
             quantityTxt.text = quantity + "";
+            this.itemType = itemType;
             empty = false;
         }
 

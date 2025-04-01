@@ -169,6 +169,7 @@ namespace Inventory.Model
         public ItemSO item;
         public List<ItemParameter> itemState;
         public bool isEmpty => item == null;
+        public ItemType itemType;
 
         public InventoryItem ChangeQuantity(int newQuantity)
         {
@@ -176,7 +177,8 @@ namespace Inventory.Model
             {
                 item = this.item,
                 quantity = newQuantity,
-                itemState = new List<ItemParameter>(this.itemState)
+                itemState = new List<ItemParameter>(this.itemState),
+                itemType = this.itemType
             };
         }
 
@@ -184,7 +186,8 @@ namespace Inventory.Model
         {
             item = null,
             quantity = 0,
-            itemState = new List<ItemParameter>()
+            itemState = new List<ItemParameter>(),
+            itemType = ItemType.None,
         };
     }
 }

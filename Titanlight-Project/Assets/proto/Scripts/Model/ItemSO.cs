@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.Compilation;
 using UnityEngine;
+using Inventory.UI;
 
 namespace Inventory.Model
 {
@@ -27,6 +28,9 @@ namespace Inventory.Model
 
         [field: SerializeField]
         public List<ItemParameter> DefaultParameterList { get; set; }//lista de parametros do item
+
+        [field: SerializeField]
+        public ItemType itemType;
     }
 
     [Serializable]  

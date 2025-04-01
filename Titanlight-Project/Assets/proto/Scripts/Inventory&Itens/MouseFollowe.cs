@@ -13,9 +13,9 @@ public class MouseFollowe : MonoBehaviour
         item = GetComponentInChildren<UIInventoryItem>();
     }
 
-    public void SetData(Sprite sprite, int quantity)
+    public void SetData(Sprite sprite, int quantity, ItemType itemType)
     {
-        item.SetData(sprite, quantity);
+        item.SetData(sprite, quantity, itemType);
     }
 
     private void Update()

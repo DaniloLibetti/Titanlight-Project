@@ -36,6 +36,7 @@ namespace Inventory.UI
             {
                 UIInventoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
                 uiItem.transform.SetParent(contentPanel);
+                uiItem.transform.localScale = Vector3.one;
                 listOfUIItems.Add(uiItem);
                 uiItem.OnItemClicked += HandleItemSelection;
                 uiItem.OnItemBeginDrag += HandleBeginDrag;
@@ -45,11 +46,11 @@ namespace Inventory.UI
             }
         }
 
-        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity) //atualiza a informaçao do item
+        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity, ItemType itemType) //atualiza a informaçao do item
         {
             if (listOfUIItems.Count > itemIndex)
             {
-                listOfUIItems[itemIndex].SetData(itemImage, itemQuantity);
+                listOfUIItems[itemIndex].SetData(itemImage, itemQuantity, itemType);
             }
         }
 
@@ -96,10 +97,10 @@ namespace Inventory.UI
             OnStartDragging?.Invoke(index);
         }
 
-        public void CreateDraggedItem(Sprite sprite, int quantity)
+        public void CreateDraggedItem(Sprite sprite, int quantity, ItemType itemType)
         {
             mouseFollower.Toggle(true);
-            mouseFollower.SetData(sprite, quantity);
+            mouseFollower.SetData(sprite, quantity, itemType);
         }
 
         private void HandleItemSelection(UIInventoryItem inventoryItemUI)
@@ -166,7 +167,7 @@ namespace Inventory.UI
         Consumable,
         Throwable,
         Weapon,
-        Chip,
+        Enhancement,
         Selling,
         None,
     };
