@@ -10,25 +10,24 @@ namespace Inventory.UI
     {
         [SerializeField] private UIInventoryItem itemPrefab;//prefab do item na UI
         [SerializeField] private RectTransform contentPanel;//painel aonde fica os itens
-        [SerializeField] private MouseFollowe mouseFollower;//sprite do item q esta sendo arrastado
+        //[SerializeField] private MouseFollowe mouseFollower;//sprite do item q esta sendo arrastado
         [SerializeField] private RectTransform equipmentPanel;//painel aonde fica os equipamentos
         [SerializeField] private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
         List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();//lista do q esta no inventario do jogador
 
-        private int currentlyDraggedItemIndex = -1;//index do item q esta sendo arrastado
+        //private int currentlyDraggedItemIndex = -1;//index do item q esta sendo arrastado
 
-        public event Action<int> OnItemActionRequested, OnStartDragging;//
+        public event Action<int> OnItemActionRequested; //OnStartDragging
 
-        public event Action<int, int> OnSwapItems;//
+        //public event Action<int, int> OnSwapItems;
 
-        [SerializeField]
-        private ItemActionPanel actionPanel;//painel de açoes do item
+        //[SerializeField] private ItemActionPanel actionPanel;//painel de açoes do item
 
         private void Awake()
         {
             Hide();
-            mouseFollower.Toggle(false);
+            //mouseFollower.Toggle(false);
         }
 
         public void InitializeInventoryUI(int inventorysize)
@@ -40,9 +39,9 @@ namespace Inventory.UI
                 uiItem.transform.localScale = Vector3.one;
                 listOfUIItems.Add(uiItem);
                 uiItem.OnItemClicked += HandleItemSelection;
-                uiItem.OnItemBeginDrag += HandleBeginDrag;
-                uiItem.OnItemDroppedOn += HandleSwap;
-                uiItem.OnItemEndDrag += HandleEndDrag;
+                //uiItem.OnItemBeginDrag += HandleBeginDrag;
+                //uiItem.OnItemDroppedOn += HandleSwap;
+                //uiItem.OnItemEndDrag += HandleEndDrag;
                 uiItem.OnRightMouseButtonClick += HandleShowItemActions;
             }
         }
@@ -65,12 +64,12 @@ namespace Inventory.UI
             OnItemActionRequested?.Invoke(index);
         }
 
-        private void HandleEndDrag(UIInventoryItem inventoryItemUI)
+        /*private void HandleEndDrag(UIInventoryItem inventoryItemUI)
         {
             mouseFollower.Toggle(false);
-        }
+        }*/
 
-        private void HandleSwap(UIInventoryItem inventoryItemUI)
+        /*private void HandleSwap(UIInventoryItem inventoryItemUI)
         {
             int index = listOfUIItems.IndexOf(inventoryItemUI);
             if (index == -1)
@@ -78,15 +77,15 @@ namespace Inventory.UI
                 return;
             }
             OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
-        }
+        }*/
 
-        private void ResetDraggedItem()
+        /*private void ResetDraggedItem()
         {
             mouseFollower.Toggle(false);
             currentlyDraggedItemIndex = -1;
-        }
+        }*/
 
-        private void HandleBeginDrag(UIInventoryItem inventoryItemUI)
+        /*private void HandleBeginDrag(UIInventoryItem inventoryItemUI)
         {
             int index = listOfUIItems.IndexOf(inventoryItemUI);
             if (index == -1)
@@ -96,13 +95,13 @@ namespace Inventory.UI
             currentlyDraggedItemIndex = index;
             HandleItemSelection(inventoryItemUI);
             OnStartDragging?.Invoke(index);
-        }
+        }*/
 
-        public void CreateDraggedItem(Sprite sprite, int quantity, ItemType itemType)
+        /*public void CreateDraggedItem(Sprite sprite, int quantity, ItemType itemType)
         {
             mouseFollower.Toggle(true);
             mouseFollower.SetData(sprite, quantity, itemType);
-        }
+        }*/
 
         private void HandleItemSelection(UIInventoryItem inventoryItemUI)
         {
@@ -111,7 +110,7 @@ namespace Inventory.UI
             {
                 return;
             }
-        }
+        }   
 
         public void Show() //ativa a interface do inventario
         {
@@ -130,25 +129,25 @@ namespace Inventory.UI
             {
                 item.Deselect();
             }
-            actionPanel.Toggle(false);
+            //actionPanel.Toggle(false);
         }
 
-        public void AddAction(string actionName, Action performAction)
+        /*public void AddAction(string actionName, Action performAction)
         {
             actionPanel.AddButon(actionName, performAction);
-        }
+        }*/
 
-        public void ShowItemAction(int itemIndex) //mostra o painel de açoes do item
+        /*public void ShowItemAction(int itemIndex) //mostra o painel de açoes do item
         {
             actionPanel.Toggle(true);
             actionPanel.transform.position = listOfUIItems[itemIndex].transform.position;
-        }
+        }*/
 
         public void Hide() //desativa a interface do inventario
         {
-            actionPanel.Toggle(false);
+            //actionPanel.Toggle(false);
             gameObject.SetActive(false);
-            ResetDraggedItem();
+            //ResetDraggedItem();
         }
 
         public void ResetAllItems() //reseta todos os itens

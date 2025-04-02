@@ -47,12 +47,12 @@ namespace Inventory
         private void PrepareUI()
         {
             inventoryUi.InitializeInventoryUI(inventoryData.Size);
-            this.inventoryUi.OnSwapItems += HandleSwapItems;
-            this.inventoryUi.OnStartDragging += HandleDragging;
-            this.inventoryUi.OnItemActionRequested += HandleItemAcrtionRequest;
+            //this.inventoryUi.OnSwapItems += HandleSwapItems;
+            //this.inventoryUi.OnStartDragging += HandleDragging;
+            //this.inventoryUi.OnItemActionRequested += HandleItemActionRequest;
         }
 
-        private void HandleItemAcrtionRequest(int itemIndex)
+        /*private void HandleItemActionRequest(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.isEmpty)
@@ -70,9 +70,9 @@ namespace Inventory
             {
                 inventoryData.RemoveItem(itemIndex, 1);
             }
-        }
+        }*/
 
-        public void PerformAction(int itemIndex)
+        /*public void PerformAction(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.isEmpty)
@@ -89,9 +89,9 @@ namespace Inventory
             {
                 itemAction.PerformAction(gameObject, inventoryItem.itemState);
             }
-        }
+        }*/
 
-        private void HandleDragging(int itemIndex)
+        /*private void HandleDragging(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.isEmpty)
@@ -99,12 +99,12 @@ namespace Inventory
                 return;
             }
             inventoryUi.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity, inventoryItem.itemType);
-        }
+        }*/
 
-        private void HandleSwapItems(int itemIndex1, int itemIndex2)
+        /*private void HandleSwapItems(int itemIndex1, int itemIndex2)
         {
             inventoryData.SwapItems(itemIndex1, itemIndex2);
-        }
+        }*/
 
         public void Update()
         {
