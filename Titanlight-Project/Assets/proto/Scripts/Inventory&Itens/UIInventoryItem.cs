@@ -24,13 +24,6 @@ namespace Inventory.UI
             Deselect();
         }
 
-        //Seleciona o item no inventario
-        public void Select()
-        {
-            borderImage.enabled = true;
-            Debug.Log("SELECIONADO");
-        }
-
         //Reseta os dados
         public void ResetData()
         {
@@ -52,6 +45,12 @@ namespace Inventory.UI
             quantityTxt.text = quantity + "";
             this.itemType = itemType;
             empty = false;
+        }
+
+        //Seleciona o item no inventario
+        public void Select()
+        {
+            borderImage.enabled = true;
         }
 
         public void OnPointerClick(PointerEventData pointerData)

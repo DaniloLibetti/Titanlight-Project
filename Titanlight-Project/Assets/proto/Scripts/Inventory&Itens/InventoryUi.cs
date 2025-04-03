@@ -1,3 +1,4 @@
+using Inventory.Model;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting.ReorderableList;
@@ -18,7 +19,7 @@ namespace Inventory.UI
 
         //private int currentlyDraggedItemIndex = -1;//index do item q esta sendo arrastado
 
-        public event Action<int> OnItemActionRequested; //OnStartDragging
+        public event Action<int> OnItemSelection; //OnStartDragging 
 
         //public event Action<int, int> OnSwapItems;
 
@@ -42,7 +43,7 @@ namespace Inventory.UI
                 //uiItem.OnItemBeginDrag += HandleBeginDrag;
                 //uiItem.OnItemDroppedOn += HandleSwap;
                 //uiItem.OnItemEndDrag += HandleEndDrag;
-                uiItem.OnRightMouseButtonClick += HandleShowItemActions;
+                //uiItem.OnRightMouseButtonClick += HandleShowItemActions;
             }
         }
 
@@ -54,15 +55,14 @@ namespace Inventory.UI
             }
         }
 
-        private void HandleShowItemActions(UIInventoryItem inventoryItemUI)
+        /*private void HandleShowItemActions(UIInventoryItem inventoryItemUI)
         {
             int index = listOfUIItems.IndexOf(inventoryItemUI);
             if (index == -1)
             {
                 return;
             }
-            OnItemActionRequested?.Invoke(index);
-        }
+        }*/
 
         /*private void HandleEndDrag(UIInventoryItem inventoryItemUI)
         {
@@ -106,10 +106,9 @@ namespace Inventory.UI
         private void HandleItemSelection(UIInventoryItem inventoryItemUI)
         {
             int index = listOfUIItems.IndexOf(inventoryItemUI);
-            if (index == -1)
-            {
-                return;
-            }
+            DeselectAllItems();
+            listOfUIItems[index].Select();
+            OnItemSelection?.Invoke(index);
         }   
 
         public void Show() //ativa a interface do inventario

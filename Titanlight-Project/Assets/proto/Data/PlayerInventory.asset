@@ -13,24 +13,204 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   inventoryItems:
-  - quantity: 7
-    item: {fileID: 11400000, guid: ab9eb41bf2e5fac418d554a6386cbe7a, type: 2}
   - quantity: 1
-    item: {fileID: 11400000, guid: 4c2b17fe255c4a44990bd7c64c0106b0, type: 2}
+    item: {fileID: 11400000, guid: 743de8ae1e3a2d74488e3bc7f9a12b06, type: 2}
+    itemState: []
+    itemType: 0
+  - quantity: 5
+    item: {fileID: 11400000, guid: ab9eb41bf2e5fac418d554a6386cbe7a, type: 2}
+    itemState: []
+    itemType: 0
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+    itemType: 5
   - quantity: 0
     item: {fileID: 0}
-  <Size>k__BackingField: 10
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+    itemType: 5
+  <Size>k__BackingField: 50

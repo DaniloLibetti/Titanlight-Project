@@ -49,28 +49,19 @@ namespace Inventory
             inventoryUi.InitializeInventoryUI(inventoryData.Size);
             //this.inventoryUi.OnSwapItems += HandleSwapItems;
             //this.inventoryUi.OnStartDragging += HandleDragging;
-            //this.inventoryUi.OnItemActionRequested += HandleItemActionRequest;
+            this.inventoryUi.OnItemSelection += HandleItemSelection;
         }
 
-        /*private void HandleItemActionRequest(int itemIndex)
+        private void HandleItemSelection(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.isEmpty)
             {
+                inventoryUi.ResetSelection();
                 return;
             }
-            IItemAction itemAction = inventoryItem.item as IItemAction;
-            if(itemAction != null)
-            {
-                inventoryUi.ShowItemAction(itemIndex);
-                inventoryUi.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
-            }
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                inventoryData.RemoveItem(itemIndex, 1);
-            }
-        }*/
+            ItemSO item = inventoryItem.item;
+        }
 
         /*public void PerformAction(int itemIndex)
         {
