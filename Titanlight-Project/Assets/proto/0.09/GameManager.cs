@@ -5,78 +5,67 @@ using System;
 
 public class GameManager : Singleton<GameManager>
 {
-    #region Grid Settings
     [Header("Grid Parameters")]
     [SerializeField]
     private Vector2Int[] _gridPresets = {
-        new Vector2Int(7, 6),  // Opções de tamanho do grid (X,Y)
+        new Vector2Int(7, 6),
         new Vector2Int(6, 5),
         new Vector2Int(5, 4),
         new Vector2Int(4, 4),
         new Vector2Int(4, 3)
     };
 
-    public float roomWidth = 7f;       // Largura de cada sala
-    public float roomHeight = 3.93f;   // Altura de cada sala
-    public Vector2Int GridSize { get; private set; } // Tamanho escolhido do grid
-    private Vector3 _gridOffset;       // Ajuste para centralizar o grid na tela
-    #endregion
+    public float roomWidth = 7f;
+    public float roomHeight = 3.93f;
+    public Vector2Int GridSize { get; private set; }
+    private Vector3 _gridOffset;
 
-    #region Room Settings
     [Header("Room Configuration")]
-    public GameObject initialRoomPrefab;   // Sala inicial obrigatória
-    public List<RoomOption> roomOptions;   // Tipos de salas que podem ser geradas
+    public GameObject initialRoomPrefab;
+    public List<RoomOption> roomOptions;
 
-    private Dictionary<Vector2Int, Room> _rooms = new Dictionary<Vector2Int, Room>(); // Mapa de salas
-    private Vector2Int _currentRoomCoord;  // Coordenada da sala atual
-    private Vector2Int _initialRoomCoord;  // Coordenada da sala inicial
-    #endregion
+    private Dictionary<Vector2Int, Room> _rooms = new Dictionary<Vector2Int, Room>();
+    private Vector2Int _currentRoomCoord;
+    private Vector2Int _initialRoomCoord;
 
-    #region Door System
     [Header("Door Management")]
-    private Dictionary<Vector2Int, HashSet<DoorDirection>> _doors = new Dictionary<Vector2Int, HashSet<DoorDirection>>(); // Portas existentes
-    #endregion
+    // Dicionário que registra as direções de portas acessíveis para cada sala
+    private Dictionary<Vector2Int, HashSet<DoorDirection>> _doors = new Dictionary<Vector2Int, HashSet<DoorDirection>>();
 
-    #region Player & Camera
     [Header("Player Settings")]
-    public GameObject playerPrefab;    // Prefab do jogador
-    private Camera _mainCamera;        // Referência da câmera principal
-    private bool _isTransitioning = false; // Impede transições simultâneas
-    public event Action<Vector2Int> OnRoomChanged; // Evento ao mudar de sala
-    #endregion
+    public GameObject playerPrefab;
+    private Camera _mainCamera;
+    private bool _isTransitioning = false;
+    public event Action<Vector2Int> OnRoomChanged;
 
-    // Classe para configurar salas no Inspector
     [Serializable]
     public class RoomOption
     {
-        public string roomName;     // Nome para identificação
-        public GameObject roomPrefab; // Prefab da sala
-        [Range(0, 100)] public float spawnChance; // Chance de aparecer (%)
+        public string roomName;
+        public GameObject roomPrefab;
+        [Range(0, 100)]
+        public float spawnChance;
     }
 
-    // Inicialização quando o jogo começa
     protected override void Awake()
     {
-        base.Awake(); // Garante a instância única
+        base.Awake();
         InitializeGame();
     }
 
-    // Configura todos os sistemas iniciais
     private void InitializeGame()
     {
-        _mainCamera = Camera.main; // Pega a câmera principal
-        SetupGrid();       // Cria o grid de salas
-        GenerateWorld();   // Gera as salas do mapa
-        InstantiatePlayer(); // Cria o jogador
+        _mainCamera = Camera.main;
+        SetupGrid();
+        GenerateWorld();
+        // Depois de gerar as salas, pareia as portas
+        PairDoors();
+        InstantiatePlayer();
     }
 
-    // Escolhe um tamanho de grid aleatório
     private void SetupGrid()
     {
-        // Sorteia um tamanho da lista de presets
         GridSize = _gridPresets[UnityEngine.Random.Range(0, _gridPresets.Length)];
-
-        // Calcula offset para centralizar o grid
         _gridOffset = new Vector3(
             -(GridSize.x * roomWidth) / 2f + roomWidth / 2f,
             -(GridSize.y * roomHeight) / 2f + roomHeight / 2f,
@@ -84,67 +73,57 @@ public class GameManager : Singleton<GameManager>
         );
     }
 
-    // Gera todas as salas do mapa
     private void GenerateWorld()
     {
-        // Escolhe coordenada aleatória para sala inicial
         _initialRoomCoord = new Vector2Int(
             UnityEngine.Random.Range(0, GridSize.x),
             UnityEngine.Random.Range(0, GridSize.y)
         );
 
-        float totalChance = CalculateTotalSpawnChance(); // Soma todas as chances
+        float totalChance = CalculateTotalSpawnChance();
 
-        // Cria salas em todas as coordenadas do grid
         for (int x = 0; x < GridSize.x; x++)
         {
             for (int y = 0; y < GridSize.y; y++)
             {
                 Vector2Int coord = new Vector2Int(x, y);
-                CreateRoom(coord, totalChance); // Instancia cada sala
+                CreateRoom(coord, totalChance);
             }
         }
-        SetCurrentRoom(_initialRoomCoord); // Define sala inicial como atual
+        SetCurrentRoom(_initialRoomCoord);
     }
 
-    // Cria uma sala em posição específica
     private void CreateRoom(Vector2Int coord, float totalChance)
     {
-        // Calcula posição no mundo
         Vector3 position = new Vector3(
             coord.x * roomWidth,
             coord.y * roomHeight,
             0
         ) + _gridOffset;
 
-        // Escolhe prefab: sala inicial ou aleatória
         GameObject prefab = (coord == _initialRoomCoord) ?
             initialRoomPrefab :
             SelectRandomRoomPrefab(totalChance);
 
-        // Instancia e configura a sala
         Room room = Instantiate(prefab, position, Quaternion.identity).GetComponent<Room>();
         _rooms.Add(coord, room);
-        room.Initialize(coord, roomWidth, roomHeight); // Inicializa a sala
+        room.Initialize(coord, roomWidth, roomHeight);
     }
 
-    // Seleciona sala aleatória baseada nas chances
     private GameObject SelectRandomRoomPrefab(float totalChance)
     {
         float randomValue = UnityEngine.Random.Range(0f, totalChance);
         float cumulative = 0f;
 
-        // Percorre opções até achar a escolhida
         foreach (RoomOption option in roomOptions)
         {
             cumulative += option.spawnChance;
             if (randomValue <= cumulative)
                 return option.roomPrefab;
         }
-        return roomOptions[0].roomPrefab; // Fallback
+        return roomOptions[0].roomPrefab;
     }
 
-    // Soma todas as chances de spawn
     private float CalculateTotalSpawnChance()
     {
         float total = 0f;
@@ -153,7 +132,6 @@ public class GameManager : Singleton<GameManager>
         return total;
     }
 
-    // Cria o jogador na cena
     private void InstantiatePlayer()
     {
         if (playerPrefab == null)
@@ -162,29 +140,30 @@ public class GameManager : Singleton<GameManager>
             return;
         }
 
-        // Posiciona jogador no centro da câmera
         Vector3 spawnPos = _mainCamera.transform.position;
-        spawnPos.z = 0; // Garante Z=0 para 2D
+        spawnPos.z = 0;
         Instantiate(playerPrefab, spawnPos, Quaternion.identity);
     }
 
-    #region Public Methods
-    // Registra uma porta no sistema
+    // Chamado pelos scripts de porta para registrar uma porta desbloqueada
     public void RegisterDoor(Vector2Int roomCoord, DoorDirection direction)
     {
         if (!_doors.ContainsKey(roomCoord))
             _doors[roomCoord] = new HashSet<DoorDirection>();
 
-        _doors[roomCoord].Add(direction);
+        if (!_doors[roomCoord].Contains(direction))
+        {
+            _doors[roomCoord].Add(direction);
+            Debug.Log($"[GameManager] Porta {direction} na sala {roomCoord} registrada como acessível.");
+        }
     }
 
-    // Verifica se uma porta existe
+    // Verifica se a porta de uma dada direção na sala está registrada como acessível
     public bool IsDoorAccessible(Vector2Int roomCoord, DoorDirection direction)
     {
         return _doors.ContainsKey(roomCoord) && _doors[roomCoord].Contains(direction);
     }
 
-    // Converte coordenada do grid para posição no mundo
     public Vector3 GetRoomWorldPosition(Vector2Int coord)
     {
         return new Vector3(
@@ -194,80 +173,165 @@ public class GameManager : Singleton<GameManager>
         ) + _gridOffset;
     }
 
-    public Room GetRoom(Vector2Int coord) => _rooms.ContainsKey(coord) ? _rooms[coord] : null;
-    public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
-    #endregion
+    public Room GetRoom(Vector2Int coord)
+    {
+        return _rooms.ContainsKey(coord) ? _rooms[coord] : null;
+    }
 
-    #region Room Transition
-    // Atualiza sala atual e gerencia portas
+    public Vector2Int GetCurrentRoomCoord()
+    {
+        return _currentRoomCoord;
+    }
+
     public void SetCurrentRoom(Vector2Int coord)
     {
         _currentRoomCoord = coord;
-        OnRoomChanged?.Invoke(coord); // Dispara evento
+        OnRoomChanged?.Invoke(coord);
 
-        // Desativa portas em todas salas
+        // Desativa as portas de todas as salas e ativa somente as da sala atual
         foreach (var room in _rooms.Values)
             room.SetActiveDoors(false);
 
-        // Ativa portas apenas na sala atual
         if (_rooms.TryGetValue(coord, out Room currentRoom))
             currentRoom.SetActiveDoors(true);
 
-        UpdateCameraPosition(); // Move a câmera
+        UpdateCameraPosition();
     }
 
-    // Posiciona câmera no slot da sala atual
     private void UpdateCameraPosition()
     {
         if (_rooms.TryGetValue(_currentRoomCoord, out Room room) && room.cameraSlot != null)
-            _mainCamera.transform.position = room.cameraSlot.position + new Vector3(0, 0, -10); // Mantém offset Z da câmera
+            _mainCamera.transform.position = room.cameraSlot.position + new Vector3(0, 0, -10);
     }
 
-    // Tenta mover o jogador através de uma porta
+    // Tenta mover o jogador através de uma porta, verificando se a porta foi registrada como desbloqueada
     public void TryMoveThroughDoor(DoorDirection direction, float moveDistance)
     {
+        // Converte a direção para Vector2Int; certifique-se de ter a extensão ou método ToVector() implementado
         Vector2Int dirVector = direction.ToVector();
         StartCoroutine(TransitionThroughDoor(dirVector, moveDistance));
     }
 
-    // Animação de transição entre salas
     private IEnumerator TransitionThroughDoor(Vector2Int direction, float moveDistance)
     {
-        if (_isTransitioning) yield break; // Evita transições simultâneas
+        if (_isTransitioning)
+            yield break;
         _isTransitioning = true;
 
         Vector2Int newCoord = _currentRoomCoord + direction;
         if (IsDoorAccessible(_currentRoomCoord, direction.ToDoorDirection()))
         {
             Collider2D playerCollider = Player.Instance.GetComponent<Collider2D>();
-            playerCollider.enabled = false; // Previne colisões durante movimento
+            playerCollider.enabled = false;
 
-            // Calcula posições inicial e final
             Vector3 startPos = Player.Instance.transform.position;
             Vector3 targetPos = startPos + (Vector3)(Vector2)direction * moveDistance;
 
-            yield return SmoothTransition(playerCollider, startPos, targetPos); // Animação
-            SetCurrentRoom(newCoord); // Atualiza sala atual
+            yield return SmoothTransition(playerCollider, startPos, targetPos);
+            SetCurrentRoom(newCoord);
+        }
+        else
+        {
+            Debug.LogWarning($"[GameManager] Porta {direction.ToDoorDirection()} na sala {_currentRoomCoord} não está acessível!");
         }
         _isTransitioning = false;
     }
 
-    // Movimento suave do jogador
     private IEnumerator SmoothTransition(Collider2D collider, Vector3 start, Vector3 target)
     {
-        float duration = 0.5f; // Tempo da animação
+        float duration = 0.5f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            // Interpola posição gradualmente
             Player.Instance.transform.position = Vector3.Lerp(start, target, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        Player.Instance.transform.position = target; // Posição final exata
-        collider.enabled = true; // Reativa colisões
+        Player.Instance.transform.position = target;
+        collider.enabled = true;
     }
-    #endregion
+
+    // Método para parear as portas entre salas vizinhas
+    private void PairDoors()
+    {
+        foreach (var roomEntry in _rooms)
+        {
+            Vector2Int coord = roomEntry.Key;
+            Room room = roomEntry.Value;
+
+            // Pareia porta de cima com a porta de baixo da sala acima
+            var doorUp = room.GetDoorTrigger(DoorDirection.Up);
+            if (doorUp != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.up;
+                Room neighbor = GetRoom(neighborCoord);
+                if (neighbor != null)
+                {
+                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Down);
+                    if (neighborDoor != null)
+                    {
+                        doorUp.pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = doorUp;
+                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Up) com Sala {neighborCoord} (porta Down).");
+                    }
+                }
+            }
+
+            // Pareia porta da direita com a porta da esquerda da sala à direita
+            var doorRight = room.GetDoorTrigger(DoorDirection.Right);
+            if (doorRight != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.right;
+                Room neighbor = GetRoom(neighborCoord);
+                if (neighbor != null)
+                {
+                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Left);
+                    if (neighborDoor != null)
+                    {
+                        doorRight.pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = doorRight;
+                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Right) com Sala {neighborCoord} (porta Left).");
+                    }
+                }
+            }
+
+            // Pareia porta de baixo com a porta de cima da sala abaixo
+            var doorDown = room.GetDoorTrigger(DoorDirection.Down);
+            if (doorDown != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.down;
+                Room neighbor = GetRoom(neighborCoord);
+                if (neighbor != null)
+                {
+                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Up);
+                    if (neighborDoor != null)
+                    {
+                        doorDown.pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = doorDown;
+                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Down) com Sala {neighborCoord} (porta Up).");
+                    }
+                }
+            }
+
+            // Pareia porta da esquerda com a porta da direita da sala à esquerda
+            var doorLeft = room.GetDoorTrigger(DoorDirection.Left);
+            if (doorLeft != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.left;
+                Room neighbor = GetRoom(neighborCoord);
+                if (neighbor != null)
+                {
+                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Right);
+                    if (neighborDoor != null)
+                    {
+                        doorLeft.pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = doorLeft;
+                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Left) com Sala {neighborCoord} (porta Right).");
+                    }
+                }
+            }
+        }
+    }
 }

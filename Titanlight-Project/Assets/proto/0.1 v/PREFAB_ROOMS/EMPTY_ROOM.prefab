@@ -52,6 +52,13 @@ MonoBehaviour:
   moveDistance: 2
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 1.5
 --- !u!61 &7123727893646226908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSlot: {fileID: 3207309266149554143}
+  doorUp: {fileID: 8168353391209908738}
+  doorDown: {fileID: 667416706043724910}
+  doorLeft: {fileID: 7371345905565269407}
+  doorRight: {fileID: 5489371490179094718}
   enemyPrefabs:
   - {fileID: 2519568851688618401, guid: d9f1f28f0d93df745907a239bc6494cb, type: 3}
   minEnemies: 2
@@ -736,6 +747,13 @@ MonoBehaviour:
   moveDistance: 1.5
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 1.5
 --- !u!61 &8580712708110276801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1008,6 +1026,13 @@ MonoBehaviour:
   moveDistance: 1.5
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 1.5
 --- !u!61 &5754594179842963497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1106,6 +1131,13 @@ MonoBehaviour:
   moveDistance: 2
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 1.5
 --- !u!61 &2157514633457895769
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSlot: {fileID: 3207309266149554143}
+  doorUp: {fileID: 8168353391209908738}
+  doorDown: {fileID: 667416706043724910}
+  doorLeft: {fileID: 7371345905565269407}
+  doorRight: {fileID: 5489371490179094718}
   enemyPrefabs: []
   minEnemies: 0
   maxEnemies: 0

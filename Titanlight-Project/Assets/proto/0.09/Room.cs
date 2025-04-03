@@ -9,51 +9,75 @@ public class Room : MonoBehaviour
     public float RoomWidth { get; private set; }
     public float RoomHeight { get; private set; }
 
-    // Listas para controlar portas
+    [Header("Portas (atribua pelo Inspector)")]
+    [SerializeField] private GameObject doorUp;
+    [SerializeField] private GameObject doorDown;
+    [SerializeField] private GameObject doorLeft;
+    [SerializeField] private GameObject doorRight;
+
+    // Listas para controlar o estado e os triggers das portas
     private List<DoorState> _doorStates = new List<DoorState>();
     private List<DoorTrigger> _doorTriggers = new List<DoorTrigger>();
 
     [Header("Spawn de Inimigos")]
-    [SerializeField] private GameObject[] enemyPrefabs; // Tipos de inimigos que podem nascer aqui
-    [SerializeField] private int minEnemies = 1; // Mínimo de inimigos por sala
-    [SerializeField] private int maxEnemies = 5; // Máximo de inimigos por sala
-    private List<GameObject> spawnedEnemies = new List<GameObject>(); // Lista dos inimigos criados
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private int minEnemies = 1;
+    [SerializeField] private int maxEnemies = 5;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    // Controle se o jogador está dentro da sala
     private bool playerInside = false;
 
-    // Configura valores iniciais quando a sala é criada
+    // Inicializa a sala com as configurações passadas
     public void Initialize(Vector2Int coord, float width, float height)
     {
         GridCoord = coord;
         RoomWidth = width;
         RoomHeight = height;
-        SetupDoors(); // Cria as portas
-        SpawnEnemies(); // Cria os inimigos
+        SetupDoors();
+        SpawnEnemies();
     }
 
-    // Cria portas nas direções necessárias
+    // Configura as portas com base na existência de sala vizinha
     void SetupDoors()
     {
         Vector2Int gridSize = GameManager.Instance.GridSize;
 
-        // Verifica em quais direções precisam de portas
-        if (GridCoord.y < gridSize.y - 1)
-            CreateDoor(DoorDirection.Up, new Vector2(0, RoomHeight / 2));
-
-        if (GridCoord.y > 0)
-            CreateDoor(DoorDirection.Down, new Vector2(0, -RoomHeight / 2));
-
-        if (GridCoord.x > 0)
-            CreateDoor(DoorDirection.Left, new Vector2(-RoomWidth / 2, 0));
-
-        if (GridCoord.x < gridSize.x - 1)
-            CreateDoor(DoorDirection.Right, new Vector2(RoomWidth / 2, 0));
+        // Verifica cada direção para ativar ou desativar a porta
+        SetupDoor(doorUp, DoorDirection.Up, GridCoord.y < gridSize.y - 1);
+        SetupDoor(doorDown, DoorDirection.Down, GridCoord.y > 0);
+        SetupDoor(doorLeft, DoorDirection.Left, GridCoord.x > 0);
+        SetupDoor(doorRight, DoorDirection.Right, GridCoord.x < gridSize.x - 1);
 
         InitializeDoorStates();
     }
 
-    // Define estado inicial das portas (todas fechadas)
+    // Configura uma porta: ativa/desativa e registra seu trigger e estado se ativa
+    void SetupDoor(GameObject doorObj, DoorDirection direction, bool shouldBeActive)
+    {
+        if (doorObj == null)
+        {
+            Debug.LogWarning("Uma porta não foi atribuída no Inspector em " + gameObject.name);
+            return;
+        }
+
+        doorObj.SetActive(shouldBeActive);
+
+        if (shouldBeActive)
+        {
+            // Registra o DoorTrigger, se existir
+            DoorTrigger trigger = doorObj.GetComponent<DoorTrigger>();
+            if (trigger != null)
+            {
+                trigger.direction = direction;
+                _doorTriggers.Add(trigger);
+            }
+            // Registra a porta no GameManager e adiciona seu estado
+            GameManager.Instance.RegisterDoor(GridCoord, direction);
+            _doorStates.Add(new DoorState { direction = direction });
+        }
+    }
+
+    // Inicializa os estados das portas (todas começam travadas e fechadas)
     void InitializeDoorStates()
     {
         foreach (DoorState door in _doorStates)
@@ -63,55 +87,33 @@ public class Room : MonoBehaviour
         }
     }
 
-    // Cria uma porta física na cena
-    void CreateDoor(DoorDirection dir, Vector2 localPosition)
+    // Retorna o DoorTrigger da porta que tem a direção informada
+    public DoorTrigger GetDoorTrigger(DoorDirection direction)
     {
-        GameObject door = new GameObject($"Door_{dir}");
-        door.transform.SetParent(transform);
-        door.transform.localPosition = localPosition;
-
-        // Adiciona colisor para detectar jogador
-        BoxCollider2D collider = door.AddComponent<BoxCollider2D>();
-        collider.isTrigger = true;
-        collider.size = new Vector2(1f, 1f);
-
-        // Configura o trigger da porta
-        DoorTrigger trigger = door.AddComponent<DoorTrigger>();
-        trigger.direction = dir;
-        _doorTriggers.Add(trigger);
-
-        // Registra a porta no GameManager
-        GameManager.Instance.RegisterDoor(GridCoord, dir);
-        _doorStates.Add(new DoorState { direction = dir });
+        return _doorTriggers.Find(d => d.direction == direction);
     }
 
-    // Cria inimigos aleatórios na sala
+    // Spawna inimigos aleatórios na sala
     void SpawnEnemies()
     {
         if (enemyPrefabs == null || enemyPrefabs.Length == 0)
             return;
 
-        // Escolhe quantos inimigos criar
         int count = Random.Range(minEnemies, maxEnemies + 1);
 
         for (int i = 0; i < count; i++)
         {
-            // Escolhe tipo de inimigo aleatório
             GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-
-            // Calcula posição aleatória dentro da sala
             Vector2 randomPos = new Vector2(
                 Random.Range(-RoomWidth / 2f + 1f, RoomWidth / 2f - 1f),
                 Random.Range(-RoomHeight / 2f + 1f, RoomHeight / 2f - 1f)
             );
-
-            // Cria o inimigo e guarda na lista
             GameObject enemy = Instantiate(enemyPrefab, transform.position + (Vector3)randomPos, Quaternion.identity, transform);
             spawnedEnemies.Add(enemy);
         }
     }
 
-    // Liga/desliga inimigos conforme o jogador entra/sai
+    // Ativa/desativa inimigos conforme o jogador entra ou sai
     public void SetEnemiesActive(bool active)
     {
         foreach (GameObject enemy in spawnedEnemies)
@@ -121,29 +123,33 @@ public class Room : MonoBehaviour
         }
     }
 
-    // Detecta quando jogador entra na sala
+    // Detecta entrada do jogador na sala
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-            SetEnemiesActive(true); // Ativa inimigos
+            SetEnemiesActive(true);
         }
     }
 
-    // Detecta quando jogador sai da sala
+    // Detecta saída do jogador da sala
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInside = false;
-            SetEnemiesActive(false); // Desativa inimigos
+            SetEnemiesActive(false);
         }
     }
 
-    // Métodos para acesso externo
-    public DoorState GetDoorState(DoorDirection dir) => _doorStates.Find(d => d.direction == dir);
+    // Permite que outros scripts acessem o estado da porta com base na direção
+    public DoorState GetDoorState(DoorDirection direction)
+    {
+        return _doorStates.Find(d => d.direction == direction);
+    }
 
+    // Ativa ou desativa os triggers das portas (por exemplo, ao entrar na sala)
     public void SetActiveDoors(bool active)
     {
         foreach (DoorTrigger trigger in _doorTriggers)

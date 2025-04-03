@@ -1,8 +1,8 @@
-public enum DoorDirection
-{
-    Up,
-    Down,
-    Left,
-    Right
-}
+//public enum DoorDirection
+//{
+   // Up,
+   // Down,
+   // Left,
+   //Right
+//}
 

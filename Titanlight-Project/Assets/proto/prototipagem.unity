@@ -976,10 +976,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gridPresets:
   - {x: 5, y: 3}
-  - {x: 6, y: 5}
+  - {x: 5, y: 3}
   - {x: 5, y: 4}
-  - {x: 4, y: 4}
-  - {x: 4, y: 3}
+  - {x: 6, y: 4}
+  - {x: 6, y: 5}
+  - {x: 6, y: 5}
+  - {x: 7, y: 6}
+  - {x: 7, y: 6}
+  - {x: 8, y: 7}
+  - {x: 8, y: 7}
   roomWidth: 6.4
   roomHeight: 4.16
   initialRoomPrefab: {fileID: 1591430054707244790, guid: 97ef0df9df3b5664a889b2b5a63d4626, type: 3}
