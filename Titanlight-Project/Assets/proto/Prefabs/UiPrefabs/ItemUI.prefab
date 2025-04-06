@@ -374,7 +374,7 @@ MonoBehaviour:
   itemImage: {fileID: 4285562554633026879}
   quantityTxt: {fileID: 5477474615534587010}
   borderImage: {fileID: 3164575547648857935}
-  itemType: 5
+  itemType: 6
 --- !u!1 &7650546877943127924
 GameObject:
   m_ObjectHideFlags: 0

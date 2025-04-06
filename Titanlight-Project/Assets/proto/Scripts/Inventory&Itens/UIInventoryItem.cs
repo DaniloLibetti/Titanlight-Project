@@ -15,8 +15,11 @@ namespace Inventory.UI
         public event Action<UIInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseButtonClick;
 
         private bool empty = true;
+        public bool isItemSelected = false;
 
         public ItemType itemType;
+
+        [SerializeField]private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
         private void Awake()
         {
@@ -56,14 +59,32 @@ namespace Inventory.UI
         public void OnPointerClick(PointerEventData pointerData)
         {
 
-            if (pointerData.button == PointerEventData.InputButton.Right)
+            if (isItemSelected = true & pointerData.button == PointerEventData.InputButton.Right)
             {
+
                 OnRightMouseButtonClick?.Invoke(this);
             }
             else
             {
                 OnItemClicked?.Invoke(this);
             }
+        }
+
+        public void EquipGear()
+        {
+
+            if (itemType == ItemType.weaponMelee)
+                meleeSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.weaponRange)
+                rangeSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.upgrades)
+                upgradeSlot1.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.upgrades)
+                upgradeSlot2.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.throwable)
+                throwableSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.consumable)
+                consumableSlot.EquipGear(itemIndex, itemImage);
         }
 
         public void OnBeginDrag(PointerEventData eventData)

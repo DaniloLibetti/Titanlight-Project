@@ -15,6 +15,8 @@ namespace Inventory.UI
         [SerializeField] private RectTransform equipmentPanel;//painel aonde fica os equipamentos
         [SerializeField] private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
+        public bool isItemSelected = false;
+
         List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();//lista do q esta no inventario do jogador
 
         //private int currentlyDraggedItemIndex = -1;//index do item q esta sendo arrastado
@@ -24,6 +26,10 @@ namespace Inventory.UI
         //public event Action<int, int> OnSwapItems;
 
         //[SerializeField] private ItemActionPanel actionPanel;//painel de açoes do item
+
+        private ItemType itemType;
+        private Sprite itemImage;
+        private int itemIndex;
 
         private void Awake()
         {
@@ -108,6 +114,7 @@ namespace Inventory.UI
             int index = listOfUIItems.IndexOf(inventoryItemUI);
             DeselectAllItems();
             listOfUIItems[index].Select();
+            isItemSelected = true;
             OnItemSelection?.Invoke(index);
         }   
 
@@ -158,14 +165,41 @@ namespace Inventory.UI
             }    
         }
 
+        public void OnLeftClick()
+        {
+            if (isItemSelected)
+            {
+                EquipGear();
+            }
+        }
+
+        private void EquipGear()
+        {
+
+            if (itemType == ItemType.weaponMelee)
+                meleeSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.weaponRange)
+                rangeSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.upgrades)
+                upgradeSlot1.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.upgrades)
+                upgradeSlot2.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.throwable)
+                throwableSlot.EquipGear(itemIndex, itemImage);
+            if (itemType == ItemType.consumable)
+                consumableSlot.EquipGear(itemIndex, itemImage);
+        }
     }
+
+    
 
 
     public enum ItemType
     {
         consumable,
         throwable,
-        weapon,
+        weaponMelee,
+        weaponRange,
         upgrades,
         selling,
         none,

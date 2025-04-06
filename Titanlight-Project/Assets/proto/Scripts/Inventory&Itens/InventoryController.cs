@@ -58,6 +58,7 @@ namespace Inventory
             if (inventoryItem.isEmpty)
             {
                 inventoryUi.ResetSelection();
+                inventoryUi.isItemSelected = false;
                 return;
             }
             ItemSO item = inventoryItem.item;

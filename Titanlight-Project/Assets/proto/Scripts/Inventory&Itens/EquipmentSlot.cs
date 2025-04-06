@@ -1,16 +1,22 @@
+using Inventory.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquipmentSlot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Image slotImage;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private ItemType itemType = new ItemType();
+
+    private Sprite itemSprite;
+
+    private bool slotInUse;
+
+    public void EquipGear(int itemIndex, Sprite itemImage)
     {
-        
+        this.itemSprite = itemImage;
+        slotImage.sprite = this.itemSprite;
+
+        slotInUse = true;
     }
 }
