@@ -12,10 +12,12 @@ namespace Inventory.UI
         [SerializeField] private TMP_Text quantityTxt;
         [SerializeField] private Image borderImage;
 
+        private Sprite itemSprite;
+
         public event Action<UIInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseButtonClick;
 
         private bool empty = true;
-        public bool isItemSelected = false;
+        //public bool isItemSelected = false;
 
         public ItemType itemType;
 
@@ -59,7 +61,7 @@ namespace Inventory.UI
         public void OnPointerClick(PointerEventData pointerData)
         {
 
-            if (isItemSelected = true & pointerData.button == PointerEventData.InputButton.Right)
+            if (/*isItemSelected = true &*/ pointerData.button == PointerEventData.InputButton.Right)
             {
 
                 OnRightMouseButtonClick?.Invoke(this);
@@ -70,21 +72,29 @@ namespace Inventory.UI
             }
         }
 
+        public void OnLeftClick()
+        {
+            EquipGear();
+            /*if (isItemSelected)
+            {
+                EquipGear();
+            }*/
+        }
         public void EquipGear()
         {
 
             if (itemType == ItemType.weaponMelee)
-                meleeSlot.EquipGear(itemIndex, itemImage);
+                meleeSlot.EquipGear(itemSprite);
             if (itemType == ItemType.weaponRange)
-                rangeSlot.EquipGear(itemIndex, itemImage);
+                rangeSlot.EquipGear(itemSprite);
             if (itemType == ItemType.upgrades)
-                upgradeSlot1.EquipGear(itemIndex, itemImage);
+                upgradeSlot1.EquipGear(itemSprite);
             if (itemType == ItemType.upgrades)
-                upgradeSlot2.EquipGear(itemIndex, itemImage);
+                upgradeSlot2.EquipGear(itemSprite);
             if (itemType == ItemType.throwable)
-                throwableSlot.EquipGear(itemIndex, itemImage);
+                throwableSlot.EquipGear(itemSprite);
             if (itemType == ItemType.consumable)
-                consumableSlot.EquipGear(itemIndex, itemImage);
+                consumableSlot.EquipGear(itemSprite);
         }
 
         public void OnBeginDrag(PointerEventData eventData)

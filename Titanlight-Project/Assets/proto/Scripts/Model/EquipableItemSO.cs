@@ -11,15 +11,19 @@ namespace Inventory.Model
 
         public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
         {
-            EquipGear();
-            /*AgentWeapon weaponSystem = character.GetComponent<AgentWeapon>();
+            EquipmentSlot equipSlot = character.GetComponent<EquipmentSlot>();
+            if (equipSlot != null)
+            {
+                
+            }
+            AgentWeapon weaponSystem = character.GetComponent<AgentWeapon>();
             if (weaponSystem != null)
             {
                 weaponSystem.SetWeapon(this, itemState == null ?
                     DefaultParameterList : itemState);
                 return true;
             }
-            return false;*/
+            return false;
         }
     }
 }

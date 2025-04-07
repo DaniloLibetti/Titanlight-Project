@@ -18,3 +18,4 @@ MonoBehaviour:
   <Name>k__BackingField: Grenade
   <ItemImage>k__BackingField: {fileID: -6240258545422738745, guid: cf4b355497d05994ba075df3a563a3f2, type: 3}
   <DefaultParameterList>k__BackingField: []
+  itemType: 1

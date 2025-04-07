@@ -2,21 +2,26 @@ using Inventory.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EquipmentSlot : MonoBehaviour
+
+namespace Inventory.UI
 {
-    [SerializeField] private Image slotImage;
-
-    [SerializeField] private ItemType itemType = new ItemType();
-
-    private Sprite itemSprite;
-
-    private bool slotInUse;
-
-    public void EquipGear(int itemIndex, Sprite itemImage)
+    public class EquipmentSlot : MonoBehaviour
     {
-        this.itemSprite = itemImage;
-        slotImage.sprite = this.itemSprite;
+        [SerializeField] private Image slotImage;
 
-        slotInUse = true;
+        //[SerializeField] private ItemType itemType = new ItemType();
+
+        private Sprite itemSprite;
+
+        private bool slotInUse = false;
+
+        public void EquipGear(Sprite itemImage)
+        {
+            this.itemSprite = itemImage;
+            slotImage.sprite = this.itemSprite;
+
+            slotInUse = true;
+        }
     }
 }
+

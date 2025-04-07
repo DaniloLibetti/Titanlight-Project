@@ -165,30 +165,8 @@ namespace Inventory.UI
             }    
         }
 
-        public void OnLeftClick()
-        {
-            if (isItemSelected)
-            {
-                EquipGear();
-            }
-        }
 
-        private void EquipGear()
-        {
 
-            if (itemType == ItemType.weaponMelee)
-                meleeSlot.EquipGear(itemIndex, itemImage);
-            if (itemType == ItemType.weaponRange)
-                rangeSlot.EquipGear(itemIndex, itemImage);
-            if (itemType == ItemType.upgrades)
-                upgradeSlot1.EquipGear(itemIndex, itemImage);
-            if (itemType == ItemType.upgrades)
-                upgradeSlot2.EquipGear(itemIndex, itemImage);
-            if (itemType == ItemType.throwable)
-                throwableSlot.EquipGear(itemIndex, itemImage);
-            if (itemType == ItemType.consumable)
-                consumableSlot.EquipGear(itemIndex, itemImage);
-        }
     }
 
     
