@@ -15,7 +15,7 @@ public class AgentWeapon : MonoBehaviour
     [SerializeField]
     private List<ItemParameter> parametersToModify, itemCurrentState;
 
-    public void SetWeapon(EquipableItemSO weaponItemSO, List<ItemParameter> itemState)
+    /*public void SetWeapon(EquipableItemSO weaponItemSO, List<ItemParameter> itemState)
     {
         if (weapon != null)
         {
@@ -42,5 +42,5 @@ public class AgentWeapon : MonoBehaviour
                 };
             }
         }
-    }
+    }*/
 }

@@ -5,11 +5,11 @@ using Inventory.UI;
 namespace Inventory.Model
 {
     [CreateAssetMenu]
-    public class EquipableItemSO : ItemSO, IDestroyableItem, IItemAction
+    public class EquipableItemSO : ItemSO, IDestroyableItem //ItemAction
     {
         public string ActionName => "Equip";
 
-        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
+        /*public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
         {
             EquipmentSlot equipSlot = character.GetComponent<EquipmentSlot>();
             if (equipSlot != null)
@@ -24,6 +24,6 @@ namespace Inventory.Model
                 return true;
             }
             return false;
-        }
+        }*/
     }
 }

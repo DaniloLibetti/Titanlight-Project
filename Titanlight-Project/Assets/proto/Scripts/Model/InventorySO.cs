@@ -18,6 +18,7 @@ namespace Inventory.Model
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
+
         public void Initialize()
         {
             inventoryItems = new List<InventoryItem>();
@@ -47,7 +48,7 @@ namespace Inventory.Model
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
 
-        public int AddItem(ItemSO item, int quantity, List<ItemParameter> itemState = null)
+        public int AddItem(ItemSO item, int quantity, ItemType itemType, List<ItemParameter> itemState = null)
         {
             if(item.IsStackable == false)
             {
@@ -55,23 +56,24 @@ namespace Inventory.Model
                 {
                     while(quantity > 0)
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
+                        quantity -= AddItemToFirstFreeSlot(item, 1, itemType, itemState);
                     }
                     InformAboutChange();
                     return quantity;
                 }
             }
-            quantity = AddStackbleItem(item, quantity);
+            quantity = AddStackbleItem(item, quantity, itemType);
             InformAboutChange();
             return quantity;
         }
 
-        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, List<ItemParameter> itemState = null)
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, ItemType itemType, List<ItemParameter> itemState = null)
         {
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
                 quantity = quantity,
+                itemType = itemType,
                 itemState = new List<ItemParameter>(itemState == null ? item.DefaultParameterList : itemState)
             };
 
@@ -86,7 +88,7 @@ namespace Inventory.Model
             return 0;
         }
 
-        private int AddStackbleItem(ItemSO item, int quantity)
+        private int AddStackbleItem(ItemSO item, int quantity, ItemType itemType)
         {
             for (int i = 0; i < inventoryItems.Count; i++)
             {
@@ -115,14 +117,14 @@ namespace Inventory.Model
             {
                 int newQuantity = Math.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
-                AddItemToFirstFreeSlot(item, newQuantity);
+                AddItemToFirstFreeSlot(item, newQuantity, itemType);
             }
             return quantity;
         }
 
         public void AddItem(InventoryItem item)
         {
-            AddItem(item.item, item.quantity);
+            AddItem(item.item, item.quantity, item.itemType);
         }
 
         public InventoryItem GetItemAt(int itemIndex)
