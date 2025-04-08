@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Inventory.Model;
+using Unity.VisualScripting;
 
 namespace Inventory.UI
 {
@@ -15,6 +17,9 @@ namespace Inventory.UI
         private Sprite itemSprite;
 
         public event Action<UIInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseButtonClick;
+
+        private int itemIndex;
+        private int amount;
 
         private bool empty = true;
         //public bool isItemSelected = false;
@@ -58,12 +63,17 @@ namespace Inventory.UI
             borderImage.enabled = true;
         }
 
+        public void TestePraVerSeEleDaCertoOQueEuQueroFazer()
+        {
+
+        }
+
         public void OnPointerClick(PointerEventData pointerData)
         {
 
             if (/*isItemSelected = true &*/ pointerData.button == PointerEventData.InputButton.Right)
             {
-
+                EquipGear();
                 OnRightMouseButtonClick?.Invoke(this);
             }
             else
@@ -72,14 +82,6 @@ namespace Inventory.UI
             }
         }
 
-        public void OnLeftClick()
-        {
-            EquipGear();
-            /*if (isItemSelected)
-            {
-                EquipGear();
-            }*/
-        }
         public void EquipGear()
         {
 
@@ -95,6 +97,8 @@ namespace Inventory.UI
                 throwableSlot.EquipGear(itemSprite);
             if (itemType == ItemType.consumable)
                 consumableSlot.EquipGear(itemSprite);
+
+
         }
 
         public void OnBeginDrag(PointerEventData eventData)

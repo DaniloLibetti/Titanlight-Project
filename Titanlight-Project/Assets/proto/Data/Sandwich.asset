@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599a050847572e5498d42f44781ed9e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 579031880f05d4147bad5fefe98fc818, type: 3}
   m_Name: Sandwich
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 10
-  <SellValue>k__BackingField: 15
-  <Name>k__BackingField: Sandwich
-  <ItemImage>k__BackingField: {fileID: -5211771596868668710, guid: 6854ae5d09086a64c89cfe414d85ba74, type: 3}
-  <DefaultParameterList>k__BackingField: []
-  modifiersData:
-  - statModifier: {fileID: 11400000, guid: e798394eec861964685c9cc6f292f191, type: 2}
-    value: 10
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <SellValue>k__BackingField: 1
+  <Name>k__BackingField: 
+  <ItemImage>k__BackingField: {fileID: 0}
+  <DefaultParameterList>k__BackingField:
+  - itemParameter: {fileID: 0}
+    value: 0
+  itemType: 0

@@ -53,7 +53,7 @@ namespace Inventory.UI
             }
         }
 
-        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity, ItemType itemType) //atualiza a informaçao do item
+        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity) //atualiza a informaçao do item
         {
             if (listOfUIItems.Count > itemIndex)
             {

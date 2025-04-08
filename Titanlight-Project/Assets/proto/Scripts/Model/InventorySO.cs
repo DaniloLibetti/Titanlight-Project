@@ -160,6 +160,7 @@ namespace Inventory.Model
                 InformAboutChange();
             }
         }
+
     }
 
     

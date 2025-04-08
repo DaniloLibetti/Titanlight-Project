@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1856775446}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2114,7 +2114,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1286779352
+--- !u!1001 &1353887220
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2123,24 +2123,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.185448
-      objectReference: {fileID: 0}
-    - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.185448
-      objectReference: {fileID: 0}
-    - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.185448
-      objectReference: {fileID: 0}
-    - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.453133
+      value: -2.646956
       objectReference: {fileID: 0}
     - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.92779744
+      value: -1.2773391
       objectReference: {fileID: 0}
     - target: {fileID: 111933549649369408, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2174,18 +2162,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 963100757645775985, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473722146914789052, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-      propertyPath: m_Radius
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5189710405576629989, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: m_Name
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 5664122713359422823, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
+      propertyPath: <InventoryItem>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: ab9eb41bf2e5fac418d554a6386cbe7a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3649,7 +3633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025861919924182874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8db000aa1d37b16489008bb9b8374768, type: 3}
   m_Name: 
@@ -4560,6 +4544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 3973555225935465920}
+  itemType: 3
 --- !u!114 &7307476977901283112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4615,6 +4600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 832508699449756119}
+  itemType: 0
 --- !u!114 &7638487689597049384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4793,6 +4779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 5218676869227770092}
+  itemType: 4
 --- !u!222 &8634296632169306661
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4814,6 +4801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 2642070645903322016}
+  itemType: 4
 --- !u!222 &8712199117946418111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4991,6 +4979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 2298342583479143108}
+  itemType: 2
 --- !u!224 &9103014278533152515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5024,6 +5013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 4882031703680593374}
+  itemType: 1
 --- !u!224 &9206445089129783426
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5056,5 +5046,5 @@ SceneRoots:
   - {fileID: 3763237328071325637}
   - {fileID: 1012664472}
   - {fileID: 1054441048}
-  - {fileID: 1286779352}
   - {fileID: 2081192571}
+  - {fileID: 1353887220}

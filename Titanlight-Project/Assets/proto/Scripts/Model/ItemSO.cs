@@ -31,6 +31,7 @@ namespace Inventory.Model
 
         [field: SerializeField]
         public ItemType itemType;
+        
     }
 
     [Serializable]  
