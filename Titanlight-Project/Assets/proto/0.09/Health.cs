@@ -12,6 +12,12 @@ public class Health : MonoBehaviour
     public UnityEvent onDeath;
     public UnityEvent<float> onDamageTaken;
 
+    // Propriedade pública para acessar o valor máximo de vida
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+    }
+
     void Awake()
     {
         // Inicia a vida com o valor máximo

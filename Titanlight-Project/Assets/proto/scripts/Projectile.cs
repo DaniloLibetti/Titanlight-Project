@@ -10,6 +10,9 @@ public class Projectile : MonoBehaviour
     // Campo para multiplicador de dano
     public float damageMultiplier = 1f;
 
+    // Tempo de vida configurável para cada prefab
+    [SerializeField] private float lifetime = 0.5f;
+
     public void Initialize(Vector2 newDirection, float newSpeed, LayerMask layers, PlayerController controller)
     {
         direction = newDirection.normalized;
@@ -17,6 +20,12 @@ public class Projectile : MonoBehaviour
         collisionLayers = layers;
         playerController = controller;
         RotateProjectile();
+    }
+
+    void Start()
+    {
+        // Destroi o projétil após o tempo definido no prefab
+        Destroy(gameObject, lifetime);
     }
 
     void Update()
@@ -42,7 +51,7 @@ public class Projectile : MonoBehaviour
                 Health health = other.GetComponent<Health>();
                 if (health != null)
                 {
-                    // Aqui você pode aplicar o dano base multiplicado pelo damageMultiplier
+                    // Aplica o dano base multiplicado pelo damageMultiplier
                     health.TakeDamage(10 * damageMultiplier);
                 }
             }

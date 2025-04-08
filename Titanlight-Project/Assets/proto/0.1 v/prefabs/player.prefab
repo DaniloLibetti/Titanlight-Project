@@ -50,7 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80dc8e8b8a4d97240a627b96b159a7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
   moveSpeed: 3
+  acceleration: 10
+  deceleration: 15
+  isStunned: 0
   dashSpeed: 12
   dashDuration: 0.1
   dashCooldown: 0.5
@@ -59,6 +63,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 384
+  rb: {fileID: 4926012572293533425}
+  animator: {fileID: 6195826825627441337}
+  spriteRenderer: {fileID: 4035355167892541558}
   attackDistance: 0.22
   attackRadius: 0.258
   attackDamage: 10
@@ -66,33 +73,37 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  projectileSpeed: 6
-  projectileLifetime: 1
   shootPoint: {fileID: 2807867361594665837}
   shootPointDistance: 0.2
   collisionLayers:
     serializedVersion: 2
     m_Bits: 392
+  projectileSpeed: 6
+  projectileLifetime: 1
   normalBulletPrefab: {fileID: 6118543610015448874, guid: 7ced92d77d2ae8a4a9d9df0691a514bd, type: 3}
-  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
-  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
   attackKey: 111
-  shotgunKey: 107
-  machineGunKey: 109
   normalCooldown: 0.4
+  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
+  shotgunKey: 107
   shotgunCooldown: 1
-  machineGunCooldown: 0.3
   shotgunPelletCount: 15
   shotgunSpreadAngle: 30
   shotgunRangeMultiplier: 0.5
+  extraPelletsMultiplier: 2
+  extraSpreadAngleMultiplier: 10
+  baseRecoilForce: 2
+  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
+  machineGunKey: 109
+  machineGunCooldown: 0.3
   maxChargeTime: 2
   chargeDamageMultiplierMin: 1
   chargeDamageMultiplierMax: 3
+  maxHeat: 100
+  heatIncreaseRate: 20
+  heatDecreaseRate: 15
+  overheatCooldownThreshold: 20
   dashKey: 32
   switchModeKey: 113
-  rb: {fileID: 4926012572293533425}
-  animator: {fileID: 6195826825627441337}
-  spriteRenderer: {fileID: 4035355167892541558}
   attackMode: 0
 --- !u!114 &3338327904106004791
 MonoBehaviour:
@@ -266,8 +277,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -4665332713141745788, guid: 41b0c3d44cc173541937ae14ee46283e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1111808343, guid: 244111ebfc508ad45a30756d7c2682c6, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.10191679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

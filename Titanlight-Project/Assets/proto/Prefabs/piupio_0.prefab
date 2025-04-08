@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c96edd6f262be42b7cc1a825ffd1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  areaLimiter: {fileID: 0}
+  damageMultiplier: 21.8
+  lifetime: 15.65
 --- !u!212 &6814573408717443173
 SpriteRenderer:
   m_ObjectHideFlags: 0

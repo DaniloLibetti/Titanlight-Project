@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9f0704ede71d6564da48650a0823d0e5
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229841
+  packageName: StateMachines
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/StateMachines/Documentation/class_kevin_castejon_1_1_hierarchical_finite_state_machine_1_1_abstract_state.html
+  uploadId: 656682

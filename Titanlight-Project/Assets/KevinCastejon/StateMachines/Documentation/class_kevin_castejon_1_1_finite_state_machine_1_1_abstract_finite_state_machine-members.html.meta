@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8305ce398a30b7b4e989f8279c6f5c03
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229841
+  packageName: StateMachines
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/StateMachines/Documentation/class_kevin_castejon_1_1_finite_state_machine_1_1_abstract_finite_state_machine-members.html
+  uploadId: 656682
