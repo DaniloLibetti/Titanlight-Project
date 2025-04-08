@@ -1,38 +1,38 @@
-/*using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
 using Inventory.UI;
 using Unity.VisualScripting;
+using Inventory.Model;
 
 namespace Inventory.Model
 {
-    [CreateAssetMenu]
-    public class InventorySO : ScriptableObject
+    public class InventoryData: MonoBehaviour
     {
         [SerializeField]
         private List<InventoryItem> inventoryItems;
 
-        [field: SerializeField]
-        public int Size { get; private set; }
+        /*[field: SerializeField]
+        public int Size { get; private set; }*/
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
 
-        public void Initialize()
+        /*public void Initialize()
         {
             inventoryItems = new List<InventoryItem>();
             for (int i = 0; i < Size; i++)
             {
                 inventoryItems.Add(InventoryItem.GetEmptyItem());
             }
-        }
+        }*/
 
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
         {
             Dictionary<int, InventoryItem> returnValue = new Dictionary<int, InventoryItem>();
 
-            for (int i = 0; i < inventoryItems.Count; i++)
+            for (int i = 0; i < inventoryPrefab.Lenght; i++)
             {
                 if (inventoryItems[i].isEmpty)
                 {
@@ -50,11 +50,11 @@ namespace Inventory.Model
 
         public int AddItem(ItemSO item, int quantity, ItemType itemType, List<ItemParameter> itemState = null)
         {
-            if(item.IsStackable == false)
+            if (item.IsStackable == false)
             {
-                for (int i = 0; i < inventoryItems.Count; i++)
+                for (int i = 0; i < inventoryPrefab.Lenght; i++)
                 {
-                    while(quantity > 0)
+                    while (quantity > 0)
                     {
                         quantity -= AddItemToFirstFreeSlot(item, 1, itemType, itemState);
                     }
@@ -77,7 +77,7 @@ namespace Inventory.Model
                 itemState = new List<ItemParameter>(itemState == null ? item.DefaultParameterList : itemState)
             };
 
-            for(int i = 0; i < inventoryItems.Count; i++)
+            for (int i = 0; i < inventoryPrefab.Lenght; i++)
             {
                 if (inventoryItems[i].isEmpty)
                 {
@@ -100,7 +100,7 @@ namespace Inventory.Model
                 {
                     int amountPossibleToTake = inventoryItems[i].item.MaxStackSize - inventoryItems[i].quantity;
 
-                    if(quantity > amountPossibleToTake)
+                    if (quantity > amountPossibleToTake)
                     {
                         inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].item.MaxStackSize);
                         quantity -= amountPossibleToTake;
@@ -113,7 +113,7 @@ namespace Inventory.Model
                     }
                 }
             }
-            while(quantity > 0)
+            while (quantity > 0)
             {
                 int newQuantity = Math.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
@@ -136,20 +136,20 @@ namespace Inventory.Model
         {
             InventoryItem item1 = inventoryItems[itemIndex1];
             inventoryItems[itemIndex1] = inventoryItems[itemIndex2];
-            inventoryItems[itemIndex2 ] = item1;
+            inventoryItems[itemIndex2] = item1;
             InformAboutChange();
         }
 
         public void RemoveItem(int itemIndex, int amount)
         {
-            if(inventoryItems.Count > itemIndex)
+            if (inventoryItems.Count > itemIndex)
             {
                 if (inventoryItems[itemIndex].isEmpty)
                 {
                     return;
                 }
                 int reminder = inventoryItems[itemIndex].quantity - amount;
-                if(reminder <= 0)
+                if (reminder <= 0)
                 {
                     inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
                 }
@@ -162,10 +162,9 @@ namespace Inventory.Model
         }
 
     }
+}
 
-    
-
-    [Serializable]
+[Serializable]
     public struct InventoryItem
     {
         public int quantity;
@@ -193,5 +192,3 @@ namespace Inventory.Model
             itemType = ItemType.none,
         };
     }
-}*/
-

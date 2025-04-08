@@ -9,13 +9,13 @@ namespace Inventory.UI
 {
     public class InventoryUi : MonoBehaviour
     {
-        [SerializeField] private UIInventoryItem itemPrefab;//prefab do item na UI
+        [SerializeField] private UIInventoryItem[] itemPrefab;//prefab do item na UI
         [SerializeField] private RectTransform contentPanel;//painel aonde fica os itens
         //[SerializeField] private MouseFollowe mouseFollower;//sprite do item q esta sendo arrastado
         [SerializeField] private RectTransform equipmentPanel;//painel aonde fica os equipamentos
         [SerializeField] private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
-        public bool isItemSelected = false;
+        //public bool isItemSelected = false;
 
         List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();//lista do q esta no inventario do jogador
 
@@ -41,11 +41,11 @@ namespace Inventory.UI
         {
             for (int i = 0; i < inventorysize; i++)
             {
-                UIInventoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                /*UIInventoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
                 uiItem.transform.SetParent(contentPanel);
                 uiItem.transform.localScale = Vector3.one;
                 listOfUIItems.Add(uiItem);
-                uiItem.OnItemClicked += HandleItemSelection;
+                uiItem.OnItemClicked += HandleItemSelection;*/
                 //uiItem.OnItemBeginDrag += HandleBeginDrag;
                 //uiItem.OnItemDroppedOn += HandleSwap;
                 //uiItem.OnItemEndDrag += HandleEndDrag;
@@ -114,7 +114,7 @@ namespace Inventory.UI
             int index = listOfUIItems.IndexOf(inventoryItemUI);
             DeselectAllItems();
             listOfUIItems[index].Select();
-            isItemSelected = true;
+            //isItemSelected = true;
             OnItemSelection?.Invoke(index);
         }   
 
