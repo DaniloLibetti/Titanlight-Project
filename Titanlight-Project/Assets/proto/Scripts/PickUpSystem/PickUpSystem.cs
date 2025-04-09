@@ -4,7 +4,7 @@ using UnityEngine;
 public class PickUpSystem : MonoBehaviour
 {
     [SerializeField]
-    private InventoryData inventoryData;
+    private InventorySO inventoryData;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

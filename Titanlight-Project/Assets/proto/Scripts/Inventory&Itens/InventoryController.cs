@@ -10,9 +10,7 @@ namespace Inventory
     {
         [SerializeField] private InventoryUi inventoryUi;
 
-        //[SerializeField] private InventorySO inventoryData;
-
-        [SerializeField] private InventoryData inventoryData;
+        [SerializeField] private InventorySO inventoryData;
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
 
@@ -25,7 +23,7 @@ namespace Inventory
 
         private void PrepareInventoryData()
         {
-            //inventoryData.Initialize();
+            inventoryData.Initialize();
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
             foreach (InventoryItem item in initialItems)
             {
@@ -48,7 +46,7 @@ namespace Inventory
 
         private void PrepareUI()
         {
-            //inventoryUi.InitializeInventoryUI(inventoryData.Size);
+            inventoryUi.InitializeInventoryUI(inventoryData.Size);
             //this.inventoryUi.OnSwapItems += HandleSwapItems;
             //this.inventoryUi.OnStartDragging += HandleDragging;
             this.inventoryUi.OnItemSelection += HandleItemSelection;
@@ -60,7 +58,7 @@ namespace Inventory
             if (inventoryItem.isEmpty)
             {
                 inventoryUi.ResetSelection();
-                //inventoryUi.isItemSelected = false;
+                inventoryUi.isItemSelected = false;
                 return;
             }
             ItemSO item = inventoryItem.item;
