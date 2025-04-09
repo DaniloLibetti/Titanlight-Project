@@ -21,44 +21,38 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
-        currentTime = startTime;
-        timerRunning = true;
-        if (timerText != null)
-            originalColor = timerText.color; // Guarda a cor original
+        // Se o timer estiver ativo ao iniciar a run, reinicia
+        ResetTimer();
     }
 
     void Update()
     {
         if (timerRunning)
         {
-            // Diminui o tempo a cada frame
             currentTime -= Time.deltaTime;
-
             if (currentTime <= 0f)
             {
-                // Quando chega em zero
                 currentTime = 0f;
                 timerRunning = false;
                 AtualizaTextoTimer(0f);
-                IniciaInvasion(); // Chama o evento
+                IniciaInvasion(); // Evento quando o tempo zera
             }
             else
             {
-                AtualizaTextoTimer(currentTime); // Atualiza display
+                AtualizaTextoTimer(currentTime);
             }
         }
     }
 
-    // Método para outros scripts tirarem tempo
+    // Permite que outros scripts reduzam o tempo
     public void ReduceTime(float amount)
     {
         if (!timerRunning || currentTime <= 0f) return;
 
         currentTime -= amount;
-        currentTime = Mathf.Max(currentTime, 0f); // Não deixa negativo
+        currentTime = Mathf.Max(currentTime, 0f);
         AtualizaTextoTimer(currentTime);
 
-        // Faz piscar vermelho
         StartCoroutine(FlashTimerRed());
 
         if (currentTime <= 0f)
@@ -68,7 +62,7 @@ public class CountdownTimer : MonoBehaviour
         }
     }
 
-    // Formata o tempo em minutos e segundos
+    // Atualiza o display do timer
     void AtualizaTextoTimer(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60f);
@@ -77,27 +71,58 @@ public class CountdownTimer : MonoBehaviour
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    // Faz o timer piscar em vermelho
+    // Faz o texto piscar em vermelho
     IEnumerator FlashTimerRed()
     {
         if (timerText == null)
             yield break;
 
-        timerText.color = Color.red; // Muda para vermelho
-        yield return new WaitForSeconds(0.3f); // Espera um pouco
-        timerText.color = originalColor; // Volta para cor normal
+        timerText.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        timerText.color = originalColor;
     }
 
-    // Quando acaba o tempo
+    // Quando o tempo chega a zero
     void IniciaInvasion()
     {
         Debug.Log("Invasion iniciada!");
-        Invasion.Invoke(); // Dispara eventos
+        Invasion.Invoke();
 
-        // Se tiver efeito de alerta na tela
         if (AlertScreenEffect.Instance != null)
         {
             AlertScreenEffect.Instance.TriggerAlert("O tempo acabou! Perigo iminente!");
+        }
+    }
+
+    // Método chamado quando o player morre para parar o timer e esconder o display
+    public void OnPlayerDeath()
+    {
+        currentTime = startTime;
+        timerRunning = false;
+        AtualizaTextoTimer(currentTime);
+
+        // Desativa o componente e, opcionalmente, o GameObject
+        this.enabled = false;
+        if (timerText != null)
+            timerText.gameObject.SetActive(false);
+    }
+
+    // Método para reiniciar e reativar o timer no início de cada run
+    public void ResetTimer()
+    {
+        // Reativa o GameObject se estiver desativado
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
+
+        // Reativa o componente e reinicia a contagem
+        this.enabled = true;
+        currentTime = startTime;
+        timerRunning = true;
+        if (timerText != null)
+        {
+            timerText.gameObject.SetActive(true);
+            originalColor = timerText.color;
+            AtualizaTextoTimer(currentTime);
         }
     }
 }

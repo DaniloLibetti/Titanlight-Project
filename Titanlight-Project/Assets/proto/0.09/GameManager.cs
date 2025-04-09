@@ -1,7 +1,8 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -29,7 +30,7 @@ public class GameManager : Singleton<GameManager>
     private Vector2Int _initialRoomCoord;
 
     [Header("Door Management")]
-    // Dicion·rio que registra as direÁıes de portas acessÌveis para cada sala
+    // Dicion√°rio que registra as dire√ß√µes de portas acess√≠veis para cada sala
     private Dictionary<Vector2Int, HashSet<DoorDirection>> _doors = new Dictionary<Vector2Int, HashSet<DoorDirection>>();
 
     [Header("Player Settings")]
@@ -47,6 +48,13 @@ public class GameManager : Singleton<GameManager>
         public float spawnChance;
     }
 
+    // ===============================
+    // NOVA PARTE: Game Over Settings
+    // ===============================
+    [Header("Game Over Settings")]
+    [SerializeField] private GameObject gameOverPanel; // Painel com a op√ß√£o de voltar para a MoonBox
+    // Esse painel dever√° estar desativado por padr√£o no inspetor.
+
     protected override void Awake()
     {
         base.Awake();
@@ -61,6 +69,13 @@ public class GameManager : Singleton<GameManager>
         // Depois de gerar as salas, pareia as portas
         PairDoors();
         InstantiatePlayer();
+
+        // Sempre que uma nova run inicia, tenta resetar o timer (caso exista na cena)
+        CountdownTimer timer = FindObjectOfType<CountdownTimer>();
+        if (timer != null)
+        {
+            timer.ResetTimer();
+        }
     }
 
     private void SetupGrid()
@@ -136,13 +151,58 @@ public class GameManager : Singleton<GameManager>
     {
         if (playerPrefab == null)
         {
-            Debug.LogError("Player prefab n„o definido no GameManager!");
+            Debug.LogError("Player prefab n√£o definido no GameManager!");
             return;
         }
 
         Vector3 spawnPos = _mainCamera.transform.position;
         spawnPos.z = 0;
-        Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        GameObject playerObj = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+
+        // Se o player possui o componente Health, inscreve no evento onDeath para:
+        // 1 - Ativar o painel de Game Over.
+        // 2 - Notificar o CountdownTimer para parar e desaparecer.
+        Health playerHealth = playerObj.GetComponent<Health>();
+        if (playerHealth != null)
+        {
+            playerHealth.onDeath.AddListener(HandlePlayerDeath);
+
+            CountdownTimer timer = FindObjectOfType<CountdownTimer>();
+            if (timer != null)
+            {
+                playerHealth.onDeath.AddListener(() =>
+                {
+                    timer.OnPlayerDeath();
+                });
+            }
+            else
+            {
+                Debug.LogWarning("CountdownTimer n√£o encontrado na cena!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Componente Health n√£o encontrado no prefab do Player!");
+        }
+    }
+
+    // M√©todo chamado quando o player morre
+    private void HandlePlayerDeath()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("GameOverPanel n√£o foi atribu√≠do no inspetor!");
+        }
+    }
+
+    // M√©todo chamado pelo bot√£o da tela de Game Over para voltar para a MoonBox
+    public void ReturnToMoonBox()
+    {
+        SceneManager.LoadScene("MoonBox");
     }
 
     // Chamado pelos scripts de porta para registrar uma porta desbloqueada
@@ -154,11 +214,11 @@ public class GameManager : Singleton<GameManager>
         if (!_doors[roomCoord].Contains(direction))
         {
             _doors[roomCoord].Add(direction);
-            Debug.Log($"[GameManager] Porta {direction} na sala {roomCoord} registrada como acessÌvel.");
+            Debug.Log($"[GameManager] Porta {direction} na sala {roomCoord} registrada como acess√≠vel.");
         }
     }
 
-    // Verifica se a porta de uma dada direÁ„o na sala est· registrada como acessÌvel
+    // Verifica se a porta de uma dada dire√ß√£o na sala est√° registrada como acess√≠vel
     public bool IsDoorAccessible(Vector2Int roomCoord, DoorDirection direction)
     {
         return _doors.ContainsKey(roomCoord) && _doors[roomCoord].Contains(direction);
@@ -204,10 +264,9 @@ public class GameManager : Singleton<GameManager>
             _mainCamera.transform.position = room.cameraSlot.position + new Vector3(0, 0, -10);
     }
 
-    // Tenta mover o jogador atravÈs de uma porta, verificando se a porta foi registrada como desbloqueada
+    // Tenta mover o jogador atrav√©s de uma porta, verificando se a porta foi registrada como desbloqueada
     public void TryMoveThroughDoor(DoorDirection direction, float moveDistance)
     {
-        // Converte a direÁ„o para Vector2Int; certifique-se de ter a extens„o ou mÈtodo ToVector() implementado
         Vector2Int dirVector = direction.ToVector();
         StartCoroutine(TransitionThroughDoor(dirVector, moveDistance));
     }
@@ -232,7 +291,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            Debug.LogWarning($"[GameManager] Porta {direction.ToDoorDirection()} na sala {_currentRoomCoord} n„o est· acessÌvel!");
+            Debug.LogWarning($"[GameManager] Porta {direction.ToDoorDirection()} na sala {_currentRoomCoord} n√£o est√° acess√≠vel!");
         }
         _isTransitioning = false;
     }
@@ -253,7 +312,7 @@ public class GameManager : Singleton<GameManager>
         collider.enabled = true;
     }
 
-    // MÈtodo para parear as portas entre salas vizinhas
+    // M√©todo para parear as portas entre salas vizinhas
     private void PairDoors()
     {
         foreach (var roomEntry in _rooms)
@@ -279,7 +338,7 @@ public class GameManager : Singleton<GameManager>
                 }
             }
 
-            // Pareia porta da direita com a porta da esquerda da sala ‡ direita
+            // Pareia porta da direita com a porta da esquerda da sala √† direita
             var doorRight = room.GetDoorTrigger(DoorDirection.Right);
             if (doorRight != null)
             {
@@ -315,7 +374,7 @@ public class GameManager : Singleton<GameManager>
                 }
             }
 
-            // Pareia porta da esquerda com a porta da direita da sala ‡ esquerda
+            // Pareia porta da esquerda com a porta da direita da sala √† esquerda
             var doorLeft = room.GetDoorTrigger(DoorDirection.Left);
             if (doorLeft != null)
             {
