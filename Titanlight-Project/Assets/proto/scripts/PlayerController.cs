@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentSmoothVelocity;               // Auxiliar para o SmoothDamp
     public bool isStunned = false;
 
+    [Header("Ajustes de Velocidade")]
+    [SerializeField] private float chargingSpeedMultiplier = 0.5f;   // Multiplicador de velocidade durante o carregamento
+    [SerializeField] private float machineGunSpeedMultiplier = 0.7f; // Multiplicador de velocidade durante disparo da metralhadora
+
     [Header("Dash")]
     [SerializeField] private float dashSpeed = 15f; // Velocidade do dash
     [SerializeField] private float dashDuration = 0.2f; // Tempo do dash
@@ -71,6 +75,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float extraSpreadAngleMultiplier = 10f; // Ângulo extra (graus) por unidade acima de 1
     [SerializeField] private float baseRecoilForce = 2f;             // Força base de recoil aplicada ao player
 
+    // Novos parâmetros ajustáveis para Shotgun
+    [Header("Ajustes de Shotgun")]
+    [SerializeField] private float minShotgunSpreadAngle = 10f; // Ângulo mínimo de dispersão (ex: 10 graus)
+    [SerializeField] private float maxShotgunLifetimeMultiplier = 2f; // Multiplicador máximo para o tempo de vida do projétil
+
     // ----- Metralhadora -----
     [Header("Ataques a Distância - Metralhadora")]
     [SerializeField] private GameObject machineGunBulletPrefab; // Prefab do tiro metralhadora
@@ -99,10 +108,7 @@ public class PlayerController : MonoBehaviour
     private bool overheated = false;
 
     // Propriedade pública para UI (calor normalizado entre 0 e 1)
-    public float HeatProgress
-    {
-        get { return currentHeat / maxHeat; }
-    }
+    public float HeatProgress { get { return currentHeat / maxHeat; } }
 
     // ============================
     // Controles Gerais e Configuração de Modo de Ataque
@@ -125,23 +131,8 @@ public class PlayerController : MonoBehaviour
     private RangedAttackType currentRangedAttackType = RangedAttackType.Normal;
 
     // Propriedades públicas para a UI dos outros sistemas
-    public float DashProgress
-    {
-        get
-        {
-            if (canDash)
-                return 1f;
-            return 1f - (dashTimer / dashCooldown);
-        }
-    }
-
-    public float ChargeProgress
-    {
-        get
-        {
-            return isCharging ? (currentChargeTime / maxChargeTime) : 0f;
-        }
-    }
+    public float DashProgress { get { return canDash ? 1f : 1f - (dashTimer / dashCooldown); } }
+    public float ChargeProgress { get { return isCharging ? (currentChargeTime / maxChargeTime) : 0f; } }
 
     // ============================
     // Métodos do Ciclo de Vida e Movimento
@@ -160,7 +151,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Se o player estiver stunado, interrompe a captura de input e zera a velocidade
         if (isStunned)
         {
             rb.linearVelocity = Vector2.zero;
@@ -170,7 +160,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Atualiza o cooldown do dash
         if (!canDash)
         {
             dashTimer -= Time.deltaTime;
@@ -196,7 +185,6 @@ public class PlayerController : MonoBehaviour
             ToggleAttackMode();
         }
 
-        // Modo de ataque corpo a corpo
         if (attackMode == AttackMode.Melee)
         {
             if (Input.GetKeyDown(attackKey) && canAttack)
@@ -204,10 +192,9 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(MeleeAttack());
             }
         }
-        // Modo de ataque a distância
         else if (attackMode == AttackMode.Ranged && canAttack)
         {
-            // Tiro carregado para arma comum e shotgun
+            // Tiros carregados para Normal e Shotgun
             if (Input.GetKeyDown(attackKey))
             {
                 isCharging = true;
@@ -232,7 +219,7 @@ public class PlayerController : MonoBehaviour
                 isCharging = false;
                 currentChargeTime = 0f;
             }
-            // Tiro contínuo da metralhadora
+            // Disparo contínuo da Metralhadora
             if (Input.GetKey(machineGunKey))
             {
                 currentRangedAttackType = RangedAttackType.MachineGun;
@@ -261,7 +248,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Alterna entre modos de ataque
     void ToggleAttackMode()
     {
         attackMode = attackMode == AttackMode.Melee ? AttackMode.Ranged : AttackMode.Melee;
@@ -272,7 +258,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Modo de Ataque: {attackMode}");
     }
 
-    // Captura a entrada para movimento
     void GetMovementInput()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -284,7 +269,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Atualiza a posição do ponto de tiro conforme a direção do player
     void UpdateShootPointDirection()
     {
         if (shootPoint != null)
@@ -293,23 +277,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Movimento suave utilizando SmoothDamp
     void MoveCharacter()
     {
-        Vector2 targetVelocity = moveInput * moveSpeed;
+        float speedModifier = 1f;
+        if (isCharging)
+        {
+            speedModifier *= chargingSpeedMultiplier;
+        }
+        if (currentRangedAttackType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey))
+        {
+            speedModifier *= machineGunSpeedMultiplier;
+        }
+        Vector2 targetVelocity = moveInput * moveSpeed * speedModifier;
         float smoothTime = (moveInput.magnitude > 0) ? 1f / acceleration : 1f / deceleration;
         Vector2 newVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVelocity, ref currentSmoothVelocity, smoothTime);
         rb.linearVelocity = newVelocity;
     }
 
-    // ============================
-    // Sistema de Dash e Ataques
-    // ============================
     IEnumerator Dash()
     {
         isDashing = true;
         canDash = false;
-        dashTimer = dashCooldown; // Reinicia o timer do dash
+        dashTimer = dashCooldown;
         int originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("Dashing");
 
@@ -321,15 +310,12 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 displacement = dashDirection * dashSpeed * Time.fixedDeltaTime;
             Vector2 newPos = rb.position + displacement;
-
             RaycastHit2D hit = Physics2D.CircleCast(rb.position, dashAttackRadius, dashDirection, displacement.magnitude, obstacleLayer);
             if (hit.collider != null)
             {
                 break;
             }
-
             rb.MovePosition(newPos);
-
             Collider2D[] enemies = Physics2D.OverlapCircleAll(rb.position, dashAttackRadius, enemyLayer);
             foreach (Collider2D enemy in enemies)
             {
@@ -346,12 +332,10 @@ public class PlayerController : MonoBehaviour
             }
             yield return new WaitForFixedUpdate();
         }
-
         gameObject.layer = originalLayer;
         isDashing = false;
     }
 
-    // Tiro para a metralhadora (arma de disparo contínuo)
     IEnumerator RangedAttack()
     {
         isAttacking = true;
@@ -363,7 +347,6 @@ public class PlayerController : MonoBehaviour
         canAttack = true;
     }
 
-    // Tiro carregado para armas comum e shotgun
     IEnumerator RangedAttackCharged(float damageMultiplier)
     {
         isAttacking = true;
@@ -383,12 +366,10 @@ public class PlayerController : MonoBehaviour
             default:
                 break;
         }
-
         isAttacking = false;
         canAttack = true;
     }
 
-    // Dispara um projétil para armas comuns e metralhadora
     void ShootProjectile(GameObject bulletPrefab, Vector2 direction, float damageMultiplier = 1f)
     {
         if (shootPoint != null && bulletPrefab != null)
@@ -404,23 +385,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Dispara os projéteis da shotgun com variações na direção, velocidade e posição
+    // Aqui a modificação para a Shotgun:
+    // Conforme o tiro é carregado, o ângulo de dispersão é interpolado entre shotgunSpreadAngle (sem carga)
+    // e minShotgunSpreadAngle (totalmente carregado). Além disso, o tempo de vida do projétil aumenta proporcionalmente.
     void ShootChargedShotgun(float damageMultiplier)
     {
         int extraPellets = Mathf.RoundToInt((damageMultiplier - 1f) * extraPelletsMultiplier);
         int totalPellets = shotgunPelletCount + extraPellets;
-        float extraSpread = (damageMultiplier - 1f) * extraSpreadAngleMultiplier;
-        float totalSpreadAngle = shotgunSpreadAngle + extraSpread;
-        float baseAngle = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
+        float t = (damageMultiplier - chargeDamageMultiplierMin) / (chargeDamageMultiplierMax - chargeDamageMultiplierMin);
+        t = Mathf.Clamp01(t);
 
+        // Interpolação do spread: sem carga (t = 0) = shotgunSpreadAngle, com carga total (t = 1) = minShotgunSpreadAngle
+        float currentShotgunSpreadAngle = Mathf.Lerp(shotgunSpreadAngle, minShotgunSpreadAngle, t);
+        // Interpolação do tempo de vida: sem carga = projectileLifetime, com carga = projectileLifetime * maxShotgunLifetimeMultiplier
+        float currentLifetimeMultiplier = Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, t);
+        float currentLifetime = projectileLifetime * currentLifetimeMultiplier;
+
+        float baseAngle = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
         for (int i = 0; i < totalPellets; i++)
         {
-            float offset = Random.Range(-totalSpreadAngle, totalSpreadAngle); // Variação no ângulo para desorganização
+            float offset = Random.Range(-currentShotgunSpreadAngle, currentShotgunSpreadAngle);
             float finalAngle = baseAngle + offset;
-            float speedFactor = Random.Range(0.9f, 1.1f); // Variação sutil na velocidade
+            float speedFactor = Random.Range(0.9f, 1.1f);
             float pelletSpeed = projectileSpeed * speedFactor;
             Vector2 direction = new Vector2(Mathf.Cos(finalAngle * Mathf.Deg2Rad), Mathf.Sin(finalAngle * Mathf.Deg2Rad)).normalized;
-            Vector2 pelletOrigin = (Vector2)shootPoint.position + lastDirection * Random.Range(-0.1f, 0.1f); // Variação na posição
+            Vector2 pelletOrigin = (Vector2)shootPoint.position + lastDirection * Random.Range(-0.1f, 0.1f);
 
             GameObject projectile = Instantiate(shotgunBulletPrefab, pelletOrigin, Quaternion.identity);
             Projectile projectileScript = projectile.GetComponent<Projectile>();
@@ -429,14 +418,12 @@ public class PlayerController : MonoBehaviour
                 projectileScript.Initialize(direction, pelletSpeed, collisionLayers, this);
                 projectileScript.damageMultiplier = damageMultiplier;
             }
-            Destroy(projectile, projectileLifetime);
+            Destroy(projectile, currentLifetime);
         }
-
         float recoilForce = baseRecoilForce * (damageMultiplier - 1f);
         rb.AddForce(-lastDirection * recoilForce, ForceMode2D.Impulse);
     }
 
-    // Ataque corpo a corpo (melee)
     IEnumerator MeleeAttack()
     {
         isAttacking = true;
@@ -454,27 +441,21 @@ public class PlayerController : MonoBehaviour
                 enemyHealth.TakeDamage(attackDamage);
             }
         }
-
         yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
         canAttack = true;
     }
 
-    // Atualiza as animações do personagem conforme o movimento
     void UpdateAnimations()
     {
-        // Se não houver movimento, usa a última direção conhecida
         Vector2 animDirection = (moveInput != Vector2.zero) ? moveInput : lastDirection;
-
         animator.SetBool("IsWalking", moveInput != Vector2.zero);
         animator.SetFloat("MoveX", animDirection.x);
         animator.SetFloat("MoveY", animDirection.y);
     }
 
-    // Métodos dummy para referências externas
     public void ProjectileDestroyed() { }
 
-    // Método de TakeDamage: Reduz a vida chamando o componente Health
     public void TakeDamage(float amount)
     {
         if (health != null)
@@ -488,12 +469,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ============================
-    // Sistema de Aquecimento: Atualiza o calor com base na ação de atirar ou não
-    // ============================
     private void UpdateHeat()
     {
-        // Se a metralhadora estiver sendo disparada e a arma não estiver superaquecida, aumenta o calor
         if (currentRangedAttackType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey) && !overheated)
         {
             currentHeat += heatIncreaseRate * Time.deltaTime;
@@ -504,7 +481,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Arma superaquecida!");
             }
         }
-        // Caso contrário, o calor diminui com o tempo
         else
         {
             currentHeat -= heatDecreaseRate * Time.deltaTime;
@@ -512,7 +488,6 @@ public class PlayerController : MonoBehaviour
             {
                 currentHeat = 0;
             }
-            // Se a arma estava superaquecida, libera o disparo quando o calor desce abaixo do limiar
             if (overheated && currentHeat <= overheatCooldownThreshold)
             {
                 overheated = false;
@@ -521,9 +496,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ============================
-    // Sistema de Stun: Impede a entrada de movimento e outras ações
-    // ============================
     public void Stun(float duration)
     {
         if (!isStunned)
@@ -534,14 +506,10 @@ public class PlayerController : MonoBehaviour
     {
         isStunned = true;
         rb.linearVelocity = Vector2.zero;
-        // Opcional: pode-se alterar a cor ou disparar uma animação de stun aqui
         yield return new WaitForSeconds(duration);
         isStunned = false;
     }
 
-    // ============================
-    // Debug: Visualização dos pontos de tiro
-    // ============================
     void OnDrawGizmos()
     {
         if (shootPoint != null)

@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2153313099290992887}
+  - component: {fileID: 5959906539815808214}
   - component: {fileID: 4148346801053061497}
   - component: {fileID: 3338327904106004791}
-  - component: {fileID: 5959906539815808214}
+  - component: {fileID: 3197593980329877281}
   - component: {fileID: 4926012572293533425}
   - component: {fileID: 7824446146647686690}
   m_Layer: 9
@@ -38,6 +39,26 @@ Transform:
   - {fileID: 191803062542819557}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5959906539815808214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156739151878723861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9155eeda1c52147aefb80070f1fa48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  destroyOnDeath: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4148346801053061497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,11 +71,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80dc8e8b8a4d97240a627b96b159a7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 5959906539815808214}
   moveSpeed: 3
   acceleration: 10
   deceleration: 15
   isStunned: 0
+  chargingSpeedMultiplier: 0.5
+  machineGunSpeedMultiplier: 0.5
   dashSpeed: 12
   dashDuration: 0.1
   dashCooldown: 0.5
@@ -92,6 +115,8 @@ MonoBehaviour:
   extraPelletsMultiplier: 2
   extraSpreadAngleMultiplier: 10
   baseRecoilForce: 2
+  minShotgunSpreadAngle: 10
+  maxShotgunLifetimeMultiplier: 2
   machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
   machineGunKey: 109
   machineGunCooldown: 0.3
@@ -117,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20011078f6eab264384818ec2011291b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5959906539815808214
+--- !u!114 &3197593980329877281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,17 +151,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3156739151878723861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9155eeda1c52147aefb80070f1fa48, type: 3}
+  m_Script: {fileID: 11500000, guid: e95801743d9d0cd4fb720eea2d978a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  destroyOnDeath: 1
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
+  healthSlider: {fileID: 0}
+  dashSlider: {fileID: 0}
+  chargeSlider: {fileID: 0}
+  heatSlider: {fileID: 0}
+  playerController: {fileID: 4148346801053061497}
 --- !u!50 &4926012572293533425
 Rigidbody2D:
   serializedVersion: 5
