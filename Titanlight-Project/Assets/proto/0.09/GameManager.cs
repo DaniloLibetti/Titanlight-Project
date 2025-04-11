@@ -15,7 +15,6 @@ public class GameManager : Singleton<GameManager>
         new Vector2Int(4, 4),
         new Vector2Int(4, 3)
     };
-
     public float roomWidth = 7f;
     public float roomHeight = 3.93f;
     public Vector2Int GridSize { get; private set; }
@@ -24,13 +23,11 @@ public class GameManager : Singleton<GameManager>
     [Header("Room Configuration")]
     public GameObject initialRoomPrefab;
     public List<RoomOption> roomOptions;
-
     private Dictionary<Vector2Int, Room> _rooms = new Dictionary<Vector2Int, Room>();
-    private Vector2Int _currentRoomCoord;
     private Vector2Int _initialRoomCoord;
+    private Vector2Int _currentRoomCoord;
 
     [Header("Door Management")]
-    // Dicionário que registra as direções de portas acessíveis para cada sala
     private Dictionary<Vector2Int, HashSet<DoorDirection>> _doors = new Dictionary<Vector2Int, HashSet<DoorDirection>>();
 
     [Header("Player Settings")]
@@ -48,34 +45,63 @@ public class GameManager : Singleton<GameManager>
         public float spawnChance;
     }
 
-    // ===============================
-    // NOVA PARTE: Game Over Settings
-    // ===============================
+    [Header("UI & Slots")]
+    public GameObject customizationCanvas;
+    public Transform slotMoonBox;
+    public Transform slotStartCamera; // não mais usado para spawn, apenas referência
+
+    // Novos Canvas para o status do jogador (certifique-se de que estão inativos inicialmente)
+    public GameObject playerStatusCanvas;
+    public GameObject playerOtherCanvas;
+
     [Header("Game Over Settings")]
-    [SerializeField] private GameObject gameOverPanel; // Painel com a opção de voltar para a MoonBox
-    // Esse painel deverá estar desativado por padrão no inspetor.
+    public GameObject gameOverPanel;
+
+    private float shiftHoldTimer = 0f;
 
     protected override void Awake()
     {
         base.Awake();
-        InitializeGame();
+        _mainCamera = Camera.main;
+
+        // Inicialmente, exibe o canvas de customização e garante que os demais estejam inativos
+        customizationCanvas.SetActive(true);
+        gameOverPanel.SetActive(false);
+        playerStatusCanvas.SetActive(false);
+        playerOtherCanvas.SetActive(false);
+
+        // A câmera inicia posicionada no slotMoonBox
+        _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
     }
 
-    private void InitializeGame()
+    /// <summary>
+    /// Método chamado ao iniciar a run (por exemplo, ao pressionar o botão "Iniciar Run").
+    /// </summary>
+    public void StartRun()
     {
-        _mainCamera = Camera.main;
+        // Se o GameManager estiver inativo, ativa-o para que as corrotinas possam ser iniciadas.
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
+
+        // Desativa o canvas de customização e ativa os canvases do status do jogador.
+        customizationCanvas.SetActive(false);
+        playerStatusCanvas.SetActive(true);
+        playerOtherCanvas.SetActive(true);
+
         SetupGrid();
         GenerateWorld();
-        // Depois de gerar as salas, pareia as portas
         PairDoors();
+
+        // Ativa a sala inicial e posiciona a câmera
+        SetCurrentRoom(_initialRoomCoord);
+
+        // Instancia o player na sala inicial
         InstantiatePlayer();
 
-        // Sempre que uma nova run inicia, tenta resetar o timer (caso exista na cena)
-        CountdownTimer timer = FindObjectOfType<CountdownTimer>();
+        // Inicia ou reseta o timer, se houver
+        var timer = FindObjectOfType<CountdownTimer>();
         if (timer != null)
-        {
             timer.ResetTimer();
-        }
     }
 
     private void SetupGrid()
@@ -96,146 +122,90 @@ public class GameManager : Singleton<GameManager>
         );
 
         float totalChance = CalculateTotalSpawnChance();
-
         for (int x = 0; x < GridSize.x; x++)
         {
             for (int y = 0; y < GridSize.y; y++)
             {
-                Vector2Int coord = new Vector2Int(x, y);
-                CreateRoom(coord, totalChance);
+                CreateRoom(new Vector2Int(x, y), totalChance);
             }
         }
-        SetCurrentRoom(_initialRoomCoord);
     }
 
     private void CreateRoom(Vector2Int coord, float totalChance)
     {
-        Vector3 position = new Vector3(
-            coord.x * roomWidth,
-            coord.y * roomHeight,
-            0
-        ) + _gridOffset;
-
-        GameObject prefab = (coord == _initialRoomCoord) ?
-            initialRoomPrefab :
-            SelectRandomRoomPrefab(totalChance);
-
-        Room room = Instantiate(prefab, position, Quaternion.identity).GetComponent<Room>();
-        _rooms.Add(coord, room);
+        Vector3 pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0) + _gridOffset;
+        GameObject prefab = coord == _initialRoomCoord
+            ? initialRoomPrefab
+            : SelectRandomRoomPrefab(totalChance);
+        Room room = Instantiate(prefab, pos, Quaternion.identity).GetComponent<Room>();
         room.Initialize(coord, roomWidth, roomHeight);
+        _rooms.Add(coord, room);
     }
 
     private GameObject SelectRandomRoomPrefab(float totalChance)
     {
-        float randomValue = UnityEngine.Random.Range(0f, totalChance);
-        float cumulative = 0f;
-
-        foreach (RoomOption option in roomOptions)
+        float rnd = UnityEngine.Random.Range(0f, totalChance), cum = 0f;
+        foreach (var opt in roomOptions)
         {
-            cumulative += option.spawnChance;
-            if (randomValue <= cumulative)
-                return option.roomPrefab;
+            cum += opt.spawnChance;
+            if (rnd <= cum)
+                return opt.roomPrefab;
         }
         return roomOptions[0].roomPrefab;
     }
 
     private float CalculateTotalSpawnChance()
     {
-        float total = 0f;
-        foreach (RoomOption option in roomOptions)
-            total += option.spawnChance;
-        return total;
+        float t = 0f;
+        foreach (var o in roomOptions)
+            t += o.spawnChance;
+        return t;
     }
 
     private void InstantiatePlayer()
     {
-        if (playerPrefab == null)
+        Room startRoom = GetRoom(_initialRoomCoord);
+        if (startRoom == null)
         {
-            Debug.LogError("Player prefab não definido no GameManager!");
+            Debug.LogError("Sala inicial não encontrada para spawn!");
             return;
         }
 
-        Vector3 spawnPos = _mainCamera.transform.position;
+        Vector3 spawnPos = startRoom.GetPlayerSpawnPoint();
         spawnPos.z = 0;
         GameObject playerObj = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
 
-        // Se o player possui o componente Health, inscreve no evento onDeath para:
-        // 1 - Ativar o painel de Game Over.
-        // 2 - Notificar o CountdownTimer para parar e desaparecer.
-        Health playerHealth = playerObj.GetComponent<Health>();
-        if (playerHealth != null)
+        var health = playerObj.GetComponent<Health>();
+        if (health != null)
         {
-            playerHealth.onDeath.AddListener(HandlePlayerDeath);
-
-            CountdownTimer timer = FindObjectOfType<CountdownTimer>();
+            health.onDeath.AddListener(HandlePlayerDeath);
+            var timer = FindObjectOfType<CountdownTimer>();
             if (timer != null)
-            {
-                playerHealth.onDeath.AddListener(() =>
-                {
-                    timer.OnPlayerDeath();
-                });
-            }
-            else
-            {
-                Debug.LogWarning("CountdownTimer não encontrado na cena!");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Componente Health não encontrado no prefab do Player!");
+                health.onDeath.AddListener(() => timer.OnPlayerDeath());
         }
     }
 
-    // Método chamado quando o player morre
     private void HandlePlayerDeath()
     {
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("GameOverPanel não foi atribuído no inspetor!");
-        }
+        gameOverPanel.SetActive(true);
+        ExitRun();
     }
 
-    // Método chamado pelo botão da tela de Game Over para voltar para a MoonBox
     public void ReturnToMoonBox()
     {
         SceneManager.LoadScene("MoonBox");
     }
 
-    // Chamado pelos scripts de porta para registrar uma porta desbloqueada
-    public void RegisterDoor(Vector2Int roomCoord, DoorDirection direction)
+    public void RegisterDoor(Vector2Int coord, DoorDirection dir)
     {
-        if (!_doors.ContainsKey(roomCoord))
-            _doors[roomCoord] = new HashSet<DoorDirection>();
-
-        if (!_doors[roomCoord].Contains(direction))
-        {
-            _doors[roomCoord].Add(direction);
-            Debug.Log($"[GameManager] Porta {direction} na sala {roomCoord} registrada como acessível.");
-        }
+        if (!_doors.ContainsKey(coord))
+            _doors[coord] = new HashSet<DoorDirection>();
+        _doors[coord].Add(dir);
     }
 
-    // Verifica se a porta de uma dada direção na sala está registrada como acessível
-    public bool IsDoorAccessible(Vector2Int roomCoord, DoorDirection direction)
+    public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir)
     {
-        return _doors.ContainsKey(roomCoord) && _doors[roomCoord].Contains(direction);
-    }
-
-    public Vector3 GetRoomWorldPosition(Vector2Int coord)
-    {
-        return new Vector3(
-            coord.x * roomWidth,
-            coord.y * roomHeight,
-            0
-        ) + _gridOffset;
-    }
-
-    public Room GetRoom(Vector2Int coord)
-    {
-        return _rooms.ContainsKey(coord) ? _rooms[coord] : null;
+        return _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
     }
 
     public Vector2Int GetCurrentRoomCoord()
@@ -243,154 +213,133 @@ public class GameManager : Singleton<GameManager>
         return _currentRoomCoord;
     }
 
+    public Room GetRoom(Vector2Int coord)
+    {
+        return _rooms.TryGetValue(coord, out var r) ? r : null;
+    }
+
     public void SetCurrentRoom(Vector2Int coord)
     {
         _currentRoomCoord = coord;
         OnRoomChanged?.Invoke(coord);
 
-        // Desativa as portas de todas as salas e ativa somente as da sala atual
         foreach (var room in _rooms.Values)
             room.SetActiveDoors(false);
 
-        if (_rooms.TryGetValue(coord, out Room currentRoom))
-            currentRoom.SetActiveDoors(true);
+        if (_rooms.TryGetValue(coord, out var current))
+            current.SetActiveDoors(true);
 
         UpdateCameraPosition();
     }
 
     private void UpdateCameraPosition()
     {
-        if (_rooms.TryGetValue(_currentRoomCoord, out Room room) && room.cameraSlot != null)
-            _mainCamera.transform.position = room.cameraSlot.position + new Vector3(0, 0, -10);
+        if (_rooms.TryGetValue(_currentRoomCoord, out var room) && room.cameraSlot != null)
+            _mainCamera.transform.position = room.cameraSlot.position + Vector3.back * 10f;
     }
 
-    // Tenta mover o jogador através de uma porta, verificando se a porta foi registrada como desbloqueada
-    public void TryMoveThroughDoor(DoorDirection direction, float moveDistance)
+    public void TryMoveThroughDoor(DoorDirection dir, float dist)
     {
-        Vector2Int dirVector = direction.ToVector();
-        StartCoroutine(TransitionThroughDoor(dirVector, moveDistance));
+        StartCoroutine(TransitionThroughDoor(dir.ToVector(), dist));
     }
 
-    private IEnumerator TransitionThroughDoor(Vector2Int direction, float moveDistance)
+    private IEnumerator TransitionThroughDoor(Vector2Int dir, float dist)
     {
         if (_isTransitioning)
             yield break;
         _isTransitioning = true;
 
-        Vector2Int newCoord = _currentRoomCoord + direction;
-        if (IsDoorAccessible(_currentRoomCoord, direction.ToDoorDirection()))
+        if (IsDoorAccessible(_currentRoomCoord, dir.ToDoorDirection()))
         {
-            Collider2D playerCollider = Player.Instance.GetComponent<Collider2D>();
-            playerCollider.enabled = false;
+            var col = Player.Instance.GetComponent<Collider2D>();
+            col.enabled = false;
 
-            Vector3 startPos = Player.Instance.transform.position;
-            Vector3 targetPos = startPos + (Vector3)(Vector2)direction * moveDistance;
+            Vector3 start = Player.Instance.transform.position;
+            Vector3 offset = (Vector3)(Vector2)dir * dist;
+            Vector3 target = start + offset;
+            yield return SmoothTransition(col, start, target);
 
-            yield return SmoothTransition(playerCollider, startPos, targetPos);
-            SetCurrentRoom(newCoord);
+            SetCurrentRoom(_currentRoomCoord + dir);
         }
-        else
-        {
-            Debug.LogWarning($"[GameManager] Porta {direction.ToDoorDirection()} na sala {_currentRoomCoord} não está acessível!");
-        }
+
         _isTransitioning = false;
     }
 
-    private IEnumerator SmoothTransition(Collider2D collider, Vector3 start, Vector3 target)
+    private IEnumerator SmoothTransition(Collider2D col, Vector3 a, Vector3 b)
     {
-        float duration = 0.5f;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
+        float duration = 0.5f, t = 0f;
+        while (t < duration)
         {
-            Player.Instance.transform.position = Vector3.Lerp(start, target, elapsed / duration);
-            elapsed += Time.deltaTime;
+            Player.Instance.transform.position = Vector3.Lerp(a, b, t / duration);
+            t += Time.deltaTime;
             yield return null;
         }
-
-        Player.Instance.transform.position = target;
-        collider.enabled = true;
+        Player.Instance.transform.position = b;
+        col.enabled = true;
     }
 
-    // Método para parear as portas entre salas vizinhas
     private void PairDoors()
     {
-        foreach (var roomEntry in _rooms)
+        foreach (var kv in _rooms)
         {
-            Vector2Int coord = roomEntry.Key;
-            Room room = roomEntry.Value;
+            Vector2Int coord = kv.Key;
+            Room room = kv.Value;
+            TryPair(room, coord, DoorDirection.Up, Vector2Int.up, DoorDirection.Down);
+            TryPair(room, coord, DoorDirection.Right, Vector2Int.right, DoorDirection.Left);
+            TryPair(room, coord, DoorDirection.Down, Vector2Int.down, DoorDirection.Up);
+            TryPair(room, coord, DoorDirection.Left, Vector2Int.left, DoorDirection.Right);
+        }
+    }
 
-            // Pareia porta de cima com a porta de baixo da sala acima
-            var doorUp = room.GetDoorTrigger(DoorDirection.Up);
-            if (doorUp != null)
-            {
-                Vector2Int neighborCoord = coord + Vector2Int.up;
-                Room neighbor = GetRoom(neighborCoord);
-                if (neighbor != null)
-                {
-                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Down);
-                    if (neighborDoor != null)
-                    {
-                        doorUp.pairedDoor = neighborDoor;
-                        neighborDoor.pairedDoor = doorUp;
-                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Up) com Sala {neighborCoord} (porta Down).");
-                    }
-                }
-            }
+    private void TryPair(Room room, Vector2Int coord, DoorDirection dir, Vector2Int off, DoorDirection opp)
+    {
+        var d = room.GetDoorTrigger(dir);
+        var n = GetRoom(coord + off)?.GetDoorTrigger(opp);
+        if (d != null && n != null)
+        {
+            d.pairedDoor = n;
+            n.pairedDoor = d;
+        }
+    }
 
-            // Pareia porta da direita com a porta da esquerda da sala à direita
-            var doorRight = room.GetDoorTrigger(DoorDirection.Right);
-            if (doorRight != null)
-            {
-                Vector2Int neighborCoord = coord + Vector2Int.right;
-                Room neighbor = GetRoom(neighborCoord);
-                if (neighbor != null)
-                {
-                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Left);
-                    if (neighborDoor != null)
-                    {
-                        doorRight.pairedDoor = neighborDoor;
-                        neighborDoor.pairedDoor = doorRight;
-                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Right) com Sala {neighborCoord} (porta Left).");
-                    }
-                }
-            }
+    private void ExitRun()
+    {
+        foreach (var r in _rooms.Values)
+        {
+            if (r != null)
+                Destroy(r.gameObject);
+        }
+        _rooms.Clear();
+        _doors.Clear();
 
-            // Pareia porta de baixo com a porta de cima da sala abaixo
-            var doorDown = room.GetDoorTrigger(DoorDirection.Down);
-            if (doorDown != null)
-            {
-                Vector2Int neighborCoord = coord + Vector2Int.down;
-                Room neighbor = GetRoom(neighborCoord);
-                if (neighbor != null)
-                {
-                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Up);
-                    if (neighborDoor != null)
-                    {
-                        doorDown.pairedDoor = neighborDoor;
-                        neighborDoor.pairedDoor = doorDown;
-                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Down) com Sala {neighborCoord} (porta Up).");
-                    }
-                }
-            }
+        var timer = FindObjectOfType<CountdownTimer>();
+        if (timer != null)
+            timer.gameObject.SetActive(false);
 
-            // Pareia porta da esquerda com a porta da direita da sala à esquerda
-            var doorLeft = room.GetDoorTrigger(DoorDirection.Left);
-            if (doorLeft != null)
+        // Reseta a câmera para o slotMoonBox e restaura os canvases
+        _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
+        customizationCanvas.SetActive(true);
+        gameOverPanel.SetActive(false);
+
+        // Desativa os canvases do status do jogador
+        playerStatusCanvas.SetActive(false);
+        playerOtherCanvas.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            shiftHoldTimer += Time.deltaTime;
+            if (shiftHoldTimer >= 3f)
             {
-                Vector2Int neighborCoord = coord + Vector2Int.left;
-                Room neighbor = GetRoom(neighborCoord);
-                if (neighbor != null)
-                {
-                    var neighborDoor = neighbor.GetDoorTrigger(DoorDirection.Right);
-                    if (neighborDoor != null)
-                    {
-                        doorLeft.pairedDoor = neighborDoor;
-                        neighborDoor.pairedDoor = doorLeft;
-                        Debug.Log($"[GameManager] Pareado: Sala {coord} (porta Left) com Sala {neighborCoord} (porta Right).");
-                    }
-                }
+                ExitRun();
+                shiftHoldTimer = 0f;
             }
+        }
+        else
+        {
+            shiftHoldTimer = 0f;
         }
     }
 }
