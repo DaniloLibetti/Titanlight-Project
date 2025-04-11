@@ -99,15 +99,16 @@ namespace Inventory.Model
                 if (inventoryItems[i].item.ID == item.ID)
                 {
                     int amountPossibleToTake = inventoryItems[i].item.MaxStackSize - inventoryItems[i].quantity;
+                    int sellAmountPossible = inventoryItems[i].sellPrice - inventoryItems[i].quantity;
 
                     if(quantity > amountPossibleToTake)
                     {
-                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].item.MaxStackSize);
+                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].item.MaxStackSize, inventoryItems[i].sellPrice);
                         quantity -= amountPossibleToTake;
                     }
                     else
                     {
-                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].quantity + quantity);
+                        inventoryItems[i] = inventoryItems[i].ChangeQuantity(inventoryItems[i].quantity + quantity, inventoryItems[i].sellPrice);
                         InformAboutChange();
                         return 0;
                     }
@@ -149,13 +150,14 @@ namespace Inventory.Model
                     return;
                 }
                 int reminder = inventoryItems[itemIndex].quantity - amount;
+                int priceReminder = inventoryItems[itemIndex].sellPrice - amount;
                 if(reminder <= 0)
                 {
                     inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
                 }
                 else
                 {
-                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder, priceReminder);
                 }
                 InformAboutChange();
             }
@@ -173,15 +175,17 @@ namespace Inventory.Model
         public List<ItemParameter> itemState;
         public bool isEmpty => item == null;
         public ItemType itemType;
+        public int sellPrice;
 
-        public InventoryItem ChangeQuantity(int newQuantity)
+        public InventoryItem ChangeQuantity(int newQuantity, int newPrice)
         {
             return new InventoryItem
             {
                 item = this.item,
                 quantity = newQuantity,
                 itemState = new List<ItemParameter>(this.itemState),
-                itemType = this.itemType
+                itemType = this.itemType,
+                sellPrice = newPrice
             };
         }
 
@@ -191,6 +195,7 @@ namespace Inventory.Model
             quantity = 0,
             itemState = new List<ItemParameter>(),
             itemType = ItemType.none,
+            sellPrice = 0
         };
     }
 }

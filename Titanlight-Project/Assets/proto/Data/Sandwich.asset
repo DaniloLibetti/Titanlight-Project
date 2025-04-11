@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <SellValue>k__BackingField: 1
+  <SellValue>k__BackingField: 10
   <Name>k__BackingField: 
   <ItemImage>k__BackingField: {fileID: 0}
   <DefaultParameterList>k__BackingField:
