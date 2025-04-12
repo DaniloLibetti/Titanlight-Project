@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/proto/Scenes ofi/MainMenu.unity
     guid: 1bfbc62aa21ceae489e33f7c4a1bddc6
   - enabled: 1
-    path: Assets/proto/Scenes ofi/MoonBox.unity
-    guid: 1802e85eeb6e6c241b47301307a5c89c
-  - enabled: 1
     path: Assets/proto/Scenes ofi/RunScene.unity
     guid: e8e5b4bacdcbad241889dd36f7320b8f
   m_configObjects:

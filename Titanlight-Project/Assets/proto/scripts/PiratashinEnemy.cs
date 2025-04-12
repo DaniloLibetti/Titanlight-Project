@@ -3,10 +3,11 @@ using System.Collections;
 
 public class PiratashinEnemy : MonoBehaviour
 {
+    public enum AIState { Idle, Chase, Attack }
+
     [Header("Configuração Geral")]
-    public Transform player;
     public Animator animator;
-    public SpriteRenderer spriteRenderer; // Arraste o SpriteRenderer pelo Inspector
+    public SpriteRenderer spriteRenderer;
 
     [Header("Parâmetros de Movimento")]
     public float moveSpeed = 3f;
@@ -15,71 +16,124 @@ public class PiratashinEnemy : MonoBehaviour
     [Header("Ataque Normal")]
     public float normalAttackDamage = 10f;
     public float attackCooldown = 1f;
-    public float normalChargeTime = 0.5f; // Tempo de carga com efeito de piscar
-
-    [Header("Ataque Dash (Investida)")]
-    public float dashChargeTime = 2f;      // Tempo para carregar a investida
-    public float dashDuration = 0.3f;        // Duração do dash
-    public float investidaDashSpeed = 15f;   // Velocidade do dash
+    public float normalChargeTime = 0.5f;
 
     [Header("Efeitos Visuais")]
-    public float postAttackCooldown = 0.5f;  // Tempo de pausa pós-ataque
+    public float postAttackCooldown = 0.5f;
 
+    [Header("Detecção da Sala")]
+    [SerializeField] private Collider2D roomCollider;
+
+    [Header("Área de Roaming")]
+    [Tooltip("Raio máximo que o inimigo pode se afastar de sua posição de origem.")]
+    public float maxRoamRadius = 5f;
+
+    // --- Campos Privados ---
+    private Transform player;
     private Rigidbody2D rb;
-    private Color defaultColor = Color.white;
-    private bool isAttacking = false;
-    private float dashTimer = 0f;          // Acumula tempo longe do player
-    private float attackTimer = 0f;        // Cooldown pro ataque normal
-    private bool isDashing = false;        // Indica se tá na fase de dash
+    private RigidbodyConstraints2D defaultConstraints;
+    private Vector2 homePosition;
+    private AIState currentState = AIState.Idle;
 
-    private RigidbodyConstraints2D defaultConstraints; // Pra salvar constraints iniciais
+    private bool isAttacking = false;
+    private float attackTimer = 0f;
+
+    private Color defaultColor = Color.white;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        defaultConstraints = rb.constraints; // Armazena os constraints padrões
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Assegure no Inspector que Freeze Rotation Z está marcado
+        // para impedir qualquer rotação em Z
+        defaultConstraints = rb.constraints;
+
+        homePosition = transform.position;
+
+        // Inicia busca pelo player em background
+        StartCoroutine(FindPlayer());
+
+        // Detecta o collider da sala de spawn
+        FindRoomCollider();
+    }
+
+    IEnumerator FindPlayer()
+    {
+        while (player == null)
+        {
+            var go = GameObject.FindGameObjectWithTag("Player");
+            if (go != null)
+                player = go.transform;
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    void FindRoomCollider()
+    {
+        int layer = LayerMask.NameToLayer("floordetect");
+        var cols = Physics2D.OverlapPointAll(transform.position);
+        foreach (var col in cols)
+        {
+            if (col.gameObject.layer == layer)
+            {
+                roomCollider = col;
+                break;
+            }
+        }
+
+        if (roomCollider == null)
+            Debug.LogWarning("PiratashinEnemy: não encontrou collider de sala em 'floordetect'");
     }
 
     void Update()
     {
-        if (player == null)
-            return;
-
+        // Atualiza cooldown de ataque
         if (attackTimer > 0f)
             attackTimer -= Time.deltaTime;
 
-        if (!isAttacking)
-        {
-            float distance = Vector2.Distance(transform.position, player.position);
-            if (distance <= meleeRange)
-            {
-                dashTimer = 0f; // Reseta o timer se estiver perto do player
-                rb.linearVelocity = Vector2.zero;
+        if (player == null || roomCollider == null)
+            return;
 
-                if (attackTimer <= 0f)
+        bool playerInRoom = roomCollider.OverlapPoint(player.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        switch (currentState)
+        {
+            case AIState.Idle:
+                rb.linearVelocity = Vector2.zero;
+                if (playerInRoom)
+                    currentState = AIState.Chase;
+                break;
+
+            case AIState.Chase:
+                // Se saiu da sala, volta a Idle
+                if (!playerInRoom)
                 {
-                    StartCoroutine(NormalAttack());
+                    currentState = AIState.Idle;
+                    return;
+                }
+
+                // Se dentro do alcance e cooldown liberado, inicia ataque
+                if (distToPlayer <= meleeRange && attackTimer <= 0f && !isAttacking)
+                {
                     attackTimer = attackCooldown;
+                    isAttacking = true;
+                    currentState = AIState.Attack;
+                    StartCoroutine(NormalAttack());
+                    return;
                 }
-            }
-            else
-            {
-                // Se estiver longe, acumula tempo
-                dashTimer += Time.deltaTime;
-                if (dashTimer >= 2f)
-                {
-                    StartCoroutine(DashAttack());
-                    dashTimer = 0f;
-                }
-                else
-                {
-                    // Continua se movendo em direção ao player
-                    Vector2 direction = (player.position - transform.position).normalized;
-                    rb.linearVelocity = direction * moveSpeed;
-                }
-            }
+
+                // Movimento de perseguição
+                Vector2 dir = (player.position - transform.position).normalized;
+                rb.linearVelocity = dir * moveSpeed;
+
+                break;
+
+            case AIState.Attack:
+                // aguardando coroutine liberar
+                break;
         }
 
         UpdateAnimations();
@@ -88,167 +142,79 @@ public class PiratashinEnemy : MonoBehaviour
 
     IEnumerator NormalAttack()
     {
-        isAttacking = true;
+        // Congela posição e rotação
+        rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
 
-        // Congela o inimigo durante a carga
-        RigidbodyConstraints2D originalConstraints = rb.constraints;
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-
-        // Efeito de carga: pisca entre branco e vermelho
+        // Efeito de carga
         yield return StartCoroutine(ChargeEffect(normalChargeTime));
 
-        // Restaura os constraints para permitir movimentação
-        rb.constraints = originalConstraints;
+        // Restaura constraints originais (posição X/Y livre, rotação Z ainda congelada)
+        rb.constraints = defaultConstraints;
 
-        // Aciona a animação de ataque normal
-        if (animator != null)
-            animator.SetTrigger("Attack");
+        // Dispara animação e aplica dano
+        animator?.SetTrigger("Attack");
+        ApplyDamageIfInRange(normalAttackDamage);
 
-        // Delay para sincronizar com a animação
-        yield return new WaitForSeconds(0.2f);
-        ApplyDamageIfInRange();
+        // Pausa pós-ataque
         yield return new WaitForSeconds(postAttackCooldown);
+
         isAttacking = false;
+        currentState = AIState.Chase;
     }
 
-    IEnumerator DashAttack()
+    IEnumerator ChargeEffect(float duration)
     {
-        isAttacking = true;
-        rb.linearVelocity = Vector2.zero;
-
-        // Congela o inimigo enquanto carrega o dash
-        RigidbodyConstraints2D originalConstraints = rb.constraints;
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-
-        float chargeTime = dashChargeTime;
-        while (chargeTime > 0f)
+        float t = 0f;
+        while (t < duration)
         {
-            // Durante o dash charge, o inimigo fica parado
-            chargeTime -= Time.deltaTime;
-            yield return null;
-        }
-
-        // Restaura os constraints para permitir o dash
-        rb.constraints = originalConstraints;
-
-        // Registra a posição do player no início do dash
-        Vector2 dashTarget = player.position;
-        spriteRenderer.color = Color.blue;
-        isDashing = true;
-        float elapsed = 0f;
-        while (elapsed < dashDuration)
-        {
-            Vector2 direction = (dashTarget - (Vector2)transform.position).normalized;
-            rb.linearVelocity = direction * investidaDashSpeed;
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        rb.linearVelocity = Vector2.zero;
-        spriteRenderer.color = defaultColor;
-        isDashing = false;
-
-        // O dano do dash será aplicado somente se houver colisão com o player
-
-        yield return new WaitForSeconds(postAttackCooldown);
-        isAttacking = false;
-    }
-
-    // Coroutine que faz o sprite piscar entre branco e vermelho durante o tempo de carga
-    IEnumerator ChargeEffect(float chargeTime)
-    {
-        float timer = 0f;
-        while (timer < chargeTime)
-        {
-            float t = Mathf.PingPong(timer * 5, 1f);
-            spriteRenderer.color = Color.Lerp(defaultColor, Color.red, t);
-            timer += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(defaultColor, Color.red, Mathf.PingPong(t * 5f, 1f));
+            t += Time.deltaTime;
             yield return null;
         }
         spriteRenderer.color = defaultColor;
     }
 
-    // Aplica dano apenas se o player estiver próximo
-    void ApplyDamageIfInRange()
+    void ApplyDamageIfInRange(float damage)
     {
-        float distance = Vector2.Distance(transform.position, player.position);
-        if (distance <= meleeRange)
-        {
-            PlayerController pc = player.GetComponent<PlayerController>();
-            if (pc != null)
-            {
-                Debug.Log("Aplicando dano de " + normalAttackDamage);
-                pc.TakeDamage(normalAttackDamage);
-            }
-            else
-            {
-                Debug.LogWarning("PlayerController não encontrado no player!");
-            }
-        }
-        else
-        {
-            Debug.Log("Player fora de alcance. Dano não aplicado.");
-        }
+        if (Vector2.Distance(transform.position, player.position) > meleeRange)
+            return;
+
+        if (player.TryGetComponent<PlayerController>(out var pc))
+            pc.TakeDamage(damage);
     }
 
-    // Se colidir com o player durante o dash, aplica dano
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (isDashing && collision.gameObject.CompareTag("Player"))
-        {
-            PlayerController pc = player.GetComponent<PlayerController>();
-            if (pc != null)
-            {
-                Debug.Log("Dash: Aplicando dano de " + normalAttackDamage);
-                pc.TakeDamage(normalAttackDamage);
-            }
-            isDashing = false;
-        }
+        // Nenhuma lógica de dash ativa por enquanto
     }
 
     void UpdateAnimations()
     {
-        if (animator == null)
-            return;
+        if (animator == null) return;
 
-        Vector2 velocity = rb.linearVelocity;
-        bool isWalking = velocity.magnitude > 0.1f;
-        animator.SetBool("IsWalking", isWalking);
-        if (isWalking)
+        bool walking = rb.linearVelocity.magnitude > 0.1f;
+        animator.SetBool("IsWalking", walking);
+        if (walking)
         {
-            animator.SetFloat("MoveX", velocity.x);
-            animator.SetFloat("MoveY", velocity.y);
+            animator.SetFloat("MoveX", rb.linearVelocity.x);
+            animator.SetFloat("MoveY", rb.linearVelocity.y);
         }
     }
 
-    // Atualiza a direção que o inimigo "olha" com base na posição do player
     void UpdateFacingDirection()
     {
+        if (player == null) return;
+
         Vector2 diff = player.position - transform.position;
         if (Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
         {
-            if (diff.x > 0)
-            {
-                animator.SetFloat("FaceX", 1);
-                animator.SetFloat("FaceY", 0);
-            }
-            else
-            {
-                animator.SetFloat("FaceX", -1);
-                animator.SetFloat("FaceY", 0);
-            }
+            animator.SetFloat("FaceX", diff.x > 0 ? 1 : -1);
+            animator.SetFloat("FaceY", 0);
         }
         else
         {
-            if (diff.y > 0)
-            {
-                animator.SetFloat("FaceX", 0);
-                animator.SetFloat("FaceY", 1);
-            }
-            else
-            {
-                animator.SetFloat("FaceX", 0);
-                animator.SetFloat("FaceY", -1);
-            }
+            animator.SetFloat("FaceX", 0);
+            animator.SetFloat("FaceY", diff.y > 0 ? 1 : -1);
         }
     }
 }

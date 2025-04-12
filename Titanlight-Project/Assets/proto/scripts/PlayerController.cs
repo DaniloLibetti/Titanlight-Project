@@ -134,6 +134,13 @@ public class PlayerController : MonoBehaviour
     public float DashProgress { get { return canDash ? 1f : 1f - (dashTimer / dashCooldown); } }
     public float ChargeProgress { get { return isCharging ? (currentChargeTime / maxChargeTime) : 0f; } }
 
+    // PROPRIEDADES PÚBLICAS PARA CONTROLE EXTERNO:
+    // Permite que outros scripts verifiquem se o jogador está dashing e se pode controlar o movimento.
+    public bool IsDashing { get { return isDashing; } }
+    public bool CanMove { get; set; } = true;
+    // NOVA PROPRIEDADE: Armazena a última posição final do dash
+    public Vector3 LastDashPosition { get; private set; } = Vector3.zero;
+
     // ============================
     // Métodos do Ciclo de Vida e Movimento
     // ============================
@@ -151,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Se estiver atordoado, o jogador não se movimenta
         if (isStunned)
         {
             rb.linearVelocity = Vector2.zero;
@@ -160,6 +168,17 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        // Se o movimento estiver bloqueado (por exemplo, durante uma queda), ignora input de movimento
+        if (!CanMove)
+        {
+            rb.linearVelocity = Vector2.zero;
+            UpdateAnimations();
+            UpdateShootPointDirection();
+            UpdateHeat();
+            return;
+        }
+
+        // Gerenciamento do cooldown do dash
         if (!canDash)
         {
             dashTimer -= Time.deltaTime;
@@ -170,6 +189,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Se estiver dashing, atualiza animações, direção e calor, mas não processa outros inputs
         if (isDashing)
         {
             UpdateAnimations();
@@ -242,7 +262,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDashing && !isStunned)
+        if (!isDashing && !isStunned && CanMove)
         {
             MoveCharacter();
         }
@@ -333,6 +353,8 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         gameObject.layer = originalLayer;
+        // Atualiza a última posição do dash para uso em outros scripts (por exemplo, HoleTrigger)
+        LastDashPosition = transform.position;
         isDashing = false;
     }
 
@@ -385,9 +407,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Aqui a modificação para a Shotgun:
-    // Conforme o tiro é carregado, o ângulo de dispersão é interpolado entre shotgunSpreadAngle (sem carga)
-    // e minShotgunSpreadAngle (totalmente carregado). Além disso, o tempo de vida do projétil aumenta proporcionalmente.
     void ShootChargedShotgun(float damageMultiplier)
     {
         int extraPellets = Mathf.RoundToInt((damageMultiplier - 1f) * extraPelletsMultiplier);
@@ -395,9 +414,7 @@ public class PlayerController : MonoBehaviour
         float t = (damageMultiplier - chargeDamageMultiplierMin) / (chargeDamageMultiplierMax - chargeDamageMultiplierMin);
         t = Mathf.Clamp01(t);
 
-        // Interpolação do spread: sem carga (t = 0) = shotgunSpreadAngle, com carga total (t = 1) = minShotgunSpreadAngle
         float currentShotgunSpreadAngle = Mathf.Lerp(shotgunSpreadAngle, minShotgunSpreadAngle, t);
-        // Interpolação do tempo de vida: sem carga = projectileLifetime, com carga = projectileLifetime * maxShotgunLifetimeMultiplier
         float currentLifetimeMultiplier = Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, t);
         float currentLifetime = projectileLifetime * currentLifetimeMultiplier;
 

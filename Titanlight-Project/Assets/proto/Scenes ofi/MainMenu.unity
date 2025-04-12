@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1824723798}
   optionsPanel: {fileID: 0}
-  gameSceneName: MoonBox
+  gameSceneName: RunScene
 --- !u!114 &1824723800
 MonoBehaviour:
   m_ObjectHideFlags: 0

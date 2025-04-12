@@ -46,16 +46,23 @@ public class GameManager : Singleton<GameManager>
     }
 
     [Header("UI & Slots")]
-    public GameObject customizationCanvas;
-    public Transform slotMoonBox;
-    public Transform slotStartCamera; // não mais usado para spawn, apenas referência
+    public GameObject customizationCanvas; // Tela inicial (MoonBox)
+    public Transform slotMoonBox;          // Posição do menu inicial
+    public Transform slotStartCamera;      // Referência (não utilizado para spawn)
 
-    // Novos Canvas para o status do jogador (certifique-se de que estão inativos inicialmente)
+    // HUD do player
     public GameObject playerStatusCanvas;
     public GameObject playerOtherCanvas;
 
-    [Header("Game Over Settings")]
-    public GameObject gameOverPanel;
+    [Header("Auction Settings")]
+    [Tooltip("Transform para o Slot Leilão")]
+    public Transform slotAuction;          // Posição da câmera durante o leilão
+    [Tooltip("Canvas do leilão que apresenta as três ofertas")]
+    public GameObject auctionCanvas;
+
+    // Campo para contagem de moedas coletadas
+    private int _coinCount = 0;
+    public int CoinCount { get { return _coinCount; } }
 
     private float shiftHoldTimer = 0f;
 
@@ -64,26 +71,29 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
         _mainCamera = Camera.main;
 
-        // Inicialmente, exibe o canvas de customização e garante que os demais estejam inativos
+        // Estado inicial: mostra o canvas de customização; demais HUDs e o canvas de leilão desativados
         customizationCanvas.SetActive(true);
-        gameOverPanel.SetActive(false);
         playerStatusCanvas.SetActive(false);
         playerOtherCanvas.SetActive(false);
+        if (auctionCanvas != null)
+            auctionCanvas.SetActive(false);
 
-        // A câmera inicia posicionada no slotMoonBox
+        // A câmera inicia posicionada no slot MoonBox
         _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
     }
 
     /// <summary>
-    /// Método chamado ao iniciar a run (por exemplo, ao pressionar o botão "Iniciar Run").
+    /// Inicia uma nova run.
     /// </summary>
     public void StartRun()
     {
-        // Se o GameManager estiver inativo, ativa-o para que as corrotinas possam ser iniciadas.
         if (!gameObject.activeSelf)
             gameObject.SetActive(true);
 
-        // Desativa o canvas de customização e ativa os canvases do status do jogador.
+        // Reinicia o contador de moedas
+        _coinCount = 0;
+
+        // Desativa o canvas de customização e ativa os HUDs
         customizationCanvas.SetActive(false);
         playerStatusCanvas.SetActive(true);
         playerOtherCanvas.SetActive(true);
@@ -92,13 +102,9 @@ public class GameManager : Singleton<GameManager>
         GenerateWorld();
         PairDoors();
 
-        // Ativa a sala inicial e posiciona a câmera
         SetCurrentRoom(_initialRoomCoord);
-
-        // Instancia o player na sala inicial
         InstantiatePlayer();
 
-        // Inicia ou reseta o timer, se houver
         var timer = FindObjectOfType<CountdownTimer>();
         if (timer != null)
             timer.ResetTimer();
@@ -123,20 +129,14 @@ public class GameManager : Singleton<GameManager>
 
         float totalChance = CalculateTotalSpawnChance();
         for (int x = 0; x < GridSize.x; x++)
-        {
             for (int y = 0; y < GridSize.y; y++)
-            {
                 CreateRoom(new Vector2Int(x, y), totalChance);
-            }
-        }
     }
 
     private void CreateRoom(Vector2Int coord, float totalChance)
     {
         Vector3 pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0) + _gridOffset;
-        GameObject prefab = coord == _initialRoomCoord
-            ? initialRoomPrefab
-            : SelectRandomRoomPrefab(totalChance);
+        GameObject prefab = (coord == _initialRoomCoord) ? initialRoomPrefab : SelectRandomRoomPrefab(totalChance);
         Room room = Instantiate(prefab, pos, Quaternion.identity).GetComponent<Room>();
         room.Initialize(coord, roomWidth, roomHeight);
         _rooms.Add(coord, room);
@@ -185,15 +185,48 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    /// <summary>
+    /// Quando o player morrer, inicia o fluxo do leilão.
+    /// </summary>
     private void HandlePlayerDeath()
     {
-        gameOverPanel.SetActive(true);
-        ExitRun();
+        StartAuction();
     }
 
-    public void ReturnToMoonBox()
+    /// <summary>
+    /// Inicia o leilão: a câmera se move para o slot de leilão e o canvas de leilão é ativado.
+    /// </summary>
+    private void StartAuction()
     {
-        SceneManager.LoadScene("MoonBox");
+        if (auctionCanvas != null)
+            auctionCanvas.SetActive(true);
+        if (slotAuction != null)
+            _mainCamera.transform.position = slotAuction.position + Vector3.back * 10f;
+    }
+
+    /// <summary>
+    /// Quando o player escolhe uma oferta no leilão, este método é chamado para resetar o jogo.
+    /// </summary>
+    public void CompleteAuction()
+    {
+        if (auctionCanvas != null)
+            auctionCanvas.SetActive(false);
+        ResetToInitialState();
+    }
+
+    /// <summary>
+    /// Reseta o estado do jogo:
+    /// – limpa as salas da run,
+    /// – reposiciona a câmera no slot MoonBox,
+    /// – ativa o canvas de customização.
+    /// </summary>
+    private void ResetToInitialState()
+    {
+        ExitRun();
+        if (slotMoonBox != null)
+            _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
+        if (customizationCanvas != null)
+            customizationCanvas.SetActive(true);
     }
 
     public void RegisterDoor(Vector2Int coord, DoorDirection dir)
@@ -222,13 +255,10 @@ public class GameManager : Singleton<GameManager>
     {
         _currentRoomCoord = coord;
         OnRoomChanged?.Invoke(coord);
-
         foreach (var room in _rooms.Values)
             room.SetActiveDoors(false);
-
         if (_rooms.TryGetValue(coord, out var current))
             current.SetActiveDoors(true);
-
         UpdateCameraPosition();
     }
 
@@ -248,20 +278,16 @@ public class GameManager : Singleton<GameManager>
         if (_isTransitioning)
             yield break;
         _isTransitioning = true;
-
         if (IsDoorAccessible(_currentRoomCoord, dir.ToDoorDirection()))
         {
             var col = Player.Instance.GetComponent<Collider2D>();
             col.enabled = false;
-
             Vector3 start = Player.Instance.transform.position;
             Vector3 offset = (Vector3)(Vector2)dir * dist;
             Vector3 target = start + offset;
             yield return SmoothTransition(col, start, target);
-
             SetCurrentRoom(_currentRoomCoord + dir);
         }
-
         _isTransitioning = false;
     }
 
@@ -302,6 +328,15 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void GoToMainMenu()
+    {
+        // Aqui carrega a cena do Main Menu, certifique-se que o nome da cena está correto e adicionada na Build Settings
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    /// <summary>
+    /// Limpa as salas e HUDs da run.
+    /// </summary>
     private void ExitRun()
     {
         foreach (var r in _rooms.Values)
@@ -316,12 +351,7 @@ public class GameManager : Singleton<GameManager>
         if (timer != null)
             timer.gameObject.SetActive(false);
 
-        // Reseta a câmera para o slotMoonBox e restaura os canvases
         _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
-        customizationCanvas.SetActive(true);
-        gameOverPanel.SetActive(false);
-
-        // Desativa os canvases do status do jogador
         playerStatusCanvas.SetActive(false);
         playerOtherCanvas.SetActive(false);
     }
@@ -341,5 +371,14 @@ public class GameManager : Singleton<GameManager>
         {
             shiftHoldTimer = 0f;
         }
+    }
+
+    /// <summary>
+    /// Registra as moedas coletadas.
+    /// </summary>
+    public void RegisterCoin(int amount)
+    {
+        _coinCount += amount;
+        Debug.Log("Moeda coletada. Total: " + _coinCount);
     }
 }

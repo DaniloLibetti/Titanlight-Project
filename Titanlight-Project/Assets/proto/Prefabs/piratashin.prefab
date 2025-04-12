@@ -119,10 +119,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3893548707062653789}
+  - component: {fileID: 1051895210215396789}
+  - component: {fileID: 2475838827300297334}
   - component: {fileID: 5570169595426810463}
   - component: {fileID: 6461567081014195493}
   - component: {fileID: 6404503261747105497}
-  - component: {fileID: 1051895210215396789}
   m_Layer: 3
   m_Name: piratashin
   m_TagString: Enemy
@@ -146,6 +147,42 @@ Transform:
   - {fileID: 6404028830544017305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051895210215396789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444819108587751148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c592cf908c903a4ea79e1528419534e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1891976511460247858}
+  spriteRenderer: {fileID: 7095355458043114193}
+  moveSpeed: 1.5
+  meleeRange: 0.28
+  normalAttackDamage: 10
+  attackCooldown: 0.22
+  normalChargeTime: 0.06
+  postAttackCooldown: 0.45
+  roomCollider: {fileID: 6404503261747105497}
+  maxRoamRadius: 5
+--- !u!114 &2475838827300297334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444819108587751148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8655c69557089e49abb50e952103e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 3969868880996217109, guid: 5c5f019fb9c0cc64fbc132427fc9b734, type: 3}
+  dropOffset: 1.3
 --- !u!114 &5570169595426810463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +201,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropMoeda:
     m_PersistentCalls:
       m_Calls: []
 --- !u!50 &6461567081014195493
@@ -229,27 +269,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.13646245
---- !u!114 &1051895210215396789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444819108587751148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c592cf908c903a4ea79e1528419534e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  animator: {fileID: 1891976511460247858}
-  spriteRenderer: {fileID: 7095355458043114193}
-  moveSpeed: 2.1
-  meleeRange: 0.28
-  normalAttackDamage: 10
-  attackCooldown: 1
-  normalChargeTime: 0.5
-  dashChargeTime: 2
-  dashDuration: 0.1
-  investidaDashSpeed: 10
-  postAttackCooldown: 1.7

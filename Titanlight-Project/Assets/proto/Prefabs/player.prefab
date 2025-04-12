@@ -71,6 +71,9 @@ MonoBehaviour:
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
+  onDropMoeda:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4148346801053061497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5959906539815808214}
-  moveSpeed: 3
+  moveSpeed: 1.7
   acceleration: 10
   deceleration: 15
   isStunned: 0
@@ -116,21 +119,16 @@ MonoBehaviour:
   projectileSpeed: 6
   projectileLifetime: 1
   normalBulletPrefab: {fileID: 6118543610015448874, guid: 7ced92d77d2ae8a4a9d9df0691a514bd, type: 3}
-  attackKey: 111
   normalCooldown: 0.4
   shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
-  shotgunKey: 107
   shotgunCooldown: 1
   shotgunPelletCount: 15
   shotgunSpreadAngle: 30
-  shotgunRangeMultiplier: 0.5
-  extraPelletsMultiplier: 2
-  extraSpreadAngleMultiplier: 10
-  baseRecoilForce: 2
   minShotgunSpreadAngle: 10
   maxShotgunLifetimeMultiplier: 2
+  extraPelletsMultiplier: 2
+  baseRecoilForce: 2
   machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
-  machineGunKey: 109
   machineGunCooldown: 0.3
   maxChargeTime: 2
   chargeDamageMultiplierMin: 1
@@ -139,8 +137,6 @@ MonoBehaviour:
   heatIncreaseRate: 20
   heatDecreaseRate: 15
   overheatCooldownThreshold: 20
-  dashKey: 32
-  switchModeKey: 113
   attackMode: 0
 --- !u!114 &3338327904106004791
 MonoBehaviour:
@@ -170,6 +166,7 @@ MonoBehaviour:
   dashSlider: {fileID: 0}
   chargeSlider: {fileID: 0}
   heatSlider: {fileID: 0}
+  coinText: {fileID: 0}
   playerController: {fileID: 4148346801053061497}
 --- !u!50 &4926012572293533425
 Rigidbody2D:
@@ -312,7 +309,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 1111808343, guid: 244111ebfc508ad45a30756d7c2682c6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.10191679, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
