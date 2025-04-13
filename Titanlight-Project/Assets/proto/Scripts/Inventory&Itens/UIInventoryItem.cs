@@ -18,8 +18,9 @@ namespace Inventory.UI
 
         public event Action<UIInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseButtonClick;
 
+        private int itemPrice;
         private int itemIndex;
-        private int amount;
+        
 
         private bool empty = true;
         //public bool isItemSelected = false;
@@ -61,11 +62,6 @@ namespace Inventory.UI
         public void Select()
         {
             borderImage.enabled = true;
-        }
-
-        public void TestePraVerSeEleDaCertoOQueEuQueroFazer()
-        {
-
         }
 
         public void OnPointerClick(PointerEventData pointerData)

@@ -18,7 +18,7 @@ namespace Inventory.Model
         public int MaxStackSize { get; set; } = 1;//valor maximo do item empilhavel
 
         [field: SerializeField]
-        public int SellValue { get; set; } = 1;//valor do venda do item
+        public int Price { get; set; } = 1;//valor do venda do item
 
         [field: SerializeField]
         public string Name { get; set; }//nome do item

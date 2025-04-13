@@ -1,63 +1,70 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Inventory.UI;
 using Inventory.Model;
 using TMPro;
+using System.Collections.Generic;
 
-public class ShopMenu : MonoBehaviour
+namespace Inventory.UI
 {
-    public TextMeshProUGUI coinsText;
-    [SerializeField] private GameObject shopMenu;
-
-    private int coins;
-    private ItemSO itemSO;
-    private InventoryUi inventoryUi;
-    private InventorySO inventorySO;
-
-
-    public void SellButton()
+    public class ShopMenu : MonoBehaviour
     {
-        inventoryUi.ResetAllItems();
-        SellItems();
-    }
+        public TextMeshProUGUI coinsText;
+        [SerializeField] private GameObject shopMenu;
 
-    public void SellItems()
-    {
-        coins += itemSO.SellValue;
-    }
+        private int coins;
+        private ItemSO itemSO;
+        [SerializeField] private InventoryUi inventoryUi;
+        [SerializeField] private InventorySO inventorySO;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        coinsText.text = "Coins:" + coins;
-    }
+        List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
-    public void Hide() //desativa a interface do inventario
-    {
-        //actionPanel.Toggle(false);
-        shopMenu.SetActive(false);
-        //ResetDraggedItem();
-    }
+        int itemIndex;
+        int amount;
 
-    public void Show() //ativa a interface do inventario
-    {
-        shopMenu.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
+        public void SellButton()
         {
-            if (!shopMenu.activeSelf)
-            {
-                Show();
-            }
-            else
-            {
-                Hide();
-            }
+            inventoryUi.ResetAllItems();
+            inventorySO.Initialize();
         }
-        
+
+        public void SellItems()
+        {
+            
+        }
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            coinsText.text = "Coins:" + coins;
+        }
+
+        public void Hide() //desativa a interface do inventario
+        {
+            //actionPanel.Toggle(false);
+            shopMenu.SetActive(false);
+            //ResetDraggedItem();
+        }
+
+        public void Show() //ativa a interface do inventario
+        {
+            shopMenu.SetActive(true);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                if (!shopMenu.activeSelf)
+                {
+                    Show();
+                }
+                else
+                {
+                    Hide();
+                }
+            }
+
+        }
     }
 }
