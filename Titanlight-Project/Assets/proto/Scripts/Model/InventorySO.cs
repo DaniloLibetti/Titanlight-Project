@@ -99,7 +99,7 @@ namespace Inventory.Model
                 if (inventoryItems[i].item.ID == item.ID)
                 {
                     int amountPossibleToTake = inventoryItems[i].item.MaxStackSize - inventoryItems[i].quantity;
-                    int sellAmountPossible = inventoryItems[i].sellPrice - inventoryItems[i].quantity;
+                    int priceAmountPossible = inventoryItems[i].sellPrice - inventoryItems[i].quantity;
 
                     if(quantity > amountPossibleToTake)
                     {

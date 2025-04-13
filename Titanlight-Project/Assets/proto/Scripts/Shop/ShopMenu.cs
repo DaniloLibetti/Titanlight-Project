@@ -7,11 +7,12 @@ using TMPro;
 public class ShopMenu : MonoBehaviour
 {
     public TextMeshProUGUI coinsText;
-    [SerializeField] ShopMenu shopMenu;
+    [SerializeField] private GameObject shopMenu;
 
     private int coins;
     private ItemSO itemSO;
     private InventoryUi inventoryUi;
+    private InventorySO inventorySO;
 
 
     public void SellButton()
@@ -34,14 +35,13 @@ public class ShopMenu : MonoBehaviour
     public void Hide() //desativa a interface do inventario
     {
         //actionPanel.Toggle(false);
-        gameObject.SetActive(false);
+        shopMenu.SetActive(false);
         //ResetDraggedItem();
     }
 
     public void Show() //ativa a interface do inventario
     {
-        gameObject.SetActive(true);
-
+        shopMenu.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class ShopMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (shopMenu.isActiveAndEnabled == false)
+            if (!shopMenu.activeSelf)
             {
                 Show();
             }
@@ -58,5 +58,6 @@ public class ShopMenu : MonoBehaviour
                 Hide();
             }
         }
+        
     }
 }
