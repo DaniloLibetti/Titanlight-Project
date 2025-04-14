@@ -27,7 +27,7 @@ namespace Inventory.UI
 
         public ItemType itemType;
 
-        [SerializeField]private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
+        //[SerializeField]private EquipmentSlot meleeSlot, rangeSlot, upgradeSlot1, upgradeSlot2, throwableSlot, consumableSlot;
 
         private void Awake()
         {
@@ -69,7 +69,7 @@ namespace Inventory.UI
 
             if (/*isItemSelected = true &*/ pointerData.button == PointerEventData.InputButton.Right)
             {
-                EquipGear();
+                //EquipGear();
                 OnRightMouseButtonClick?.Invoke(this);
             }
             else
@@ -78,7 +78,7 @@ namespace Inventory.UI
             }
         }
 
-        public void EquipGear()
+        /*public void EquipGear()
         {
 
             if (itemType == ItemType.weaponMelee)
@@ -95,7 +95,7 @@ namespace Inventory.UI
                 consumableSlot.EquipGear(itemSprite);
 
 
-        }
+        }*/
 
         public void OnBeginDrag(PointerEventData eventData)
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+/*public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float damage = 10f;
     [SerializeField] private float moveSpeed = 3f;
@@ -33,4 +33,4 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-}
+}*/

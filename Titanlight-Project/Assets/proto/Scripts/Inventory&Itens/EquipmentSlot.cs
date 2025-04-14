@@ -9,7 +9,7 @@ namespace Inventory.UI
     {
         [SerializeField] private Image slotImage;
 
-        [SerializeField] private ItemType itemType = new ItemType();
+        //[SerializeField] private ItemType itemType = new ItemType();
 
         private Sprite itemSprite;
 

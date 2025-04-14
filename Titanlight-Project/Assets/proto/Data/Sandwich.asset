@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sandwich
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 10
-  <SellValue>k__BackingField: 10
+  <MaxStackSize>k__BackingField: 5
+  <Price>k__BackingField: 1
   <Name>k__BackingField: 
   <ItemImage>k__BackingField: {fileID: -5211771596868668710, guid: 6854ae5d09086a64c89cfe414d85ba74, type: 3}
   <DefaultParameterList>k__BackingField: []
