@@ -3,7 +3,25 @@ using UnityEngine;
 
 public class Controle : MonoBehaviour
 {
-    [Header("Movimentação")]
+    public float movSpeed;
+    float speedX, speedY;
+    Rigidbody2D rb;
+
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
+        speedY = Input.GetAxisRaw("Vertical") * movSpeed;
+        rb.linearVelocity = new Vector2 (speedX, speedY);
+    }
+
+
+    /*[Header("Movimentação")]
     [SerializeField] private float moveSpeed = 5f;
 
     [Header("Dash")]
@@ -174,5 +192,5 @@ public class Controle : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, areaLimiter.MinBounds.x, areaLimiter.MaxBounds.x);
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, areaLimiter.MinBounds.y, areaLimiter.MaxBounds.y);
         transform.position = clampedPosition;
-    }
+    }*/
 }

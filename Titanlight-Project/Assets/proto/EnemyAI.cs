@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent<Controle>(out Controle playerController))
             {
-                playerController.TakeDamage(damage);
+                //playerController.TakeDamage(damage);
             }
         }
     }
