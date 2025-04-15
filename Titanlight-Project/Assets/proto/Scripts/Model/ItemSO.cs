@@ -26,24 +26,7 @@ namespace Inventory.Model
         [field: SerializeField]
         public Sprite ItemImage { get; set; }//imagem do item
 
-        [field: SerializeField]
-        public List<ItemParameter> DefaultParameterList { get; set; }//lista de parametros do item
-
-        [field: SerializeField]
-        public ItemType itemType;
         
-    }
-
-    [Serializable]  
-    public struct ItemParameter : IEquatable<ItemParameter>
-    {
-        public ItemParameterSO itemParameter;
-        public float value;
-
-        public bool Equals(ItemParameter other)
-        {
-            return other.itemParameter == itemParameter;
-        }
     }
 }
 

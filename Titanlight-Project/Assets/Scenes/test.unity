@@ -463,7 +463,6 @@ GameObject:
   - component: {fileID: 270708711}
   - component: {fileID: 270708710}
   - component: {fileID: 270708709}
-  - component: {fileID: 270708712}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -557,28 +556,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270708707}
   m_CullTransparentMesh: 1
---- !u!114 &270708712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270708707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ec9d173450a084dbe48a95e08f8860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 1620250360090536699, guid: b5a9fe4a420f0c94d839b1136b45a363, type: 3}
-  contentPanel: {fileID: 295794412}
-  equipmentPanel: {fileID: 547449549}
-  meleeSlot: {fileID: 9025861919924182875}
-  rangeSlot: {fileID: 7232021409009482822}
-  upgradeSlot1: {fileID: 8634296632169306662}
-  upgradeSlot2: {fileID: 8500654523684692530}
-  throwableSlot: {fileID: 9103014278533152516}
-  consumableSlot: {fileID: 7578077951099657290}
-  isItemSelected: 0
 --- !u!1 &295794411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsText: {fileID: 335578740}
   shopMenu: {fileID: 441677310}
-  inventoryUi: {fileID: 270708712}
-  inventorySO: {fileID: 11400000, guid: fe7d6031ca467154c9f640ada6099521, type: 2}
 --- !u!1 &555199080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44af26d746d068e45a613326801427cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryData: {fileID: 11400000, guid: fe7d6031ca467154c9f640ada6099521, type: 2}
 --- !u!70 &890262245
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1998,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce7bae342520c04ba40ca93af9f7887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUi: {fileID: 270708712}
+  inventoryUi: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: fe7d6031ca467154c9f640ada6099521, type: 2}
   initialItems: []
 --- !u!4 &890262248
@@ -2766,7 +2740,7 @@ PrefabInstance:
     - target: {fileID: 5664122713359422823, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: <InventoryItem>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: e90cf5520ffb72c44aff815aec3c7880, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3060,7 +3034,7 @@ PrefabInstance:
     - target: {fileID: 5664122713359422823, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: <InventoryItem>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: ab9eb41bf2e5fac418d554a6386cbe7a, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3752,7 +3726,7 @@ PrefabInstance:
     - target: {fileID: 5664122713359422823, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: <InventoryItem>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: e90cf5520ffb72c44aff815aec3c7880, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3926,7 +3900,7 @@ PrefabInstance:
     - target: {fileID: 5664122713359422823, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
       propertyPath: <InventoryItem>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 743de8ae1e3a2d74488e3bc7f9a12b06, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4130,6 +4104,10 @@ MonoBehaviour:
   itemImage: {fileID: 2642070645903322016}
   quantityTxt: {fileID: 0}
   borderImage: {fileID: 3763093392514302416}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!224 &770385855483387677
 RectTransform:
@@ -4435,6 +4413,10 @@ MonoBehaviour:
   itemImage: {fileID: 3973555225935465920}
   quantityTxt: {fileID: 0}
   borderImage: {fileID: 2861848092802901936}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!222 &1951708718758232425
 CanvasRenderer:
@@ -4714,6 +4696,10 @@ MonoBehaviour:
   itemImage: {fileID: 832508699449756119}
   quantityTxt: {fileID: 9004714444388137066}
   borderImage: {fileID: 1954032831797830567}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!222 &2857213417007378168
 CanvasRenderer:
@@ -4899,6 +4885,10 @@ MonoBehaviour:
   itemImage: {fileID: 2298342583479143108}
   quantityTxt: {fileID: 0}
   borderImage: {fileID: 1114340357397487796}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!114 &3763093392514302416
 MonoBehaviour:
@@ -5742,6 +5732,10 @@ MonoBehaviour:
   itemImage: {fileID: 5218676869227770092}
   quantityTxt: {fileID: 0}
   borderImage: {fileID: 6413057939606395548}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!1 &7578077951099657289
 GameObject:
@@ -5853,6 +5847,10 @@ MonoBehaviour:
   itemImage: {fileID: 4882031703680593374}
   quantityTxt: {fileID: 3799617120244259939}
   borderImage: {fileID: 6004355167195039662}
+  itemSprite: {fileID: 0}
+  itemPrice: 0
+  itemIndex: 0
+  empty: 1
   itemType: 0
 --- !u!114 &7984705857869559080
 MonoBehaviour:

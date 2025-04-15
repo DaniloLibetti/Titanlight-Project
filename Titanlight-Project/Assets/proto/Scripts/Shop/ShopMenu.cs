@@ -13,18 +13,13 @@ namespace Inventory.UI
 
         private int coins;
         private ItemSO itemSO;
-        [SerializeField] private InventoryUi inventoryUi;
-        [SerializeField] private InventorySO inventorySO;
-
-        List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
         int itemIndex;
         int amount;
 
         public void SellButton()
         {
-            inventoryUi.ResetAllItems();
-            inventorySO.Initialize();
+
         }
 
         public void SellItems()
