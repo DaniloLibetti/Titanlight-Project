@@ -1,17 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Inventory.Model;
 using TMPro;
 using System.Collections.Generic;
 
-namespace Inventory.UI
-{
     public class ShopMenu : MonoBehaviour
     {
         public TextMeshProUGUI coinsText;
         [SerializeField] private GameObject shopMenu;
 
-        private int coins;
+        private int coins = 0;
         private ItemSO itemSO;
 
         int itemIndex;
@@ -62,4 +59,3 @@ namespace Inventory.UI
 
         }
     }
-}

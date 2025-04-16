@@ -1,6 +1,6 @@
-using Inventory.Model;
-using Inventory.UI;
+
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -17,10 +17,24 @@ public class Item : MonoBehaviour
     [SerializeField]
     private float duration = 0.3f;
 
+    [SerializeField]
+    private TextMeshProUGUI itemsPickedText;
+
+    private int itemsCount = 0;
+
     private void Start()
     {
         GetComponent<SpriteRenderer>().sprite = InventoryItem.ItemImage;
+        itemsPickedText.text = "Espólios: " + itemsCount;
     }
+
+
+    public void AddItem()
+    {
+        itemsCount++;
+        //itemsPickedText.text = "Espólios: " + itemsCount;
+    }
+
 
     internal void DestroyItem()
     {

@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579031880f05d4147bad5fefe98fc818, type: 3}
-  m_Name: Grenade
+  m_Script: {fileID: 11500000, guid: cbe8b46c604a8d6458dc9c1cec60aa07, type: 3}
+  m_Name: Grenades
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 10
-  <SellValue>k__BackingField: 50
-  <Name>k__BackingField: Grenade
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Price>k__BackingField: 1
+  <Name>k__BackingField: Grenades
   <ItemImage>k__BackingField: {fileID: -6240258545422738745, guid: cf4b355497d05994ba075df3a563a3f2, type: 3}
-  <DefaultParameterList>k__BackingField: []
-  itemType: 1
