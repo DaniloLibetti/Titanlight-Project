@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 3cbf8dca9abc7e84c85d9673c3de57cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2269931526444436951
+    second: P2_Melee_Charged_ATK_RUN_0
+  - first:
+      213: 5280688894064507325
+    second: P2_Melee_Charged_ATK_RUN_1
+  - first:
+      213: 4290710129770575914
+    second: P2_Melee_Charged_ATK_RUN_2
+  - first:
+      213: -1243435172867264877
+    second: P2_Melee_Charged_ATK_RUN_3
+  - first:
+      213: 6347537177748291940
+    second: P2_Melee_Charged_ATK_RUN_4
+  - first:
+      213: -5324976241894251718
+    second: P2_Melee_Charged_ATK_RUN_5
+  - first:
+      213: 7779751022545146772
+    second: P2_Melee_Charged_ATK_RUN_6
+  - first:
+      213: -3036910253586246845
+    second: P2_Melee_Charged_ATK_RUN_7
+  - first:
+      213: 5971684884666847422
+    second: P2_Melee_Charged_ATK_RUN_8
+  - first:
+      213: 3770464213652631527
+    second: P2_Melee_Charged_ATK_RUN_9
+  - first:
+      213: 7348186263711611916
+    second: P2_Melee_Charged_ATK_RUN_10
+  - first:
+      213: 8062891475437842286
+    second: P2_Melee_Charged_ATK_RUN_11
+  - first:
+      213: 1321496060159194689
+    second: P2_Melee_Charged_ATK_RUN_12
+  - first:
+      213: -8691705485920914083
+    second: P2_Melee_Charged_ATK_RUN_13
+  - first:
+      213: 4583682955515128698
+    second: P2_Melee_Charged_ATK_RUN_14
+  - first:
+      213: 4502761072879140699
+    second: P2_Melee_Charged_ATK_RUN_15
+  - first:
+      213: 6463273375531608342
+    second: P2_Melee_Charged_ATK_RUN_16
+  - first:
+      213: 1772892206776755771
+    second: P2_Melee_Charged_ATK_RUN_17
+  - first:
+      213: 453707864532989872
+    second: P2_Melee_Charged_ATK_RUN_18
+  - first:
+      213: -949406964326805658
+    second: P2_Melee_Charged_ATK_RUN_19
+  - first:
+      213: 6075638606365974987
+    second: P2_Melee_Charged_ATK_RUN_20
+  - first:
+      213: -764406735544567005
+    second: P2_Melee_Charged_ATK_RUN_21
+  - first:
+      213: -6432159891481322290
+    second: P2_Melee_Charged_ATK_RUN_22
+  - first:
+      213: 6792395307116562128
+    second: P2_Melee_Charged_ATK_RUN_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922b1d5ad459f70e0800000000000000
+      internalID: -2269931526444436951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 191
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9b0142296c84940800000000000000
+      internalID: 5280688894064507325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28352f312aab8b30800000000000000
+      internalID: 4290710129770575914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e250c5c4e6ebee0800000000000000
+      internalID: -1243435172867264877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461c546be6bf61850800000000000000
+      internalID: 6347537177748291940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 191
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33af782252e916b0800000000000000
+      internalID: -5324976241894251718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49319cb065a37fb60800000000000000
+      internalID: 7779751022545146772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 128
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3431040f63abad5d0800000000000000
+      internalID: -3036910253586246845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 130
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb0132563cfafd250800000000000000
+      internalID: 5971684884666847422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef661db931635430800000000000000
+      internalID: 3770464213652631527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c7fe779700af560800000000000000
+      internalID: 7348186263711611916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 129
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f6fffe31525ef60800000000000000
+      internalID: 8062891475437842286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146fdd54aa5e65210800000000000000
+      internalID: 1321496060159194689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 63
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55be5349ebd06780800000000000000
+      internalID: -8691705485920914083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_14
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7bed76dc538c9f30800000000000000
+      internalID: 4583682955515128698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 63
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ffa61d6550d7e30800000000000000
+      internalID: 4502761072879140699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 63
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6192dc224e822b950800000000000000
+      internalID: 6463273375531608342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_17
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36acf1a1149a9810800000000000000
+      internalID: 1772892206776755771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_18
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b73a4126e4eb4600800000000000000
+      internalID: 453707864532989872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fc408656703d2f0800000000000000
+      internalID: -949406964326805658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 3
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1e7145f11015450800000000000000
+      internalID: 6075638606365974987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_21
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b33ffbf184465f0800000000000000
+      internalID: -764406735544567005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_22
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc9db168a06cb6a0800000000000000
+      internalID: -6432159891481322290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_RUN_23
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 3
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d686be4b8f634e50800000000000000
+      internalID: 6792395307116562128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Melee_Charged_ATK_RUN_0: -2269931526444436951
+      P2_Melee_Charged_ATK_RUN_1: 5280688894064507325
+      P2_Melee_Charged_ATK_RUN_10: 7348186263711611916
+      P2_Melee_Charged_ATK_RUN_11: 8062891475437842286
+      P2_Melee_Charged_ATK_RUN_12: 1321496060159194689
+      P2_Melee_Charged_ATK_RUN_13: -8691705485920914083
+      P2_Melee_Charged_ATK_RUN_14: 4583682955515128698
+      P2_Melee_Charged_ATK_RUN_15: 4502761072879140699
+      P2_Melee_Charged_ATK_RUN_16: 6463273375531608342
+      P2_Melee_Charged_ATK_RUN_17: 1772892206776755771
+      P2_Melee_Charged_ATK_RUN_18: 453707864532989872
+      P2_Melee_Charged_ATK_RUN_19: -949406964326805658
+      P2_Melee_Charged_ATK_RUN_2: 4290710129770575914
+      P2_Melee_Charged_ATK_RUN_20: 6075638606365974987
+      P2_Melee_Charged_ATK_RUN_21: -764406735544567005
+      P2_Melee_Charged_ATK_RUN_22: -6432159891481322290
+      P2_Melee_Charged_ATK_RUN_23: 6792395307116562128
+      P2_Melee_Charged_ATK_RUN_3: -1243435172867264877
+      P2_Melee_Charged_ATK_RUN_4: 6347537177748291940
+      P2_Melee_Charged_ATK_RUN_5: -5324976241894251718
+      P2_Melee_Charged_ATK_RUN_6: 7779751022545146772
+      P2_Melee_Charged_ATK_RUN_7: -3036910253586246845
+      P2_Melee_Charged_ATK_RUN_8: 5971684884666847422
+      P2_Melee_Charged_ATK_RUN_9: 3770464213652631527
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

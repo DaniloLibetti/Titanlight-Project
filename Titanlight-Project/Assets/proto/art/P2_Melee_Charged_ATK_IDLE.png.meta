@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 65d4a3a94af89e74a97adf10c9f3ea19
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3034023903476114245
+    second: P2_Melee_Charged_ATK_IDLE_0
+  - first:
+      213: -4349483343602515109
+    second: P2_Melee_Charged_ATK_IDLE_1
+  - first:
+      213: -7131038654110977407
+    second: P2_Melee_Charged_ATK_IDLE_2
+  - first:
+      213: 2300029415992818232
+    second: P2_Melee_Charged_ATK_IDLE_3
+  - first:
+      213: 1129731907430466497
+    second: P2_Melee_Charged_ATK_IDLE_4
+  - first:
+      213: -8391428352042304088
+    second: P2_Melee_Charged_ATK_IDLE_5
+  - first:
+      213: 758709047747522644
+    second: P2_Melee_Charged_ATK_IDLE_6
+  - first:
+      213: 1391257734719439366
+    second: P2_Melee_Charged_ATK_IDLE_7
+  - first:
+      213: 7997918383184906206
+    second: P2_Melee_Charged_ATK_IDLE_8
+  - first:
+      213: 3545802899589967973
+    second: P2_Melee_Charged_ATK_IDLE_9
+  - first:
+      213: -8054484464677673287
+    second: P2_Melee_Charged_ATK_IDLE_10
+  - first:
+      213: -20103679961078126
+    second: P2_Melee_Charged_ATK_IDLE_11
+  - first:
+      213: -6655477797263486768
+    second: P2_Melee_Charged_ATK_IDLE_12
+  - first:
+      213: -4649643341872431569
+    second: P2_Melee_Charged_ATK_IDLE_13
+  - first:
+      213: -5223726149661359234
+    second: P2_Melee_Charged_ATK_IDLE_14
+  - first:
+      213: -4497124604923203509
+    second: P2_Melee_Charged_ATK_IDLE_15
+  - first:
+      213: 4804646797297986496
+    second: P2_Melee_Charged_ATK_IDLE_16
+  - first:
+      213: -5239501525347081967
+    second: P2_Melee_Charged_ATK_IDLE_17
+  - first:
+      213: -1458219166809130501
+    second: P2_Melee_Charged_ATK_IDLE_18
+  - first:
+      213: -8688294143545279198
+    second: P2_Melee_Charged_ATK_IDLE_19
+  - first:
+      213: -8501321196166000934
+    second: P2_Melee_Charged_ATK_IDLE_20
+  - first:
+      213: -7769528678703583410
+    second: P2_Melee_Charged_ATK_IDLE_21
+  - first:
+      213: 3518827059330581362
+    second: P2_Melee_Charged_ATK_IDLE_22
+  - first:
+      213: -7712685386114937573
+    second: P2_Melee_Charged_ATK_IDLE_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc1341b55bf4e5d0800000000000000
+      internalID: -3034023903476114245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 191
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53081c81f783a3c0800000000000000
+      internalID: -4349483343602515109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182b22e3026790d90800000000000000
+      internalID: -7131038654110977407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a733951985bef10800000000000000
+      internalID: 2300029415992818232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c341d92f2d9daf00800000000000000
+      internalID: 1129731907430466497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 191
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad706e9f58ab8b80800000000000000
+      internalID: -8391428352042304088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450bddeebd9778a00800000000000000
+      internalID: 758709047747522644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60287fcd98dbe4310800000000000000
+      internalID: 1391257734719439366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed78d4c05605efe60800000000000000
+      internalID: 7997918383184906206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5603c9163f8353130800000000000000
+      internalID: 3545802899589967973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b62cf9cd09b83090800000000000000
+      internalID: -8054484464677673287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296ed314fc398bff0800000000000000
+      internalID: -20103679961078126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d05c93a43ef2a3a0800000000000000
+      internalID: -6655477797263486768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_13
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 63
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2efe63f306297fb0800000000000000
+      internalID: -4649643341872431569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_14
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73048d4eb89187b0800000000000000
+      internalID: -5223726149661359234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4032e4aff00791c0800000000000000
+      internalID: -4497124604923203509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_16
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 63
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb2a285ec88da240800000000000000
+      internalID: 4804646797297986496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_17
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 63
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111e19d6f1d8947b0800000000000000
+      internalID: -5239501525347081967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_18
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9fcadc46d53cbe0800000000000000
+      internalID: -1458219166809130501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d70ed428afc6780800000000000000
+      internalID: -8688294143545279198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adec60df96d350a80800000000000000
+      internalID: -8501321196166000934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_21
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fa9a9d4d61d2490800000000000000
+      internalID: -7769528678703583410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_22
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 0
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2738e61219265d030800000000000000
+      internalID: 3518827059330581362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Charged_ATK_IDLE_23
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1dc540418907f490800000000000000
+      internalID: -7712685386114937573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Melee_Charged_ATK_IDLE_0: -3034023903476114245
+      P2_Melee_Charged_ATK_IDLE_1: -4349483343602515109
+      P2_Melee_Charged_ATK_IDLE_10: -8054484464677673287
+      P2_Melee_Charged_ATK_IDLE_11: -20103679961078126
+      P2_Melee_Charged_ATK_IDLE_12: -6655477797263486768
+      P2_Melee_Charged_ATK_IDLE_13: -4649643341872431569
+      P2_Melee_Charged_ATK_IDLE_14: -5223726149661359234
+      P2_Melee_Charged_ATK_IDLE_15: -4497124604923203509
+      P2_Melee_Charged_ATK_IDLE_16: 4804646797297986496
+      P2_Melee_Charged_ATK_IDLE_17: -5239501525347081967
+      P2_Melee_Charged_ATK_IDLE_18: -1458219166809130501
+      P2_Melee_Charged_ATK_IDLE_19: -8688294143545279198
+      P2_Melee_Charged_ATK_IDLE_2: -7131038654110977407
+      P2_Melee_Charged_ATK_IDLE_20: -8501321196166000934
+      P2_Melee_Charged_ATK_IDLE_21: -7769528678703583410
+      P2_Melee_Charged_ATK_IDLE_22: 3518827059330581362
+      P2_Melee_Charged_ATK_IDLE_23: -7712685386114937573
+      P2_Melee_Charged_ATK_IDLE_3: 2300029415992818232
+      P2_Melee_Charged_ATK_IDLE_4: 1129731907430466497
+      P2_Melee_Charged_ATK_IDLE_5: -8391428352042304088
+      P2_Melee_Charged_ATK_IDLE_6: 758709047747522644
+      P2_Melee_Charged_ATK_IDLE_7: 1391257734719439366
+      P2_Melee_Charged_ATK_IDLE_8: 7997918383184906206
+      P2_Melee_Charged_ATK_IDLE_9: 3545802899589967973
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: bf83881171b4f30448290f28f0950568
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2330349096962544989
+    second: P2_Gun.Shot_IDLE_0
+  - first:
+      213: 2398125141917458178
+    second: P2_Gun.Shot_IDLE_1
+  - first:
+      213: 2617216879257764213
+    second: P2_Gun.Shot_IDLE_2
+  - first:
+      213: -3173793172030713467
+    second: P2_Gun.Shot_IDLE_3
+  - first:
+      213: 4191096963740156536
+    second: P2_Gun.Shot_IDLE_4
+  - first:
+      213: -1520935604222563280
+    second: P2_Gun.Shot_IDLE_5
+  - first:
+      213: 876243558695791731
+    second: P2_Gun.Shot_IDLE_6
+  - first:
+      213: 1456536228685910436
+    second: P2_Gun.Shot_IDLE_7
+  - first:
+      213: -2781869651784698396
+    second: P2_Gun.Shot_IDLE_8
+  - first:
+      213: -6734233135479906284
+    second: P2_Gun.Shot_IDLE_9
+  - first:
+      213: -5350369757917783544
+    second: P2_Gun.Shot_IDLE_10
+  - first:
+      213: -4138055266449224607
+    second: P2_Gun.Shot_IDLE_11
+  - first:
+      213: 7202230005522083104
+    second: P2_Gun.Shot_IDLE_12
+  - first:
+      213: 322854634710562059
+    second: P2_Gun.Shot_IDLE_13
+  - first:
+      213: -7443387548556831784
+    second: P2_Gun.Shot_IDLE_14
+  - first:
+      213: -6982654588494091051
+    second: P2_Gun.Shot_IDLE_15
+  - first:
+      213: -4242257343851573702
+    second: P2_Gun.Shot_IDLE_16
+  - first:
+      213: -2675746272583922829
+    second: P2_Gun.Shot_IDLE_17
+  - first:
+      213: 4382691950076622705
+    second: P2_Gun.Shot_IDLE_18
+  - first:
+      213: -4327400922130905504
+    second: P2_Gun.Shot_IDLE_19
+  - first:
+      213: -7564685660152288237
+    second: P2_Gun.Shot_IDLE_20
+  - first:
+      213: -2453192015100983111
+    second: P2_Gun.Shot_IDLE_21
+  - first:
+      213: 2920651582742182905
+    second: P2_Gun.Shot_IDLE_22
+  - first:
+      213: 2782930503352195763
+    second: P2_Gun.Shot_IDLE_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa25e0d7dfe8afd0800000000000000
+      internalID: -2330349096962544989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 191
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f5cea5c1ad74120800000000000000
+      internalID: 2398125141917458178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571c05492e8325420800000000000000
+      internalID: 2617216879257764213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5819c8eeceb64f3d0800000000000000
+      internalID: -3173793172030713467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87243feab74c92a30800000000000000
+      internalID: 4191096963740156536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 191
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ce110502d84eae0800000000000000
+      internalID: -1520935604222563280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 127
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c69c4cfda092c00800000000000000
+      internalID: 876243558695791731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 127
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a19f41abf7a63410800000000000000
+      internalID: 1456536228685910436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5fee96a40d469d0800000000000000
+      internalID: -2781869651784698396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_9
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4102e0d84a23b82a0800000000000000
+      internalID: -6734233135479906284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_10
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 127
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a515a7d0bafb5b0800000000000000
+      internalID: -5350369757917783544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_11
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 127
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c0c56d8aca296c0800000000000000
+      internalID: -4138055266449224607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 63
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02dadcde70673f360800000000000000
+      internalID: 7202230005522083104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 63
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05f20864920b7400800000000000000
+      internalID: 322854634710562059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 63
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d354ba1676c3b890800000000000000
+      internalID: -7443387548556831784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 63
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcee8fb5a0a81f90800000000000000
+      internalID: -6982654588494091051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_16
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 63
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e4fe51c697025c0800000000000000
+      internalID: -4242257343851573702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 63
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b4f8911f6dddad0800000000000000
+      internalID: -2675746272583922829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_18
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177f74cab1372dc30800000000000000
+      internalID: 4382691950076622705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06680b3f9cbf1f3c0800000000000000
+      internalID: -4327400922130905504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ca125b876d40790800000000000000
+      internalID: -7564685660152288237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_21
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8c41e1cd284fdd0800000000000000
+      internalID: -2453192015100983111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_22
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbb706e32d388820800000000000000
+      internalID: 2920651582742182905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_IDLE_23
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba18e65c84fe9620800000000000000
+      internalID: 2782930503352195763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Gun.Shot_IDLE_0: -2330349096962544989
+      P2_Gun.Shot_IDLE_1: 2398125141917458178
+      P2_Gun.Shot_IDLE_10: -5350369757917783544
+      P2_Gun.Shot_IDLE_11: -4138055266449224607
+      P2_Gun.Shot_IDLE_12: 7202230005522083104
+      P2_Gun.Shot_IDLE_13: 322854634710562059
+      P2_Gun.Shot_IDLE_14: -7443387548556831784
+      P2_Gun.Shot_IDLE_15: -6982654588494091051
+      P2_Gun.Shot_IDLE_16: -4242257343851573702
+      P2_Gun.Shot_IDLE_17: -2675746272583922829
+      P2_Gun.Shot_IDLE_18: 4382691950076622705
+      P2_Gun.Shot_IDLE_19: -4327400922130905504
+      P2_Gun.Shot_IDLE_2: 2617216879257764213
+      P2_Gun.Shot_IDLE_20: -7564685660152288237
+      P2_Gun.Shot_IDLE_21: -2453192015100983111
+      P2_Gun.Shot_IDLE_22: 2920651582742182905
+      P2_Gun.Shot_IDLE_23: 2782930503352195763
+      P2_Gun.Shot_IDLE_3: -3173793172030713467
+      P2_Gun.Shot_IDLE_4: 4191096963740156536
+      P2_Gun.Shot_IDLE_5: -1520935604222563280
+      P2_Gun.Shot_IDLE_6: 876243558695791731
+      P2_Gun.Shot_IDLE_7: 1456536228685910436
+      P2_Gun.Shot_IDLE_8: -2781869651784698396
+      P2_Gun.Shot_IDLE_9: -6734233135479906284
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

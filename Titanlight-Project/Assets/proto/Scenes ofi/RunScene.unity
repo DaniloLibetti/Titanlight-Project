@@ -2111,7 +2111,7 @@ MonoBehaviour:
   - roomName: normal 04
     roomPrefab: {fileID: 1591430054707244790, guid: cddabf08e6808a6458818227af12192f, type: 3}
     spawnChance: 28
-  playerPrefab: {fileID: 3156739151878723861, guid: 6c5985b9f40f77f4aa8e15ae6efe41ba, type: 3}
+  playerPrefab: {fileID: 3156739151878723861, guid: eb36917307a6afd419dde8e3f51793d9, type: 3}
   customizationCanvas: {fileID: 1859575847}
   slotMoonBox: {fileID: 1381320975}
   slotStartCamera: {fileID: 1381320975}
