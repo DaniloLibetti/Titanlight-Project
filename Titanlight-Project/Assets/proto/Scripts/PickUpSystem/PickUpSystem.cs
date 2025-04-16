@@ -1,10 +1,24 @@
 
+using TMPro;
 using UnityEngine;
 
 public class PickUpSystem : MonoBehaviour
 {
     [SerializeField]
-    private Item itemPicked;
+    private TextMeshProUGUI itemsPickedText;
+
+    private int itemsCount = 0;
+
+    private void Start()
+    {
+        itemsPickedText.text = "Espólios: " + itemsCount;
+    }
+
+    public void AddItem()
+    {
+        itemsCount++;
+        itemsPickedText.text = "Espólios: " + itemsCount;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,8 +26,9 @@ public class PickUpSystem : MonoBehaviour
         if (item != null)
         {
             //int reminder = itemPicked.AddItem
+            AddItem();
             item.DestroyItem();
-            itemPicked.AddItem();
+            
         }
     }
 
