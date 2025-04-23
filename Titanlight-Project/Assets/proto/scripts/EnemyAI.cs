@@ -40,7 +40,9 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        // tenta achar o player na cena
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -55,25 +57,38 @@ public class EnemyAI : MonoBehaviour
 
         homePosition = transform.position;
 
+        // encontra o collider da sala
         int floorDetectLayer = LayerMask.NameToLayer("floordetect");
         Collider2D[] colliders = Physics2D.OverlapPointAll(transform.position);
         foreach (Collider2D col in colliders)
-        {
             if (col.gameObject.layer == floorDetectLayer)
             {
                 roomCollider = col;
                 break;
             }
-        }
         if (roomCollider == null)
             Debug.LogWarning("Nenhum collider da sala encontrado");
     }
 
     void Update()
     {
+        // Se inimigo está stunado, não faz nada
         if (isStunned) return;
 
-        bool playerInRoom = roomCollider != null && roomCollider.OverlapPoint(player.position);
+        // Se perdeu a referência ao player, tenta encontrá-lo de novo
+        if (player == null)
+        {
+            var p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+                player = p.transform;
+            else
+                return; // sem player na cena, sai do Update
+        }
+
+        // Se não temos collider de sala ou player, nada a fazer
+        if (roomCollider == null) return;
+
+        bool playerInRoom = roomCollider.OverlapPoint(player.position);
 
         switch (currentState)
         {
@@ -114,7 +129,6 @@ public class EnemyAI : MonoBehaviour
                 break;
 
             case AIState.Attack:
-                // nada aqui, a coroutine faz o trabalho
                 break;
 
             case AIState.Standby:
@@ -130,7 +144,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    IEnumerator PerformAttack()
+
+
+IEnumerator PerformAttack()
     {
         currentState = AIState.Attack;
         spriteRenderer.color = attackColor;

@@ -198,10 +198,18 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     private void StartAuction()
     {
+        // ativa o canvas de leilão (se tiver algum overlay genérico)
         if (auctionCanvas != null)
             auctionCanvas.SetActive(true);
+
+        // move a câmera para o slot de leilão
         if (slotAuction != null)
             _mainCamera.transform.position = slotAuction.position + Vector3.back * 10f;
+
+        // AQUI mostramos o RunSummary na hora
+        var summary = FindObjectOfType<RunSummary>();
+        if (summary != null)
+            summary.ShowSummary();
     }
 
     /// <summary>
@@ -209,10 +217,14 @@ public class GameManager : Singleton<GameManager>
     /// </summary>
     public void CompleteAuction()
     {
+        // Esconde o canvas de leilão geral (se houver)
         if (auctionCanvas != null)
             auctionCanvas.SetActive(false);
+
+        // Reseta o estado da run e retorna ao MoonBox
         ResetToInitialState();
     }
+
 
     /// <summary>
     /// Reseta o estado do jogo:

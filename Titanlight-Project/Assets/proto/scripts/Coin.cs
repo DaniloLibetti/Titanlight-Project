@@ -5,10 +5,8 @@ public class Coin : MonoBehaviour
     [Header("Configurações da Moeda")]
     [Tooltip("Valor que essa moeda representa")]
     public int value = 1;
-
     [Tooltip("Distância para iniciar a atração do jogador")]
     public float pickupRange = 2f;
-
     [Tooltip("Velocidade com que a moeda se move em direção ao jogador")]
     public float attractionSpeed = 5f;
 
@@ -17,7 +15,6 @@ public class Coin : MonoBehaviour
 
     void Start()
     {
-        // Procura o jogador utilizando a tag "Player"
         playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (playerTransform == null)
             Debug.LogWarning("Player não encontrado para atrair a moeda!");
@@ -29,9 +26,7 @@ public class Coin : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, playerTransform.position);
             if (distance <= pickupRange)
-            {
                 isAttracting = true;
-            }
         }
 
         if (isAttracting && playerTransform != null)
@@ -44,11 +39,10 @@ public class Coin : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Debug.Log("Moeda colidiu com o Player!");
+            // Registra no GameManager para CoinCount atualizar
             if (GameManager.Instance != null)
-            {
                 GameManager.Instance.RegisterCoin(value);
-            }
+
             Destroy(gameObject);
         }
     }

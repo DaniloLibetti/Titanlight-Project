@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-// Se for reiniciar a cena ao final, descomente a linha abaixo
-// using UnityEngine.SceneManagement;
 
 public class RunSummary : MonoBehaviour
 {
@@ -18,13 +16,11 @@ public class RunSummary : MonoBehaviour
     public Button optionHighButton;
     public Button optionNeutralButton;
     public Button optionLowButton;
-
     public TextMeshProUGUI optionHighText;
     public TextMeshProUGUI optionNeutralText;
     public TextMeshProUGUI optionLowText;
-
-    [Tooltip("Canvas do leilão (resumo da run)")]
-    public GameObject summaryCanvas;
+    [Tooltip("Painel que contém os botões e textos de oferta")]
+    public GameObject summaryCanvas;    // mantenha desativado no Inspector
 
     private int coinCount;
     private int highOffer;
@@ -35,89 +31,77 @@ public class RunSummary : MonoBehaviour
 
     void Awake()
     {
+        // Garante que o painel comece fechado
+        if (summaryCanvas != null)
+            summaryCanvas.SetActive(false);
+
+        // Liga os botões às funções
         optionHighButton.onClick.AddListener(SelectHigh);
         optionNeutralButton.onClick.AddListener(SelectNeutral);
         optionLowButton.onClick.AddListener(SelectLow);
     }
 
-    void OnEnable()
-    {
-        CalculateProposals();
-        SetUI();
-    }
-
     /// <summary>
-    /// Exibe o canvas de resumo.
+    /// Exibe o painel de resumo e atualiza os valores.
     /// </summary>
     public void ShowSummary()
     {
-        summaryCanvas.SetActive(true);
+        CalculateProposals();
+        SetUI();
+
+        if (summaryCanvas != null)
+            summaryCanvas.SetActive(true);
     }
 
-    /// <summary>
-    /// Calcula as propostas com base nas moedas acumuladas no PlayerData.
-    /// </summary>
-    void CalculateProposals()
+    private void CalculateProposals()
     {
-        // Pega o total de moedas que o jogador acumulou
-        coinCount = PlayerData.GetMoney();
-        Debug.Log($"[RunSummary] coinCount obtido: {coinCount}");
+        // Pega quantas moedas foram coletadas nesta run
+        coinCount = GameManager.Instance.CoinCount;
 
-        // Alta recompensa: moedas * 100
+        // Calcula cada oferta
         highOffer = Mathf.RoundToInt(coinCount * highMultiplier);
-        // Perda de reputação: (highOffer / 5) * 2
         highReputationChange = -Mathf.RoundToInt((highOffer / 5f) * 2f);
 
-        // Baixa recompensa: moedas * 60
-        lowOffer = Mathf.RoundToInt(coinCount * lowMultiplier);
-        // Ganho de reputação: (lowOffer / 3) * 2
-        lowReputationChange = Mathf.RoundToInt((lowOffer / 3f) * 2f);
-
-        // Oferta neutra: moedas * 80, sem reputação
         neutralOffer = Mathf.RoundToInt(coinCount * neutralMultiplier);
+
+        lowOffer = Mathf.RoundToInt(coinCount * lowMultiplier);
+        lowReputationChange = Mathf.RoundToInt((lowOffer / 3f) * 2f);
     }
 
-    /// <summary>
-    /// Atualiza os textos dos botões com valores calculados.
-    /// </summary>
-    void SetUI()
+    private void SetUI()
     {
-        optionHighText.text = $"Receber {highOffer} moedas ({highReputationChange} Rep)";
-        optionNeutralText.text = $"Receber {neutralOffer} moedas (Neutro)";
-        optionLowText.text = $"Receber {lowOffer} moedas (+{lowReputationChange} Rep)";
+        // Formata com sinal + ou –
+        optionHighText.text = $"Oferta: {highOffer}\nReputação: {highReputationChange:+#;-#;0}";
+        optionNeutralText.text = $"Oferta: {neutralOffer}\nReputação: +0";
+        optionLowText.text = $"Oferta: {lowOffer}\nReputação: {lowReputationChange:+#;-#;0}";
     }
 
-    void SelectHigh()
+    private void SelectHigh()
     {
         PlayerData.AddMoney(highOffer);
         PlayerData.ChangeReputation(highReputationChange);
         EndRun();
     }
 
-    void SelectNeutral()
+    private void SelectNeutral()
     {
         PlayerData.AddMoney(neutralOffer);
         EndRun();
     }
 
-    void SelectLow()
+    private void SelectLow()
     {
         PlayerData.AddMoney(lowOffer);
         PlayerData.ChangeReputation(lowReputationChange);
         EndRun();
     }
 
-    /// <summary>
-    /// Finaliza a run: esconde o canvas e retorna ao estado inicial.
-    /// </summary>
     public void EndRun()
     {
         if (summaryCanvas != null)
             summaryCanvas.SetActive(false);
 
-        Debug.Log("Run encerrada. Proposta escolhida aplicada.");
-
-        // Se quiser recarregar a cena inicial da run, descomente:
-        // SceneManager.LoadScene("NomeDaCenaInicial");
+        // chama o CompleteAuction que agora reseta para o MoonBox
+        GameManager.Instance.CompleteAuction();
     }
 }
