@@ -1,40 +1,52 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     private Vector2 direction;
     private float speed;
     private LayerMask collisionLayers;
-    private PlayerController playerController;
 
-    // Campo para multiplicador de dano
+    // Multiplicador de dano
     public float damageMultiplier = 1f;
 
-    // Tempo de vida configur�vel para cada prefab
+    // Tempo de vida configurável no prefab
     [SerializeField] private float lifetime = 0.5f;
 
+    /// <summary>
+    /// Overload para manter compatibilidade com
+    /// PlayerController.Initialize(..., controller)
+    /// </summary>
     public void Initialize(Vector2 newDirection, float newSpeed, LayerMask layers, PlayerController controller)
+    {
+        Initialize(newDirection, newSpeed, layers);
+    }
+
+    /// <summary>
+    /// Inicializa direção, velocidade e camadas de colisão.
+    /// </summary>
+    public void Initialize(Vector2 newDirection, float newSpeed, LayerMask layers)
     {
         direction = newDirection.normalized;
         speed = newSpeed;
         collisionLayers = layers;
-        playerController = controller;
         RotateProjectile();
     }
 
     void Start()
     {
-        // Destroi o proj�til ap�s o tempo definido no prefab
+        // Destroi o projétil após 'lifetime' segundos
         Destroy(gameObject, lifetime);
     }
 
     void Update()
     {
+        // Move o projétil
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-    void RotateProjectile()
+    private void RotateProjectile()
     {
+        // Ajusta a rota��o para a direção do movimento
         if (direction != Vector2.zero)
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -44,27 +56,17 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Verifica se colidiu com uma layer válida
         if ((collisionLayers.value & (1 << other.gameObject.layer)) != 0)
         {
             if (other.CompareTag("Enemy"))
             {
-                Health health = other.GetComponent<Health>();
+                var health = other.GetComponent<Health>();
                 if (health != null)
-                {
-                    // Aplica o dano base multiplicado pelo damageMultiplier
                     health.TakeDamage(10 * damageMultiplier);
-                }
             }
-            DestroyProjectile();
+            // Destroi o projétil imediatamente
+            Destroy(gameObject);
         }
-    }
-
-    void DestroyProjectile()
-    {
-        if (playerController != null)
-        {
-            playerController.ProjectileDestroyed();
-        }
-        Destroy(gameObject);
     }
 }

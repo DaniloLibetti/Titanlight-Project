@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2153313099290992887}
   - component: {fileID: 5959906539815808214}
   - component: {fileID: 4148346801053061497}
-  - component: {fileID: 3338327904106004791}
-  - component: {fileID: 3197593980329877281}
   - component: {fileID: 4926012572293533425}
   - component: {fileID: 8690328119778389521}
+  - component: {fileID: 1084674615185830077}
+  - component: {fileID: 4426126718819554260}
   m_Layer: 9
   m_Name: player (A)
   m_TagString: Player
@@ -35,8 +35,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2807867361594665837}
   - {fileID: 191803062542819557}
+  - {fileID: 2807867361594665837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5959906539815808214
@@ -81,21 +81,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3156739151878723861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80dc8e8b8a4d97240a627b96b159a7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5959906539815808214}
   moveSpeed: 2
-  acceleration: 10
-  deceleration: 15
+  acceleration: 20
+  deceleration: 20
   isStunned: 0
   chargingSpeedMultiplier: 0.5
   machineGunSpeedMultiplier: 0.5
-  dashSpeed: 12
-  dashDuration: 0.1
-  dashCooldown: 0.5
+  dashSpeed: 4
+  dashDuration: 0.4
+  dashCooldown: 1
   dashDamage: 30
   dashAttackRadius: 0.1
   obstacleLayer:
@@ -145,36 +145,6 @@ MonoBehaviour:
   dashKey: 32
   switchModeKey: 113
   attackMode: 0
---- !u!114 &3338327904106004791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156739151878723861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20011078f6eab264384818ec2011291b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3197593980329877281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156739151878723861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e95801743d9d0cd4fb720eea2d978a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthSlider: {fileID: 0}
-  dashSlider: {fileID: 0}
-  chargeSlider: {fileID: 0}
-  heatSlider: {fileID: 0}
-  coinText: {fileID: 0}
-  playerController: {fileID: 4148346801053061497}
 --- !u!50 &4926012572293533425
 Rigidbody2D:
   serializedVersion: 5
@@ -239,6 +209,63 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.19620013}
   m_Size: {x: 0.18778685, y: 0.39240026}
   m_Direction: 0
+--- !u!114 &1084674615185830077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156739151878723861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7c38cd4880ff54285465e3b252ee12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeKey: 111
+  shotgunKey: 107
+  machineGunKey: 109
+  dashKey: 32
+  switchModeKey: 113
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  attackCombos:
+  - {fileID: 11400000, guid: dc38b6682535c3f49a669c58e9e22dbc, type: 2}
+  config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
+  moveInput: {x: 0, y: 0}
+  lastDirection: {x: 1, y: 0}
+  canDash: 1
+  currentSmoothVelocity: {x: 0, y: 0}
+--- !u!114 &4426126718819554260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156739151878723861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: bcb6379c9ae2fad41a542f161df67170, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player 1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4260499236814555331
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,91 +8,87 @@ public class PlayerController : MonoBehaviour
     // Configurações Gerais e Movimento
     // ============================
     [Header("Vida")]
-    [SerializeField] private Health health; // Componente de vida do player
+    [SerializeField] private Health health;
 
     [Header("Movimentação")]
-    [SerializeField] private float moveSpeed = 5f; // Velocidade máxima do movimento
-    [SerializeField] private float acceleration = 10f;   // Quanto menor o valor, mais rápido acelera
-    [SerializeField] private float deceleration = 15f;   // Quanto menor o valor, mais rápido desacelera
-    private Vector2 currentSmoothVelocity;               // Auxiliar para o SmoothDamp
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float acceleration = 10f;
+    [SerializeField] private float deceleration = 15f;
+    private Vector2 currentSmoothVelocity;
     public bool isStunned = false;
 
     [Header("Ajustes de Velocidade")]
-    [SerializeField] private float chargingSpeedMultiplier = 0.5f;   // Multiplicador de velocidade durante o carregamento
-    [SerializeField] private float machineGunSpeedMultiplier = 0.7f; // Multiplicador de velocidade durante disparo da metralhadora
+    [SerializeField] private float chargingSpeedMultiplier = 0.5f;
+    [SerializeField] private float machineGunSpeedMultiplier = 0.7f;
 
     [Header("Dash")]
-    [SerializeField] private float dashSpeed = 15f; // Velocidade do dash
-    [SerializeField] private float dashDuration = 0.2f; // Tempo do dash
-    [SerializeField] private float dashCooldown = 0.5f; // Tempo para recarregar o dash
-    [SerializeField] private float dashDamage = 15f; // Dano causado pelo dash
-    [SerializeField] private float dashAttackRadius = 0.7f; // Área do dash
-    private float dashTimer = 0f; // Cronômetro para o cooldown do dash
+    [SerializeField] private float dashSpeed = 15f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 0.5f;
+    [SerializeField] private float dashDamage = 15f;
+    [SerializeField] private float dashAttackRadius = 0.7f;
+    private float dashTimer = 0f;
+    private bool isDashing = false;
+    private bool canDash = true;
 
     [Header("Obstáculos")]
-    [SerializeField] private LayerMask obstacleLayer; // Layer dos obstáculos
+    [SerializeField] private LayerMask obstacleLayer;
 
     [Header("Componentes")]
-    [SerializeField] private Rigidbody2D rb; // Rigidbody do player
-    [SerializeField] private Animator animator; // Animator do player
-    [SerializeField] private SpriteRenderer spriteRenderer; // SpriteRenderer do player
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     // ============================
     // Ataque Corpo a Corpo (Melee)
     // ============================
     [Header("Ataque Melee")]
-    [SerializeField] private float attackDistance = 1f; // Distância do ataque melee
-    [SerializeField] private float attackRadius = 0.5f; // Área do ataque melee
-    [SerializeField] private float attackDamage = 10f; // Dano do ataque melee
-    [SerializeField] private float attackCooldown = 0.5f; // Tempo para recarregar o ataque melee
-    [SerializeField] private LayerMask enemyLayer; // Layer dos inimigos
+    [SerializeField] private float attackDistance = 1f;
+    [SerializeField] private float attackRadius = 0.5f;
+    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private LayerMask enemyLayer;
 
     // ============================
     // Ataques a Distância
     // ============================
     [Header("Ataques a Distância - Geral")]
-    [SerializeField] private Transform shootPoint; // Ponto de onde sai o tiro
-    [SerializeField] private float shootPointDistance = 0.5f; // Distância do ponto de tiro
-    [SerializeField] private LayerMask collisionLayers; // Layers com que o tiro colide
-    [SerializeField] private float projectileSpeed = 25f; // Velocidade dos projéteis
-    [SerializeField] private float projectileLifetime = 0.5f; // Tempo de vida padrão dos projéteis
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private float shootPointDistance = 0.5f;
+    [SerializeField] private LayerMask collisionLayers;
+    [SerializeField] private float projectileSpeed = 25f;
+    [SerializeField] private float projectileLifetime = 0.5f;
 
-    // ----- Arma Comum -----
-    [Header("Ataques a Distância - Arma Comum")]
-    [SerializeField] private GameObject normalBulletPrefab; // Prefab do tiro normal
-    [SerializeField] private KeyCode attackKey = KeyCode.O;      // Tecla para tiro normal (carregável)
-    [SerializeField] private float normalCooldown = 0.5f; // Tempo para recarregar o tiro normal
+    [Header("Arma Comum")]
+    [SerializeField] private GameObject normalBulletPrefab;
+    [SerializeField] private KeyCode attackKey = KeyCode.O;
+    [SerializeField] private float normalCooldown = 0.5f;
 
-    // ----- Shotgun -----
-    [Header("Ataques a Distância - Shotgun")]
-    [SerializeField] private GameObject shotgunBulletPrefab; // Prefab do tiro shotgun
-    [SerializeField] private KeyCode shotgunKey = KeyCode.K;       // Tecla para tiro shotgun (carregável)
-    [SerializeField] private float shotgunCooldown = 0.7f; // Tempo para recarregar o tiro shotgun
-    [SerializeField] private int shotgunPelletCount = 6; // Quantidade base de projéteis da shotgun
-    [SerializeField] private float shotgunSpreadAngle = 45f; // Ângulo base de dispersão da shotgun
-    [SerializeField] private float shotgunRangeMultiplier = 1.0f; // Multiplicador da área do tiro
-    [SerializeField] private int extraPelletsMultiplier = 2;       // Projéteis extras por unidade acima de 1 no multiplicador
-    [SerializeField] private float extraSpreadAngleMultiplier = 10f; // Ângulo extra (graus) por unidade acima de 1
-    [SerializeField] private float baseRecoilForce = 2f;             // Força base de recoil aplicada ao player
+    [Header("Shotgun")]
+    [SerializeField] private GameObject shotgunBulletPrefab;
+    [SerializeField] private KeyCode shotgunKey = KeyCode.K;
+    [SerializeField] private float shotgunCooldown = 0.7f;
+    [SerializeField] private int shotgunPelletCount = 6;
+    [SerializeField] private float shotgunSpreadAngle = 45f;
+    [SerializeField] private float shotgunRangeMultiplier = 1.0f;
+    [SerializeField] private int extraPelletsMultiplier = 2;
+    [SerializeField] private float extraSpreadAngleMultiplier = 10f;
+    [SerializeField] private float baseRecoilForce = 2f;
+    [SerializeField] private float minShotgunSpreadAngle = 10f;
+    [SerializeField] private float maxShotgunLifetimeMultiplier = 2f;
 
-    // Novos parâmetros ajustáveis para Shotgun
-    [Header("Ajustes de Shotgun")]
-    [SerializeField] private float minShotgunSpreadAngle = 10f; // Ângulo mínimo de dispersão (ex: 10 graus)
-    [SerializeField] private float maxShotgunLifetimeMultiplier = 2f; // Multiplicador máximo para o tempo de vida do projétil
-
-    // ----- Metralhadora -----
-    [Header("Ataques a Distância - Metralhadora")]
-    [SerializeField] private GameObject machineGunBulletPrefab; // Prefab do tiro metralhadora
-    [SerializeField] private KeyCode machineGunKey = KeyCode.M;    // Tecla para tiro metralhadora (disparo contínuo)
-    [SerializeField] private float machineGunCooldown = 0.2f; // Tempo para recarregar a metralhadora
+    [Header("Metralhadora")]
+    [SerializeField] private GameObject machineGunBulletPrefab;
+    [SerializeField] private KeyCode machineGunKey = KeyCode.M;
+    [SerializeField] private float machineGunCooldown = 0.2f;
 
     // ============================
     // Mecânica de Carregamento
     // ============================
     [Header("Mecânica de Carregamento")]
-    [SerializeField] private float maxChargeTime = 2f; // Tempo máximo de carregamento
-    [SerializeField] private float chargeDamageMultiplierMin = 1f; // Multiplicador mínimo de dano carregado
-    [SerializeField] private float chargeDamageMultiplierMax = 3f; // Multiplicador máximo de dano carregado
+    [SerializeField] private float maxChargeTime = 2f;
+    [SerializeField] private float chargeDamageMultiplierMin = 1f;
+    [SerializeField] private float chargeDamageMultiplierMax = 3f;
     private float currentChargeTime = 0f;
     private bool isCharging = false;
 
@@ -100,50 +96,37 @@ public class PlayerController : MonoBehaviour
     // Sistema de Aquecimento
     // ============================
     [Header("Sistema de Aquecimento")]
-    [SerializeField] private float maxHeat = 100f;             // Calor máximo da arma
-    [SerializeField] private float heatIncreaseRate = 20f;       // Taxa de aumento do calor (por segundo) enquanto atira
-    [SerializeField] private float heatDecreaseRate = 15f;       // Taxa de diminuição do calor (por segundo) quando não atira
-    [SerializeField] private float overheatCooldownThreshold = 20f; // Valor mínimo de calor para liberar a arma após superaquecimento
+    [SerializeField] private float maxHeat = 100f;
+    [SerializeField] private float heatIncreaseRate = 20f;
+    [SerializeField] private float heatDecreaseRate = 15f;
+    [SerializeField] private float overheatCooldownThreshold = 20f;
     private float currentHeat = 0f;
     private bool overheated = false;
-
-    // Propriedade pública para UI (calor normalizado entre 0 e 1)
-    public float HeatProgress { get { return currentHeat / maxHeat; } }
+    public float HeatProgress => currentHeat / maxHeat;
 
     // ============================
-    // Controles Gerais e Configuração de Modo de Ataque
+    // Controles Gerais
     // ============================
     [Header("Controles Gerais")]
-    [SerializeField] private KeyCode dashKey = KeyCode.Space; // Tecla do dash
-    [SerializeField] private KeyCode switchModeKey = KeyCode.Q; // Tecla para trocar modo de ataque
+    [SerializeField] private KeyCode dashKey = KeyCode.Space;
+    [SerializeField] private KeyCode switchModeKey = KeyCode.Q;
 
-    private bool isDashing = false;
-    private bool canDash = true;
     private bool canAttack = true;
-    private bool isAttacking = false;
     private Vector2 moveInput;
-    private Vector2 lastDirection = Vector2.right; // Direção inicial para a direita
+    private Vector2 lastDirection = Vector2.right;
 
     private enum AttackMode { Melee, Ranged }
-    [SerializeField] private AttackMode attackMode = AttackMode.Melee; // Modo inicial: melee
+    [SerializeField] private AttackMode attackMode = AttackMode.Melee;
 
     private enum RangedAttackType { Normal, Shotgun, MachineGun }
     private RangedAttackType currentRangedAttackType = RangedAttackType.Normal;
 
-    // Propriedades públicas para a UI dos outros sistemas
-    public float DashProgress { get { return canDash ? 1f : 1f - (dashTimer / dashCooldown); } }
-    public float ChargeProgress { get { return isCharging ? (currentChargeTime / maxChargeTime) : 0f; } }
-
-    // PROPRIEDADES PÚBLICAS PARA CONTROLE EXTERNO:
-    // Permite que outros scripts verifiquem se o jogador está dashing e se pode controlar o movimento.
-    public bool IsDashing { get { return isDashing; } }
+    public float DashProgress => canDash ? 1f : 1f - (dashTimer / dashCooldown);
+    public float ChargeProgress => isCharging ? (currentChargeTime / maxChargeTime) : 0f;
+    public bool IsDashing => isDashing;
     public bool CanMove { get; set; } = true;
-    // NOVA PROPRIEDADE: Armazena a última posição final do dash
     public Vector3 LastDashPosition { get; private set; } = Vector3.zero;
 
-    // ============================
-    // Métodos do Ciclo de Vida e Movimento
-    // ============================
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
@@ -151,15 +134,12 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 0;
         if (animator == null) animator = GetComponentInChildren<Animator>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
-
-        if (health == null)
-            health = GetComponent<Health>();
+        if (health == null) health = GetComponent<Health>();
     }
 
     void Update()
     {
-        // Se estiver atordoado, o jogador não se movimenta
-        if (isStunned)
+        if (isStunned || !CanMove)
         {
             rb.linearVelocity = Vector2.zero;
             UpdateAnimations();
@@ -168,17 +148,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Se o movimento estiver bloqueado (por exemplo, durante uma queda), ignora input de movimento
-        if (!CanMove)
-        {
-            rb.linearVelocity = Vector2.zero;
-            UpdateAnimations();
-            UpdateShootPointDirection();
-            UpdateHeat();
-            return;
-        }
-
-        // Gerenciamento do cooldown do dash
         if (!canDash)
         {
             dashTimer -= Time.deltaTime;
@@ -189,7 +158,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Se estiver dashing, atualiza animações, direção e calor, mas não processa outros inputs
         if (isDashing)
         {
             UpdateAnimations();
@@ -201,59 +169,12 @@ public class PlayerController : MonoBehaviour
         GetMovementInput();
 
         if (Input.GetKeyDown(switchModeKey))
-        {
             ToggleAttackMode();
-        }
 
-        if (attackMode == AttackMode.Melee)
-        {
-            if (Input.GetKeyDown(attackKey) && canAttack)
-            {
-                StartCoroutine(MeleeAttack());
-            }
-        }
-        else if (attackMode == AttackMode.Ranged && canAttack)
-        {
-            // Tiros carregados para Normal e Shotgun
-            if (Input.GetKeyDown(attackKey))
-            {
-                isCharging = true;
-                currentChargeTime = 0f;
-                currentRangedAttackType = RangedAttackType.Normal;
-            }
-            if (Input.GetKeyDown(shotgunKey))
-            {
-                isCharging = true;
-                currentChargeTime = 0f;
-                currentRangedAttackType = RangedAttackType.Shotgun;
-            }
-            if (isCharging && (Input.GetKey(attackKey) || Input.GetKey(shotgunKey)))
-            {
-                currentChargeTime += Time.deltaTime;
-                currentChargeTime = Mathf.Min(currentChargeTime, maxChargeTime);
-            }
-            if (isCharging && (Input.GetKeyUp(attackKey) || Input.GetKeyUp(shotgunKey)))
-            {
-                float multiplier = Mathf.Lerp(chargeDamageMultiplierMin, chargeDamageMultiplierMax, currentChargeTime / maxChargeTime);
-                StartCoroutine(RangedAttackCharged(multiplier));
-                isCharging = false;
-                currentChargeTime = 0f;
-            }
-            // Disparo contínuo da Metralhadora
-            if (Input.GetKey(machineGunKey))
-            {
-                currentRangedAttackType = RangedAttackType.MachineGun;
-                if (!overheated && canAttack)
-                {
-                    StartCoroutine(RangedAttack());
-                }
-            }
-        }
+        HandleAttacks();
 
         if (Input.GetKeyDown(dashKey) && canDash && lastDirection != Vector2.zero)
-        {
             StartCoroutine(Dash());
-        }
 
         UpdateAnimations();
         UpdateShootPointDirection();
@@ -263,260 +184,230 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (!isDashing && !isStunned && CanMove)
-        {
             MoveCharacter();
-        }
     }
 
     void ToggleAttackMode()
     {
         attackMode = attackMode == AttackMode.Melee ? AttackMode.Ranged : AttackMode.Melee;
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = (attackMode == AttackMode.Ranged) ? Color.green : Color.white;
-        }
-        Debug.Log($"Modo de Ataque: {attackMode}");
+        spriteRenderer.color = (attackMode == AttackMode.Ranged) ? Color.green : Color.white;
     }
 
     void GetMovementInput()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        moveInput = new Vector2(horizontal, vertical).normalized;
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (moveInput != Vector2.zero)
-        {
             lastDirection = moveInput;
+    }
+
+    void HandleAttacks()
+    {
+        if (!canAttack) return;
+
+        if (attackMode == AttackMode.Melee && Input.GetKeyDown(attackKey))
+            StartCoroutine(MeleeAttack());
+        else if (attackMode == AttackMode.Ranged)
+        {
+            if (Input.GetKeyDown(attackKey) || Input.GetKeyDown(shotgunKey))
+            {
+                isCharging = true;
+                currentChargeTime = 0f;
+                currentRangedAttackType = Input.GetKeyDown(shotgunKey) ? RangedAttackType.Shotgun : RangedAttackType.Normal;
+            }
+
+            if (isCharging && (Input.GetKey(attackKey) || Input.GetKey(shotgunKey)))
+            {
+                currentChargeTime = Mathf.Min(currentChargeTime + Time.deltaTime, maxChargeTime);
+            }
+
+            if (isCharging && (Input.GetKeyUp(attackKey) || Input.GetKeyUp(shotgunKey)))
+            {
+                float mult = Mathf.Lerp(chargeDamageMultiplierMin, chargeDamageMultiplierMax, currentChargeTime / maxChargeTime);
+                StartCoroutine(RangedAttackCharged(mult));
+                isCharging = false;
+            }
+
+            if (Input.GetKey(machineGunKey))
+            {
+                currentRangedAttackType = RangedAttackType.MachineGun;
+                if (!overheated)
+                    StartCoroutine(RangedAttack());
+            }
         }
     }
 
     void UpdateShootPointDirection()
     {
         if (shootPoint != null)
-        {
-            shootPoint.localPosition = lastDirection * shootPointDistance;
-        }
+            shootPoint.localPosition = (Vector3)lastDirection * shootPointDistance;
     }
 
     void MoveCharacter()
     {
-        float speedModifier = 1f;
-        if (isCharging)
-        {
-            speedModifier *= chargingSpeedMultiplier;
-        }
+        float speedMod = 1f;
+        if (isCharging) speedMod *= chargingSpeedMultiplier;
         if (currentRangedAttackType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey))
-        {
-            speedModifier *= machineGunSpeedMultiplier;
-        }
-        Vector2 targetVelocity = moveInput * moveSpeed * speedModifier;
-        float smoothTime = (moveInput.magnitude > 0) ? 1f / acceleration : 1f / deceleration;
-        Vector2 newVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVelocity, ref currentSmoothVelocity, smoothTime);
-        rb.linearVelocity = newVelocity;
+            speedMod *= machineGunSpeedMultiplier;
+
+        Vector2 targetVel = moveInput * moveSpeed * speedMod;
+        float smoothTime = moveInput.magnitude > 0 ? 1f / acceleration : 1f / deceleration;
+        rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVel, ref currentSmoothVelocity, smoothTime);
     }
 
     IEnumerator Dash()
     {
+        // Ativa o bool IsDashing (no Animator, sem trigger)
+        animator.SetBool("IsDashing", true);
         isDashing = true;
         canDash = false;
         dashTimer = dashCooldown;
+
         int originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("Dashing");
 
         float startTime = Time.time;
         Vector2 dashDirection = lastDirection.normalized;
-        HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
+        var hitEnemies = new HashSet<Collider2D>();
 
         while (Time.time < startTime + dashDuration)
         {
             Vector2 displacement = dashDirection * dashSpeed * Time.fixedDeltaTime;
-            Vector2 newPos = rb.position + displacement;
-            RaycastHit2D hit = Physics2D.CircleCast(rb.position, dashAttackRadius, dashDirection, displacement.magnitude, obstacleLayer);
-            if (hit.collider != null)
-            {
+            if (Physics2D.CircleCast(rb.position, dashAttackRadius, dashDirection, displacement.magnitude, obstacleLayer))
                 break;
-            }
-            rb.MovePosition(newPos);
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(rb.position, dashAttackRadius, enemyLayer);
-            foreach (Collider2D enemy in enemies)
-            {
-                if (enemy.isTrigger) continue;
-                if (!hitEnemies.Contains(enemy))
-                {
-                    hitEnemies.Add(enemy);
-                    Health enemyHealth = enemy.GetComponent<Health>();
-                    if (enemyHealth != null)
-                    {
-                        enemyHealth.TakeDamage(dashDamage);
-                    }
-                }
-            }
+
+            rb.MovePosition(rb.position + displacement);
+
+            var enemies = Physics2D.OverlapCircleAll(rb.position, dashAttackRadius, enemyLayer);
+            foreach (var e in enemies)
+                if (!e.isTrigger && hitEnemies.Add(e))
+                    e.GetComponent<Health>()?.TakeDamage(dashDamage);
+
             yield return new WaitForFixedUpdate();
         }
+
         gameObject.layer = originalLayer;
-        // Atualiza a última posição do dash para uso em outros scripts (por exemplo, HoleTrigger)
         LastDashPosition = transform.position;
+
+        // Desativa o dash
         isDashing = false;
+        animator.SetBool("IsDashing", false);
     }
 
     IEnumerator RangedAttack()
     {
-        isAttacking = true;
         canAttack = false;
         animator.SetTrigger("RangedAttack");
         ShootProjectile(machineGunBulletPrefab, lastDirection);
         yield return new WaitForSeconds(machineGunCooldown);
-        isAttacking = false;
         canAttack = true;
     }
 
-    IEnumerator RangedAttackCharged(float damageMultiplier)
+    IEnumerator RangedAttackCharged(float multiplier)
     {
-        isAttacking = true;
         canAttack = false;
         animator.SetTrigger("RangedAttack");
 
-        switch (currentRangedAttackType)
+        if (currentRangedAttackType == RangedAttackType.Normal)
         {
-            case RangedAttackType.Normal:
-                ShootProjectile(normalBulletPrefab, lastDirection, damageMultiplier);
-                yield return new WaitForSeconds(normalCooldown);
-                break;
-            case RangedAttackType.Shotgun:
-                ShootChargedShotgun(damageMultiplier);
-                yield return new WaitForSeconds(shotgunCooldown);
-                break;
-            default:
-                break;
+            ShootProjectile(normalBulletPrefab, lastDirection, multiplier);
+            yield return new WaitForSeconds(normalCooldown);
         }
-        isAttacking = false;
+        else // Shotgun
+        {
+            ShootChargedShotgun(multiplier);
+            yield return new WaitForSeconds(shotgunCooldown);
+        }
+
         canAttack = true;
     }
 
-    void ShootProjectile(GameObject bulletPrefab, Vector2 direction, float damageMultiplier = 1f)
+    void ShootProjectile(GameObject prefab, Vector2 dir, float mult = 1f)
     {
-        if (shootPoint != null && bulletPrefab != null)
+        if (prefab == null || shootPoint == null) return;
+        var proj = Instantiate(prefab, shootPoint.position, Quaternion.identity);
+        if (proj.TryGetComponent<Projectile>(out var script))
         {
-            GameObject projectile = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
-            Projectile projectileScript = projectile.GetComponent<Projectile>();
-            if (projectileScript != null)
-            {
-                projectileScript.Initialize(direction, projectileSpeed, collisionLayers, this);
-                projectileScript.damageMultiplier = damageMultiplier;
-                Destroy(projectile, projectileLifetime);
-            }
+            script.Initialize(dir, projectileSpeed, collisionLayers, this);
+            script.damageMultiplier = mult;
         }
+        Destroy(proj, projectileLifetime);
     }
 
-    void ShootChargedShotgun(float damageMultiplier)
+    void ShootChargedShotgun(float mult)
     {
-        int extraPellets = Mathf.RoundToInt((damageMultiplier - 1f) * extraPelletsMultiplier);
-        int totalPellets = shotgunPelletCount + extraPellets;
-        float t = (damageMultiplier - chargeDamageMultiplierMin) / (chargeDamageMultiplierMax - chargeDamageMultiplierMin);
-        t = Mathf.Clamp01(t);
+        int extra = Mathf.RoundToInt((mult - 1f) * extraPelletsMultiplier);
+        int total = shotgunPelletCount + extra;
+        float t = Mathf.InverseLerp(chargeDamageMultiplierMin, chargeDamageMultiplierMax, mult);
+        float spread = Mathf.Lerp(shotgunSpreadAngle, minShotgunSpreadAngle, t);
+        float lifeMult = Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, t);
+        float life = projectileLifetime * lifeMult;
 
-        float currentShotgunSpreadAngle = Mathf.Lerp(shotgunSpreadAngle, minShotgunSpreadAngle, t);
-        float currentLifetimeMultiplier = Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, t);
-        float currentLifetime = projectileLifetime * currentLifetimeMultiplier;
-
-        float baseAngle = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
-        for (int i = 0; i < totalPellets; i++)
+        float baseAng = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
+        for (int i = 0; i < total; i++)
         {
-            float offset = Random.Range(-currentShotgunSpreadAngle, currentShotgunSpreadAngle);
-            float finalAngle = baseAngle + offset;
-            float speedFactor = Random.Range(0.9f, 1.1f);
-            float pelletSpeed = projectileSpeed * speedFactor;
-            Vector2 direction = new Vector2(Mathf.Cos(finalAngle * Mathf.Deg2Rad), Mathf.Sin(finalAngle * Mathf.Deg2Rad)).normalized;
-            Vector2 pelletOrigin = (Vector2)shootPoint.position + lastDirection * Random.Range(-0.1f, 0.1f);
-
-            GameObject projectile = Instantiate(shotgunBulletPrefab, pelletOrigin, Quaternion.identity);
-            Projectile projectileScript = projectile.GetComponent<Projectile>();
-            if (projectileScript != null)
+            float off = Random.Range(-spread, spread);
+            float ang = baseAng + off;
+            Vector2 dir = new Vector2(Mathf.Cos(ang * Mathf.Deg2Rad), Mathf.Sin(ang * Mathf.Deg2Rad)).normalized;
+            var origin = (Vector2)shootPoint.position + lastDirection * Random.Range(-0.1f, 0.1f);
+            var p = Instantiate(shotgunBulletPrefab, origin, Quaternion.identity);
+            if (p.TryGetComponent<Projectile>(out var s))
             {
-                projectileScript.Initialize(direction, pelletSpeed, collisionLayers, this);
-                projectileScript.damageMultiplier = damageMultiplier;
+                s.Initialize(dir, projectileSpeed * Random.Range(0.9f, 1.1f), collisionLayers, this);
+                s.damageMultiplier = mult;
             }
-            Destroy(projectile, currentLifetime);
+            Destroy(p, life);
         }
-        float recoilForce = baseRecoilForce * (damageMultiplier - 1f);
-        rb.AddForce(-lastDirection * recoilForce, ForceMode2D.Impulse);
+        rb.AddForce(-lastDirection * baseRecoilForce * (mult - 1f), ForceMode2D.Impulse);
     }
 
     IEnumerator MeleeAttack()
     {
-        isAttacking = true;
         canAttack = false;
         animator.SetTrigger("Attack");
 
-        Vector2 attackPosition = rb.position + lastDirection * attackDistance;
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPosition, attackRadius, enemyLayer);
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            if (enemy.isTrigger) continue;
-            Health enemyHealth = enemy.GetComponent<Health>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(attackDamage);
-            }
-        }
+        Vector2 pos = rb.position + lastDirection * attackDistance;
+        var hits = Physics2D.OverlapCircleAll(pos, attackRadius, enemyLayer);
+        foreach (var e in hits)
+            if (!e.isTrigger)
+                e.GetComponent<Health>()?.TakeDamage(attackDamage);
+
         yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
         canAttack = true;
     }
 
     void UpdateAnimations()
     {
-        Vector2 animDirection = (moveInput != Vector2.zero) ? moveInput : lastDirection;
+        Vector2 dir = moveInput != Vector2.zero ? moveInput : lastDirection;
         animator.SetBool("IsWalking", moveInput != Vector2.zero);
-        animator.SetFloat("MoveX", animDirection.x);
-        animator.SetFloat("MoveY", animDirection.y);
-    }
-
-    public void ProjectileDestroyed() { }
-
-    public void TakeDamage(float amount)
-    {
-        if (health != null)
-        {
-            health.TakeDamage(amount);
-            Debug.Log("Player took damage: " + amount);
-        }
-        else
-        {
-            Debug.LogWarning("Health component not assigned!");
-        }
+        animator.SetFloat("MoveX", dir.x);
+        animator.SetFloat("MoveY", dir.y);
+        // o bool IsDashing já é atualizado diretamente no Dash()
     }
 
     private void UpdateHeat()
     {
         if (currentRangedAttackType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey) && !overheated)
         {
-            currentHeat += heatIncreaseRate * Time.deltaTime;
+            currentHeat = Mathf.Min(currentHeat + heatIncreaseRate * Time.deltaTime, maxHeat);
             if (currentHeat >= maxHeat)
-            {
-                currentHeat = maxHeat;
                 overheated = true;
-                Debug.Log("Arma superaquecida!");
-            }
         }
         else
         {
-            currentHeat -= heatDecreaseRate * Time.deltaTime;
-            if (currentHeat < 0)
-            {
-                currentHeat = 0;
-            }
+            currentHeat = Mathf.Max(currentHeat - heatDecreaseRate * Time.deltaTime, 0f);
             if (overheated && currentHeat <= overheatCooldownThreshold)
-            {
                 overheated = false;
-                Debug.Log("Arma resfriada, pode atirar novamente!");
-            }
         }
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health?.TakeDamage(amount);
     }
 
     public void Stun(float duration)
     {
-        if (!isStunned)
-            StartCoroutine(StunCoroutine(duration));
+        if (!isStunned) StartCoroutine(StunCoroutine(duration));
     }
 
     private IEnumerator StunCoroutine(float duration)
@@ -534,13 +425,6 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(shootPoint.position, 0.1f);
             Gizmos.DrawLine(transform.position, shootPoint.position);
-        }
-        else
-        {
-            Gizmos.color = Color.cyan;
-            Vector3 defaultPoint = transform.position + new Vector3(lastDirection.x, lastDirection.y, 0f) * shootPointDistance;
-            Gizmos.DrawWireSphere(defaultPoint, 0.1f);
-            Gizmos.DrawLine(transform.position, defaultPoint);
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;  // Adiciona essa linha pra usar o TextMesh Pro
 
-public class PlayerUIController : MonoBehaviour
+/*public class PlayerUIController : MonoBehaviour
 {
     [Header("Elementos de UI (Serão buscados se não atribuídos no inspetor)")]
     [SerializeField] private Slider healthSlider;    // Slider para a vida
@@ -110,3 +110,4 @@ public class PlayerUIController : MonoBehaviour
         }
     }
 }
+*/
