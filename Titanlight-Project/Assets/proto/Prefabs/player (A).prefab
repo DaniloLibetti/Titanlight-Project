@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2153313099290992887}
   - component: {fileID: 5959906539815808214}
-  - component: {fileID: 4148346801053061497}
+  - component: {fileID: 5428558593844269614}
   - component: {fileID: 4926012572293533425}
   - component: {fileID: 8690328119778389521}
   - component: {fileID: 1084674615185830077}
@@ -37,6 +37,7 @@ Transform:
   m_Children:
   - {fileID: 191803062542819557}
   - {fileID: 2807867361594665837}
+  - {fileID: 4173382345048747646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5959906539815808214
@@ -74,77 +75,18 @@ MonoBehaviour:
   onDropMoeda:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4148346801053061497
+--- !u!114 &5428558593844269614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3156739151878723861}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80dc8e8b8a4d97240a627b96b159a7d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e26f77ee6dacbc4fa6d3b55c9955e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 5959906539815808214}
-  moveSpeed: 2
-  acceleration: 20
-  deceleration: 20
-  isStunned: 0
-  chargingSpeedMultiplier: 0.5
-  machineGunSpeedMultiplier: 0.5
-  dashSpeed: 4
-  dashDuration: 0.4
-  dashCooldown: 1
-  dashDamage: 30
-  dashAttackRadius: 0.1
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 384
-  rb: {fileID: 4926012572293533425}
-  animator: {fileID: 6195826825627441337}
-  spriteRenderer: {fileID: 4035355167892541558}
-  attackDistance: 0.22
-  attackRadius: 0.258
-  attackDamage: 10
-  attackCooldown: 0.1
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  shootPoint: {fileID: 2807867361594665837}
-  shootPointDistance: 0.2
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 392
-  projectileSpeed: 6
-  projectileLifetime: 1
-  normalBulletPrefab: {fileID: 6118543610015448874, guid: 7ced92d77d2ae8a4a9d9df0691a514bd, type: 3}
-  attackKey: 111
-  normalCooldown: 0.4
-  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
-  shotgunKey: 107
-  shotgunCooldown: 1
-  shotgunPelletCount: 15
-  shotgunSpreadAngle: 30
-  shotgunRangeMultiplier: 1
-  extraPelletsMultiplier: 2
-  extraSpreadAngleMultiplier: 10
-  baseRecoilForce: 2
-  minShotgunSpreadAngle: 10
-  maxShotgunLifetimeMultiplier: 2
-  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
-  machineGunKey: 109
-  machineGunCooldown: 0.3
-  maxChargeTime: 2
-  chargeDamageMultiplierMin: 1
-  chargeDamageMultiplierMax: 3
-  maxHeat: 100
-  heatIncreaseRate: 20
-  heatDecreaseRate: 15
-  overheatCooldownThreshold: 20
-  dashKey: 32
-  switchModeKey: 113
-  attackMode: 0
 --- !u!50 &4926012572293533425
 Rigidbody2D:
   serializedVersion: 5
@@ -221,21 +163,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7c38cd4880ff54285465e3b252ee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeKey: 111
+  config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
+  invincibleDuration: 2
+  blinkInterval: 0.1
   shotgunKey: 107
   machineGunKey: 109
   dashKey: 32
   switchModeKey: 113
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  attackCombos:
-  - {fileID: 11400000, guid: dc38b6682535c3f49a669c58e9e22dbc, type: 2}
-  config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
+  firePoint: {fileID: 2807867361594665837}
+  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
+  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
+  projectileCollisionLayers:
+    serializedVersion: 2
+    m_Bits: 409
+  extraPelletsMultiplier: 2
+  minShotgunSpreadAngle: 10
+  maxShotgunLifetimeMultiplier: 2
+  baseRecoilForce: 1
+  shotgunCooldown: 0.7
+  machineGunCooldown: 0.2
+  projectileSpeed: 10
+  projectileLifetime: 1
+  shootPointDistance: 0
   moveInput: {x: 0, y: 0}
-  lastDirection: {x: 1, y: 0}
-  canDash: 1
   currentSmoothVelocity: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
+  currentHeat: 0
+  overheated: 0
 --- !u!114 &4426126718819554260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: bcb6379c9ae2fad41a542f161df67170, type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -266,6 +220,74 @@ MonoBehaviour:
   m_DefaultActionMap: Player 1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &3354392806302390262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4173382345048747646}
+  - component: {fileID: 2622405058638750071}
+  m_Layer: 9
+  m_Name: DamageHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4173382345048747646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354392806302390262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2153313099290992887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2622405058638750071
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354392806302390262}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.26177105
 --- !u!1 &4260499236814555331
 GameObject:
   m_ObjectHideFlags: 0

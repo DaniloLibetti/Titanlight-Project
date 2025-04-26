@@ -1,113 +1,129 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;  // Adiciona essa linha pra usar o TextMesh Pro
+using Player.StateMachine;
 
-/*public class PlayerUIController : MonoBehaviour
+/// <summary>
+/// Controla os sliders de UI automaticamente, encontrando os objetos na cena:
+/// - Vida do jogador
+/// - Energia para dash (0 a 100)
+/// - Heat da metralhadora
+/// </summary>
+public class PlayerUIController : MonoBehaviour
 {
-    [Header("Elementos de UI (Serão buscados se não atribuídos no inspetor)")]
-    [SerializeField] private Slider healthSlider;    // Slider para a vida
-    [SerializeField] private Slider dashSlider;      // Slider para o dash (cooldown)
-    [SerializeField] private Slider chargeSlider;    // Slider para o tiro carregado
-    [SerializeField] private Slider heatSlider;      // Slider para o sistema de aquecimento
+    private Slider healthSlider;
+    private Slider dashEnergySlider;
+    private Slider heatSlider;
 
-    [Header("Contador de Moedas")]
-    // Alterei o tipo de Text para TMP_Text para usar o TextMesh Pro
-    [SerializeField] private TMP_Text coinText;
+    private PlayerStateMachine player;
+    private Health playerHealth;
 
-    [Header("Referência ao Player")]
-    [SerializeField] private PlayerController playerController; // Referência ao script do Player
+    private bool lastCanDash;
+    private float dashStartTime;
 
     void Awake()
     {
-        // Busca os sliders se não estiverem atribuídos via inspetor
+        // Encontrar sliders na cena pelo nome
+        var sliders = FindObjectsOfType<Slider>();
+        foreach (var s in sliders)
+        {
+            string lower = s.gameObject.name.ToLower();
+            if (lower.Contains("health"))
+                healthSlider = s;
+            else if (lower.Contains("dash"))
+                dashEnergySlider = s;
+            else if (lower.Contains("heat"))
+                heatSlider = s;
+        }
+
         if (healthSlider == null)
-        {
-            GameObject healthObj = GameObject.Find("HealthSlider");
-            if (healthObj != null)
-                healthSlider = healthObj.GetComponent<Slider>();
-            else
-                Debug.LogWarning("HealthSlider não foi encontrado na cena!");
-        }
-
-        if (dashSlider == null)
-        {
-            GameObject dashObj = GameObject.Find("DashSlider");
-            if (dashObj != null)
-                dashSlider = dashObj.GetComponent<Slider>();
-            else
-                Debug.LogWarning("DashSlider não foi encontrado na cena!");
-        }
-
-        if (chargeSlider == null)
-        {
-            GameObject chargeObj = GameObject.Find("ChargeSlider");
-            if (chargeObj != null)
-                chargeSlider = chargeObj.GetComponent<Slider>();
-            else
-                Debug.LogWarning("ChargeSlider não foi encontrado na cena!");
-        }
-
+            Debug.LogWarning("[UI] Health slider n�o encontrado.");
+        if (dashEnergySlider == null)
+            Debug.LogWarning("[UI] Dash energy slider n�o encontrado.");
         if (heatSlider == null)
-        {
-            GameObject heatObj = GameObject.Find("HeatSlider");
-            if (heatObj != null)
-                heatSlider = heatObj.GetComponent<Slider>();
-            else
-                Debug.LogWarning("HeatSlider não foi encontrado na cena!");
-        }
+            Debug.LogWarning("[UI] Heat slider n�o encontrado.");
 
-        // Busca o contador de moedas se não estiver atribuído via inspetor
-        if (coinText == null)
-        {
-            GameObject coinObj = GameObject.Find("CoinText");
-            if (coinObj != null)
-                coinText = coinObj.GetComponent<TMP_Text>();  // usa TMP_Text
-            else
-                Debug.LogWarning("CoinText não foi encontrado na cena!");
-        }
-
-        if (playerController == null)
-        {
-            playerController = GetComponent<PlayerController>();
-            if (playerController == null)
-                Debug.LogWarning("PlayerController não encontrado no prefab do Player!");
-        }
+        player = PlayerStateMachine.Instance;
+        if (player != null)
+            playerHealth = player.GetComponent<Health>();
     }
 
     void Start()
     {
-        // Configura o valor máximo do slider de vida
-        if (playerController != null && healthSlider != null)
-        {
-            Health h = playerController.GetComponent<Health>();
-            if (h != null)
-                healthSlider.maxValue = h.MaxHealth;
-        }
+        InitializeUI();
     }
 
     void Update()
     {
-        if (playerController != null)
+        // Caso o player seja instanciado depois
+        if (player == null)
         {
-            if (healthSlider != null)
-            {
-                Health h = playerController.GetComponent<Health>();
-                if (h != null)
-                    healthSlider.value = h.CurrentHealth;
-            }
-            if (dashSlider != null)
-                dashSlider.value = playerController.DashProgress;
-            if (chargeSlider != null)
-                chargeSlider.value = playerController.ChargeProgress;
-            if (heatSlider != null)
-                heatSlider.value = playerController.HeatProgress;
+            player = PlayerStateMachine.Instance;
+            if (player != null)
+                playerHealth = player.GetComponent<Health>();
+            else
+                return;
         }
 
-        // Atualiza o contador de moedas usando TextMesh Pro
-        if (coinText != null && GameManager.Instance != null)
+        // Atualiza vida
+        if (healthSlider != null && playerHealth != null)
+            healthSlider.value = playerHealth.CurrentHealth;
+
+        // Atualiza dash energy (0 a 100)
+        if (dashEnergySlider != null)
         {
-            coinText.text = "N₢$" + GameManager.Instance.CoinCount;
+            float dashCd = player.config.dashCooldown;
+            dashEnergySlider.maxValue = 100f;
+
+            // Detecta in�cio do consumo
+            if (lastCanDash && !player.CanDash)
+                dashStartTime = Time.time;
+            lastCanDash = player.CanDash;
+
+            float percent = player.CanDash
+                ? 1f
+                : Mathf.Clamp((Time.time - dashStartTime) / dashCd, 0f, 1f);
+
+            dashEnergySlider.value = percent * 100f;
+        }
+
+        // Atualiza heat
+        if (heatSlider != null)
+        {
+            heatSlider.maxValue = player.config.heatMax;
+            heatSlider.value = player.currentHeat;
+        }
+    }
+
+    /// <summary>
+    /// Inicializa valores m�ximos e estado inicial dos sliders.
+    /// </summary>
+    private void InitializeUI()
+    {
+        if (player == null)
+            player = PlayerStateMachine.Instance;
+        if (player == null)
+            return;
+
+        playerHealth = player.GetComponent<Health>();
+
+        if (healthSlider != null && playerHealth != null)
+        {
+            healthSlider.maxValue = playerHealth.MaxHealth;
+            healthSlider.value = playerHealth.CurrentHealth;
+        }
+
+        if (dashEnergySlider != null)
+        {
+            dashEnergySlider.maxValue = 100f;
+            dashEnergySlider.value = player.CanDash ? 100f : 0f;
+            lastCanDash = player.CanDash;
+            dashStartTime = Time.time - (player.CanDash ? player.config.dashCooldown : 0f);
+        }
+
+        if (heatSlider != null)
+        {
+            heatSlider.maxValue = player.config.heatMax;
+            heatSlider.value = player.currentHeat;
         }
     }
 }
-*/

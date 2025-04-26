@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6727351883274950852}
   - component: {fileID: 5375163663833395546}
   - component: {fileID: 8682271409958267375}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: shotgun bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 4
-  lifetime: 0.3
+  lifetime: 1
 --- !u!58 &5375163663833395546
 CircleCollider2D:
   m_ObjectHideFlags: 0

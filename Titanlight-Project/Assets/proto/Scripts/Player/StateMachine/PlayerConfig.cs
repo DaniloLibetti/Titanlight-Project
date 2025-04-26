@@ -6,6 +6,7 @@ namespace Player.Config
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Player/Config")]
     public class PlayerConfig : ScriptableObject
     {
+
         [Header("Movimento")]
         public float moveSpeed = 5f;
         public float acceleration = 10f;
@@ -15,6 +16,10 @@ namespace Player.Config
         public float dashSpeed = 15f;
         public float dashDuration = 0.2f;
         public float dashCooldown = 1f;
+
+        [Header("Dash Damage Settings")]
+        public float dashHitRadius = 1.0f;
+        public int dashDamage = 10;
 
         [Header("Ataque Corpo a Corpo")]
         public float meleeAttackDistance = 1f;

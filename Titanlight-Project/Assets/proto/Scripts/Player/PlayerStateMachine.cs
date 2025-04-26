@@ -1,107 +1,158 @@
-// File: PlayerStateMachine.cs
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using Player.Config;
-using Player.StateMachine;
 
 namespace Player.StateMachine
 {
+    public enum RangedAttackType { Shotgun, MachineGun }
+
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
     public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
-        [SerializeField] private KeyCode meleeKey = KeyCode.O;
-        [SerializeField] private KeyCode shotgunKey = KeyCode.K;
-        [SerializeField] private KeyCode machineGunKey = KeyCode.M;
-        [SerializeField] private KeyCode dashKey = KeyCode.Space;
-        [SerializeField] private KeyCode switchModeKey = KeyCode.Q;
-
-        [HideInInspector] public Rigidbody2D rb;
-        [HideInInspector] public Animator animator;
-        [HideInInspector] public SpriteRenderer spriteRenderer;
-
-        // Novo: referência ao Input System
-        public PlayerInput playerInput { get; private set; }
-
-        // Novo: campos para uso por estados baseados em PlayerState
-        public PlayerBaseState nextState { get; set; }
-        public bool overrideStateCompletion { get; set; }
-
+        [Header("Config Scriptable")]
         public PlayerConfig config;
 
-        public PlayerBaseState CurrentState { get; private set; }
-        public IdleState IdleState { get; private set; }
-        public MovingState MovingState { get; private set; }
-        public DashState DashState { get; private set; }
-        public AttackState AttackState { get; private set; }
-        public StunnedState StunnedState { get; private set; }
+        [Header("Config Dash")]
+        public bool IsDashing { get; set; }           // usado pelo HoleTrigger
+        public Vector3 LastDashPosition { get; set; } // onde retorna apÃ³s cair
 
-        [HideInInspector] public Vector2 moveInput;
-        [HideInInspector] public Vector2 lastDirection = Vector2.down;
-        [HideInInspector] public bool canDash = true;
-        [HideInInspector] public Vector2 currentSmoothVelocity;
+        [Header("Invincible Settings")]
+        public float invincibleDuration = 2f;
+        public float blinkInterval = 0.1f;
+
+        [Header("Movement & Dash Control")]
+        public bool CanMove { get; private set; } = true;
+        public void SetCanMove(bool v) => CanMove = v;
+
+        public bool CanDash { get; private set; } = true;
+        public void SetCanDash(bool v) => CanDash = v;
+
+        [Header("Input Keys")]
+        public KeyCode shotgunKey = KeyCode.C;
+        public KeyCode machineGunKey = KeyCode.V;
+        public KeyCode dashKey = KeyCode.Space;
+        public KeyCode switchModeKey = KeyCode.Q;
+
+        [Header("References & Prefabs")]
+        public Transform firePoint;
+        public GameObject shotgunBulletPrefab;
+        public GameObject machineGunBulletPrefab;
+        public LayerMask projectileCollisionLayers;
+        public Animator animator { get; private set; }
+        public Rigidbody2D rb { get; private set; }
+
+        [Header("Shotgun Settings")]
+        public int extraPelletsMultiplier = 2;
+        public float minShotgunSpreadAngle = 10f;
+        public float maxShotgunLifetimeMultiplier = 2f;
+        public float baseRecoilForce = 2f;
+
+        [Header("Ranged Cooldowns")]
+        public float shotgunCooldown = 0.7f;
+        public float machineGunCooldown = 0.2f;
+
+        [Header("Shooting")]
+        public float projectileSpeed = 25f;
+        public float projectileLifetime = 0.5f;
+        public float shootPointDistance = 0.5f;
+
+        // Player states
+        public PlayerBaseState IdleState { get; private set; }
+        public PlayerBaseState MovingState { get; private set; }
+        public PlayerBaseState DashState { get; private set; }
+        public PlayerBaseState StunnedState { get; private set; }
+        public PlayerBaseState InvincibleState { get; private set; }
+        public PlayerBaseState CurrentState { get; private set; }
+
+        // Cooldown trackers
+        private float nextShotgunTime = 0f;
+        private float nextMachineGunTime = 0f;
+
+        // Runtime variables
+        public Vector2 moveInput;
+        public Vector2 currentSmoothVelocity;
+        public Vector2 lastDirection = Vector2.right;
+        public float currentHeat;
+        public bool overheated;
+        private bool isRangedMode = false;
+
+        // Remember initial firePoint local position
+        private Vector3 firePointInitialLocalPos;
+
+        // Collider support
+        private Collider2D[] _colliders;
 
         protected override void Awake()
         {
             base.Awake();
-
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            playerInput = GetComponent<PlayerInput>();
-
             if (animator == null)
-                Debug.LogError("Animator não encontrado.");
-            else if (animator.runtimeAnimatorController == null)
-                Debug.LogError("AnimatorController não atribuído.");
+                Debug.LogError("Animator not found in Player children.");
 
-            IdleState = new IdleState();
-            MovingState = new MovingState();
-            DashState = new DashState();
-            AttackState = new AttackState();
-            StunnedState = new StunnedState();
-            SwitchState(IdleState);
+            if (firePoint != null)
+                firePointInitialLocalPos = firePoint.localPosition;
+
+            _colliders = GetComponents<Collider2D>();
+
+            // Initialize states
+            IdleState = new IdleState(this);
+            MovingState = new MovingState(this);
+            DashState = new DashState(this);
+            StunnedState = new StunnedState(this);
+
+            CurrentState = IdleState;
+            CurrentState.EnterState(this);
+
+            // Invincibility state with configurable duration and blink interval
+            InvincibleState = new InvincibleState(this, invincibleDuration, blinkInterval);
         }
 
         void Update()
         {
-            // Se um estado baseado em PlayerState definiu nextState e override, aplica imediatamente
-            if (overrideStateCompletion && nextState != null)
-            {
-                SwitchState((PlayerBaseState)nextState);
-                overrideStateCompletion = false;
-                nextState = null;
-            }
+            // If player is locked (e.g., falling in a hole), skip input and updates
+            if (!CanMove)
+                return;
 
-            // Lê input de movimento tradicional (eixos)
-            moveInput = new Vector2(
-                Input.GetAxisRaw("Horizontal"),
-                Input.GetAxisRaw("Vertical")
-            ).normalized;
+            // Toggle melee/ranged mode
+            if (Input.GetKeyDown(switchModeKey))
+                isRangedMode = !isRangedMode;
+
+            // Movement input
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            moveInput = new Vector2(h, v).normalized;
             if (moveInput != Vector2.zero)
                 lastDirection = moveInput;
 
-            animator.SetFloat("MoveX", lastDirection.x);
-            animator.SetFloat("MoveY", lastDirection.y);
+            // Update firePoint orientation/position
+            UpdateFirePointTransform();
 
-            if (Input.GetKeyDown(switchModeKey))
-                ToggleAttackMode();
-
-            if (Input.GetKeyDown(dashKey) && canDash && lastDirection != Vector2.zero)
-                SwitchState(DashState);
-
-            bool wantMelee = Input.GetKeyDown(meleeKey) && !config.isRangedMode;
-            bool wantRanged = config.isRangedMode &&
-                               (Input.GetKeyDown(meleeKey)
-                                || Input.GetKeyDown(shotgunKey)
-                                || Input.GetKey(machineGunKey));
-            if ((CurrentState == IdleState || CurrentState == MovingState)
-                && (wantMelee || wantRanged))
+            if (isRangedMode)
             {
-                SwitchState(AttackState);
+                if (Input.GetKeyDown(shotgunKey) && Time.time >= nextShotgunTime)
+                {
+                    nextShotgunTime = Time.time + shotgunCooldown;
+                    StartCoroutine(ShotgunAttack());
+                }
+                if (Input.GetKey(machineGunKey) && Time.time >= nextMachineGunTime && !overheated)
+                {
+                    nextMachineGunTime = Time.time + machineGunCooldown;
+                    StartCoroutine(MachineGunAttack());
+                }
             }
 
+            // Dash input
+            if (Input.GetKeyDown(dashKey) && CanDash && lastDirection != Vector2.zero)
+                SwitchState(DashState);
+
+            // Animations based on state
+            UpdateAnimations();
+
+            // State-specific logic & heat management
             CurrentState.UpdateState(this);
+            UpdateHeat();
         }
 
         void FixedUpdate()
@@ -111,29 +162,109 @@ namespace Player.StateMachine
 
         public void SwitchState(PlayerBaseState newState)
         {
-            CurrentState?.ExitState(this);
+            CurrentState.ExitState(this);
             CurrentState = newState;
             CurrentState.EnterState(this);
         }
 
-        private void ToggleAttackMode()
+        // Enable/disable trigger on all colliders
+        public void SetCollidersTrigger(bool trigger)
         {
-            config.isRangedMode = !config.isRangedMode;
-            spriteRenderer.color = config.isRangedMode ? Color.green : Color.white;
+            foreach (var col in _colliders)
+                col.isTrigger = trigger;
         }
 
-        public IEnumerator MeleeAttack()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            // lógica melee
-            yield return new WaitForSeconds(config.meleeCooldown);
-            SwitchState(IdleState);
+            if (!IsDashing) return;
+            if (other.TryGetComponent<Health>(out var h))
+                h.TakeDamage(config.dashDamage);
         }
 
-        public IEnumerator RangedAttack()
+        private void UpdateAnimations()
         {
-            // lógica ranged
-            yield return new WaitForSeconds(config.attackCooldown);
-            SwitchState(IdleState);
+            Vector2 dir = moveInput != Vector2.zero ? moveInput : lastDirection;
+            animator.SetBool("IsWalking", moveInput != Vector2.zero);
+            animator.SetFloat("MoveX", dir.x);
+            animator.SetFloat("MoveY", dir.y);
+        }
+
+        private void UpdateFirePointTransform()
+        {
+            if (firePoint == null) return;
+            float angle = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
+            firePoint.localRotation = Quaternion.Euler(0f, 0f, angle);
+            firePoint.localPosition = new Vector3(
+                lastDirection.x * shootPointDistance,
+                firePointInitialLocalPos.y,
+                firePointInitialLocalPos.z
+            );
+        }
+
+        private IEnumerator ShotgunAttack()
+        {
+            animator.SetTrigger("RangedAttack");
+            ShootShotgun();
+            yield return new WaitForSeconds(shotgunCooldown);
+        }
+
+        private IEnumerator MachineGunAttack()
+        {
+            animator.SetTrigger("RangedAttack");
+            ShootProjectile(machineGunBulletPrefab);
+            yield return new WaitForSeconds(machineGunCooldown);
+        }
+
+        private void ShootProjectile(GameObject prefab)
+        {
+            if (prefab == null || firePoint == null) return;
+            GameObject proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
+            if (proj.TryGetComponent<Projectile>(out var comp))
+            {
+                comp.Initialize(firePoint.right, projectileSpeed, projectileCollisionLayers);
+                comp.damageMultiplier = 1f;
+            }
+            Destroy(proj, projectileLifetime);
+        }
+
+        private void ShootShotgun()
+        {
+            float t = 1f;
+            int extra = Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
+            int total = config.shotgunPelletCount + extra;
+            float spread = Mathf.Lerp(minShotgunSpreadAngle, config.shotgunSpreadAngle,
+                                       (t - 1f) / (config.chargeMultiplierMax - 1f));
+            float life = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier,
+                                                         (t - 1f) / (config.chargeMultiplierMax - 1f));
+            for (int i = 0; i < total; i++)
+            {
+                float offset = -spread * 0.5f + spread * i / (total - 1);
+                Quaternion rot = firePoint.localRotation * Quaternion.Euler(0, 0, offset);
+                GameObject pellet = Instantiate(shotgunBulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, offset));
+                if (pellet.TryGetComponent<Projectile>(out var comp))
+                {
+                    Vector2 dir = rot * Vector3.right;
+                    comp.Initialize(dir, projectileSpeed, projectileCollisionLayers);
+                    comp.damageMultiplier = t;
+                }
+                Destroy(pellet, life);
+            }
+            rb.AddForce(-lastDirection * baseRecoilForce * (t - 1f), ForceMode2D.Impulse);
+        }
+
+        private void UpdateHeat()
+        {
+            if (isRangedMode && Input.GetKey(machineGunKey) && !overheated)
+            {
+                currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
+                if (currentHeat >= config.heatMax) overheated = true;
+            }
+            else
+            {
+                currentHeat = Mathf.Max(currentHeat - config.heatDecreaseRate * Time.deltaTime, 0f);
+                if (overheated && currentHeat <= config.overheatThreshold)
+                    overheated = false;
+            }
         }
     }
 }

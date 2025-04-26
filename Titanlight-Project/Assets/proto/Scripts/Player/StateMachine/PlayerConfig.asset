@@ -18,18 +18,20 @@ MonoBehaviour:
   dashSpeed: 4
   dashDuration: 0.3
   dashCooldown: 1
+  dashHitRadius: 2
+  dashDamage: 200
   meleeAttackDistance: 1
   meleeAttackRadius: 0.5
   meleeDamage: 10
   meleeCooldown: 0.5
   attackCooldown: 0.5
   isRangedMode: 0
-  normalBulletSpeed: 25
+  normalBulletSpeed: 10
   normalBulletLifetime: 0.5
-  normalAttackCooldown: 0.5
+  normalAttackCooldown: 0.6
   shotgunSpreadAngle: 45
   shotgunPelletCount: 6
-  shotgunCooldown: 0.7
+  shotgunCooldown: 0.8
   machineGunCooldown: 0.2
   heatMax: 100
   heatIncreaseRate: 20

@@ -1,4 +1,3 @@
-// File: StunnedState.cs
 using UnityEngine;
 using System.Collections;
 
@@ -7,6 +6,8 @@ namespace Player.StateMachine
     public class StunnedState : PlayerBaseState
     {
         private float stunTimer;
+
+        public StunnedState(PlayerStateMachine player) : base(player) { }
 
         public override void EnterState(PlayerStateMachine player)
         {
@@ -23,12 +24,12 @@ namespace Player.StateMachine
 
         public override void FixedUpdateState(PlayerStateMachine player)
         {
-            // nada
+            // nada durante stun
         }
 
         public override void ExitState(PlayerStateMachine player)
         {
-            // nada
+            // nada a limpar
         }
     }
 }

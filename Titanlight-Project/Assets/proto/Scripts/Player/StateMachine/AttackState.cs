@@ -1,33 +1,32 @@
-// File: AttackState.cs
 using UnityEngine;
-using System.Collections;
 
 namespace Player.StateMachine
 {
     public class AttackState : PlayerBaseState
     {
+        public AttackState(PlayerStateMachine player) : base(player) { }
+
         public override void EnterState(PlayerStateMachine player)
         {
+            // Opcional: dispara animação de ataque genérica
             player.animator.SetTrigger("Attack");
-            if (player.config.isRangedMode)
-                player.StartCoroutine(player.RangedAttack());
-            else
-                player.StartCoroutine(player.MeleeAttack());
+            // Se quiser, volte direto pro Idle:
+            player.SwitchState(player.IdleState);
         }
 
         public override void UpdateState(PlayerStateMachine player)
         {
-            // troca de estado feita nas coroutines
+            // Nada aqui
         }
 
         public override void FixedUpdateState(PlayerStateMachine player)
         {
-            // nada
+            // Nada aqui
         }
 
         public override void ExitState(PlayerStateMachine player)
         {
-            // nada
+            // Nada aqui
         }
     }
 }
