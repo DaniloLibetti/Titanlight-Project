@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8655c69557089e49abb50e952103e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 3969868880996217109, guid: 5c5f019fb9c0cc64fbc132427fc9b734, type: 3}
-  dropOffset: 1.3
+  dropPrefab: {fileID: 5189710405576629989, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
+  dropAmount: 2
 --- !u!114 &5570169595426810463
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,103 +5,80 @@ using TMPro;
 public class RunSummary : MonoBehaviour
 {
     [Header("Configurações de Run")]
-    [Tooltip("Multiplicador para a oferta de alta recompensa")]
-    public float highMultiplier = 100f;
-    [Tooltip("Multiplicador para a oferta neutra")]
-    public float neutralMultiplier = 80f;
-    [Tooltip("Multiplicador para a oferta de baixa recompensa")]
-    public float lowMultiplier = 60f;
+    public float highMultiplier = 100f; // multiplicador de recompensa alta  
+    public float neutralMultiplier = 80f; // multiplicador neutro  
+    public float lowMultiplier = 60f; // multiplicador de recompensa baixa  
 
     [Header("Componentes da UI")]
-    public Button optionHighButton;
-    public Button optionNeutralButton;
-    public Button optionLowButton;
-    public TextMeshProUGUI optionHighText;
-    public TextMeshProUGUI optionNeutralText;
-    public TextMeshProUGUI optionLowText;
-    [Tooltip("Painel que contém os botões e textos de oferta")]
-    public GameObject summaryCanvas;    // mantenha desativado no Inspector
+    public Button optionHighButton; // botão da oferta alta  
+    public Button optionNeutralButton; // botão da oferta neutra  
+    public Button optionLowButton; // botão da oferta baixa  
+    public TextMeshProUGUI optionHighText; // texto da oferta alta  
+    public TextMeshProUGUI optionNeutralText; // texto da oferta neutra  
+    public TextMeshProUGUI optionLowText; // texto da oferta baixa  
+    public GameObject summaryCanvas; // painel de resumo  
 
-    private int coinCount;
     private int highOffer;
     private int neutralOffer;
     private int lowOffer;
-    private int highReputationChange;
-    private int lowReputationChange;
+    private int highReputationChange; // mudança de reputação (oferta alta)  
+    private int lowReputationChange; // mudança de reputação (oferta baixa)  
 
     void Awake()
     {
-        // Garante que o painel comece fechado
-        if (summaryCanvas != null)
-            summaryCanvas.SetActive(false);
-
-        // Liga os botões às funções
-        optionHighButton.onClick.AddListener(SelectHigh);
-        optionNeutralButton.onClick.AddListener(SelectNeutral);
-        optionLowButton.onClick.AddListener(SelectLow);
+        summaryCanvas?.SetActive(false); // inicia com o painel desativado  
+        optionHighButton.onClick.AddListener(SelectHigh); // vincula botão alta  
+        optionNeutralButton.onClick.AddListener(SelectNeutral); // vincula botão neutro  
+        optionLowButton.onClick.AddListener(SelectLow); // vincula botão baixa  
     }
 
-    /// <summary>
-    /// Exibe o painel de resumo e atualiza os valores.
-    /// </summary>
     public void ShowSummary()
     {
-        CalculateProposals();
-        SetUI();
-
-        if (summaryCanvas != null)
-            summaryCanvas.SetActive(true);
+        CalculateProposals(); // calcula ofertas  
+        SetUI(); // atualiza textos  
+        summaryCanvas?.SetActive(true); // mostra o painel  
     }
 
     private void CalculateProposals()
     {
-        // Pega quantas moedas foram coletadas nesta run
-        coinCount = GameManager.Instance.CoinCount;
-
-        // Calcula cada oferta
-        highOffer = Mathf.RoundToInt(coinCount * highMultiplier);
-        highReputationChange = -Mathf.RoundToInt((highOffer / 5f) * 2f);
-
-        neutralOffer = Mathf.RoundToInt(coinCount * neutralMultiplier);
-
-        lowOffer = Mathf.RoundToInt(coinCount * lowMultiplier);
-        lowReputationChange = Mathf.RoundToInt((lowOffer / 3f) * 2f);
+        int itemCount = GameManager.Instance.ScriptableObjectCount; // pega itens coletados  
+        highOffer = Mathf.RoundToInt(itemCount * highMultiplier); // calcula oferta alta  
+        neutralOffer = Mathf.RoundToInt(itemCount * neutralMultiplier); // oferta neutra  
+        lowOffer = Mathf.RoundToInt(itemCount * lowMultiplier); // oferta baixa  
+        highReputationChange = -Mathf.RoundToInt((highOffer / 5f) * 2f); // penaliza reputação (alta)  
+        lowReputationChange = Mathf.RoundToInt((lowOffer / 3f) * 2f); // aumenta reputação (baixa)  
     }
 
     private void SetUI()
     {
-        // Formata com sinal + ou –
         optionHighText.text = $"Oferta: {highOffer}\nReputação: {highReputationChange:+#;-#;0}";
-        optionNeutralText.text = $"Oferta: {neutralOffer}\nReputação: +0";
+        optionNeutralText.text = $"Oferta: {neutralOffer}\nReputação: +0"; // neutro não altera  
         optionLowText.text = $"Oferta: {lowOffer}\nReputação: {lowReputationChange:+#;-#;0}";
     }
 
     private void SelectHigh()
     {
-        PlayerData.AddMoney(highOffer);
-        PlayerData.ChangeReputation(highReputationChange);
-        EndRun();
+        PlayerData.AddMoney(highOffer); // adiciona dinheiro (alta)  
+        PlayerData.ChangeReputation(highReputationChange); // aplica mudança reputação  
+        EndRun(); // fecha o painel  
     }
 
     private void SelectNeutral()
     {
-        PlayerData.AddMoney(neutralOffer);
+        PlayerData.AddMoney(neutralOffer); // adiciona dinheiro neutro  
         EndRun();
     }
 
     private void SelectLow()
     {
-        PlayerData.AddMoney(lowOffer);
-        PlayerData.ChangeReputation(lowReputationChange);
+        PlayerData.AddMoney(lowOffer); // adiciona dinheiro (baixa)  
+        PlayerData.ChangeReputation(lowReputationChange); // aplica mudança reputação  
         EndRun();
     }
 
     public void EndRun()
     {
-        if (summaryCanvas != null)
-            summaryCanvas.SetActive(false);
-
-        // chama o CompleteAuction que agora reseta para o MoonBox
-        GameManager.Instance.CompleteAuction();
+        summaryCanvas?.SetActive(false); // esconde painel  
+        GameManager.Instance.CompleteAuction(); // finaliza lógica do leilão  
     }
 }

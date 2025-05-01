@@ -1,21 +1,22 @@
-﻿// File: GameManager.cs
+﻿// GameManager.cs
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine.SceneManagement;
 using Player.StateMachine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
     [Header("Grid Parameters")]
     [SerializeField]
     private Vector2Int[] _gridPresets = {
-        new Vector2Int(7, 6),
-        new Vector2Int(6, 5),
-        new Vector2Int(5, 4),
-        new Vector2Int(4, 4),
-        new Vector2Int(4, 3)
+        new Vector2Int(7,6),
+        new Vector2Int(6,5),
+        new Vector2Int(5,4),
+        new Vector2Int(4,4),
+        new Vector2Int(4,3)
     };
     public float roomWidth = 7f;
     public float roomHeight = 3.93f;
@@ -34,6 +35,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Player Settings")]
     public GameObject playerPrefab;
+    private GameObject _currentPlayer;
     private Camera _mainCamera;
     private bool _isTransitioning = false;
     public event Action<Vector2Int> OnRoomChanged;
@@ -54,43 +56,46 @@ public class GameManager : Singleton<GameManager>
     [Header("HUD")]
     public GameObject playerStatusCanvas;
     public GameObject playerOtherCanvas;
+    [Tooltip("Texto que mostra quantos itens foram coletados")]
+    public TextMeshProUGUI itemCountText;
 
     [Header("Auction Settings")]
     public Transform slotAuction;
     public GameObject auctionCanvas;
 
-    private int _coinCount = 0;
-    public int CoinCount => _coinCount;
+    private int _scriptableObjectCount = 0;
+    public int ScriptableObjectCount => _scriptableObjectCount;
 
-    private float shiftHoldTimer = 0f;
+    private float _shiftHoldTimer = 0f;
+    private const float SHIFT_HOLD_DURATION = 2f;
 
     protected override void Awake()
     {
         base.Awake();
         _mainCamera = Camera.main;
-
         customizationCanvas.SetActive(true);
         playerStatusCanvas.SetActive(false);
         playerOtherCanvas.SetActive(false);
         if (auctionCanvas != null) auctionCanvas.SetActive(false);
-
-        _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
+        _scriptableObjectCount = 0;
+        if (itemCountText != null) itemCountText.text = "0";
+        if (slotMoonBox != null)
+            _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
     }
 
     public void StartRun()
     {
         if (!gameObject.activeSelf) gameObject.SetActive(true);
-        _coinCount = 0;
+        _scriptableObjectCount = 0;
+        if (itemCountText != null) itemCountText.text = "0";
         customizationCanvas.SetActive(false);
         playerStatusCanvas.SetActive(true);
         playerOtherCanvas.SetActive(true);
-
         SetupGrid();
         GenerateWorld();
         PairDoors();
         SetCurrentRoom(_initialRoomCoord);
         InstantiatePlayer();
-
         var timer = FindObjectOfType<CountdownTimer>();
         if (timer != null) timer.ResetTimer();
     }
@@ -101,17 +106,14 @@ public class GameManager : Singleton<GameManager>
         _gridOffset = new Vector3(
             -(GridSize.x * roomWidth) / 2f + roomWidth / 2f,
             -(GridSize.y * roomHeight) / 2f + roomHeight / 2f,
-            0
-        );
+            0f);
     }
 
     private void GenerateWorld()
     {
         _initialRoomCoord = new Vector2Int(
             UnityEngine.Random.Range(0, GridSize.x),
-            UnityEngine.Random.Range(0, GridSize.y)
-        );
-
+            UnityEngine.Random.Range(0, GridSize.y));
         float totalChance = CalculateTotalSpawnChance();
         for (int x = 0; x < GridSize.x; x++)
             for (int y = 0; y < GridSize.y; y++)
@@ -120,7 +122,7 @@ public class GameManager : Singleton<GameManager>
 
     private void CreateRoom(Vector2Int coord, float totalChance)
     {
-        Vector3 pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0) + _gridOffset;
+        Vector3 pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0f) + _gridOffset;
         GameObject prefab = coord == _initialRoomCoord ? initialRoomPrefab : SelectRandomRoomPrefab(totalChance);
         Room room = Instantiate(prefab, pos, Quaternion.identity).GetComponent<Room>();
         room.Initialize(coord, roomWidth, roomHeight);
@@ -148,104 +150,87 @@ public class GameManager : Singleton<GameManager>
     private void InstantiatePlayer()
     {
         Room startRoom = GetRoom(_initialRoomCoord);
-        if (startRoom == null)
-        {
-            Debug.LogError("Sala inicial não encontrada!");
-            return;
-        }
-
+        if (startRoom == null) return;
         Vector3 spawnPos = startRoom.GetPlayerSpawnPoint();
-        spawnPos.z = 0;
-        GameObject playerObj = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        spawnPos.z = 0f;
+        _currentPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+        Health health = _currentPlayer.GetComponent<Health>();
+        if (health != null) health.onDeath.AddListener(OnPlayerDeath);
+    }
 
-        var health = playerObj.GetComponent<Health>();
-        if (health != null)
+    private void OnPlayerDeath() => EndRunAndAuction();
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            health.onDeath.AddListener(HandlePlayerDeath);
-            var timer = FindObjectOfType<CountdownTimer>();
-            if (timer != null) health.onDeath.AddListener(() => timer.OnPlayerDeath());
+            _shiftHoldTimer += Time.deltaTime;
+            if (_shiftHoldTimer >= SHIFT_HOLD_DURATION)
+            {
+                EndRunAndAuction();
+                _shiftHoldTimer = 0f;
+            }
         }
+        else _shiftHoldTimer = 0f;
     }
 
-    private void HandlePlayerDeath()
+    private void EndRunAndAuction()
     {
-        StartAuction();
-    }
-
-    private void StartAuction()
-    {
+        if (_currentPlayer != null) Destroy(_currentPlayer);
+        ExitRun();
         if (auctionCanvas != null) auctionCanvas.SetActive(true);
         if (slotAuction != null) _mainCamera.transform.position = slotAuction.position + Vector3.back * 10f;
-        var summary = FindObjectOfType<RunSummary>();
+        RunSummary summary = FindObjectOfType<RunSummary>();
         if (summary != null) summary.ShowSummary();
+    }
+
+    private void ExitRun()
+    {
+        foreach (var r in _rooms.Values) if (r != null) Destroy(r.gameObject);
+        _rooms.Clear();
+        _doors.Clear();
+        CountdownTimer timer = FindObjectOfType<CountdownTimer>();
+        if (timer != null) timer.gameObject.SetActive(false);
+        playerStatusCanvas.SetActive(false);
+        playerOtherCanvas.SetActive(false);
     }
 
     public void CompleteAuction()
     {
         if (auctionCanvas != null) auctionCanvas.SetActive(false);
-        ResetToInitialState();
+        if (slotMoonBox != null) _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
+        customizationCanvas.SetActive(true);
     }
 
-    private void ResetToInitialState()
+    public void RegisterScriptableObject(int amount)
     {
-        ExitRun();
-        if (slotMoonBox != null)
-            _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
-        if (customizationCanvas != null) customizationCanvas.SetActive(true);
+        _scriptableObjectCount += amount;
+        if (itemCountText != null) itemCountText.text = _scriptableObjectCount.ToString();
     }
-
-    public void RegisterDoor(Vector2Int coord, DoorDirection dir)
-    {
-        if (!_doors.ContainsKey(coord))
-            _doors[coord] = new HashSet<DoorDirection>();
-        _doors[coord].Add(dir);
-    }
-
-    public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir)
-        => _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
 
     public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
 
-    public Room GetRoom(Vector2Int coord)
-        => _rooms.TryGetValue(coord, out var r) ? r : null;
-
-    public void SetCurrentRoom(Vector2Int coord)
+    public void RegisterDoor(Vector2Int coord, DoorDirection dir)
     {
-        _currentRoomCoord = coord;
-        OnRoomChanged?.Invoke(coord);
-        foreach (var room in _rooms.Values) room.SetActiveDoors(false);
-        if (_rooms.TryGetValue(coord, out var current))
-            current.SetActiveDoors(true);
-        UpdateCameraPosition();
+        if (!_doors.ContainsKey(coord)) _doors[coord] = new HashSet<DoorDirection>();
+        _doors[coord].Add(dir);
     }
 
-    private void UpdateCameraPosition()
-    {
-        if (_rooms.TryGetValue(_currentRoomCoord, out var room) && room.cameraSlot != null)
-            _mainCamera.transform.position = room.cameraSlot.position + Vector3.back * 10f;
-    }
-
-    public void TryMoveThroughDoor(DoorDirection dir, float dist)
-    {
-        StartCoroutine(TransitionThroughDoor(dir.ToVector(), dist));
-    }
+    public void TryMoveThroughDoor(DoorDirection dir, float dist) => StartCoroutine(TransitionThroughDoor(dir.ToVector(), dist));
 
     private IEnumerator TransitionThroughDoor(Vector2Int dir, float dist)
     {
         if (_isTransitioning) yield break;
         _isTransitioning = true;
-
         if (IsDoorAccessible(_currentRoomCoord, dir.ToDoorDirection()))
         {
-            var col = PlayerStateMachine.Instance.GetComponent<Collider2D>();
-            col.enabled = false;
+            Collider2D col = PlayerStateMachine.Instance.GetComponent<Collider2D>(); col.enabled = false;
             Vector3 start = PlayerStateMachine.Instance.transform.position;
-            Vector3 offset = (Vector3)(Vector2)dir * dist;
+            Vector3 offset = new Vector3(dir.x, dir.y, 0f) * dist;
             Vector3 target = start + offset;
             yield return SmoothTransition(col, start, target);
             SetCurrentRoom(_currentRoomCoord + dir);
         }
-
         _isTransitioning = false;
     }
 
@@ -266,8 +251,8 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (var kv in _rooms)
         {
-            var coord = kv.Key;
-            var room = kv.Value;
+            Vector2Int coord = kv.Key;
+            Room room = kv.Value;
             TryPair(room, coord, DoorDirection.Up, Vector2Int.up, DoorDirection.Down);
             TryPair(room, coord, DoorDirection.Right, Vector2Int.right, DoorDirection.Left);
             TryPair(room, coord, DoorDirection.Down, Vector2Int.down, DoorDirection.Up);
@@ -286,43 +271,29 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void GoToMainMenu()
+    public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir) =>
+        _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
+
+    public void SetCurrentRoom(Vector2Int coord)
     {
-        SceneManager.LoadScene("MainMenu");
+        _currentRoomCoord = coord;
+        OnRoomChanged?.Invoke(coord);
+        foreach (var room in _rooms.Values) room.SetActiveDoors(false);
+        if (_rooms.TryGetValue(coord, out var current)) current.SetActiveDoors(true);
+        UpdateCameraPosition();
     }
 
-    private void ExitRun()
+    private void UpdateCameraPosition()
     {
-        foreach (var r in _rooms.Values)
-            if (r != null) Destroy(r.gameObject);
-        _rooms.Clear();
-        _doors.Clear();
-
-        var timer = FindObjectOfType<CountdownTimer>();
-        if (timer != null) timer.gameObject.SetActive(false);
-
-        _mainCamera.transform.position = slotMoonBox.position + Vector3.back * 10f;
-        playerStatusCanvas.SetActive(false);
-        playerOtherCanvas.SetActive(false);
+        if (_rooms.TryGetValue(_currentRoomCoord, out var room) && room.cameraSlot != null)
+            _mainCamera.transform.position = room.cameraSlot.position + Vector3.back * 10f;
     }
 
-    private void Update()
+    // ADDED missing GetRoom method
+    public Room GetRoom(Vector2Int coord)
     {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            shiftHoldTimer += Time.deltaTime;
-            if (shiftHoldTimer >= 3f)
-            {
-                ExitRun();
-                shiftHoldTimer = 0f;
-            }
-        }
-        else shiftHoldTimer = 0f;
+        return _rooms.TryGetValue(coord, out var room) ? room : null;
     }
 
-    public void RegisterCoin(int amount)
-    {
-        _coinCount += amount;
-        Debug.Log("Moeda coletada. Total: " + _coinCount);
-    }
+    public void GoToMainMenu() => SceneManager.LoadScene("MainMenu");
 }
