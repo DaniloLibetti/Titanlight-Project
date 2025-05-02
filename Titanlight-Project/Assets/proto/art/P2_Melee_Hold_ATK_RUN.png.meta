@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: c9ac944a01ed46d40a3f46b7a41401c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6735347955727633586
+    second: P2_Melee_Hold_ATK_RUN_0
+  - first:
+      213: -1745978216297276789
+    second: P2_Melee_Hold_ATK_RUN_1
+  - first:
+      213: 2232343381260025
+    second: P2_Melee_Hold_ATK_RUN_2
+  - first:
+      213: 2463149834260515691
+    second: P2_Melee_Hold_ATK_RUN_3
+  - first:
+      213: 2256150399240753159
+    second: P2_Melee_Hold_ATK_RUN_4
+  - first:
+      213: 8945562567234611512
+    second: P2_Melee_Hold_ATK_RUN_5
+  - first:
+      213: -417439885997345614
+    second: P2_Melee_Hold_ATK_RUN_6
+  - first:
+      213: 1794541750908233158
+    second: P2_Melee_Hold_ATK_RUN_7
+  - first:
+      213: 7210383721353217751
+    second: P2_Melee_Hold_ATK_RUN_8
+  - first:
+      213: -2745535989529809359
+    second: P2_Melee_Hold_ATK_RUN_9
+  - first:
+      213: 7877272166756169952
+    second: P2_Melee_Hold_ATK_RUN_10
+  - first:
+      213: 3051617853469478375
+    second: P2_Melee_Hold_ATK_RUN_11
+  - first:
+      213: 1308841650365652757
+    second: P2_Melee_Hold_ATK_RUN_12
+  - first:
+      213: 4341724982738590217
+    second: P2_Melee_Hold_ATK_RUN_13
+  - first:
+      213: 1196733925047577281
+    second: P2_Melee_Hold_ATK_RUN_14
+  - first:
+      213: -7256263161962025418
+    second: P2_Melee_Hold_ATK_RUN_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 191
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43733c38bc3782a0800000000000000
+      internalID: -6735347955727633586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 191
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ad708101a05c7e0800000000000000
+      internalID: -1745978216297276789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 191
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6b142fd4ee70000800000000000000
+      internalID: 2232343381260025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b09a359bdde2220800000000000000
+      internalID: 2463149834260515691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 127
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700d992a5d47f4f10800000000000000
+      internalID: 2256150399240753159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_5
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 128
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839ec0062c5052c70800000000000000
+      internalID: 8945562567234611512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 130
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b47c08a2a4f43af0800000000000000
+      internalID: -417439885997345614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_7
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 127
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c52e7de63e77e810800000000000000
+      internalID: 1794541750908233158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 63
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d68485dacd601460800000000000000
+      internalID: 7210383721353217751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 63
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e66026095e5e9d0800000000000000
+      internalID: -2745535989529809359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 63
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8b292dc41b15d60800000000000000
+      internalID: 7877272166756169952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 63
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edc9420546895a20800000000000000
+      internalID: 3051617853469478375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fd745eb80f92210800000000000000
+      internalID: 1308841650365652757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a929c4ed7e04c30800000000000000
+      internalID: 4341724982738590217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_14
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1caae1d0a27ab9010800000000000000
+      internalID: 1196733925047577281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Melee_Hold_ATK_RUN_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e208a79139c4b90800000000000000
+      internalID: -7256263161962025418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Melee_Hold_ATK_RUN_0: -6735347955727633586
+      P2_Melee_Hold_ATK_RUN_1: -1745978216297276789
+      P2_Melee_Hold_ATK_RUN_10: 7877272166756169952
+      P2_Melee_Hold_ATK_RUN_11: 3051617853469478375
+      P2_Melee_Hold_ATK_RUN_12: 1308841650365652757
+      P2_Melee_Hold_ATK_RUN_13: 4341724982738590217
+      P2_Melee_Hold_ATK_RUN_14: 1196733925047577281
+      P2_Melee_Hold_ATK_RUN_15: -7256263161962025418
+      P2_Melee_Hold_ATK_RUN_2: 2232343381260025
+      P2_Melee_Hold_ATK_RUN_3: 2463149834260515691
+      P2_Melee_Hold_ATK_RUN_4: 2256150399240753159
+      P2_Melee_Hold_ATK_RUN_5: 8945562567234611512
+      P2_Melee_Hold_ATK_RUN_6: -417439885997345614
+      P2_Melee_Hold_ATK_RUN_7: 1794541750908233158
+      P2_Melee_Hold_ATK_RUN_8: 7210383721353217751
+      P2_Melee_Hold_ATK_RUN_9: -2745535989529809359
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

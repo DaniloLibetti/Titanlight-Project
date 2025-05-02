@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 1f11a26f34e1c3b41b1ec74a8bb49eaa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6715883878074916629
+    second: P2_Gun.Shot_RUN_0
+  - first:
+      213: 2460191498362470
+    second: P2_Gun.Shot_RUN_1
+  - first:
+      213: -2327265502016528496
+    second: P2_Gun.Shot_RUN_2
+  - first:
+      213: -8755157364907934738
+    second: P2_Gun.Shot_RUN_3
+  - first:
+      213: 432619322627897425
+    second: P2_Gun.Shot_RUN_4
+  - first:
+      213: -4235091181517617410
+    second: P2_Gun.Shot_RUN_5
+  - first:
+      213: -1551660880776553835
+    second: P2_Gun.Shot_RUN_6
+  - first:
+      213: -522993958848506395
+    second: P2_Gun.Shot_RUN_7
+  - first:
+      213: 3835107238262351990
+    second: P2_Gun.Shot_RUN_8
+  - first:
+      213: -3771818596377138166
+    second: P2_Gun.Shot_RUN_9
+  - first:
+      213: -8724036590633945328
+    second: P2_Gun.Shot_RUN_10
+  - first:
+      213: -2812371120328203222
+    second: P2_Gun.Shot_RUN_11
+  - first:
+      213: -4042078220007757499
+    second: P2_Gun.Shot_RUN_12
+  - first:
+      213: 1180623655668120348
+    second: P2_Gun.Shot_RUN_13
+  - first:
+      213: -5692601569229198372
+    second: P2_Gun.Shot_RUN_14
+  - first:
+      213: -5433120545626877101
+    second: P2_Gun.Shot_RUN_15
+  - first:
+      213: -8792356813160633683
+    second: P2_Gun.Shot_RUN_16
+  - first:
+      213: -9117933013637601123
+    second: P2_Gun.Shot_RUN_17
+  - first:
+      213: 8129924346887993018
+    second: P2_Gun.Shot_RUN_18
+  - first:
+      213: -2049566315586632971
+    second: P2_Gun.Shot_RUN_19
+  - first:
+      213: 4730222265531870621
+    second: P2_Gun.Shot_RUN_20
+  - first:
+      213: 6317808371300380860
+    second: P2_Gun.Shot_RUN_21
+  - first:
+      213: 7963544467852439629
+    second: P2_Gun.Shot_RUN_22
+  - first:
+      213: 5516779568254945414
+    second: P2_Gun.Shot_RUN_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f9d690ecc933d50800000000000000
+      internalID: 6715883878074916629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 191
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ed658f78db80000800000000000000
+      internalID: 2460191498362470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f98463b54e3bfd0800000000000000
+      internalID: -2327265502016528496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb740073ce6f7680800000000000000
+      internalID: -8755157364907934738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158b4385bf8f00600800000000000000
+      internalID: 432619322627897425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 191
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6c046420fe935c0800000000000000
+      internalID: -4235091181517617410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a917566a4677ae0800000000000000
+      internalID: -1551660880776553835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 128
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5d82fe3c3fdb8f0800000000000000
+      internalID: -522993958848506395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 130
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6782824c6b9093530800000000000000
+      internalID: 3835107238262351990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_9
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 127
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c6ab578fec7abc0800000000000000
+      internalID: -3771818596377138166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 127
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017f0c751fefde680800000000000000
+      internalID: -8724036590633945328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 127
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24254cdd5378f8d0800000000000000
+      internalID: -2812371120328203222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 63
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54928165647a7e7c0800000000000000
+      internalID: -4042078220007757499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 63
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b7589a5fa626010800000000000000
+      internalID: 1180623655668120348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 63
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb23429801dff0b0800000000000000
+      internalID: -5692601569229198372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 63
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353980056ada994b0800000000000000
+      internalID: -5433120545626877101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_16
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 63
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa2315ff064bf580800000000000000
+      internalID: -8792356813160633683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 63
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d98e254ab38967180800000000000000
+      internalID: -9117933013637601123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_18
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6fe0b8e1b43d070800000000000000
+      internalID: 8129924346887993018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f24ad78b4a7e83e0800000000000000
+      internalID: -2049566315586632971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_20
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 2
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9daba5b61025a140800000000000000
+      internalID: 4730222265531870621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_21
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb039529d3d5da750800000000000000
+      internalID: 6317808371300380860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_22
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d403f573081348e60800000000000000
+      internalID: 7963544467852439629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Gun.Shot_RUN_23
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68808f5c9c98f8c40800000000000000
+      internalID: 5516779568254945414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Gun.Shot_RUN_0: 6715883878074916629
+      P2_Gun.Shot_RUN_1: 2460191498362470
+      P2_Gun.Shot_RUN_10: -8724036590633945328
+      P2_Gun.Shot_RUN_11: -2812371120328203222
+      P2_Gun.Shot_RUN_12: -4042078220007757499
+      P2_Gun.Shot_RUN_13: 1180623655668120348
+      P2_Gun.Shot_RUN_14: -5692601569229198372
+      P2_Gun.Shot_RUN_15: -5433120545626877101
+      P2_Gun.Shot_RUN_16: -8792356813160633683
+      P2_Gun.Shot_RUN_17: -9117933013637601123
+      P2_Gun.Shot_RUN_18: 8129924346887993018
+      P2_Gun.Shot_RUN_19: -2049566315586632971
+      P2_Gun.Shot_RUN_2: -2327265502016528496
+      P2_Gun.Shot_RUN_20: 4730222265531870621
+      P2_Gun.Shot_RUN_21: 6317808371300380860
+      P2_Gun.Shot_RUN_22: 7963544467852439629
+      P2_Gun.Shot_RUN_23: 5516779568254945414
+      P2_Gun.Shot_RUN_3: -8755157364907934738
+      P2_Gun.Shot_RUN_4: 432619322627897425
+      P2_Gun.Shot_RUN_5: -4235091181517617410
+      P2_Gun.Shot_RUN_6: -1551660880776553835
+      P2_Gun.Shot_RUN_7: -522993958848506395
+      P2_Gun.Shot_RUN_8: 3835107238262351990
+      P2_Gun.Shot_RUN_9: -3771818596377138166
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
