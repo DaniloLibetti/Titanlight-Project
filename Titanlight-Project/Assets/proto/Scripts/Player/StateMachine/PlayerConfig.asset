@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fb87a2e47d8714fb53e60ed195c460, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
+  comboWindow: 0.5
+  maxCombo: 3
+  comboDamage:
+  - 10
+  - 15
+  - 20
   moveSpeed: 2
   acceleration: 20
   deceleration: 20

@@ -20,7 +20,8 @@ namespace Player.StateMachine
 
         public override void UpdateState(PlayerStateMachine player)
         {
-            if (player.moveInput != Vector2.zero)
+            // Use player.moveInput (não player.moveInput)
+            if (player.moveInput != Vector2.zero) // Corrigido
             {
                 player.SwitchState(player.MovingState);
             }

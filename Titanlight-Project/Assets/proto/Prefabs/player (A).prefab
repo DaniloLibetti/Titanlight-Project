@@ -163,13 +163,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7c38cd4880ff54285465e3b252ee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseRecoilForce: 1
+  cooldownTimer: 0
   config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
-  invincibleDuration: 2
+  invincibleDuration: 2.64
   blinkInterval: 0.1
   shotgunKey: 107
   machineGunKey: 109
   dashKey: 32
   switchModeKey: 113
+  meleeAttackKey: 111
   firePoint: {fileID: 2807867361594665837}
   shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
   machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
@@ -179,7 +182,6 @@ MonoBehaviour:
   extraPelletsMultiplier: 2
   minShotgunSpreadAngle: 10
   maxShotgunLifetimeMultiplier: 2
-  baseRecoilForce: 1
   shotgunCooldown: 0.7
   machineGunCooldown: 0.2
   projectileSpeed: 10
@@ -299,6 +301,7 @@ GameObject:
   - component: {fileID: 191803062542819557}
   - component: {fileID: 4035355167892541558}
   - component: {fileID: 6195826825627441337}
+  - component: {fileID: 919542979023446222}
   m_Layer: 9
   m_Name: Art (A)
   m_TagString: Untagged
@@ -398,6 +401,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &919542979023446222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260499236814555331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4af9f252b6dc443afe506f51f33b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8677140583620374178
 GameObject:
   m_ObjectHideFlags: 0

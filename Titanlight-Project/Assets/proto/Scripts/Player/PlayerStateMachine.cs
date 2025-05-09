@@ -10,21 +10,26 @@ namespace Player.StateMachine
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
     public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
+        [Header("Recoil Settings")]
+        public float baseRecoilForce = 2f;
+
+        [Header("Combo Settings")]
+        public float cooldownTimer;
+
         [Header("Config Scriptable")]
         public PlayerConfig config;
 
-        [Header("Config Dash")]
-        public bool IsDashing { get; set; }           // usado pelo HoleTrigger
-        public Vector3 LastDashPosition { get; set; } // onde retorna após cair
+        [Header("Dash Settings")]
+        public bool IsDashing { get; set; }
+        public Vector3 LastDashPosition { get; set; }
 
-        [Header("Invincible Settings")]
+        [Header("Invincibility")]
         public float invincibleDuration = 2f;
         public float blinkInterval = 0.1f;
 
-        [Header("Movement & Dash Control")]
+        [Header("Movement Control")]
         public bool CanMove { get; private set; } = true;
         public void SetCanMove(bool v) => CanMove = v;
-
         public bool CanDash { get; private set; } = true;
         public void SetCanDash(bool v) => CanDash = v;
 
@@ -33,8 +38,9 @@ namespace Player.StateMachine
         public KeyCode machineGunKey = KeyCode.V;
         public KeyCode dashKey = KeyCode.Space;
         public KeyCode switchModeKey = KeyCode.Q;
+        public KeyCode meleeAttackKey = KeyCode.O;
 
-        [Header("References & Prefabs")]
+        [Header("References")]
         public Transform firePoint;
         public GameObject shotgunBulletPrefab;
         public GameObject machineGunBulletPrefab;
@@ -42,91 +48,87 @@ namespace Player.StateMachine
         public Animator animator { get; private set; }
         public Rigidbody2D rb { get; private set; }
 
-        [Header("Shotgun Settings")]
+        [Header("Shotgun Configuration")]
         public int extraPelletsMultiplier = 2;
         public float minShotgunSpreadAngle = 10f;
         public float maxShotgunLifetimeMultiplier = 2f;
-        public float baseRecoilForce = 2f;
 
-        [Header("Ranged Cooldowns")]
+        [Header("Cooldowns")]
         public float shotgunCooldown = 0.7f;
         public float machineGunCooldown = 0.2f;
 
-        [Header("Shooting")]
+        [Header("Projectile Settings")]
         public float projectileSpeed = 25f;
         public float projectileLifetime = 0.5f;
         public float shootPointDistance = 0.5f;
 
-        // Player states
         public PlayerBaseState IdleState { get; private set; }
         public PlayerBaseState MovingState { get; private set; }
         public PlayerBaseState DashState { get; private set; }
         public PlayerBaseState StunnedState { get; private set; }
         public PlayerBaseState InvincibleState { get; private set; }
+        public PlayerBaseState AttackState { get; private set; }
         public PlayerBaseState CurrentState { get; private set; }
 
-        // Cooldown trackers
-        private float nextShotgunTime = 0f;
-        private float nextMachineGunTime = 0f;
-
-        // Runtime variables
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
         public Vector2 lastDirection = Vector2.right;
         public float currentHeat;
         public bool overheated;
         private bool isRangedMode = false;
-
-        // Remember initial firePoint local position
         private Vector3 firePointInitialLocalPos;
-
-        // Collider support
         private Collider2D[] _colliders;
+        private float nextShotgunTime = 0f;
+        private float nextMachineGunTime = 0f;
 
         protected override void Awake()
         {
             base.Awake();
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
+
             if (animator == null)
-                Debug.LogError("Animator not found in Player children.");
+                Debug.LogError("Animator não encontrado.");
 
             if (firePoint != null)
                 firePointInitialLocalPos = firePoint.localPosition;
 
             _colliders = GetComponents<Collider2D>();
 
-            // Initialize states
             IdleState = new IdleState(this);
             MovingState = new MovingState(this);
             DashState = new DashState(this);
             StunnedState = new StunnedState(this);
+            AttackState = new AttackState(this);
+            InvincibleState = new InvincibleState(this, invincibleDuration, blinkInterval);
 
             CurrentState = IdleState;
             CurrentState.EnterState(this);
-
-            // Invincibility state with configurable duration and blink interval
-            InvincibleState = new InvincibleState(this, invincibleDuration, blinkInterval);
         }
 
         void Update()
         {
-            // If player is locked (e.g., falling in a hole), skip input and updates
-            if (!CanMove)
-                return;
+            if (!CanMove) return;
 
-            // Toggle melee/ranged mode
+            if (Input.GetKeyDown(meleeAttackKey))
+            {
+                if (cooldownTimer <= 0 && CurrentState != AttackState)
+                    SwitchState(AttackState);
+            }
+
+            if (cooldownTimer > 0)
+                cooldownTimer -= Time.deltaTime;
+
             if (Input.GetKeyDown(switchModeKey))
                 isRangedMode = !isRangedMode;
 
-            // Movement input
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             moveInput = new Vector2(h, v).normalized;
+
             if (moveInput != Vector2.zero)
                 lastDirection = moveInput;
 
-            // Update firePoint orientation/position
             UpdateFirePointTransform();
 
             if (isRangedMode)
@@ -143,22 +145,15 @@ namespace Player.StateMachine
                 }
             }
 
-            // Dash input
             if (Input.GetKeyDown(dashKey) && CanDash && lastDirection != Vector2.zero)
                 SwitchState(DashState);
 
-            // Animations based on state
             UpdateAnimations();
-
-            // State-specific logic & heat management
             CurrentState.UpdateState(this);
             UpdateHeat();
         }
 
-        void FixedUpdate()
-        {
-            CurrentState.FixedUpdateState(this);
-        }
+        void FixedUpdate() => CurrentState.FixedUpdateState(this);
 
         public void SwitchState(PlayerBaseState newState)
         {
@@ -167,18 +162,10 @@ namespace Player.StateMachine
             CurrentState.EnterState(this);
         }
 
-        // Enable/disable trigger on all colliders
         public void SetCollidersTrigger(bool trigger)
         {
             foreach (var col in _colliders)
                 col.isTrigger = trigger;
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (!IsDashing) return;
-            if (other.TryGetComponent<Health>(out var h))
-                h.TakeDamage(config.dashDamage);
         }
 
         private void UpdateAnimations()
@@ -230,21 +217,18 @@ namespace Player.StateMachine
         private void ShootShotgun()
         {
             float t = 1f;
-            int extra = Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
-            int total = config.shotgunPelletCount + extra;
-            float spread = Mathf.Lerp(minShotgunSpreadAngle, config.shotgunSpreadAngle,
-                                       (t - 1f) / (config.chargeMultiplierMax - 1f));
-            float life = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier,
-                                                         (t - 1f) / (config.chargeMultiplierMax - 1f));
+            int total = config.shotgunPelletCount + Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
+            float spread = Mathf.Lerp(minShotgunSpreadAngle, config.shotgunSpreadAngle, (t - 1f) / (config.chargeMultiplierMax - 1f));
+            float life = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, (t - 1f) / (config.chargeMultiplierMax - 1f));
+
             for (int i = 0; i < total; i++)
             {
                 float offset = -spread * 0.5f + spread * i / (total - 1);
-                Quaternion rot = firePoint.localRotation * Quaternion.Euler(0, 0, offset);
-                GameObject pellet = Instantiate(shotgunBulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, offset));
+                Quaternion rot = firePoint.rotation * Quaternion.Euler(0, 0, offset);
+                GameObject pellet = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
                 if (pellet.TryGetComponent<Projectile>(out var comp))
                 {
-                    Vector2 dir = rot * Vector3.right;
-                    comp.Initialize(dir, projectileSpeed, projectileCollisionLayers);
+                    comp.Initialize(rot * Vector2.right, projectileSpeed, projectileCollisionLayers);
                     comp.damageMultiplier = t;
                 }
                 Destroy(pellet, life);
@@ -257,7 +241,7 @@ namespace Player.StateMachine
             if (isRangedMode && Input.GetKey(machineGunKey) && !overheated)
             {
                 currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
-                if (currentHeat >= config.heatMax) overheated = true;
+                overheated = currentHeat >= config.heatMax;
             }
             else
             {
@@ -265,6 +249,19 @@ namespace Player.StateMachine
                 if (overheated && currentHeat <= config.overheatThreshold)
                     overheated = false;
             }
+        }
+
+        public void OnAttackAnimationEnd()
+        {
+            if (CurrentState is AttackState attackState)
+                attackState.OnAnimationEnd(this);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!IsDashing) return;
+            if (other.CompareTag("Enemy") && other.TryGetComponent<Health>(out var health))
+                health.TakeDamage(config.dashDamage);
         }
     }
 }

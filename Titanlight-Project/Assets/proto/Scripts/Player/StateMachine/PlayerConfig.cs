@@ -6,6 +6,11 @@ namespace Player.Config
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Player/Config")] // Cria asset no menu do Unity  
     public class PlayerConfig : ScriptableObject // Configs centralizadas num ScriptableObject  
     {
+        [Header("Combo Settings")]
+        public int maxCombo = 3;
+        public float comboWindow = 0.8f;
+        public float[] comboDamage = { 10f, 15f, 20f };
+
         [Header("Movimento")]
         public float moveSpeed = 5f; // velocidade base  
         public float acceleration = 10f; // aceleração do movimento  
@@ -21,10 +26,8 @@ namespace Player.Config
         public int dashDamage = 10; // dano causado  
 
         [Header("Ataque Corpo a Corpo")]
-        public float meleeAttackDistance = 1f; // distância do ataque  
-        public float meleeAttackRadius = 0.5f; // área de colisão  
-        public float meleeDamage = 10f; // dano  
-        public float meleeCooldown = 0.5f; // intervalo entre ataques  
+        public float meleeAttackDistance = 1f; // Distância do ataque
+        public float meleeAttackRadius = 0.5f; // Área de colisão
 
         [Header("Ataque Geral")]
         public float attackCooldown = 0.5f; // cooldown genérico  

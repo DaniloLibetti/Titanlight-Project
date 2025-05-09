@@ -119,9 +119,7 @@ public class Room : MonoBehaviour
             dt.enabled = active;
     }
 
-    /// <summary>
-    /// Retorna o ponto de spawn do player (ou o centro da sala se não atribuído).
-    /// </summary>
+  
     public Vector3 GetPlayerSpawnPoint()
     {
         return playerSpawnPoint != null ? playerSpawnPoint.position : transform.position;
