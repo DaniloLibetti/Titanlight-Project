@@ -127,6 +127,8 @@ public class PlayerController : MonoBehaviour
     public bool CanMove { get; set; } = true;
     public Vector3 LastDashPosition { get; private set; } = Vector3.zero;
 
+    public EquipmentMenuController EquipController;
+
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
