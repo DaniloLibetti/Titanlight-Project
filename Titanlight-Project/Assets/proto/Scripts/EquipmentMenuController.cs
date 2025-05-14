@@ -7,53 +7,113 @@ using System.Collections.Generic;
 
 public class EquipmentMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject range1Options, range2Options, chip1Options, chip2Options, granadeOptions, healOptions;
+    [Header("Player1")]
+    [SerializeField] GameObject range1OptionsP1;
+    [SerializeField] GameObject range2OptionsP1;
+    [SerializeField] GameObject chip1OptionsP1;
+    [SerializeField] GameObject chip2OptionsP1;
+    [SerializeField] GameObject granadeOptionsP1;
+    [SerializeField] GameObject healOptionsP1;
     [SerializeField] Button button1, button2, button3;
+
+    [Header("Player2")]
+    [SerializeField] GameObject range1OptionsP2;
+    [SerializeField] GameObject range2OptionsP2;
+    [SerializeField] GameObject chip1OptionsP2;
+    [SerializeField] GameObject chip2OptionsP2;
+    [SerializeField] GameObject granadeOptionsP2;
+    [SerializeField] GameObject healOptionsP2;
+
     public int buttonValue;
 
-    public void ShowRange1Options()
+    public void ShowRange1OptionsP1()
     {
-        HideOptions();
-        range1Options.SetActive(true);
+        HideOptionsP1();
+        range1OptionsP1.SetActive(true);
     }
 
-    public void ShowRange2Options()
+    public void ShowRange2OptionsP1()
     {
-        HideOptions();
-        range2Options.SetActive(true);
+        HideOptionsP1();
+        range2OptionsP1.SetActive(true);
     }
 
-    public void Showchip1Options()
+    public void Showchip1OptionsP1()
     {
-        HideOptions();
-        chip1Options.SetActive(true);
+        HideOptionsP1();
+        chip1OptionsP1.SetActive(true);
     }
 
-    public void Showchip2Options()
+    public void Showchip2OptionsP1()
     {
-        HideOptions();
-        chip2Options.SetActive(true);
+        HideOptionsP1();
+        chip2OptionsP1.SetActive(true);
     }
 
-    public void ShowGranadeOptions()
+    public void ShowGranadeOptionsP1()
     {
-        HideOptions();
-        granadeOptions.SetActive(true);
+        HideOptionsP1();
+        granadeOptionsP1.SetActive(true);
     }
-    public void ShowHealOptions()
+    public void ShowHealOptionsP1()
     {
-        HideOptions();
-        healOptions.SetActive(true);
+        HideOptionsP1();
+        healOptionsP1.SetActive(true);
     }
 
-    public void HideOptions()
+    public void HideOptionsP1()
     {
-        range1Options.SetActive(false);
-        range2Options.SetActive(false);
-        chip1Options.SetActive(false);
-        chip2Options.SetActive(false);
-        granadeOptions.SetActive(false);
-        healOptions.SetActive(false);
+        range1OptionsP1.SetActive(false);
+        range2OptionsP1.SetActive(false);
+        chip1OptionsP1.SetActive(false);
+        chip2OptionsP1.SetActive(false);
+        granadeOptionsP1.SetActive(false);
+        healOptionsP1.SetActive(false);
+    }
+
+    public void ShowRange1OptionsP2()
+    {
+        HideOptionsP2();
+        range1OptionsP2.SetActive(true);
+    }
+
+    public void ShowRange2OptionsP2()
+    {
+        HideOptionsP2();
+        range2OptionsP2.SetActive(true);
+    }
+
+    public void Showchip1OptionsP2()
+    {
+        HideOptionsP2();
+        chip1OptionsP2.SetActive(true);
+    }
+
+    public void Showchip2OptionsP2()
+    {
+        HideOptionsP2();
+        chip2OptionsP2.SetActive(true);
+    }
+
+    public void ShowGranadeOptionsP2()
+    {
+        HideOptionsP2();
+        granadeOptionsP2.SetActive(true);
+    }
+    public void ShowHealOptionsP2()
+    {
+        HideOptionsP2();
+        healOptionsP2.SetActive(true);
+    }
+
+    public void HideOptionsP2()
+    {
+        range1OptionsP2.SetActive(false);
+        range2OptionsP2.SetActive(false);
+        chip1OptionsP2.SetActive(false);
+        chip2OptionsP2.SetActive(false);
+        granadeOptionsP2.SetActive(false);
+        healOptionsP2.SetActive(false);
     }
 
     public void ChangeRangeAttack1()
