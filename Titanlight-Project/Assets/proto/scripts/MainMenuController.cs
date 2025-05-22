@@ -21,35 +21,48 @@ public class MainMenuController : MonoBehaviour
     // Método chamado pelo botão Start para carregar a próxima cena
     public void StartGame()
     {
-        SceneManager.LoadScene(gameSceneName);
         SoundManager.PlaySound(SoundType.BUTTON);
+        SceneManager.LoadScene(gameSceneName);
     }
 
     // Método chamado pelo botão Options para abrir o menu de opções
     public void OpenOptions()
     {
         if (mainMenuPanel != null)
+        {
+            SoundManager.PlaySound(SoundType.BUTTON);
             mainMenuPanel.SetActive(false);
+        }
+            
 
         if (optionsPanel != null)
+        {
+            SoundManager.PlaySound(SoundType.BUTTON);
             optionsPanel.SetActive(true);
-        SoundManager.PlaySound(SoundType.BUTTON);
+        }
     }
 
     // Método chamado pelo botão Back, no menu de opções, para voltar ao menu principal
     public void BackToMainMenu()
     {
         if (optionsPanel != null)
+        {
+            SoundManager.PlaySound(SoundType.BUTTON);
             optionsPanel.SetActive(false);
-
+        }
+            
         if (mainMenuPanel != null)
+        {
+            SoundManager.PlaySound(SoundType.BUTTON);
             mainMenuPanel.SetActive(true);
-        SoundManager.PlaySound(SoundType.BUTTON);
+        }    
+        
     }
 
     // Método chamado pelo botão Quit para fechar o jogo
     public void QuitGame()
     {
+        SoundManager.PlaySound(SoundType.BUTTON);
         Application.Quit();
 
         // Se estiver executando na Unity Editor, encerra o modo de jogo.

@@ -85,6 +85,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartRun()
     {
+        SoundManager.PlaySound(SoundType.BUTTON);
         if (!gameObject.activeSelf) gameObject.SetActive(true);
         _scriptableObjectCount = 0;
         if (itemCountText != null) itemCountText.text = "0";
@@ -295,5 +296,10 @@ public class GameManager : Singleton<GameManager>
         return _rooms.TryGetValue(coord, out var room) ? room : null;
     }
 
-    public void GoToMainMenu() => SceneManager.LoadScene("MainMenu");
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        SoundManager.PlaySound(SoundType.BUTTON);
+    }
+    
 }

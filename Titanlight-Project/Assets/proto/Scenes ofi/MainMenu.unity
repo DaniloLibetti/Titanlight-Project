@@ -337,7 +337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 279967079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1824723799}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: OpenOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &279967079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +865,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - {fileID: 8300000, guid: 5c0490dc8c940324a9db95ac07739c88, type: 3}
+  - {fileID: 8300000, guid: 21052c3829a9a1d4eb1e6f18b5300b3a, type: 3}
+  - {fileID: 8300000, guid: ee8a6d49bbf8a8b4d88a637d8ec9f6dc, type: 3}
+  - {fileID: 8300000, guid: f838361275a7559418d96337b4dfa4be, type: 3}
+  - {fileID: 8300000, guid: 5c144db195b96784caaa676048633a3b, type: 3}
+  - {fileID: 8300000, guid: eeb0cdeb9cf1a2f49990472710e14fc9, type: 3}
+  - {fileID: 8300000, guid: 18bf14b21462b3741b43c8f115ae3a69, type: 3}
+  - {fileID: 8300000, guid: 30c9a1338d95dd64c8f1e3b0ae7150d5, type: 3}
+  - {fileID: 8300000, guid: df8ef3b8852fb7344ace8fb3e26d6d4a, type: 3}
+  - {fileID: 8300000, guid: 083dd1e2ac9cfe34ba652984b30d3496, type: 3}
+  - {fileID: 8300000, guid: 56015a2d8202a304c8a260234ff336f9, type: 3}
+  - {fileID: 8300000, guid: 25ab3a2671de48f41906bf51c8c635fd, type: 3}
 --- !u!4 &917668718
 Transform:
   m_ObjectHideFlags: 0
