@@ -25,6 +25,7 @@ public class TimeOutEvent : MonoBehaviour
         {
             isEventActive = true;
             StartCoroutine(WarningEffect());
+            SoundManager.PlaySound(SoundType.WARNING);
         }
     }
 

@@ -214,7 +214,7 @@ public class PlayerController : MonoBehaviour
             {
                 isCharging = true;
                 currentChargeTime = 0f;
-                currentRangedAttackType = Input.GetKeyDown(shotgunKey) ? RangedAttackType.Shotgun : RangedAttackType.Normal;
+                currentRangedAttackType = Input.GetKeyDown(shotgunKey) ? RangedAttackType.Shotgun : RangedAttackType.Normal;                
             }
 
             if (isCharging && (Input.GetKey(attackKey) || Input.GetKey(shotgunKey)))
@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentRangedAttackType = RangedAttackType.MachineGun;
                 if (!overheated)
-                    StartCoroutine(RangedAttack());
+                    StartCoroutine(RangedAttack());               
             }
         }
     }
@@ -405,6 +405,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health?.TakeDamage(amount);
+        SoundManager.PlaySound(SoundType.PLAYERHIT);
     }
 
     public void Stun(float duration)
