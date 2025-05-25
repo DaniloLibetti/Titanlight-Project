@@ -67,6 +67,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interaqgir",
+                    "type": "Button",
+                    "id": "89aabe25-d964-46bd-845b-7e9e0e6be5db",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hack",
+                    "type": "Button",
+                    "id": "6e5f9c18-33af-460a-8d16-d48f87a6acc0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -76,7 +94,7 @@
                     "path": "<DualShockGamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -87,7 +105,7 @@
                     "path": "<DualShockGamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -98,7 +116,7 @@
                     "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -109,7 +127,7 @@
                     "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "Shotgun",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -120,7 +138,7 @@
                     "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "MachineGun",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -131,7 +149,7 @@
                     "path": "<DualShockGamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "SwitchMode",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -142,8 +160,30 @@
                     "path": "<DualShockGamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";PlayS",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e9d9700-fb85-4b24-8787-8488a9c16557",
+                    "path": "<Gamepad>{Player1}/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PlayS",
+                    "action": "Interaqgir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7cd70ef-7fa3-4400-92ce-b9559769bb04",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": ";PlayS",
+                    "action": "Hack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -178,7 +218,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Shotgun",
@@ -215,27 +255,122 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interagir",
+                    "type": "Button",
+                    "id": "0e1bab49-173b-44be-a3b4-42e1b854bba1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hack",
+                    "type": "Button",
+                    "id": "ce749dc0-f7b6-4c1b-bcff-be62b0526fb5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "2d2cbc01-8f46-4b0b-bfc9-af63b45a9282",
-                    "path": "<DualShockGamepad>{Player2}/leftStick",
+                    "name": "2D Vector",
+                    "id": "9932093f-2714-476c-bd32-286962259442",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "509c5a93-d097-45b7-8c0f-929a4439673b",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "7c8d19ca-d2ca-4da9-9cbb-b43e70df2613",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "03d4b827-3568-48f4-9629-f80b941ee6b2",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "536a982e-116f-4a98-b957-1a67aa4fa0ce",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
                     "id": "0304b12c-bffc-4e70-ab06-799ef0d0c298",
-                    "path": "<DualShockGamepad>{Player2}/leftTrigger",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";player 2",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb42ac8b-4b64-4bfd-9bf4-7636b7122330",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";player 2",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b4669d1-cc5b-401e-ad35-9be4fe19ec3d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";player 2",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86b3569f-49a1-4198-b250-982259c07c8b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";New Control Scheme",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -243,10 +378,10 @@
                 {
                     "name": "",
                     "id": "6d6a5267-12de-42c8-8bbc-ad4c746abcd1",
-                    "path": "<DualShockGamepad>{Player2}/buttonWest",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";player 2",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -254,7 +389,7 @@
                 {
                     "name": "",
                     "id": "ed8303ad-0108-4641-9793-2f2dfa2aa3a0",
-                    "path": "<DualShockGamepad>{Player2}/rightShoulder",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -265,7 +400,7 @@
                 {
                     "name": "",
                     "id": "67f034e2-c7f9-45c8-81fb-1fa99ae674f4",
-                    "path": "<DualShockGamepad>{Player2}/rightShoulder",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -276,7 +411,7 @@
                 {
                     "name": "",
                     "id": "71a80185-a029-4346-8ddd-5e906b1ca766",
-                    "path": "<DualShockGamepad>{Player2}/leftShoulder",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -286,17 +421,73 @@
                 },
                 {
                     "name": "",
-                    "id": "156337a9-4b63-4613-b14b-13e8f6cf385a",
-                    "path": "<DualShockGamepad>{Player2}/start",
+                    "id": "12fd758b-3ba1-40a0-9dd6-0dbaf9fb6356",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf0af240-20ef-4f62-8fc0-defabe6166c6",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interagir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1f18f08-dd55-449a-b6a7-08bc3347df5b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "player 2",
+            "bindingGroup": "player 2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "New Control Scheme",
+            "bindingGroup": "New Control Scheme",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "PlayS",
+            "bindingGroup": "PlayS",
+            "devices": [
+                {
+                    "devicePath": "<DualShockGamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

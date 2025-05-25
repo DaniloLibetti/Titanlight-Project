@@ -1,35 +1,34 @@
-
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))] // Garante que o jogador tem collider
 public class PickUpSystem : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI itemsPickedText;
-
+    [SerializeField] private TextMeshProUGUI itemsPickedText;
     private int itemsCount = 0;
 
     private void Start()
     {
-        itemsPickedText.text = "Espólios: " + itemsCount;
+        UpdateUI();
+        Debug.Log("Sistema de coleta inicializado!");
     }
 
-    public void AddItem()
+    public void AddItem(ItemSO itemSO, int quantity = 1)
     {
-        itemsCount++;
-        itemsPickedText.text = "Espólios: " + itemsCount;
+        itemsCount += quantity;
+        Debug.Log($"Item coletado: {itemSO.name} (Total: {itemsCount})");
+        UpdateUI();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void UpdateUI()
     {
-        Item item = collision.GetComponent<Item>();
-        if (item != null)
+        if (itemsPickedText != null)
         {
-            //int reminder = itemPicked.AddItem
-            AddItem();
-            item.DestroyItem();
-            
+            itemsPickedText.text = "Espólios: " + itemsCount;
+        }
+        else
+        {
+            Debug.LogError("TextMeshProUGUI não atribuído!");
         }
     }
-
 }

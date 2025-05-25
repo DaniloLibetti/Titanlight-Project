@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: e2e0d065ee5985b429f93349e91781aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6886687321932842243
+    second: Robot_02_Shooting_0
+  - first:
+      213: -2806237368989950352
+    second: Robot_02_Shooting_1
+  - first:
+      213: -6279512732466639909
+    second: Robot_02_Shooting_2
+  - first:
+      213: 8466447109092539597
+    second: Robot_02_Shooting_3
+  - first:
+      213: 6475801354059592235
+    second: Robot_02_Shooting_4
+  - first:
+      213: -1144288541533314113
+    second: Robot_02_Shooting_5
+  - first:
+      213: 7935934319685755428
+    second: Robot_02_Shooting_6
+  - first:
+      213: -70741979255472436
+    second: Robot_02_Shooting_7
+  - first:
+      213: -2323138193450692507
+    second: Robot_02_Shooting_8
+  - first:
+      213: -6849854377177607347
+    second: Robot_02_Shooting_9
+  - first:
+      213: -7147556591665630497
+    second: Robot_02_Shooting_10
+  - first:
+      213: -6291531199656283207
+    second: Robot_02_Shooting_11
+  - first:
+      213: 1654481383180434162
+    second: Robot_02_Shooting_12
+  - first:
+      213: -4245122422059486849
+    second: Robot_02_Shooting_13
+  - first:
+      213: -4163498195343144414
+    second: Robot_02_Shooting_14
+  - first:
+      213: 8815619280370555027
+    second: Robot_02_Shooting_15
+  - first:
+      213: -5772859148700845646
+    second: Robot_02_Shooting_16
+  - first:
+      213: 1007857569900671840
+    second: Robot_02_Shooting_17
+  - first:
+      213: 7012880943741887566
+    second: Robot_02_Shooting_18
+  - first:
+      213: -544288404235624666
+    second: Robot_02_Shooting_19
+  - first:
+      213: 5089182404484065182
+    second: Robot_02_Shooting_20
+  - first:
+      213: -3258884878852023187
+    second: Robot_02_Shooting_21
+  - first:
+      213: 5911542506476051430
+    second: Robot_02_Shooting_22
+  - first:
+      213: -674825250150400335
+    second: Robot_02_Shooting_23
+  - first:
+      213: -9168744812136253309
+    second: Robot_02_Shooting_24
+  - first:
+      213: 9196036290783376296
+    second: Robot_02_Shooting_25
+  - first:
+      213: -8565269997666184495
+    second: Robot_02_Shooting_26
+  - first:
+      213: 92934840811371497
+    second: Robot_02_Shooting_27
+  - first:
+      213: -3740184699094731514
+    second: Robot_02_Shooting_28
+  - first:
+      213: 7211649985514116509
+    second: Robot_02_Shooting_29
+  - first:
+      213: 484502220638813785
+    second: Robot_02_Shooting_30
+  - first:
+      213: -7568484127022217613
+    second: Robot_02_Shooting_31
+  - first:
+      213: -5631408376492522026
+    second: Robot_02_Shooting_32
+  - first:
+      213: 3470441168121519466
+    second: Robot_02_Shooting_33
+  - first:
+      213: 523249099820602908
+    second: Robot_02_Shooting_34
+  - first:
+      213: -4657927077590044585
+    second: Robot_02_Shooting_35
+  - first:
+      213: -139807347973054204
+    second: Robot_02_Shooting_36
+  - first:
+      213: -7653196887729384209
+    second: Robot_02_Shooting_37
+  - first:
+      213: 4315039156828657901
+    second: Robot_02_Shooting_38
+  - first:
+      213: 4031686366431929662
+    second: Robot_02_Shooting_39
+  - first:
+      213: 2250726620248305357
+    second: Robot_02_Shooting_40
+  - first:
+      213: 2275257346135639234
+    second: Robot_02_Shooting_41
+  - first:
+      213: -8140277302314928436
+    second: Robot_02_Shooting_42
+  - first:
+      213: 2842158352912666006
+    second: Robot_02_Shooting_43
+  - first:
+      213: 5877552912141907588
+    second: Robot_02_Shooting_44
+  - first:
+      213: -1173799476218992658
+    second: Robot_02_Shooting_45
+  - first:
+      213: -3925144593640552131
+    second: Robot_02_Shooting_46
+  - first:
+      213: 1614798178059832841
+    second: Robot_02_Shooting_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Robot_02_Shooting_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 225
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfab1013e529d60a0800000000000000
+      internalID: -6886687321932842243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 225
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e5de12bfd3e09d0800000000000000
+      internalID: -2806237368989950352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 225
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb88caa070bad8a0800000000000000
+      internalID: -6279512732466639909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dccf71fd9ccde7570800000000000000
+      internalID: 8466447109092539597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2237b0750baed950800000000000000
+      internalID: 6475801354059592235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb36b5952abae10f0800000000000000
+      internalID: -1144288541533314113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42263b5a73a122e60800000000000000
+      internalID: 7935934319685755428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_7
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 225
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccef4cf6b8ca40ff0800000000000000
+      internalID: -70741979255472436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 225
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5609a3f1f1e82cfd0800000000000000
+      internalID: -2323138193450692507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_9
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d439c2d6cbd60f0a0800000000000000
+      internalID: -6849854377177607347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_10
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 225
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2b4c53627cecc90800000000000000
+      internalID: -7147556591665630497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_11
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 225
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3333735bdffa8a0800000000000000
+      internalID: -6291531199656283207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 161
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa77fb5d06e5f610800000000000000
+      internalID: 1654481383180434162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 161
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71391516ab4615c0800000000000000
+      internalID: -4245122422059486849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 161
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a879353784836c0800000000000000
+      internalID: -4163498195343144414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3985291470f575a70800000000000000
+      internalID: 8815619280370555027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9725fa03fa2efa0800000000000000
+      internalID: -5772859148700845646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0633e16be11acfd00800000000000000
+      internalID: 1007857569900671840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_18
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4467dfff02c25160800000000000000
+      internalID: 7012880943741887566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_19
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 161
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fdb22849c4278f0800000000000000
+      internalID: -544288404235624666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_20
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 161
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97e078ee6860a640800000000000000
+      internalID: 5089182404484065182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_21
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c1220187d16c2d0800000000000000
+      internalID: -3258884878852023187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_22
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 161
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb9025c6940a0250800000000000000
+      internalID: 5911542506476051430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_23
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 161
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be3257a20a82a6f0800000000000000
+      internalID: -674825250150400335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 97
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388b964eb2312c080800000000000000
+      internalID: -9168744812136253309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_25
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 97
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a37eb5a842ee9f70800000000000000
+      internalID: 9196036290783376296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_26
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 97
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2dbcf515c022980800000000000000
+      internalID: -8565269997666184495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_27
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebb1ddcebb2a4100800000000000000
+      internalID: 92934840811371497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_28
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6057b1025d1381cc0800000000000000
+      internalID: -3740184699094731514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_29
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95150fe37de41460800000000000000
+      internalID: 7211649985514116509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_30
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e7012e33c49b600800000000000000
+      internalID: 484502220638813785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_31
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 97
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37688a839c757f690800000000000000
+      internalID: -7568484127022217613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_32
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 97
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d501060be739d1b0800000000000000
+      internalID: -5631408376492522026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_33
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d56cfeadb792030800000000000000
+      internalID: 3470441168121519466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_34
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 97
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1699d3b844f24700800000000000000
+      internalID: 523249099820602908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_35
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 97
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750729e6008bb5fb0800000000000000
+      internalID: -4657927077590044585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401a31f25fd4f0ef0800000000000000
+      internalID: -139807347973054204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_37
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 33
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4d3ce9af16ac590800000000000000
+      internalID: -7653196887729384209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_38
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 33
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de85ca6404912eb30800000000000000
+      internalID: 4315039156828657901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35e5f4b36d63f730800000000000000
+      internalID: 4031686366431929662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_40
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce6a6eafef2c3f10800000000000000
+      internalID: 2250726620248305357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_41
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c443016086539f10800000000000000
+      internalID: 2275257346135639234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_42
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc6f75e2cece70f80800000000000000
+      internalID: -8140277302314928436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_43
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69dc4cca6ff517720800000000000000
+      internalID: 2842158352912666006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 486f7c4ab33419150800000000000000
+      internalID: 5877552912141907588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_45
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee76d6e6893d5bfe0800000000000000
+      internalID: -1173799476218992658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_46
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d398204d9c51789c0800000000000000
+      internalID: -3925144593640552131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Shooting_47
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e443b236ae86610800000000000000
+      internalID: 1614798178059832841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Robot_02_Shooting_0: -6886687321932842243
+      Robot_02_Shooting_1: -2806237368989950352
+      Robot_02_Shooting_10: -7147556591665630497
+      Robot_02_Shooting_11: -6291531199656283207
+      Robot_02_Shooting_12: 1654481383180434162
+      Robot_02_Shooting_13: -4245122422059486849
+      Robot_02_Shooting_14: -4163498195343144414
+      Robot_02_Shooting_15: 8815619280370555027
+      Robot_02_Shooting_16: -5772859148700845646
+      Robot_02_Shooting_17: 1007857569900671840
+      Robot_02_Shooting_18: 7012880943741887566
+      Robot_02_Shooting_19: -544288404235624666
+      Robot_02_Shooting_2: -6279512732466639909
+      Robot_02_Shooting_20: 5089182404484065182
+      Robot_02_Shooting_21: -3258884878852023187
+      Robot_02_Shooting_22: 5911542506476051430
+      Robot_02_Shooting_23: -674825250150400335
+      Robot_02_Shooting_24: -9168744812136253309
+      Robot_02_Shooting_25: 9196036290783376296
+      Robot_02_Shooting_26: -8565269997666184495
+      Robot_02_Shooting_27: 92934840811371497
+      Robot_02_Shooting_28: -3740184699094731514
+      Robot_02_Shooting_29: 7211649985514116509
+      Robot_02_Shooting_3: 8466447109092539597
+      Robot_02_Shooting_30: 484502220638813785
+      Robot_02_Shooting_31: -7568484127022217613
+      Robot_02_Shooting_32: -5631408376492522026
+      Robot_02_Shooting_33: 3470441168121519466
+      Robot_02_Shooting_34: 523249099820602908
+      Robot_02_Shooting_35: -4657927077590044585
+      Robot_02_Shooting_36: -139807347973054204
+      Robot_02_Shooting_37: -7653196887729384209
+      Robot_02_Shooting_38: 4315039156828657901
+      Robot_02_Shooting_39: 4031686366431929662
+      Robot_02_Shooting_4: 6475801354059592235
+      Robot_02_Shooting_40: 2250726620248305357
+      Robot_02_Shooting_41: 2275257346135639234
+      Robot_02_Shooting_42: -8140277302314928436
+      Robot_02_Shooting_43: 2842158352912666006
+      Robot_02_Shooting_44: 5877552912141907588
+      Robot_02_Shooting_45: -1173799476218992658
+      Robot_02_Shooting_46: -3925144593640552131
+      Robot_02_Shooting_47: 1614798178059832841
+      Robot_02_Shooting_5: -1144288541533314113
+      Robot_02_Shooting_6: 7935934319685755428
+      Robot_02_Shooting_7: -70741979255472436
+      Robot_02_Shooting_8: -2323138193450692507
+      Robot_02_Shooting_9: -6849854377177607347
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

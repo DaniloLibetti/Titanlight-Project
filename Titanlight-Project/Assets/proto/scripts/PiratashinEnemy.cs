@@ -1,9 +1,16 @@
-using UnityEngine;
+// PiratashinEnemy.cs
 using System.Collections;
+using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(EnemyCoinDrop))]
 public class PiratashinEnemy : MonoBehaviour
 {
     public enum AIState { Idle, Chase, Attack }
+
+    [Header("— Componentes Obrigatórios —")]
+    private Rigidbody2D rb;
+    private EnemyCoinDrop coinDrop;
 
     [Header("Configuração Geral")]
     public Animator animator;
@@ -24,38 +31,29 @@ public class PiratashinEnemy : MonoBehaviour
     [Header("Detecção da Sala")]
     [SerializeField] private Collider2D roomCollider;
 
-    [Header("Área de Roaming")]
-    [Tooltip("Raio máximo que o inimigo pode se afastar de sua posição de origem.")]
-    public float maxRoamRadius = 5f;
+    [Header("Vida do Inimigo")]
+    [SerializeField] private float maxHealth = 50f;
+    private float currentHealth;
 
-    // --- Campos Privados ---
+    // Estados internos
     private Transform player;
-    private Rigidbody2D rb;
-    private RigidbodyConstraints2D defaultConstraints;
-    private Vector2 homePosition;
     private AIState currentState = AIState.Idle;
-
     private bool isAttacking = false;
     private float attackTimer = 0f;
-
     private Color defaultColor = Color.white;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        coinDrop = GetComponent<EnemyCoinDrop>();
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Assegure no Inspector que Freeze Rotation Z está marcado
-        // para impedir qualquer rotação em Z
-        defaultConstraints = rb.constraints;
-
-        homePosition = transform.position;
-
-        // Inicia busca pelo player em background
+        currentHealth = maxHealth;
         StartCoroutine(FindPlayer());
-
-        // Detecta o collider da sala de spawn
         FindRoomCollider();
     }
 
@@ -82,14 +80,12 @@ public class PiratashinEnemy : MonoBehaviour
                 break;
             }
         }
-
         if (roomCollider == null)
-            Debug.LogWarning("PiratashinEnemy: não encontrou collider de sala em 'floordetect'");
+            Debug.LogWarning("PiratashinEnemy: collider de sala não encontrado na layer 'floordetect'");
     }
 
     void Update()
     {
-        // Atualiza cooldown de ataque
         if (attackTimer > 0f)
             attackTimer -= Time.deltaTime;
 
@@ -108,14 +104,11 @@ public class PiratashinEnemy : MonoBehaviour
                 break;
 
             case AIState.Chase:
-                // Se saiu da sala, volta a Idle
                 if (!playerInRoom)
                 {
                     currentState = AIState.Idle;
                     return;
                 }
-
-                // Se dentro do alcance e cooldown liberado, inicia ataque
                 if (distToPlayer <= meleeRange && attackTimer <= 0f && !isAttacking)
                 {
                     attackTimer = attackCooldown;
@@ -124,15 +117,12 @@ public class PiratashinEnemy : MonoBehaviour
                     StartCoroutine(NormalAttack());
                     return;
                 }
-
-                // Movimento de perseguição
                 Vector2 dir = (player.position - transform.position).normalized;
                 rb.linearVelocity = dir * moveSpeed;
-
                 break;
 
             case AIState.Attack:
-                // aguardando coroutine liberar
+                // Aguarda fim da coroutine de ataque
                 break;
         }
 
@@ -142,20 +132,21 @@ public class PiratashinEnemy : MonoBehaviour
 
     IEnumerator NormalAttack()
     {
-        // Congela posição e rotação
+        // 1) Congela movimento
+        var prevC = rb.constraints;
         rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
 
-        // Efeito de carga
+        // 2) Efeito de carga
         yield return StartCoroutine(ChargeEffect(normalChargeTime));
 
-        // Restaura constraints originais (posição X/Y livre, rotação Z ainda congelada)
-        rb.constraints = defaultConstraints;
+        // 3) Restaura movimento
+        rb.constraints = prevC;
 
-        // Dispara animação e aplica dano
+        // 4) Animação e dano
         animator?.SetTrigger("Attack");
         ApplyDamageIfInRange(normalAttackDamage);
 
-        // Pausa pós-ataque
+        // 5) Pós-ataque
         yield return new WaitForSeconds(postAttackCooldown);
 
         isAttacking = false;
@@ -178,20 +169,31 @@ public class PiratashinEnemy : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) > meleeRange)
             return;
-
         if (player.TryGetComponent<PlayerController>(out var pc))
             pc.TakeDamage(damage);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void TakeDamage(float dmg)
     {
-        // Nenhuma lógica de dash ativa por enquanto
+        currentHealth -= dmg;
+        if (currentHealth <= 0f)
+            Die();
+    }
+
+    private void Die()
+    {
+        // Chama o drop público
+        coinDrop?.DropItems();
+
+        // (Opcional) partículas e sons de morte
+        // Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 
     void UpdateAnimations()
     {
         if (animator == null) return;
-
         bool walking = rb.linearVelocity.magnitude > 0.1f;
         animator.SetBool("IsWalking", walking);
         if (walking)
@@ -204,7 +206,6 @@ public class PiratashinEnemy : MonoBehaviour
     void UpdateFacingDirection()
     {
         if (player == null) return;
-
         Vector2 diff = player.position - transform.position;
         if (Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
         {
@@ -216,5 +217,10 @@ public class PiratashinEnemy : MonoBehaviour
             animator.SetFloat("FaceX", 0);
             animator.SetFloat("FaceY", diff.y > 0 ? 1 : -1);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        // Lógica extra de colisão se precisar
     }
 }

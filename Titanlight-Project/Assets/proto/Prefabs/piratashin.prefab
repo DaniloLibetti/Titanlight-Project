@@ -168,7 +168,7 @@ MonoBehaviour:
   normalChargeTime: 0.06
   postAttackCooldown: 0.45
   roomCollider: {fileID: 6404503261747105497}
-  maxRoamRadius: 5
+  maxHealth: 50
 --- !u!114 &2475838827300297334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +182,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropPrefab: {fileID: 5189710405576629989, guid: e8d56280a841a294998dc062e7c368c1, type: 3}
-  dropAmount: 2
+  possibleDrops:
+  - {fileID: 11400000, guid: b5955ab6aa358be49ac4e2e48298c395, type: 2}
+  - {fileID: 11400000, guid: 1abeeb0827bb6e1499d1b802757c091b, type: 2}
+  - {fileID: 11400000, guid: 15954a9687d4e73478439f7d2263975e, type: 2}
+  - {fileID: 11400000, guid: 2e437cfe0e48a7344bb8fd2681004534, type: 2}
+  minDrops: 1
+  maxDrops: 3
+  scatterRadius: 0.5
+  minImpulse: 0.69
+  maxImpulse: 1.21
 --- !u!114 &5570169595426810463
 MonoBehaviour:
   m_ObjectHideFlags: 0

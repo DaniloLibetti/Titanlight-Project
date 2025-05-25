@@ -1,0 +1,2197 @@
+fileFormatVersion: 2
+guid: 4bde3a227042221458c494834a57ebb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6905669695717804784
+    second: Robot_02_Destroyed_0
+  - first:
+      213: 1512980574936140009
+    second: Robot_02_Destroyed_1
+  - first:
+      213: -8557834205206302500
+    second: Robot_02_Destroyed_2
+  - first:
+      213: -8520053148377468942
+    second: Robot_02_Destroyed_3
+  - first:
+      213: 1174694110217301245
+    second: Robot_02_Destroyed_4
+  - first:
+      213: -1846653801438005710
+    second: Robot_02_Destroyed_5
+  - first:
+      213: 7617355831025426665
+    second: Robot_02_Destroyed_6
+  - first:
+      213: -8821365129916289553
+    second: Robot_02_Destroyed_7
+  - first:
+      213: 4703572930050973182
+    second: Robot_02_Destroyed_8
+  - first:
+      213: 9181326588646612962
+    second: Robot_02_Destroyed_9
+  - first:
+      213: 216730537309954540
+    second: Robot_02_Destroyed_10
+  - first:
+      213: 234841826923700650
+    second: Robot_02_Destroyed_11
+  - first:
+      213: 7424499714213318359
+    second: Robot_02_Destroyed_12
+  - first:
+      213: 7350113123989135554
+    second: Robot_02_Destroyed_13
+  - first:
+      213: -6751306967046277150
+    second: Robot_02_Destroyed_14
+  - first:
+      213: -7156813295310013295
+    second: Robot_02_Destroyed_15
+  - first:
+      213: 720434582719286319
+    second: Robot_02_Destroyed_16
+  - first:
+      213: 341224938896469589
+    second: Robot_02_Destroyed_17
+  - first:
+      213: -4258032095647759342
+    second: Robot_02_Destroyed_18
+  - first:
+      213: -8851849757986836209
+    second: Robot_02_Destroyed_19
+  - first:
+      213: 5260770237945530914
+    second: Robot_02_Destroyed_20
+  - first:
+      213: 7219858201167420232
+    second: Robot_02_Destroyed_21
+  - first:
+      213: -5068580919230834889
+    second: Robot_02_Destroyed_22
+  - first:
+      213: -1654264960532694558
+    second: Robot_02_Destroyed_23
+  - first:
+      213: -3182776147537654583
+    second: Robot_02_Destroyed_24
+  - first:
+      213: 7163436182714668533
+    second: Robot_02_Destroyed_25
+  - first:
+      213: -5354221943807226486
+    second: Robot_02_Destroyed_26
+  - first:
+      213: 7118273359789375292
+    second: Robot_02_Destroyed_27
+  - first:
+      213: 6132769674204014184
+    second: Robot_02_Destroyed_28
+  - first:
+      213: -7778043064822671628
+    second: Robot_02_Destroyed_29
+  - first:
+      213: 3574651408286471952
+    second: Robot_02_Destroyed_30
+  - first:
+      213: -7583777197378148824
+    second: Robot_02_Destroyed_31
+  - first:
+      213: -1726528812518242189
+    second: Robot_02_Destroyed_32
+  - first:
+      213: -5675406203163674303
+    second: Robot_02_Destroyed_33
+  - first:
+      213: 5894236587726639381
+    second: Robot_02_Destroyed_34
+  - first:
+      213: -4603588434420234454
+    second: Robot_02_Destroyed_35
+  - first:
+      213: 1787701470465777529
+    second: Robot_02_Destroyed_36
+  - first:
+      213: 1055591898175372527
+    second: Robot_02_Destroyed_37
+  - first:
+      213: 7417996877749087513
+    second: Robot_02_Destroyed_38
+  - first:
+      213: -764043749999810494
+    second: Robot_02_Destroyed_39
+  - first:
+      213: 3817213058562055333
+    second: Robot_02_Destroyed_40
+  - first:
+      213: -8466692593849942917
+    second: Robot_02_Destroyed_41
+  - first:
+      213: 3399219698359456056
+    second: Robot_02_Destroyed_42
+  - first:
+      213: 6799277774546385701
+    second: Robot_02_Destroyed_43
+  - first:
+      213: 3949586039508358266
+    second: Robot_02_Destroyed_44
+  - first:
+      213: -2160281793323302189
+    second: Robot_02_Destroyed_45
+  - first:
+      213: 5613065898769118491
+    second: Robot_02_Destroyed_46
+  - first:
+      213: -340850397465797994
+    second: Robot_02_Destroyed_47
+  - first:
+      213: 3956635243059224866
+    second: Robot_02_Destroyed_48
+  - first:
+      213: 2710287898414358878
+    second: Robot_02_Destroyed_49
+  - first:
+      213: 3923574161903806132
+    second: Robot_02_Destroyed_50
+  - first:
+      213: -4680674099935217523
+    second: Robot_02_Destroyed_51
+  - first:
+      213: 2690131820234257930
+    second: Robot_02_Destroyed_52
+  - first:
+      213: -4437746709036646638
+    second: Robot_02_Destroyed_53
+  - first:
+      213: 2996077992324938057
+    second: Robot_02_Destroyed_54
+  - first:
+      213: 3697600581161590029
+    second: Robot_02_Destroyed_55
+  - first:
+      213: 3584054826367872738
+    second: Robot_02_Destroyed_56
+  - first:
+      213: -8615697223292221308
+    second: Robot_02_Destroyed_57
+  - first:
+      213: -8186445615134933770
+    second: Robot_02_Destroyed_58
+  - first:
+      213: 3636444448046095595
+    second: Robot_02_Destroyed_59
+  - first:
+      213: -949677998555288329
+    second: Robot_02_Destroyed_60
+  - first:
+      213: -4995494375341489881
+    second: Robot_02_Destroyed_61
+  - first:
+      213: -527923009458777680
+    second: Robot_02_Destroyed_62
+  - first:
+      213: -648554621554460672
+    second: Robot_02_Destroyed_63
+  - first:
+      213: -2914256371864749870
+    second: Robot_02_Destroyed_64
+  - first:
+      213: 4850673027557710001
+    second: Robot_02_Destroyed_65
+  - first:
+      213: 1996619093812778563
+    second: Robot_02_Destroyed_66
+  - first:
+      213: -5846480941312023844
+    second: Robot_02_Destroyed_67
+  - first:
+      213: -4247372930597164430
+    second: Robot_02_Destroyed_68
+  - first:
+      213: 357493179398224115
+    second: Robot_02_Destroyed_69
+  - first:
+      213: 6066949395507125256
+    second: Robot_02_Destroyed_70
+  - first:
+      213: 5802305124636835815
+    second: Robot_02_Destroyed_71
+  - first:
+      213: -8743543943717722622
+    second: Robot_02_Destroyed_72
+  - first:
+      213: -2625878857384570360
+    second: Robot_02_Destroyed_73
+  - first:
+      213: 4409213266301467291
+    second: Robot_02_Destroyed_74
+  - first:
+      213: -6895216683164756824
+    second: Robot_02_Destroyed_75
+  - first:
+      213: 4630965899867331367
+    second: Robot_02_Destroyed_76
+  - first:
+      213: -6708704429990825430
+    second: Robot_02_Destroyed_77
+  - first:
+      213: -2045790546369274880
+    second: Robot_02_Destroyed_78
+  - first:
+      213: -9094757990186108387
+    second: Robot_02_Destroyed_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_0
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 225
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa807d100ed5df50800000000000000
+      internalID: 6905669695717804784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 225
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8822911df2ff410800000000000000
+      internalID: 1512980574936140009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 225
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0bdf7b1277c3980800000000000000
+      internalID: -8557834205206302500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_3
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 276
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff238f7dc0b2c980800000000000000
+      internalID: -8520053148377468942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_4
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 282
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfcee37c11a5d4010800000000000000
+      internalID: 1174694110217301245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_5
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 279
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236b92ec62e5f56e0800000000000000
+      internalID: -1846653801438005710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_6
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 220
+        width: 32
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0650415c846b960800000000000000
+      internalID: 7617355831025426665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_7
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 280
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed6255e627349580800000000000000
+      internalID: -8821365129916289553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 225
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdd4d6c8a2764140800000000000000
+      internalID: 4703572930050973182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 225
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef512b33ef9a6f70800000000000000
+      internalID: 9181326588646612962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce1e650864bf10300800000000000000
+      internalID: 216730537309954540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 225
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1e038b563524300800000000000000
+      internalID: 234841826923700650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_12
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 225
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de8ca4472f190760800000000000000
+      internalID: 7424499714213318359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_13
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c02f4691f8d00660800000000000000
+      internalID: 7350113123989135554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_14
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 218
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7369b551a8e42a0800000000000000
+      internalID: -6751306967046277150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 225
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19cf041f934edac90800000000000000
+      internalID: -7156813295310013295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_16
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2cc3ea9f6f7ff900800000000000000
+      internalID: 720434582719286319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_17
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 225
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ead6726464cb400800000000000000
+      internalID: 341224938896469589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_18
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 225
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21404b87e5e68e4c0800000000000000
+      internalID: -4258032095647759342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_19
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 225
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0131125b89e72580800000000000000
+      internalID: -8851849757986836209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_20
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 225
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ac0bd98a2020940800000000000000
+      internalID: 5260770237945530914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_21
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 225
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b564118c6123460800000000000000
+      internalID: 7219858201167420232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 161
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7375ce92288c8a9b0800000000000000
+      internalID: -5068580919230834889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 161
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9b21778ceda09e0800000000000000
+      internalID: -1654264960532694558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_24
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 161
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc8e66f4f184d3d0800000000000000
+      internalID: -3182776147537654583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 161
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f553e13143a96360800000000000000
+      internalID: 7163436182714668533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 161
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8dc4ce828bf1b5b0800000000000000
+      internalID: -5354221943807226486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_27
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 161
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f3f5018ef29c260800000000000000
+      internalID: 7118273359789375292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_28
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 161
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866e730a689fb1550800000000000000
+      internalID: 6132769674204014184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_29
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 161
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6dd89da07de0490800000000000000
+      internalID: -7778043064822671628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_30
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 161
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017d3ca3486bb9130800000000000000
+      internalID: 3574651408286471952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 156
+        width: 32
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826619ec1d201c690800000000000000
+      internalID: -7583777197378148824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_32
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 216
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3788f5b41332a08e0800000000000000
+      internalID: -1726528812518242189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_33
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 161
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1497168b028ec31b0800000000000000
+      internalID: -5675406203163674303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_34
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 161
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5119e8192f88cc150800000000000000
+      internalID: 5894236587726639381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_35
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 161
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a270942b5b4cc10c0800000000000000
+      internalID: -4603588434420234454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_36
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 161
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f5e8704013fc810800000000000000
+      internalID: 1787701470465777529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_37
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 161
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fecf5861d3736ae00800000000000000
+      internalID: 1055591898175372527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_38
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 161
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91de03babd402f660800000000000000
+      internalID: 7417996877749087513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_39
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 161
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2486768e1429565f0800000000000000
+      internalID: -764043749999810494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_40
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 97
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5acd2936d0779f430800000000000000
+      internalID: 3817213058562055333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_41
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 97
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cb421c1f3408a80800000000000000
+      internalID: -8466692593849942917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_42
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 97
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831d93a4e447c2f20800000000000000
+      internalID: 3399219698359456056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_43
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 97
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52bbb01ac13eb5e50800000000000000
+      internalID: 6799277774546385701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_44
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 97
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a74dcbeb39fbfc630800000000000000
+      internalID: 3949586039508358266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_45
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 97
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d2883697232502e0800000000000000
+      internalID: -2160281793323302189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_46
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 97
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15fdf412bd95ed40800000000000000
+      internalID: 5613065898769118491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_47
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 154
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a10819e5e054bf0800000000000000
+      internalID: -340850397465797994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_48
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 92
+        width: 32
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22126585acac8e630800000000000000
+      internalID: 3956635243059224866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_49
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 152
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e512700eb70ec9520800000000000000
+      internalID: 2710287898414358878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_50
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 97
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b66d2a89e5537630800000000000000
+      internalID: 3923574161903806132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_51
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 97
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d887df394b7ea0fb0800000000000000
+      internalID: -4680674099935217523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_52
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 97
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06b90833a4455520800000000000000
+      internalID: 2690131820234257930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_53
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 97
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f36bc51e4f962c0800000000000000
+      internalID: -4437746709036646638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_54
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 97
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 949b4e36f05349920800000000000000
+      internalID: 2996077992324938057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_55
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 97
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d1a694324805330800000000000000
+      internalID: 3697600581161590029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_56
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 90
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee6e2d10ee1db130800000000000000
+      internalID: 3584054826367872738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_57
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 97
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4880959f505ee6880800000000000000
+      internalID: -8615697223292221308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_58
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 97
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcf3d03617e36e80800000000000000
+      internalID: -8186445615134933770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_59
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 97
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec9a3375fe377230800000000000000
+      internalID: 3636444448046095595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_60
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fcab1554e012d2f0800000000000000
+      internalID: -949677998555288329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_61
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 33
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7210f4835507caab0800000000000000
+      internalID: -4995494375341489881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_62
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 33
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b15478e1d07ca8f0800000000000000
+      internalID: -527923009458777680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_63
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 33
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008fec4020fdff6f0800000000000000
+      internalID: -648554621554460672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_64
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 84
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8359a254b7e87d0800000000000000
+      internalID: -2914256371864749870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_65
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b855292b6d015340800000000000000
+      internalID: 4850673027557710001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_66
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 33
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346197ebc7a65bb10800000000000000
+      internalID: 1996619093812778563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_67
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 88
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd261035f802ddea0800000000000000
+      internalID: -5846480941312023844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 33
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a652bb2dc4e05c0800000000000000
+      internalID: -4247372930597164430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_69
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8f7af072216f400800000000000000
+      internalID: 357493179398224115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_70
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 33
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c1975c452223450800000000000000
+      internalID: 6066949395507125256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_71
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 33
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef3868d4cde58050800000000000000
+      internalID: 5802305124636835815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_72
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 33
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206efa4cb11b8a680800000000000000
+      internalID: -8743543943717722622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_73
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 33
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802526a77110f8bd0800000000000000
+      internalID: -2625878857384570360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_74
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 33
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ab6dcca1ca03d30800000000000000
+      internalID: 4409213266301467291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_75
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 33
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a41e9685f44f40a0800000000000000
+      internalID: -6895216683164756824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_76
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 33
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b1a8433fe744040800000000000000
+      internalID: 4630965899867331367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_77
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 33
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22be4b7dd4e5e2a0800000000000000
+      internalID: -6708704429990825430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_78
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 33
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c9ece4654eb93e0800000000000000
+      internalID: -2045790546369274880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_02_Destroyed_79
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 33
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1abfc44bcde8c180800000000000000
+      internalID: -9094757990186108387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Robot_02_Destroyed_0: 6905669695717804784
+      Robot_02_Destroyed_1: 1512980574936140009
+      Robot_02_Destroyed_10: 216730537309954540
+      Robot_02_Destroyed_11: 234841826923700650
+      Robot_02_Destroyed_12: 7424499714213318359
+      Robot_02_Destroyed_13: 7350113123989135554
+      Robot_02_Destroyed_14: -6751306967046277150
+      Robot_02_Destroyed_15: -7156813295310013295
+      Robot_02_Destroyed_16: 720434582719286319
+      Robot_02_Destroyed_17: 341224938896469589
+      Robot_02_Destroyed_18: -4258032095647759342
+      Robot_02_Destroyed_19: -8851849757986836209
+      Robot_02_Destroyed_2: -8557834205206302500
+      Robot_02_Destroyed_20: 5260770237945530914
+      Robot_02_Destroyed_21: 7219858201167420232
+      Robot_02_Destroyed_22: -5068580919230834889
+      Robot_02_Destroyed_23: -1654264960532694558
+      Robot_02_Destroyed_24: -3182776147537654583
+      Robot_02_Destroyed_25: 7163436182714668533
+      Robot_02_Destroyed_26: -5354221943807226486
+      Robot_02_Destroyed_27: 7118273359789375292
+      Robot_02_Destroyed_28: 6132769674204014184
+      Robot_02_Destroyed_29: -7778043064822671628
+      Robot_02_Destroyed_3: -8520053148377468942
+      Robot_02_Destroyed_30: 3574651408286471952
+      Robot_02_Destroyed_31: -7583777197378148824
+      Robot_02_Destroyed_32: -1726528812518242189
+      Robot_02_Destroyed_33: -5675406203163674303
+      Robot_02_Destroyed_34: 5894236587726639381
+      Robot_02_Destroyed_35: -4603588434420234454
+      Robot_02_Destroyed_36: 1787701470465777529
+      Robot_02_Destroyed_37: 1055591898175372527
+      Robot_02_Destroyed_38: 7417996877749087513
+      Robot_02_Destroyed_39: -764043749999810494
+      Robot_02_Destroyed_4: 1174694110217301245
+      Robot_02_Destroyed_40: 3817213058562055333
+      Robot_02_Destroyed_41: -8466692593849942917
+      Robot_02_Destroyed_42: 3399219698359456056
+      Robot_02_Destroyed_43: 6799277774546385701
+      Robot_02_Destroyed_44: 3949586039508358266
+      Robot_02_Destroyed_45: -2160281793323302189
+      Robot_02_Destroyed_46: 5613065898769118491
+      Robot_02_Destroyed_47: -340850397465797994
+      Robot_02_Destroyed_48: 3956635243059224866
+      Robot_02_Destroyed_49: 2710287898414358878
+      Robot_02_Destroyed_5: -1846653801438005710
+      Robot_02_Destroyed_50: 3923574161903806132
+      Robot_02_Destroyed_51: -4680674099935217523
+      Robot_02_Destroyed_52: 2690131820234257930
+      Robot_02_Destroyed_53: -4437746709036646638
+      Robot_02_Destroyed_54: 2996077992324938057
+      Robot_02_Destroyed_55: 3697600581161590029
+      Robot_02_Destroyed_56: 3584054826367872738
+      Robot_02_Destroyed_57: -8615697223292221308
+      Robot_02_Destroyed_58: -8186445615134933770
+      Robot_02_Destroyed_59: 3636444448046095595
+      Robot_02_Destroyed_6: 7617355831025426665
+      Robot_02_Destroyed_60: -949677998555288329
+      Robot_02_Destroyed_61: -4995494375341489881
+      Robot_02_Destroyed_62: -527923009458777680
+      Robot_02_Destroyed_63: -648554621554460672
+      Robot_02_Destroyed_64: -2914256371864749870
+      Robot_02_Destroyed_65: 4850673027557710001
+      Robot_02_Destroyed_66: 1996619093812778563
+      Robot_02_Destroyed_67: -5846480941312023844
+      Robot_02_Destroyed_68: -4247372930597164430
+      Robot_02_Destroyed_69: 357493179398224115
+      Robot_02_Destroyed_7: -8821365129916289553
+      Robot_02_Destroyed_70: 6066949395507125256
+      Robot_02_Destroyed_71: 5802305124636835815
+      Robot_02_Destroyed_72: -8743543943717722622
+      Robot_02_Destroyed_73: -2625878857384570360
+      Robot_02_Destroyed_74: 4409213266301467291
+      Robot_02_Destroyed_75: -6895216683164756824
+      Robot_02_Destroyed_76: 4630965899867331367
+      Robot_02_Destroyed_77: -6708704429990825430
+      Robot_02_Destroyed_78: -2045790546369274880
+      Robot_02_Destroyed_79: -9094757990186108387
+      Robot_02_Destroyed_8: 4703572930050973182
+      Robot_02_Destroyed_9: 9181326588646612962
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

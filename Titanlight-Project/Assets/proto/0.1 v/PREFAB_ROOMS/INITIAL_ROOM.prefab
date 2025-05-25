@@ -52,6 +52,13 @@ MonoBehaviour:
   moveDistance: 2
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 2
 --- !u!61 &7123727893646226908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111,7 +118,7 @@ GameObject:
   - component: {fileID: 6323430952707927894}
   m_Layer: 10
   m_Name: INITIAL_ROOM
-  m_TagString: Untagged
+  m_TagString: RoomBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSlot: {fileID: 3207309266149554143}
+  playerSpawnPoint: {fileID: 0}
   doorUp: {fileID: 8168353391209908738}
   doorDown: {fileID: 667416706043724910}
   doorLeft: {fileID: 7371345905565269407}
@@ -827,6 +835,13 @@ MonoBehaviour:
   moveDistance: 1.5
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 2
 --- !u!61 &8580712708110276801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1012,6 +1027,13 @@ MonoBehaviour:
   moveDistance: 1.5
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 2
 --- !u!61 &5754594179842963497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,6 +1132,13 @@ MonoBehaviour:
   moveDistance: 2
   hackTimeReduction: 10
   timer: {fileID: 0}
+  pairedDoor: {fileID: 0}
+  sharedState:
+    direction: 0
+    isOpen: 0
+    isLocked: 1
+    exists: 1
+  pairingRadius: 2
 --- !u!61 &2157514633457895769
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,40 +1,48 @@
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
 public class EnemyCoinDrop : MonoBehaviour
 {
-    [Header("Drop Settings")] // Configs do que dropa  
-    [Tooltip("Prefab do objeto que será dropado")]
-    [SerializeField] private GameObject dropPrefab; // item q aparece qnd o inimigo morre  
-    [Tooltip("Quantidade de objetos a serem contabilizados ao coletar")]
-    [SerializeField] private int dropAmount = 1; // qtd de itens (ex: +1)  
+    [Header("Drop Settings")]
+    [SerializeField] private GameObject dropPrefab;
+    [SerializeField] private List<ItemSO> possibleDrops = new List<ItemSO>();
+    [SerializeField] private int minDrops = 1;
+    [SerializeField] private int maxDrops = 3;
+    [SerializeField] private float scatterRadius = 1f;
 
-    private Health health; // referencia pro componente de vida  
+    [Header("Physics Settings")]
+    [SerializeField] private float minImpulse = 2f;
+    [SerializeField] private float maxImpulse = 4f;
 
-    void Start()
+    private void Start()
     {
-        health = GetComponent<Health>(); // pega o Health do inimigo  
-        if (health != null)
-            health.onDeath.AddListener(DropItem); // qnd morrer, droppa o item  
-        else
-            Debug.LogWarning($"Health component not found on {gameObject.name}"); // avisa se não tiver health  
+        GetComponent<Health>().onDeath.AddListener(DropItems);
     }
 
-    private void DropItem() // executa qnd o inimigo morre  
+    public void DropItems()
     {
-        if (dropPrefab == null)
+        int count = Random.Range(minDrops, maxDrops + 1);
+
+        for (int i = 0; i < count; i++)
         {
-            Debug.LogError("Drop Prefab não está atribuído em EnemyCoinDrop!"); // erro se faltar prefab  
-            return;
+            Vector3 pos = transform.position + (Vector3)Random.insideUnitCircle * scatterRadius;
+            GameObject item = Instantiate(dropPrefab, pos, Quaternion.identity);
+
+            Item itemComp = item.GetComponent<Item>();
+            itemComp.Init(possibleDrops[Random.Range(0, possibleDrops.Count)]);
+
+            ApplyDropForce(item);
         }
+    }
 
-        // Cria o item no chão na posição do inimigo  
-        GameObject drop = Instantiate(dropPrefab, transform.position, Quaternion.identity);
-
-        // Configura a qtd no script de coleta (PickupableItem)  
-        var pickup = drop.GetComponent<PickupableItem>();
-        if (pickup != null)
-            pickup.SetAmount(dropAmount); // define qts itens vale  
-        else
-            Debug.LogWarning("Prefab dropado precisa do componente PickupableItem!"); // avisa se faltar componente  
+    private void ApplyDropForce(GameObject item)
+    {
+        Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            Vector2 force = Random.insideUnitCircle.normalized * Random.Range(minImpulse, maxImpulse);
+            rb.AddForce(force, ForceMode2D.Impulse);
+        }
     }
 }

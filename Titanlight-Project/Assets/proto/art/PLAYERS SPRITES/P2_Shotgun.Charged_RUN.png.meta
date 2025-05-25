@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 94d6927f4bc1a214382482d71452f75d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1559356177132839428
+    second: P2_Shotgun.Charged_RUN_0
+  - first:
+      213: -5318535680853395153
+    second: P2_Shotgun.Charged_RUN_1
+  - first:
+      213: -319408115279389116
+    second: P2_Shotgun.Charged_RUN_2
+  - first:
+      213: -877258484171617140
+    second: P2_Shotgun.Charged_RUN_3
+  - first:
+      213: 6408050108624742635
+    second: P2_Shotgun.Charged_RUN_4
+  - first:
+      213: 5122360346571586713
+    second: P2_Shotgun.Charged_RUN_5
+  - first:
+      213: 8832532122656930742
+    second: P2_Shotgun.Charged_RUN_6
+  - first:
+      213: 2173438210706938185
+    second: P2_Shotgun.Charged_RUN_7
+  - first:
+      213: 7546507718152207777
+    second: P2_Shotgun.Charged_RUN_8
+  - first:
+      213: 2388631564757518358
+    second: P2_Shotgun.Charged_RUN_9
+  - first:
+      213: 111845962280099526
+    second: P2_Shotgun.Charged_RUN_10
+  - first:
+      213: -1075496535108106425
+    second: P2_Shotgun.Charged_RUN_11
+  - first:
+      213: 9180108043566252679
+    second: P2_Shotgun.Charged_RUN_12
+  - first:
+      213: 5935603005730471557
+    second: P2_Shotgun.Charged_RUN_13
+  - first:
+      213: -333791337008958045
+    second: P2_Shotgun.Charged_RUN_14
+  - first:
+      213: 5087734317695290050
+    second: P2_Shotgun.Charged_RUN_15
+  - first:
+      213: 5867570413572113135
+    second: P2_Shotgun.Charged_RUN_16
+  - first:
+      213: 7885886647495235028
+    second: P2_Shotgun.Charged_RUN_17
+  - first:
+      213: -2247832064673041007
+    second: P2_Shotgun.Charged_RUN_18
+  - first:
+      213: 8647483449898215907
+    second: P2_Shotgun.Charged_RUN_19
+  - first:
+      213: -6182903572425859470
+    second: P2_Shotgun.Charged_RUN_20
+  - first:
+      213: -9089140045792706239
+    second: P2_Shotgun.Charged_RUN_21
+  - first:
+      213: -2988350954709521137
+    second: P2_Shotgun.Charged_RUN_22
+  - first:
+      213: 8346653400372928690
+    second: P2_Shotgun.Charged_RUN_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 319
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd9fa791dd0c5ae0800000000000000
+      internalID: -1559356177132839428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 319
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f293e712af3c036b0800000000000000
+      internalID: -5318535680853395153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_2
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 319
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e156ee20c319bf0800000000000000
+      internalID: -319408115279389116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 319
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8cc0ca7e0a53d3f0800000000000000
+      internalID: -877258484171617140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 319
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be82b7b5f97fde850800000000000000
+      internalID: 6408050108624742635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 319
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c32f48897461740800000000000000
+      internalID: 5122360346571586713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 223
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb71363b25739a70800000000000000
+      internalID: 8832532122656930742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_7
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 224
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 949927a898a992e10800000000000000
+      internalID: 2173438210706938185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 226
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adb43b59c49ab860800000000000000
+      internalID: 7546507718152207777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_9
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 223
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61848aca0cf162120800000000000000
+      internalID: 2388631564757518358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_10
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 223
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce54436f4b5d8100800000000000000
+      internalID: 111845962280099526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_11
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 223
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747c7bb79911311f0800000000000000
+      internalID: -1075496535108106425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 127
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782097890ab466f70800000000000000
+      internalID: 9180108043566252679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 127
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e3e4c4c7f7f5250800000000000000
+      internalID: 5935603005730471557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_14
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 127
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a57a782c822e5bf0800000000000000
+      internalID: -333791337008958045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 127
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cacacde7634b9640800000000000000
+      internalID: 5087734317695290050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_16
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 127
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2ce83143ccd6150800000000000000
+      internalID: 5867570413572113135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 127
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d513faef1c407d60800000000000000
+      internalID: 7885886647495235028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 31
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1953e6e85a81ec0e0800000000000000
+      internalID: -2247832064673041007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 33
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e9a040a168020870800000000000000
+      internalID: 8647483449898215907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_20
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 34
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27e101595f9e13aa0800000000000000
+      internalID: -6182903572425859470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 31
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1418fb0e843ecd180800000000000000
+      internalID: -9089140045792706239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 33
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0de650c3ae3786d0800000000000000
+      internalID: -2988350954709521137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_Shotgun.Charged_RUN_23
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 33
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0e8809b0545d370800000000000000
+      internalID: 8346653400372928690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P2_Shotgun.Charged_RUN_0: -1559356177132839428
+      P2_Shotgun.Charged_RUN_1: -5318535680853395153
+      P2_Shotgun.Charged_RUN_10: 111845962280099526
+      P2_Shotgun.Charged_RUN_11: -1075496535108106425
+      P2_Shotgun.Charged_RUN_12: 9180108043566252679
+      P2_Shotgun.Charged_RUN_13: 5935603005730471557
+      P2_Shotgun.Charged_RUN_14: -333791337008958045
+      P2_Shotgun.Charged_RUN_15: 5087734317695290050
+      P2_Shotgun.Charged_RUN_16: 5867570413572113135
+      P2_Shotgun.Charged_RUN_17: 7885886647495235028
+      P2_Shotgun.Charged_RUN_18: -2247832064673041007
+      P2_Shotgun.Charged_RUN_19: 8647483449898215907
+      P2_Shotgun.Charged_RUN_2: -319408115279389116
+      P2_Shotgun.Charged_RUN_20: -6182903572425859470
+      P2_Shotgun.Charged_RUN_21: -9089140045792706239
+      P2_Shotgun.Charged_RUN_22: -2988350954709521137
+      P2_Shotgun.Charged_RUN_23: 8346653400372928690
+      P2_Shotgun.Charged_RUN_3: -877258484171617140
+      P2_Shotgun.Charged_RUN_4: 6408050108624742635
+      P2_Shotgun.Charged_RUN_5: 5122360346571586713
+      P2_Shotgun.Charged_RUN_6: 8832532122656930742
+      P2_Shotgun.Charged_RUN_7: 2173438210706938185
+      P2_Shotgun.Charged_RUN_8: 7546507718152207777
+      P2_Shotgun.Charged_RUN_9: 2388631564757518358
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

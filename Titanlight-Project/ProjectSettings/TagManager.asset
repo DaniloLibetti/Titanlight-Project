@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - RoomBounds
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - floordetect
   - HoleFloor
   - bullet
-  - 
+  - Itens
   - 
   - 
   - 

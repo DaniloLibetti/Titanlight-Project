@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: ef9924e19f89e944dad3f7ad3d732081
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4953047998452364367
+    second: P1_Shotgun.Charged_WALK_0
+  - first:
+      213: 2487187961241207128
+    second: P1_Shotgun.Charged_WALK_1
+  - first:
+      213: 5885594178595154157
+    second: P1_Shotgun.Charged_WALK_2
+  - first:
+      213: -5175137343736824755
+    second: P1_Shotgun.Charged_WALK_3
+  - first:
+      213: -2002153663021263651
+    second: P1_Shotgun.Charged_WALK_4
+  - first:
+      213: 5318310555326350687
+    second: P1_Shotgun.Charged_WALK_5
+  - first:
+      213: -5886339593477425920
+    second: P1_Shotgun.Charged_WALK_6
+  - first:
+      213: 2157780005179980171
+    second: P1_Shotgun.Charged_WALK_7
+  - first:
+      213: 9146031635879887271
+    second: P1_Shotgun.Charged_WALK_8
+  - first:
+      213: -1349588780729508668
+    second: P1_Shotgun.Charged_WALK_9
+  - first:
+      213: -3982357033463728602
+    second: P1_Shotgun.Charged_WALK_10
+  - first:
+      213: 1905725089238094352
+    second: P1_Shotgun.Charged_WALK_11
+  - first:
+      213: 4820089515333908728
+    second: P1_Shotgun.Charged_WALK_12
+  - first:
+      213: -8236869183538869146
+    second: P1_Shotgun.Charged_WALK_13
+  - first:
+      213: -5594686521000193307
+    second: P1_Shotgun.Charged_WALK_14
+  - first:
+      213: 4962839819237083206
+    second: P1_Shotgun.Charged_WALK_15
+  - first:
+      213: -4877838533803235061
+    second: P1_Shotgun.Charged_WALK_16
+  - first:
+      213: 629744563455342664
+    second: P1_Shotgun.Charged_WALK_17
+  - first:
+      213: -4531404568018761514
+    second: P1_Shotgun.Charged_WALK_18
+  - first:
+      213: 5162282178100306783
+    second: P1_Shotgun.Charged_WALK_19
+  - first:
+      213: 8180292974250151839
+    second: P1_Shotgun.Charged_WALK_20
+  - first:
+      213: 359116017419072442
+    second: P1_Shotgun.Charged_WALK_21
+  - first:
+      213: -7330033858443172782
+    second: P1_Shotgun.Charged_WALK_22
+  - first:
+      213: -1974094401369407570
+    second: P1_Shotgun.Charged_WALK_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 319
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb89c8761d334bb0800000000000000
+      internalID: -4953047998452364367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 319
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8510967e544448220800000000000000
+      internalID: 2487187961241207128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_2
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 319
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de86543e8b4dda150800000000000000
+      internalID: 5885594178595154157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 319
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c35b241083e28b0800000000000000
+      internalID: -5175137343736824755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_4
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 319
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4ded1f9dbe634e0800000000000000
+      internalID: -2002153663021263651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_5
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 319
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55007fb54f6ec940800000000000000
+      internalID: 5318310555326350687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_6
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 223
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005f57fa3558f4ea0800000000000000
+      internalID: -5886339593477425920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_7
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 225
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8971387b79f1fd10800000000000000
+      internalID: 2157780005179980171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 224
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a10b19a05b3dee70800000000000000
+      internalID: 9146031635879887271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_9
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 223
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccd3c3872c454de0800000000000000
+      internalID: -1349588780729508668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_10
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 225
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626bd93a063dbb8c0800000000000000
+      internalID: -3982357033463728602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_11
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 224
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01216972fde727a10800000000000000
+      internalID: 1905725089238094352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 127
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8ff0350e564e240800000000000000
+      internalID: 4820089515333908728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_13
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ccdcd4e13c0bd80800000000000000
+      internalID: -8236869183538869146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_14
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 127
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e21e16404eab52b0800000000000000
+      internalID: -5594686521000193307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 127
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6484ac6758c8fd440800000000000000
+      internalID: 4962839819237083206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_16
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 127
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0922f882bf6e4cb0800000000000000
+      internalID: -4877838533803235061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_17
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 127
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8483dfb085d4db800800000000000000
+      internalID: 629744563455342664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 32
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8c8a5cd873d11c0800000000000000
+      internalID: -4531404568018761514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 33
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53afff3a4c14a740800000000000000
+      internalID: 5162282178100306783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_20
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 33
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fcdc87e1d368170800000000000000
+      internalID: 8180292974250151839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 31
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3ba6b7d16dbf400800000000000000
+      internalID: 359116017419072442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 33
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 254a8ebba0d764a90800000000000000
+      internalID: -7330033858443172782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_Shotgun.Charged_WALK_23
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 34
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaff945e99b9a94e0800000000000000
+      internalID: -1974094401369407570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P1_Shotgun.Charged_WALK_0: -4953047998452364367
+      P1_Shotgun.Charged_WALK_1: 2487187961241207128
+      P1_Shotgun.Charged_WALK_10: -3982357033463728602
+      P1_Shotgun.Charged_WALK_11: 1905725089238094352
+      P1_Shotgun.Charged_WALK_12: 4820089515333908728
+      P1_Shotgun.Charged_WALK_13: -8236869183538869146
+      P1_Shotgun.Charged_WALK_14: -5594686521000193307
+      P1_Shotgun.Charged_WALK_15: 4962839819237083206
+      P1_Shotgun.Charged_WALK_16: -4877838533803235061
+      P1_Shotgun.Charged_WALK_17: 629744563455342664
+      P1_Shotgun.Charged_WALK_18: -4531404568018761514
+      P1_Shotgun.Charged_WALK_19: 5162282178100306783
+      P1_Shotgun.Charged_WALK_2: 5885594178595154157
+      P1_Shotgun.Charged_WALK_20: 8180292974250151839
+      P1_Shotgun.Charged_WALK_21: 359116017419072442
+      P1_Shotgun.Charged_WALK_22: -7330033858443172782
+      P1_Shotgun.Charged_WALK_23: -1974094401369407570
+      P1_Shotgun.Charged_WALK_3: -5175137343736824755
+      P1_Shotgun.Charged_WALK_4: -2002153663021263651
+      P1_Shotgun.Charged_WALK_5: 5318310555326350687
+      P1_Shotgun.Charged_WALK_6: -5886339593477425920
+      P1_Shotgun.Charged_WALK_7: 2157780005179980171
+      P1_Shotgun.Charged_WALK_8: 9146031635879887271
+      P1_Shotgun.Charged_WALK_9: -1349588780729508668
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

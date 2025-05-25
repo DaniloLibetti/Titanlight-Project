@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2847421426837544714}
   - component: {fileID: 8083342415082825651}
   - component: {fileID: 7442955473444710397}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1012284240000828407}
   - component: {fileID: 5909149142609086464}
   - component: {fileID: 4520897165114863199}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: -2090779289817120820}
   - component: {fileID: 5664122713359422823}
   - component: {fileID: 1674986793591689536}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f524d7ac29cf9a449fdf52c5697235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 0.8
+  interactRange: 2
   promptText: {fileID: 7442955473444710397}
 --- !u!114 &5664122713359422823
 MonoBehaviour:
@@ -392,9 +392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304d8a2e203fd3b49b2f183270acad57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 15954a9687d4e73478439f7d2263975e, type: 2}
-  <Quantity>k__BackingField: 5
-  duration: 0.3
+  attractionSpeed: 1.32
+  collectDistance: 2
+  activationDelay: 0.5
 --- !u!82 &1674986793591689536
 AudioSource:
   m_ObjectHideFlags: 0
