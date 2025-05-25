@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_SHOP_0: 4158529858208774392
+      UI_SHOP_1: -2924366265469912378
+      UI_SHOP_2: -938082354008217963
+      UI_SHOP_3: 2200391589390997178
+      UI_SHOP_4: -7124149458535747463
+      UI_SHOP_5: 5305329629895729249
+      UI_SHOP_6: -4157622663421944584
+      UI_SHOP_7: 132009468976229824
+      UI_SHOP_8: 3763792827233663499
+      UI_SHOP_9: 6112263462963035490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

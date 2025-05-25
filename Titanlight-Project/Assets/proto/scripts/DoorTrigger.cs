@@ -110,13 +110,13 @@ public class DoorTrigger : MonoBehaviour
         if (Input.GetKeyDown(hackKey))
         {
             TryHackDoor();
-            SoundManager.PlaySound(SoundType.HACKING);
+            
         }
 
         else if (Input.GetKeyDown(interactKey))
         {
             TryPassThrough();
-            SoundManager.PlaySound(SoundType.DOOR);
+            
         }
 
     }
@@ -125,7 +125,11 @@ public class DoorTrigger : MonoBehaviour
     {
         // Se a porta estiver aberta, o GameManager trata da transição (passagem pelo túnel)
         if (sharedState.isOpen && !sharedState.isLocked)
+        {
             GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
+            SoundManager.PlaySound(SoundType.DOOR);
+        }
+            
     }
 
     public void TryHackDoor()
@@ -158,6 +162,7 @@ public class DoorTrigger : MonoBehaviour
         if (room != null)
         {
             GameManager.Instance.RegisterDoor(room.GridCoord, direction);
+            SoundManager.PlaySound(SoundType.HACKING);
         }
         else
         {

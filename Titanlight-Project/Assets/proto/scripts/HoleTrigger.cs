@@ -34,7 +34,10 @@ public class HoleTrigger : MonoBehaviour
         {
             var player = other.GetComponent<PlayerStateMachine>();
             if (player != null && !player.IsDashing)
+            {
                 StartCoroutine(FallSequence(player));
+                SoundManager.PlaySound(SoundType.FALL);
+            }                
         }
     }
 

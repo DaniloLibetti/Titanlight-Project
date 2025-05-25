@@ -160,8 +160,7 @@ MonoBehaviour:
   doorLeft: {fileID: 7371345905565269407}
   doorRight: {fileID: 5489371490179094718}
   enemyPrefabs:
-  - {fileID: 2519568851688618401, guid: d9f1f28f0d93df745907a239bc6494cb, type: 3}
-  - {fileID: 6444819108587751148, guid: a634287bd14798848a64c0a51c2f9477, type: 3}
+  - {fileID: 2519568851688618401, guid: d2c089117dbf57f4a88424be1c1451c7, type: 3}
   minEnemies: 3
   maxEnemies: 4
 --- !u!61 &6323430952707927894
