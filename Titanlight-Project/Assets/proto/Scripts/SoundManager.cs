@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] soundList;
     private static SoundManager instance;
-    private AudioSource audioSource;
+    private AudioSource sFXAudioSource;
 
     private void Awake()
     {
@@ -32,11 +32,11 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        sFXAudioSource = GetComponent<AudioSource>();
     }
 
     public static void PlaySound(SoundType sound, float volume = 1)
     {
-        instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
+        instance.sFXAudioSource.PlayOneShot(instance.soundList[(int)sound], volume);
     }
 }

@@ -23,6 +23,7 @@ public class MainMenuController : MonoBehaviour
     {
         SoundManager.PlaySound(SoundType.BUTTON);
         SceneManager.LoadScene(gameSceneName);
+        MusicaManager.PlayMusic();
     }
 
     // Método chamado pelo botão Options para abrir o menu de opções
@@ -42,6 +43,16 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    public void CloseOptions()
+    {
+        if(optionsPanel != null)
+        {
+            SoundManager.PlaySound(SoundType.BUTTON);
+            optionsPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
+        }
+    }
+
     // Método chamado pelo botão Back, no menu de opções, para voltar ao menu principal
     public void BackToMainMenu()
     {
@@ -55,7 +66,7 @@ public class MainMenuController : MonoBehaviour
         {
             SoundManager.PlaySound(SoundType.BUTTON);
             mainMenuPanel.SetActive(true);
-        }    
+        }
         
     }
 

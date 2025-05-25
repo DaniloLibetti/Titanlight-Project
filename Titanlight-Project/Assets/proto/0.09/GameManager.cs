@@ -69,6 +69,7 @@ public class GameManager : Singleton<GameManager>
     private float _shiftHoldTimer = 0f;
     private const float SHIFT_HOLD_DURATION = 2f;
 
+
     protected override void Awake()
     {
         base.Awake();
@@ -298,8 +299,9 @@ public class GameManager : Singleton<GameManager>
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
         SoundManager.PlaySound(SoundType.BUTTON);
+        Application.Quit();
     }
     
 }
