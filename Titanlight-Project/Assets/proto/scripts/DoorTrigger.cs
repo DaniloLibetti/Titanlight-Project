@@ -108,9 +108,17 @@ public class DoorTrigger : MonoBehaviour
     void CheckInputs()
     {
         if (Input.GetKeyDown(hackKey))
+        {
             TryHackDoor();
+            SoundManager.PlaySound(SoundType.HACKING);
+        }
+
         else if (Input.GetKeyDown(interactKey))
+        {
             TryPassThrough();
+            SoundManager.PlaySound(SoundType.DOOR);
+        }
+
     }
 
     void TryPassThrough()

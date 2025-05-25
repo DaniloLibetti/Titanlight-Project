@@ -92,8 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
-  invincibleDuration: 0.5
-  blinkInterval: 0.1
   damage: 20
 --- !u!1 &667416706043724910
 GameObject:
@@ -213,7 +211,7 @@ GameObject:
   - component: {fileID: 6323430952707927894}
   m_Layer: 10
   m_Name: ROOM_3
-  m_TagString: RoomBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +255,8 @@ MonoBehaviour:
   doorLeft: {fileID: 7371345905565269407}
   doorRight: {fileID: 5489371490179094718}
   enemyPrefabs:
-  - {fileID: 2519568851688618401, guid: d2c089117dbf57f4a88424be1c1451c7, type: 3}
+  - {fileID: 2519568851688618401, guid: d9f1f28f0d93df745907a239bc6494cb, type: 3}
+  - {fileID: 6444819108587751148, guid: a634287bd14798848a64c0a51c2f9477, type: 3}
   minEnemies: 2
   maxEnemies: 4
 --- !u!61 &6323430952707927894
@@ -398,8 +397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
-  invincibleDuration: 0.5
-  blinkInterval: 0.1
   damage: 20
 --- !u!1 &3182809772925355241
 GameObject:
