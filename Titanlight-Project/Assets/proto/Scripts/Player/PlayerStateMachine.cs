@@ -157,6 +157,7 @@ namespace Player.StateMachine
                         if (Input.GetKeyDown(shotgunKey) && Time.time >= nextShotgunTime)
                         {
                             nextShotgunTime = Time.time + shotgunCooldown;
+                            SoundManager.PlaySound(SoundType.LASERSHOTGUN);
                             StartCoroutine(ShotgunAttack());
                         }
                         break;
@@ -165,6 +166,7 @@ namespace Player.StateMachine
                         if (Input.GetKey(machineGunKey) && Time.time >= nextMachineGunTime && !overheated)
                         {
                             nextMachineGunTime = Time.time + machineGunCooldown;
+                            SoundManager.PlaySound(SoundType.HEATLASER);
                             StartCoroutine(MachineGunAttack());
                         }
                         break;
@@ -269,6 +271,10 @@ namespace Player.StateMachine
             {
                 currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
                 overheated = currentHeat >= config.heatMax;
+                if (overheated)
+                {
+                    SoundManager.PlaySound(SoundType.OVERHEAT);
+                }
             }
             else
             {

@@ -15,6 +15,12 @@ public class EquipmentMenuController : MonoBehaviour
     [SerializeField] GameObject granadeOptionsP1;
     [SerializeField] GameObject healOptionsP1;
     [SerializeField] Button button1, button2, button3;
+    /*[SerializeField] Image range1BorderP1;
+    [SerializeField] Image range2BorderP1;
+    [SerializeField] Image chip1BorderP1;
+    [SerializeField] Image chip2BorderP1;
+    [SerializeField] Image granadeBorderP1;
+    [SerializeField] Image healBorderP1;*/
 
     [Header("Player2")]
     [SerializeField] GameObject range1OptionsP2;
@@ -23,6 +29,12 @@ public class EquipmentMenuController : MonoBehaviour
     [SerializeField] GameObject chip2OptionsP2;
     [SerializeField] GameObject granadeOptionsP2;
     [SerializeField] GameObject healOptionsP2;
+    /*[SerializeField] Image range1BorderP2;
+    [SerializeField] Image range2BorderP2;
+    [SerializeField] Image chip1BorderP2;
+    [SerializeField] Image chip2BorderP2;
+    [SerializeField] Image granadeBorderP2;
+    [SerializeField] Image healBorderP2;*/
 
     public int buttonValue;
 
