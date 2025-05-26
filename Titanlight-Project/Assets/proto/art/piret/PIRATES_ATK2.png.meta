@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: c173461f51576bc41b855b8b7112861d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 388448733547595558
+    second: PIRATES_ATK2_0
+  - first:
+      213: 2852346803645668042
+    second: PIRATES_ATK2_1
+  - first:
+      213: 8047507458053348966
+    second: PIRATES_ATK2_2
+  - first:
+      213: -4137577560523123589
+    second: PIRATES_ATK2_3
+  - first:
+      213: 8297246867234184913
+    second: PIRATES_ATK2_4
+  - first:
+      213: -9204238696797386639
+    second: PIRATES_ATK2_5
+  - first:
+      213: -3638847969854332221
+    second: PIRATES_ATK2_6
+  - first:
+      213: 1317853693568366631
+    second: PIRATES_ATK2_7
+  - first:
+      213: -3583914169960649384
+    second: PIRATES_ATK2_8
+  - first:
+      213: 840293833403923680
+    second: PIRATES_ATK2_9
+  - first:
+      213: 1129190392333735392
+    second: PIRATES_ATK2_10
+  - first:
+      213: -8673501848414132486
+    second: PIRATES_ATK2_11
+  - first:
+      213: -8973287590580932421
+    second: PIRATES_ATK2_12
+  - first:
+      213: -768599361159128887
+    second: PIRATES_ATK2_13
+  - first:
+      213: -348650349279597673
+    second: PIRATES_ATK2_14
+  - first:
+      213: -239959487750334159
+    second: PIRATES_ATK2_15
+  - first:
+      213: 7549562661653643120
+    second: PIRATES_ATK2_16
+  - first:
+      213: 2940721417170296054
+    second: PIRATES_ATK2_17
+  - first:
+      213: 8550686517066122058
+    second: PIRATES_ATK2_18
+  - first:
+      213: -1374825653967032892
+    second: PIRATES_ATK2_19
+  - first:
+      213: 7127608960028676000
+    second: PIRATES_ATK2_20
+  - first:
+      213: 2348349155199984098
+    second: PIRATES_ATK2_21
+  - first:
+      213: 1454498924209004344
+    second: PIRATES_ATK2_22
+  - first:
+      213: 3280685309125837172
+    second: PIRATES_ATK2_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PIRATES_ATK2_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 319
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6270e88a01c046500800000000000000
+      internalID: 388448733547595558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 319
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca55873e42959720800000000000000
+      internalID: 2852346803645668042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 319
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e9394456d7eaf60800000000000000
+      internalID: 8047507458053348966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 319
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74546a612f5496c0800000000000000
+      internalID: -4137577560523123589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_4
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 319
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de5737a01eb52370800000000000000
+      internalID: 8297246867234184913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_5
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 319
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178cc71eba9f34080800000000000000
+      internalID: -9204238696797386639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 223
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c26e250d07308dc0800000000000000
+      internalID: -3638847969854332221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 223
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7283417b3f4f94210800000000000000
+      internalID: 1317853693568366631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_8
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 223
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85da1020d01634ec0800000000000000
+      internalID: -3583914169960649384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_9
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 223
+        width: 58
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ecfdf61ac259ab00800000000000000
+      internalID: 840293833403923680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_10
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 224
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e516dadda0bbaf00800000000000000
+      internalID: 1129190392333735392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_11
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 224
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6e496e50881a780800000000000000
+      internalID: -8673501848414132486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 127
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0b0089a7a787380800000000000000
+      internalID: -8973287590580932421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_13
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 127
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8948704f26555f0800000000000000
+      internalID: -768599361159128887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_14
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 127
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79baf54ca58592bf0800000000000000
+      internalID: -348650349279597673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_15
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 127
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13918240e1e7bacf0800000000000000
+      internalID: -239959487750334159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_16
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 127
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ffa61dd3f65c860800000000000000
+      internalID: 7549562661653643120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 127
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc91dd5c8a8fc820800000000000000
+      internalID: 2940721417170296054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 32
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43c27375142aa670800000000000000
+      internalID: 8550686517066122058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 32
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd63331a53abece0800000000000000
+      internalID: -1374825653967032892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_20
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 32
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af8660e59a5ae260800000000000000
+      internalID: 7127608960028676000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_21
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 32
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e1a8445d13079020800000000000000
+      internalID: 2348349155199984098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_22
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 32
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f5aa7b01b6f2410800000000000000
+      internalID: 1454498924209004344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_ATK2_23
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 32
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471c94628e5578d20800000000000000
+      internalID: 3280685309125837172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PIRATES_ATK2_0: 388448733547595558
+      PIRATES_ATK2_1: 2852346803645668042
+      PIRATES_ATK2_10: 1129190392333735392
+      PIRATES_ATK2_11: -8673501848414132486
+      PIRATES_ATK2_12: -8973287590580932421
+      PIRATES_ATK2_13: -768599361159128887
+      PIRATES_ATK2_14: -348650349279597673
+      PIRATES_ATK2_15: -239959487750334159
+      PIRATES_ATK2_16: 7549562661653643120
+      PIRATES_ATK2_17: 2940721417170296054
+      PIRATES_ATK2_18: 8550686517066122058
+      PIRATES_ATK2_19: -1374825653967032892
+      PIRATES_ATK2_2: 8047507458053348966
+      PIRATES_ATK2_20: 7127608960028676000
+      PIRATES_ATK2_21: 2348349155199984098
+      PIRATES_ATK2_22: 1454498924209004344
+      PIRATES_ATK2_23: 3280685309125837172
+      PIRATES_ATK2_3: -4137577560523123589
+      PIRATES_ATK2_4: 8297246867234184913
+      PIRATES_ATK2_5: -9204238696797386639
+      PIRATES_ATK2_6: -3638847969854332221
+      PIRATES_ATK2_7: 1317853693568366631
+      PIRATES_ATK2_8: -3583914169960649384
+      PIRATES_ATK2_9: 840293833403923680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
