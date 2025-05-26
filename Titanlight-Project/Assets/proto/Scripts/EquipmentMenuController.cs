@@ -3,10 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 
 public class EquipmentMenuController : MonoBehaviour
 {
+
+    [SerializeField] GameObject equipCanvas;
+
     [Header("Player1")]
     [SerializeField] GameObject range1OptionsP1;
     [SerializeField] GameObject range2OptionsP1;
@@ -36,7 +40,10 @@ public class EquipmentMenuController : MonoBehaviour
     [SerializeField] Image granadeBorderP2;
     [SerializeField] Image healBorderP2;*/
 
+
     public int buttonValue;
+
+    
 
     public void ShowRange1OptionsP1()
     {
