@@ -7,9 +7,25 @@ namespace Player.StateMachine
 {
     public enum RangedAttackType { Shotgun = 1, MachineGun = 0 }
 
+    [System.Serializable]
+    public class PlayerInputSettings
+    {
+        [Header("Attack Keys")]
+        public KeyCode shotgunKey = KeyCode.C;
+        public KeyCode machineGunKey = KeyCode.V;
+        public KeyCode dashKey = KeyCode.Space;
+        public KeyCode switchModeKey = KeyCode.Q;
+        public KeyCode meleeAttackKey = KeyCode.O;
+    }
+
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
     public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
+        [Header("Player Settings")]
+        [SerializeField] private bool isPlayerOne = true;
+        [SerializeField] private PlayerInputSettings player1Inputs = new PlayerInputSettings();
+        [SerializeField] private PlayerInputSettings player2Inputs = new PlayerInputSettings();
+
         [Header("Recoil Settings")]
         public float baseRecoilForce = 2f;
 
@@ -32,13 +48,6 @@ namespace Player.StateMachine
         public void SetCanMove(bool v) => CanMove = v;
         public bool CanDash { get; private set; } = true;
         public void SetCanDash(bool v) => CanDash = v;
-
-        [Header("Input Keys")]
-        public KeyCode shotgunKey = KeyCode.C;
-        public KeyCode machineGunKey = KeyCode.V;
-        public KeyCode dashKey = KeyCode.Space;
-        public KeyCode switchModeKey = KeyCode.Q;
-        public KeyCode meleeAttackKey = KeyCode.O;
 
         [Header("References")]
         public Transform firePoint;
@@ -72,6 +81,7 @@ namespace Player.StateMachine
         public PlayerBaseState CurrentState { get; private set; }
 
         // Input e mecânicas
+        private PlayerInputSettings currentInputs;
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
         public Vector2 lastDirection = Vector2.right;
@@ -82,29 +92,36 @@ namespace Player.StateMachine
         private Collider2D[] _colliders;
         private float nextShotgunTime = 0f;
         private float nextMachineGunTime = 0f;
-
-        // Arma atual
         private RangedAttackType currentRangedType = RangedAttackType.MachineGun;
 
         protected override void Awake()
         {
             base.Awake();
+            ConfigureInputs();
+            InitializeComponents();
+            SetupStates();
+        }
+
+        private void ConfigureInputs()
+        {
+            currentInputs = isPlayerOne ? player1Inputs : player2Inputs;
+        }
+
+        private void InitializeComponents()
+        {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
+            _colliders = GetComponents<Collider2D>();
+
             if (animator == null)
                 Debug.LogError("Animator não encontrado.");
 
             if (firePoint != null)
                 firePointInitialLocalPos = firePoint.localPosition;
+        }
 
-            _colliders = GetComponents<Collider2D>();
-
-            // Define estado inicial de arma
-            isRangedMode = true;
-            currentRangedType = RangedAttackType.MachineGun;
-            animator.SetInteger("WeaponType", (int)currentRangedType);
-
-            // Inicializa estados
+        private void SetupStates()
+        {
             IdleState = new IdleState(this);
             MovingState = new MovingState(this);
             DashState = new DashState(this);
@@ -114,73 +131,115 @@ namespace Player.StateMachine
 
             CurrentState = IdleState;
             CurrentState.EnterState(this);
+
+            isRangedMode = true;
+            animator.SetInteger("WeaponType", (int)currentRangedType);
         }
 
         void Update()
         {
             if (!CanMove) return;
 
-            // (Opcional: ignorar melee por enquanto)
-            if (Input.GetKeyDown(meleeAttackKey))
+            HandleMeleeAttack();
+            HandleWeaponSwitch();
+            HandleMovementInput();
+            UpdateFirePointTransform();
+            HandleRangedAttack();
+            HandleDash();
+            UpdateAnimations();
+            UpdateTimers();
+            UpdateHeat();
+            CurrentState.UpdateState(this);
+        }
+
+        void FixedUpdate() => CurrentState.FixedUpdateState(this);
+
+        private void HandleMeleeAttack()
+        {
+            if (Input.GetKeyDown(currentInputs.meleeAttackKey))
             {
                 if (cooldownTimer <= 0 && CurrentState != AttackState)
+                {
                     SwitchState(AttackState);
+                }
             }
+        }
 
-            if (cooldownTimer > 0)
-                cooldownTimer -= Time.deltaTime;
-
-            // Troca de arma entre metralhadora e shotgun
-            if (Input.GetKeyDown(switchModeKey))
+        private void HandleWeaponSwitch()
+        {
+            if (Input.GetKeyDown(currentInputs.switchModeKey))
             {
                 currentRangedType = currentRangedType == RangedAttackType.MachineGun
                                     ? RangedAttackType.Shotgun
                                     : RangedAttackType.MachineGun;
                 animator.SetInteger("WeaponType", (int)currentRangedType);
             }
+        }
 
-            // Movimento
+        private void HandleMovementInput()
+        {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             moveInput = new Vector2(h, v).normalized;
-            if (moveInput != Vector2.zero)
-                lastDirection = moveInput;
-
-            UpdateFirePointTransform();
-
-            // Disparo conforme arma selecionada
-            if (isRangedMode)
-            {
-                switch (currentRangedType)
-                {
-                    case RangedAttackType.Shotgun:
-                        if (Input.GetKeyDown(shotgunKey) && Time.time >= nextShotgunTime)
-                        {
-                            nextShotgunTime = Time.time + shotgunCooldown;
-                            StartCoroutine(ShotgunAttack());
-                        }
-                        break;
-
-                    case RangedAttackType.MachineGun:
-                        if (Input.GetKey(machineGunKey) && Time.time >= nextMachineGunTime && !overheated)
-                        {
-                            nextMachineGunTime = Time.time + machineGunCooldown;
-                            StartCoroutine(MachineGunAttack());
-                        }
-                        break;
-                }
-            }
-
-            // Dash
-            if (Input.GetKeyDown(dashKey) && CanDash && lastDirection != Vector2.zero)
-                SwitchState(DashState);
-
-            UpdateAnimations();
-            CurrentState.UpdateState(this);
-            UpdateHeat();
+            if (moveInput != Vector2.zero) lastDirection = moveInput;
         }
 
-        void FixedUpdate() => CurrentState.FixedUpdateState(this);
+        private void HandleRangedAttack()
+        {
+            if (!isRangedMode) return;
+
+            switch (currentRangedType)
+            {
+                case RangedAttackType.Shotgun:
+                    if (Input.GetKeyDown(currentInputs.shotgunKey))
+                    {
+                        StartCoroutine(HandleShotgun());
+                    }
+                    break;
+
+                case RangedAttackType.MachineGun:
+                    if (Input.GetKey(currentInputs.machineGunKey))
+                    {
+                        StartCoroutine(HandleMachineGun());
+                    }
+                    break;
+            }
+        }
+
+        private IEnumerator HandleShotgun()
+        {
+            if (Time.time >= nextShotgunTime && !overheated)
+            {
+                nextShotgunTime = Time.time + shotgunCooldown;
+                animator.SetTrigger("RangedAttack");
+                ShootShotgun();
+                yield return new WaitForSeconds(shotgunCooldown);
+            }
+        }
+
+        private IEnumerator HandleMachineGun()
+        {
+            if (Time.time >= nextMachineGunTime && !overheated)
+            {
+                nextMachineGunTime = Time.time + machineGunCooldown;
+                animator.SetTrigger("RangedAttack");
+                ShootProjectile(machineGunBulletPrefab);
+                yield return new WaitForSeconds(machineGunCooldown);
+            }
+        }
+
+        private void HandleDash()
+        {
+            if (Input.GetKeyDown(currentInputs.dashKey) && CanDash && lastDirection != Vector2.zero)
+            {
+                SwitchState(DashState);
+            }
+        }
+
+        private void UpdateTimers()
+        {
+            if (cooldownTimer > 0) cooldownTimer -= Time.deltaTime;
+        }
 
         public void SwitchState(PlayerBaseState newState)
         {
@@ -213,20 +272,6 @@ namespace Player.StateMachine
                 firePointInitialLocalPos.y,
                 firePointInitialLocalPos.z
             );
-        }
-
-        private IEnumerator ShotgunAttack()
-        {
-            animator.SetTrigger("RangedAttack");
-            ShootShotgun();
-            yield return new WaitForSeconds(shotgunCooldown);
-        }
-
-        private IEnumerator MachineGunAttack()
-        {
-            animator.SetTrigger("RangedAttack");
-            ShootProjectile(machineGunBulletPrefab);
-            yield return new WaitForSeconds(machineGunCooldown);
         }
 
         private void ShootProjectile(GameObject prefab)
@@ -265,7 +310,7 @@ namespace Player.StateMachine
 
         private void UpdateHeat()
         {
-            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey) && !overheated)
+            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && Input.GetKey(currentInputs.machineGunKey) && !overheated)
             {
                 currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
                 overheated = currentHeat >= config.heatMax;

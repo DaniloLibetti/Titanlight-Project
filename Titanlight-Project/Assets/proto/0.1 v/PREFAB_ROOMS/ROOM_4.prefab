@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &667416706043724910
 GameObject:
@@ -448,6 +450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &1591430054707244790
 GameObject:
@@ -510,8 +514,7 @@ MonoBehaviour:
   doorLeft: {fileID: 7371345905565269407}
   doorRight: {fileID: 5489371490179094718}
   enemyPrefabs:
-  - {fileID: 6444819108587751148, guid: a634287bd14798848a64c0a51c2f9477, type: 3}
-  - {fileID: 2519568851688618401, guid: d9f1f28f0d93df745907a239bc6494cb, type: 3}
+  - {fileID: 2519568851688618401, guid: d2c089117dbf57f4a88424be1c1451c7, type: 3}
   minEnemies: 4
   maxEnemies: 5
 --- !u!61 &6323430952707927894
@@ -652,6 +655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &2779519118519671588
 GameObject:
@@ -911,6 +916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &4069862804584864296
 GameObject:
@@ -1226,6 +1233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &4577899442311834566
 GameObject:
@@ -2039,6 +2048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkDuration: 1
+  invincibleDuration: 0.5
+  blinkInterval: 0.1
   damage: 20
 --- !u!1 &8168353391209908738
 GameObject:
