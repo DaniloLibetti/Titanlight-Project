@@ -5,80 +5,115 @@ using TMPro;
 public class RunSummary : MonoBehaviour
 {
     [Header("Configurações de Run")]
-    public float highMultiplier = 100f; // multiplicador de recompensa alta  
-    public float neutralMultiplier = 80f; // multiplicador neutro  
-    public float lowMultiplier = 60f; // multiplicador de recompensa baixa  
+    [Tooltip("Mercado Negro: melhor oferta, reputação é negativa (%)")]
+    public float marketMultiplier = 100f;
+    [Tooltip("Varejo: oferta intermediária, sem mudança de reputação")]
+    public float retailMultiplier = 80f;
+    [Tooltip("TitanLight: pior oferta, reputação é positiva (%)")]
+    public float titanMultiplier = 60f;
+
+    [Header("Reputação baseada na oferta")]
+    [Tooltip("Percentual de reputação negativa para Mercado Negro (ex: 0.12 = 12% de marketOffer)")]
+    [Range(0f, 1f)]
+    public float marketReputationPercent = 0.12f;
+    [Tooltip("Percentual de reputação positiva para TitanLight (ex: 0.20 = 20% de titanOffer)")]
+    [Range(0f, 1f)]
+    public float titanReputationPercent = 0.20f;
 
     [Header("Componentes da UI")]
-    public Button optionHighButton; // botão da oferta alta  
-    public Button optionNeutralButton; // botão da oferta neutra  
-    public Button optionLowButton; // botão da oferta baixa  
-    public TextMeshProUGUI optionHighText; // texto da oferta alta  
-    public TextMeshProUGUI optionNeutralText; // texto da oferta neutra  
-    public TextMeshProUGUI optionLowText; // texto da oferta baixa  
-    public GameObject summaryCanvas; // painel de resumo  
+    // Mercado Negro
+    public Button marketButton;           
+    // Varejo
+    public Button retailButton;     
+    // TitanLight
+    public Button titanButton;
 
-    private int highOffer;
-    private int neutralOffer;
-    private int lowOffer;
-    private int highReputationChange; // mudança de reputação (oferta alta)  
-    private int lowReputationChange; // mudança de reputação (oferta baixa)  
+    public TextMeshProUGUI marketOfferText;
+    public TextMeshProUGUI marketReputationText;
+
+    public TextMeshProUGUI retailOfferText;
+    public TextMeshProUGUI retailReputationText;
+
+    public TextMeshProUGUI titanOfferText;
+    public TextMeshProUGUI titanReputationText;
+
+    public GameObject summaryCanvas;
+
+    private int marketOffer, retailOffer, titanOffer;
+    private int marketReputationChange, titanReputationChange;
 
     void Awake()
     {
-        summaryCanvas?.SetActive(false); // inicia com o painel desativado  
-        optionHighButton.onClick.AddListener(SelectHigh); // vincula botão alta  
-        optionNeutralButton.onClick.AddListener(SelectNeutral); // vincula botão neutro  
-        optionLowButton.onClick.AddListener(SelectLow); // vincula botão baixa  
+        summaryCanvas?.SetActive(false);
+
+        marketButton.onClick.AddListener(SelectMarket);
+        retailButton.onClick.AddListener(SelectRetail);
+        titanButton.onClick.AddListener(SelectTitan);
     }
 
     public void ShowSummary()
     {
-        CalculateProposals(); // calcula ofertas  
-        SetUI(); // atualiza textos  
-        summaryCanvas?.SetActive(true); // mostra o painel  
+        CalculateOffersAndReputation();
+        UpdateUI();
+        summaryCanvas?.SetActive(true);
     }
 
-    private void CalculateProposals()
+    private void CalculateOffersAndReputation()
     {
-        int itemCount = GameManager.Instance.ScriptableObjectCount; // pega itens coletados  
-        highOffer = Mathf.RoundToInt(itemCount * highMultiplier); // calcula oferta alta  
-        neutralOffer = Mathf.RoundToInt(itemCount * neutralMultiplier); // oferta neutra  
-        lowOffer = Mathf.RoundToInt(itemCount * lowMultiplier); // oferta baixa  
-        highReputationChange = -Mathf.RoundToInt((highOffer / 5f) * 2f); // penaliza reputação (alta)  
-        lowReputationChange = Mathf.RoundToInt((lowOffer / 3f) * 2f); // aumenta reputação (baixa)  
+        int itemCount = GameManager.Instance.ScriptableObjectCount;
+
+        marketOffer = Mathf.RoundToInt(itemCount * marketMultiplier);
+        retailOffer = Mathf.RoundToInt(itemCount * retailMultiplier);
+        titanOffer = Mathf.RoundToInt(itemCount * titanMultiplier);
+
+        marketReputationChange = -Mathf.RoundToInt(marketOffer * marketReputationPercent);
+        titanReputationChange = Mathf.RoundToInt(titanOffer * titanReputationPercent);
     }
 
-    private void SetUI()
+    private void UpdateUI()
     {
-        optionHighText.text = $"Oferta: {highOffer}\nReputação: {highReputationChange:+#;-#;0}";
-        optionNeutralText.text = $"Oferta: {neutralOffer}\nReputação: +0"; // neutro não altera  
-        optionLowText.text = $"Oferta: {lowOffer}\nReputação: {lowReputationChange:+#;-#;0}";
+        // Mercado Negro
+        marketOfferText.text = marketOffer.ToString();
+        marketReputationText.text = FormatReputation(marketReputationChange);
+
+        // Varejo
+        retailOfferText.text = retailOffer.ToString();
+        retailReputationText.text = FormatReputation(0);
+
+        // TitanLight
+        titanOfferText.text = titanOffer.ToString();
+        titanReputationText.text = FormatReputation(titanReputationChange);
     }
 
-    private void SelectHigh()
+    private string FormatReputation(int rep)
     {
-        PlayerData.AddMoney(highOffer); // adiciona dinheiro (alta)  
-        PlayerData.ChangeReputation(highReputationChange); // aplica mudança reputação  
-        EndRun(); // fecha o painel  
+        string sign = rep > 0 ? "+" : "";
+        return $"{sign}{rep} of reputation";
     }
 
-    private void SelectNeutral()
+    private void SelectMarket()
     {
-        PlayerData.AddMoney(neutralOffer); // adiciona dinheiro neutro  
+        PlayerData.AddMoney(marketOffer);
+        PlayerData.ChangeReputation(marketReputationChange);
         EndRun();
     }
 
-    private void SelectLow()
+    private void SelectRetail()
     {
-        PlayerData.AddMoney(lowOffer); // adiciona dinheiro (baixa)  
-        PlayerData.ChangeReputation(lowReputationChange); // aplica mudança reputação  
+        PlayerData.AddMoney(retailOffer);
+        EndRun();
+    }
+
+    private void SelectTitan()
+    {
+        PlayerData.AddMoney(titanOffer);
+        PlayerData.ChangeReputation(titanReputationChange);
         EndRun();
     }
 
     public void EndRun()
     {
-        summaryCanvas?.SetActive(false); // esconde painel  
-        GameManager.Instance.CompleteAuction(); // finaliza lógica do leilão  
+        summaryCanvas?.SetActive(false);
+        GameManager.Instance.CompleteAuction();
     }
 }

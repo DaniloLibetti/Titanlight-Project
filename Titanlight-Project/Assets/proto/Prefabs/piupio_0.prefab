@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7776739613336437450}
-  - component: {fileID: 5820701445083616723}
+  - component: {fileID: 3393799647812214011}
   - component: {fileID: 6814573408717443173}
   - component: {fileID: 4484730766618276341}
   - component: {fileID: 7949238528057395143}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: piupio_0
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5820701445083616723
+--- !u!114 &3393799647812214011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,11 +44,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9192490774628815525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c96edd6f262be42b7cc1a825ffd1aa, type: 3}
+  m_Script: {fileID: 11500000, guid: da41a4b572bd92047afc5ea8247ff1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 21.8
-  lifetime: 15.65
+  speed: 5.52
+  damage: 15
+  lifeTime: 6
 --- !u!212 &6814573408717443173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,9 +93,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 9
   m_Sprite: {fileID: 8593235595649452036, guid: eed117155f0f3624e9db3a4a09fad412, type: 3}
-  m_Color: {r: 0.99371064, g: 0.51638335, b: 0.37186018, a: 1}
+  m_Color: {r: 0.8805031, g: 0.19659024, b: 0.36635402, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,7 +135,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

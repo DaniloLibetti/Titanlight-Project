@@ -340,12 +340,12 @@ TextureImporter:
       name: Robot_02_Destroyed_0
       rect:
         serializedVersion: 2
-        x: 511
-        y: 225
-        width: 34
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,12 +362,12 @@ TextureImporter:
       name: Robot_02_Destroyed_1
       rect:
         serializedVersion: 2
-        x: 607
-        y: 225
-        width: 33
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -384,12 +384,12 @@ TextureImporter:
       name: Robot_02_Destroyed_2
       rect:
         serializedVersion: 2
-        x: 704
-        y: 225
-        width: 33
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,12 +406,12 @@ TextureImporter:
       name: Robot_02_Destroyed_3
       rect:
         serializedVersion: 2
-        x: 801
-        y: 276
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -428,12 +428,12 @@ TextureImporter:
       name: Robot_02_Destroyed_4
       rect:
         serializedVersion: 2
-        x: 804
-        y: 282
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -450,12 +450,12 @@ TextureImporter:
       name: Robot_02_Destroyed_5
       rect:
         serializedVersion: 2
-        x: 821
-        y: 279
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -472,12 +472,12 @@ TextureImporter:
       name: Robot_02_Destroyed_6
       rect:
         serializedVersion: 2
-        x: 896
-        y: 220
-        width: 32
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 576
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -494,12 +494,12 @@ TextureImporter:
       name: Robot_02_Destroyed_7
       rect:
         serializedVersion: 2
-        x: 898
-        y: 280
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 672
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -516,12 +516,12 @@ TextureImporter:
       name: Robot_02_Destroyed_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 225
-        width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -538,12 +538,12 @@ TextureImporter:
       name: Robot_02_Destroyed_9
       rect:
         serializedVersion: 2
-        x: 128
-        y: 225
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 864
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -560,12 +560,12 @@ TextureImporter:
       name: Robot_02_Destroyed_10
       rect:
         serializedVersion: 2
-        x: 224
-        y: 225
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 960
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -582,12 +582,12 @@ TextureImporter:
       name: Robot_02_Destroyed_11
       rect:
         serializedVersion: 2
-        x: 320
-        y: 225
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1056
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -604,12 +604,12 @@ TextureImporter:
       name: Robot_02_Destroyed_12
       rect:
         serializedVersion: 2
-        x: 416
-        y: 225
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1152
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -626,12 +626,12 @@ TextureImporter:
       name: Robot_02_Destroyed_13
       rect:
         serializedVersion: 2
-        x: 800
-        y: 225
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1248
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -648,12 +648,12 @@ TextureImporter:
       name: Robot_02_Destroyed_14
       rect:
         serializedVersion: 2
-        x: 804
-        y: 218
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1344
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -670,12 +670,12 @@ TextureImporter:
       name: Robot_02_Destroyed_15
       rect:
         serializedVersion: 2
-        x: 992
-        y: 225
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1440
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -692,12 +692,12 @@ TextureImporter:
       name: Robot_02_Destroyed_16
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 225
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1536
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -714,12 +714,12 @@ TextureImporter:
       name: Robot_02_Destroyed_17
       rect:
         serializedVersion: 2
-        x: 1184
-        y: 225
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -736,12 +736,12 @@ TextureImporter:
       name: Robot_02_Destroyed_18
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 225
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -758,12 +758,12 @@ TextureImporter:
       name: Robot_02_Destroyed_19
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 225
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -780,12 +780,12 @@ TextureImporter:
       name: Robot_02_Destroyed_20
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 225
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -802,12 +802,12 @@ TextureImporter:
       name: Robot_02_Destroyed_21
       rect:
         serializedVersion: 2
-        x: 1568
-        y: 225
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -824,12 +824,12 @@ TextureImporter:
       name: Robot_02_Destroyed_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 161
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -846,12 +846,12 @@ TextureImporter:
       name: Robot_02_Destroyed_23
       rect:
         serializedVersion: 2
-        x: 128
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 576
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -868,12 +868,12 @@ TextureImporter:
       name: Robot_02_Destroyed_24
       rect:
         serializedVersion: 2
-        x: 224
-        y: 161
-        width: 33
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 672
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -890,12 +890,12 @@ TextureImporter:
       name: Robot_02_Destroyed_25
       rect:
         serializedVersion: 2
-        x: 320
-        y: 161
-        width: 33
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -912,12 +912,12 @@ TextureImporter:
       name: Robot_02_Destroyed_26
       rect:
         serializedVersion: 2
-        x: 416
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 864
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -934,12 +934,12 @@ TextureImporter:
       name: Robot_02_Destroyed_27
       rect:
         serializedVersion: 2
-        x: 511
-        y: 161
-        width: 34
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 960
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -956,12 +956,12 @@ TextureImporter:
       name: Robot_02_Destroyed_28
       rect:
         serializedVersion: 2
-        x: 607
-        y: 161
-        width: 34
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1056
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -978,12 +978,12 @@ TextureImporter:
       name: Robot_02_Destroyed_29
       rect:
         serializedVersion: 2
-        x: 704
-        y: 161
-        width: 33
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1152
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1000,12 +1000,12 @@ TextureImporter:
       name: Robot_02_Destroyed_30
       rect:
         serializedVersion: 2
-        x: 801
-        y: 161
-        width: 32
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1248
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1022,12 +1022,12 @@ TextureImporter:
       name: Robot_02_Destroyed_31
       rect:
         serializedVersion: 2
-        x: 896
-        y: 156
-        width: 32
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1344
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1044,12 +1044,12 @@ TextureImporter:
       name: Robot_02_Destroyed_32
       rect:
         serializedVersion: 2
-        x: 898
-        y: 216
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1440
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1066,12 +1066,12 @@ TextureImporter:
       name: Robot_02_Destroyed_33
       rect:
         serializedVersion: 2
-        x: 993
-        y: 161
-        width: 31
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1536
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1088,12 +1088,12 @@ TextureImporter:
       name: Robot_02_Destroyed_34
       rect:
         serializedVersion: 2
-        x: 1089
-        y: 161
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1110,12 +1110,12 @@ TextureImporter:
       name: Robot_02_Destroyed_35
       rect:
         serializedVersion: 2
-        x: 1185
-        y: 161
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1132,12 +1132,12 @@ TextureImporter:
       name: Robot_02_Destroyed_36
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 161
-        width: 30
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1154,12 +1154,12 @@ TextureImporter:
       name: Robot_02_Destroyed_37
       rect:
         serializedVersion: 2
-        x: 1377
-        y: 161
-        width: 30
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1176,12 +1176,12 @@ TextureImporter:
       name: Robot_02_Destroyed_38
       rect:
         serializedVersion: 2
-        x: 1473
-        y: 161
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1198,12 +1198,12 @@ TextureImporter:
       name: Robot_02_Destroyed_39
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 161
-        width: 30
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1220,12 +1220,12 @@ TextureImporter:
       name: Robot_02_Destroyed_40
       rect:
         serializedVersion: 2
-        x: 31
-        y: 97
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 576
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1242,12 +1242,12 @@ TextureImporter:
       name: Robot_02_Destroyed_41
       rect:
         serializedVersion: 2
-        x: 127
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 672
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1264,12 +1264,12 @@ TextureImporter:
       name: Robot_02_Destroyed_42
       rect:
         serializedVersion: 2
-        x: 415
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1286,12 +1286,12 @@ TextureImporter:
       name: Robot_02_Destroyed_43
       rect:
         serializedVersion: 2
-        x: 511
-        y: 97
-        width: 34
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 864
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1308,12 +1308,12 @@ TextureImporter:
       name: Robot_02_Destroyed_44
       rect:
         serializedVersion: 2
-        x: 607
-        y: 97
-        width: 33
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 960
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1330,12 +1330,12 @@ TextureImporter:
       name: Robot_02_Destroyed_45
       rect:
         serializedVersion: 2
-        x: 703
-        y: 97
-        width: 34
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1056
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1352,12 +1352,12 @@ TextureImporter:
       name: Robot_02_Destroyed_46
       rect:
         serializedVersion: 2
-        x: 799
-        y: 97
-        width: 33
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1152
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1374,12 +1374,12 @@ TextureImporter:
       name: Robot_02_Destroyed_47
       rect:
         serializedVersion: 2
-        x: 804
-        y: 154
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1248
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1396,12 +1396,12 @@ TextureImporter:
       name: Robot_02_Destroyed_48
       rect:
         serializedVersion: 2
-        x: 896
-        y: 92
-        width: 32
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1344
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1418,12 +1418,12 @@ TextureImporter:
       name: Robot_02_Destroyed_49
       rect:
         serializedVersion: 2
-        x: 898
-        y: 152
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1440
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1440,12 +1440,12 @@ TextureImporter:
       name: Robot_02_Destroyed_50
       rect:
         serializedVersion: 2
-        x: 993
-        y: 97
-        width: 31
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1536
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1462,12 +1462,12 @@ TextureImporter:
       name: Robot_02_Destroyed_51
       rect:
         serializedVersion: 2
-        x: 1089
-        y: 97
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1484,12 +1484,12 @@ TextureImporter:
       name: Robot_02_Destroyed_52
       rect:
         serializedVersion: 2
-        x: 1185
-        y: 97
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1506,12 +1506,12 @@ TextureImporter:
       name: Robot_02_Destroyed_53
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 97
-        width: 30
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1528,12 +1528,12 @@ TextureImporter:
       name: Robot_02_Destroyed_54
       rect:
         serializedVersion: 2
-        x: 223
-        y: 97
-        width: 33
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1550,12 +1550,12 @@ TextureImporter:
       name: Robot_02_Destroyed_55
       rect:
         serializedVersion: 2
-        x: 319
-        y: 97
-        width: 33
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1572,12 +1572,12 @@ TextureImporter:
       name: Robot_02_Destroyed_56
       rect:
         serializedVersion: 2
-        x: 804
-        y: 90
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1594,12 +1594,12 @@ TextureImporter:
       name: Robot_02_Destroyed_57
       rect:
         serializedVersion: 2
-        x: 1377
-        y: 97
-        width: 30
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1616,12 +1616,12 @@ TextureImporter:
       name: Robot_02_Destroyed_58
       rect:
         serializedVersion: 2
-        x: 1473
-        y: 97
-        width: 30
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1638,12 +1638,12 @@ TextureImporter:
       name: Robot_02_Destroyed_59
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 97
-        width: 30
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1660,12 +1660,12 @@ TextureImporter:
       name: Robot_02_Destroyed_60
       rect:
         serializedVersion: 2
-        x: 32
-        y: 33
-        width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1682,12 +1682,12 @@ TextureImporter:
       name: Robot_02_Destroyed_61
       rect:
         serializedVersion: 2
-        x: 511
-        y: 33
-        width: 34
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 960
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1704,12 +1704,12 @@ TextureImporter:
       name: Robot_02_Destroyed_62
       rect:
         serializedVersion: 2
-        x: 607
-        y: 33
-        width: 33
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1056
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1726,12 +1726,12 @@ TextureImporter:
       name: Robot_02_Destroyed_63
       rect:
         serializedVersion: 2
-        x: 704
-        y: 33
-        width: 33
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1152
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1748,12 +1748,12 @@ TextureImporter:
       name: Robot_02_Destroyed_64
       rect:
         serializedVersion: 2
-        x: 801
-        y: 84
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1248
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1770,12 +1770,12 @@ TextureImporter:
       name: Robot_02_Destroyed_65
       rect:
         serializedVersion: 2
-        x: 821
-        y: 87
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1344
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1792,12 +1792,12 @@ TextureImporter:
       name: Robot_02_Destroyed_66
       rect:
         serializedVersion: 2
-        x: 896
-        y: 33
-        width: 32
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1440
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1814,12 +1814,12 @@ TextureImporter:
       name: Robot_02_Destroyed_67
       rect:
         serializedVersion: 2
-        x: 898
-        y: 88
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1536
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1832,275 +1832,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_68
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27a652bb2dc4e05c0800000000000000
-      internalID: -4247372930597164430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_69
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 33
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f8f7af072216f400800000000000000
-      internalID: 357493179398224115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_70
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 33
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 80c1975c452223450800000000000000
-      internalID: 6066949395507125256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_71
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ef3868d4cde58050800000000000000
-      internalID: 5802305124636835815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_72
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 33
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 206efa4cb11b8a680800000000000000
-      internalID: -8743543943717722622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_73
-      rect:
-        serializedVersion: 2
-        x: 992
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 802526a77110f8bd0800000000000000
-      internalID: -2625878857384570360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_74
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 33
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9ab6dcca1ca03d30800000000000000
-      internalID: 4409213266301467291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_75
-      rect:
-        serializedVersion: 2
-        x: 1184
-        y: 33
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a41e9685f44f40a0800000000000000
-      internalID: -6895216683164756824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_76
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 33
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72b1a8433fe744040800000000000000
-      internalID: 4630965899867331367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_77
-      rect:
-        serializedVersion: 2
-        x: 1376
-        y: 33
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a22be4b7dd4e5e2a0800000000000000
-      internalID: -6708704429990825430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_78
-      rect:
-        serializedVersion: 2
-        x: 1472
-        y: 33
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00c9ece4654eb93e0800000000000000
-      internalID: -2045790546369274880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Destroyed_79
-      rect:
-        serializedVersion: 2
-        x: 1568
-        y: 33
-        width: 32
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1abfc44bcde8c180800000000000000
-      internalID: -9094757990186108387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6702e758c2fd8ad439fd9cd798e8cb3c
     internalID: 0
     vertices: []
     indices: 
@@ -2175,19 +1911,7 @@ TextureImporter:
       Robot_02_Destroyed_65: 4850673027557710001
       Robot_02_Destroyed_66: 1996619093812778563
       Robot_02_Destroyed_67: -5846480941312023844
-      Robot_02_Destroyed_68: -4247372930597164430
-      Robot_02_Destroyed_69: 357493179398224115
       Robot_02_Destroyed_7: -8821365129916289553
-      Robot_02_Destroyed_70: 6066949395507125256
-      Robot_02_Destroyed_71: 5802305124636835815
-      Robot_02_Destroyed_72: -8743543943717722622
-      Robot_02_Destroyed_73: -2625878857384570360
-      Robot_02_Destroyed_74: 4409213266301467291
-      Robot_02_Destroyed_75: -6895216683164756824
-      Robot_02_Destroyed_76: 4630965899867331367
-      Robot_02_Destroyed_77: -6708704429990825430
-      Robot_02_Destroyed_78: -2045790546369274880
-      Robot_02_Destroyed_79: -9094757990186108387
       Robot_02_Destroyed_8: 4703572930050973182
       Robot_02_Destroyed_9: 9181326588646612962
   mipmapLimitGroupName: 
