@@ -65,6 +65,11 @@ public class MimicChestTurret : MonoBehaviour
         }
     }
 
+    public void LaserSound()
+    {
+        SoundManager.PlaySound(SoundType.ENEMYLASER);
+    }
+
     void AimAtPlayer()
     {
         if (player == null) return;

@@ -15,7 +15,9 @@ public enum SoundType
     PLAYERHIT,
     SPININGBLADEENEMY,
     WARNING,
-    ENEMYEXPLODE
+    ENEMYEXPLODE,
+    TRANSFORMENEMY,
+    ENEMYLASER
 }
 
 [RequireComponent(typeof(AudioSource))]
