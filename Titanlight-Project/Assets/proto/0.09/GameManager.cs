@@ -9,6 +9,7 @@ using System.IO;
 
 public class GameManager : Singleton<GameManager>
 {
+    // Classe para dados de salvamento
     [Serializable]
     public class PlayerSaveData
     {
@@ -129,9 +130,6 @@ public class GameManager : Singleton<GameManager>
         customizationCanvas.SetActive(false);
         playerStatusCanvas.SetActive(true);
         playerOtherCanvas.SetActive(true);
-
-        // **Atualiza novamente, agora com o Canvas ativo**
-        UpdatePersistentStatsUI();
 
         // Gera mundo
         SetupGrid();

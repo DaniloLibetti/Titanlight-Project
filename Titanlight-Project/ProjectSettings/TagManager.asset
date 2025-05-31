@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - RoomBounds
-  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -22,7 +21,7 @@ TagManager:
   - HoleFloor
   - bullet
   - Itens
-  - enemyBullet
+  - 
   - 
   - 
   - 

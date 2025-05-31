@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2153313099290992887}
-  - component: {fileID: 1084674615185830077}
   - component: {fileID: 5959906539815808214}
   - component: {fileID: 5428558593844269614}
   - component: {fileID: 4926012572293533425}
   - component: {fileID: 8690328119778389521}
+  - component: {fileID: 1084674615185830077}
   - component: {fileID: 4426126718819554260}
   m_Layer: 9
   m_Name: player (Z)
@@ -40,55 +40,6 @@ Transform:
   - {fileID: 4173382345048747646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1084674615185830077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3156739151878723861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f7c38cd4880ff54285465e3b252ee12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerOne: 0
-  player1Inputs:
-    shotgunKey: 99
-    machineGunKey: 118
-    dashKey: 32
-    switchModeKey: 113
-    meleeAttackKey: 111
-  player2Inputs:
-    shotgunKey: 122
-    machineGunKey: 122
-    dashKey: 32
-    switchModeKey: 97
-    meleeAttackKey: 0
-  baseRecoilForce: 1
-  cooldownTimer: 0
-  config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
-  invincibleDuration: 2.64
-  blinkInterval: 0.1
-  firePoint: {fileID: 2807867361594665837}
-  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
-  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
-  projectileCollisionLayers:
-    serializedVersion: 2
-    m_Bits: 409
-  extraPelletsMultiplier: 2
-  minShotgunSpreadAngle: 10
-  maxShotgunLifetimeMultiplier: 2
-  shotgunCooldown: 0.7
-  machineGunCooldown: 0.2
-  projectileSpeed: 10
-  projectileLifetime: 1
-  shootPointDistance: 0
-  moveInput: {x: 0, y: 0}
-  currentSmoothVelocity: {x: 0, y: 0}
-  lastDirection: {x: 0, y: 0}
-  currentHeat: 0
-  overheated: 0
 --- !u!114 &5959906539815808214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +151,47 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.19620013}
   m_Size: {x: 0.18778685, y: 0.39240026}
   m_Direction: 0
+--- !u!114 &1084674615185830077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156739151878723861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7c38cd4880ff54285465e3b252ee12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRecoilForce: 1
+  cooldownTimer: 0
+  config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
+  invincibleDuration: 2.64
+  blinkInterval: 0.1
+  shotgunKey: 107
+  machineGunKey: 109
+  dashKey: 32
+  switchModeKey: 113
+  meleeAttackKey: 111
+  firePoint: {fileID: 2807867361594665837}
+  shotgunBulletPrefab: {fileID: 6118543610015448874, guid: f6101acf934dc8248963b40894d04c96, type: 3}
+  machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
+  projectileCollisionLayers:
+    serializedVersion: 2
+    m_Bits: 409
+  extraPelletsMultiplier: 2
+  minShotgunSpreadAngle: 10
+  maxShotgunLifetimeMultiplier: 2
+  shotgunCooldown: 0.7
+  machineGunCooldown: 0.2
+  projectileSpeed: 10
+  projectileLifetime: 1
+  shootPointDistance: 0
+  moveInput: {x: 0, y: 0}
+  currentSmoothVelocity: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
+  currentHeat: 0
+  overheated: 0
 --- !u!114 &4426126718819554260
 MonoBehaviour:
   m_ObjectHideFlags: 0

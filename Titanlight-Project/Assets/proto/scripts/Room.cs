@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class Room : MonoBehaviour
@@ -24,17 +24,6 @@ public class Room : MonoBehaviour
     [SerializeField] private int maxEnemies = 5;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    [Header("Baús")]
-    [Tooltip("Slots possíveis para baús")]
-    [SerializeField] private Transform[] chestSlots;
-    [Tooltip("Chance de spawn de um baú em cada slot (0-1)")]
-    [SerializeField] private float chestSpawnChance = 0.5f;
-    [Tooltip("Chance de um baú ser um mími​co (0-1), caso spawnado")]
-    [SerializeField] private float mimicChance = 0.2f;
-    [SerializeField] private GameObject chestPrefab;
-    [SerializeField] private GameObject mimicPrefab;
-    private List<GameObject> spawnedChests = new List<GameObject>();
-
     public void Initialize(Vector2Int coord, float width, float height)
     {
         GridCoord = coord;
@@ -42,7 +31,6 @@ public class Room : MonoBehaviour
         RoomHeight = height;
         SetupDoors();
         SpawnEnemies();
-        SpawnChests();
     }
 
     void SetupDoors()
@@ -102,54 +90,22 @@ public class Room : MonoBehaviour
         }
     }
 
-    void SpawnChests()
-    {
-        if (chestSlots == null || chestSlots.Length == 0) return;
-        foreach (var slot in chestSlots)
-        {
-            if (Random.value <= chestSpawnChance)
-            {
-                bool isMimic = Random.value <= mimicChance;
-                GameObject toSpawn = isMimic ? mimicPrefab : chestPrefab;
-                if (toSpawn != null)
-                {
-                    var c = Instantiate(toSpawn, slot.position, slot.rotation, transform);
-                    spawnedChests.Add(c);
-                }
-            }
-        }
-    }
-
     public void SetEnemiesActive(bool active)
     {
         foreach (var e in spawnedEnemies)
-            if (e != null)
-                e.SetActive(active);
-    }
-
-    public void SetChestsActive(bool active)
-    {
-        foreach (var c in spawnedChests)
-            if (c != null)
-                c.SetActive(active);
+            if (e != null) e.SetActive(active);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             SetEnemiesActive(true);
-            SetChestsActive(true);
-        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             SetEnemiesActive(false);
-            SetChestsActive(false);
-        }
     }
 
     public DoorState GetDoorState(DoorDirection direction)
@@ -163,6 +119,7 @@ public class Room : MonoBehaviour
             dt.enabled = active;
     }
 
+  
     public Vector3 GetPlayerSpawnPoint()
     {
         return playerSpawnPoint != null ? playerSpawnPoint.position : transform.position;

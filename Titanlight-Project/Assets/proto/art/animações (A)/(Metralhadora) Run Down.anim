@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Metralhadora) Run Down
+<<<<<<<< HEAD:Titanlight-Project/Assets/proto/art/animações (A)/(Metralhadora) Run Down.anim
+  m_Name: (Metralhadora) Run Down
+========
+  m_Name: Attack Down
+>>>>>>>> DaniloBranchV2:Titanlight-Project/Assets/proto/animacao/Attack Down.anim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,6 +25,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+<<<<<<<< HEAD:Titanlight-Project/Assets/proto/art/animações (A)/(Metralhadora) Run Down.anim
       value: {fileID: 1549507672183327918, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - time: 0.083333336
       value: {fileID: 626215733105110732, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
@@ -32,6 +37,19 @@ AnimationClip:
       value: {fileID: -4052901710317259442, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - time: 0.41666666
       value: {fileID: 1950094642277686001, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
+========
+      value: {fileID: 165246117871365600, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - time: 0.083333336
+      value: {fileID: 921687310392110625, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - time: 0.16666667
+      value: {fileID: -4523056715799697251, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - time: 0.25
+      value: {fileID: -2300625646237637624, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1344418893126246653, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - time: 0.41666666
+      value: {fileID: -2349213894274152005, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+>>>>>>>> DaniloBranchV2:Titanlight-Project/Assets/proto/animacao/Attack Down.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,12 +72,21 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+<<<<<<<< HEAD:Titanlight-Project/Assets/proto/art/animações (A)/(Metralhadora) Run Down.anim
     - {fileID: 1549507672183327918, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - {fileID: 626215733105110732, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - {fileID: -140314051027568190, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - {fileID: 5917744925165539308, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - {fileID: -4052901710317259442, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
     - {fileID: 1950094642277686001, guid: db477b9058caac54e86f8ac00a7f252a, type: 3}
+========
+    - {fileID: 165246117871365600, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - {fileID: 921687310392110625, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - {fileID: -4523056715799697251, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - {fileID: -2300625646237637624, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - {fileID: 1344418893126246653, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+    - {fileID: -2349213894274152005, guid: 1e2e5b28e21385f41ad5ae69853503aa, type: 3}
+>>>>>>>> DaniloBranchV2:Titanlight-Project/Assets/proto/animacao/Attack Down.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
