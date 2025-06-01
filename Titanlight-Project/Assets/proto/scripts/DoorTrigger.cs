@@ -1,3 +1,4 @@
+// DoorTrigger.cs
 using UnityEngine;
 
 public enum DoorDirection { Up, Down, Left, Right }
@@ -5,50 +6,35 @@ public enum DoorDirection { Up, Down, Left, Right }
 public class DoorTrigger : MonoBehaviour
 {
     public DoorDirection direction;
-    public KeyCode interactKey = KeyCode.E;
-    public KeyCode hackKey = KeyCode.H;
     public float moveDistance = 3f;
     public float hackTimeReduction = 10f;
     public CountdownTimer timer;
     public DoorTrigger pairedDoor;
 
-    // Estado da porta obtido da Room (caso não esteja pareada)
     private DoorState _state;
-
-    // Este objeto será compartilhado entre as portas pareadas.
-    // Se a porta não estiver pareada, sharedState equivale a _state.
     public DoorState sharedState;
 
     private bool _isPlayerInRange;
-
-    // Raio para procurar a porta pareada (se necessário)
     public float pairingRadius = 2f;
 
     void Start()
     {
-
         if (timer == null)
             timer = FindObjectOfType<CountdownTimer>();
 
-
-        // Obtém o estado da porta a partir da Room (por exemplo, travada e fechada inicialmente)
         Room room = GetComponentInParent<Room>();
         if (room != null)
         {
             _state = room.GetDoorState(direction);
-            // Inicialmente, se não estiver pareada, o sharedState é o mesmo que _state.
             sharedState = _state;
-            Debug.Log($"[{gameObject.name}] Estado obtido na sala {room.GridCoord} para a direção {direction}");
         }
         else
         {
             Debug.LogError("Room não encontrado no Start do DoorTrigger!");
         }
 
-        // Tenta parear com outra porta próxima (se não houver pareamento já feito pelo GameManager)
         PairDoorWithOverlap();
 
-        // Se a porta já estiver pareada, garanta que ambas compartilhem o mesmo estado
         if (pairedDoor != null)
         {
             if (pairedDoor.sharedState == null)
@@ -71,13 +57,10 @@ public class DoorTrigger : MonoBehaviour
             {
                 Vector2 toOther = otherDoor.transform.position - transform.position;
                 Vector2 expectedDir = DirectionToVector(direction);
-                // Se o objeto estiver aproximadamente na direção esperada...
                 if (Vector2.Dot(toOther.normalized, expectedDir) > 0.5f)
                 {
                     pairedDoor = otherDoor;
                     otherDoor.pairedDoor = this;
-                    Debug.Log($"[{gameObject.name}] Pareado com {otherDoor.gameObject.name}");
-                    // Garanta que ambas compartilhem o mesmo estado
                     if (otherDoor.sharedState == null)
                         otherDoor.sharedState = sharedState;
                     else
@@ -92,72 +75,68 @@ public class DoorTrigger : MonoBehaviour
     {
         if (!_isPlayerInRange) return;
         UpdateInterface();
-        CheckInputs();
     }
 
     void UpdateInterface()
     {
         if (sharedState.isLocked)
-            GameUI.Instance.SetInteractionText("[H] Hackear Porta");
+            GameUI.Instance.SetInteractionText("Pressione [Hack] para desbloquear");
         else if (!sharedState.isOpen)
             GameUI.Instance.SetInteractionText("Porta Quebrada");
         else
-            GameUI.Instance.SetInteractionText("[E] Entrar");
+            GameUI.Instance.SetInteractionText("Pressione [Interact] para atravessar");
     }
 
-    void CheckInputs()
+    // Atravessa somente se já estiver aberta
+    public void Interact()
     {
-        if (Input.GetKeyDown(hackKey))
-        {
-            TryHackDoor();
-            
-        }
+        Debug.Log("DoorTrigger.Interact chamado em " + gameObject.name);
+        if (!_isPlayerInRange) return;
 
-        else if (Input.GetKeyDown(interactKey))
+        if (sharedState.isOpen && !sharedState.isLocked)
         {
             TryPassThrough();
-            
         }
+        else
+        {
+            Debug.Log("Porta fechada ou travada; não pode atravessar.");
+        }
+    }
 
+    // Desbloqueia porta
+    public void Hack()
+    {
+        Debug.Log("DoorTrigger.Hack chamado em " + gameObject.name);
+        if (!_isPlayerInRange) return;
+
+        if (sharedState.isLocked)
+            TryHackDoor();
+        else
+            Debug.Log("Porta já desbloqueada.");
     }
 
     void TryPassThrough()
     {
-        // Se a porta estiver aberta, o GameManager trata da transição (passagem pelo túnel)
-        if (sharedState.isOpen && !sharedState.isLocked)
-        {
-            GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
-            SoundManager.PlaySound(SoundType.DOOR);
-        }
-            
+        Debug.Log("Passando pela porta " + gameObject.name);
+        GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
+        SoundManager.PlaySound(SoundType.DOOR);
     }
 
     public void TryHackDoor()
     {
-        if (!sharedState.isLocked)
-        {
-            Debug.Log($"[{gameObject.name}] Porta já desbloqueada.");
-            return;
-        }
-
-        Debug.Log($"[{gameObject.name}] Tentando hackear a porta na direção {direction}.");
-        // Desbloqueia esta porta; como o sharedState é o mesmo para as duas, ambas ficam atualizadas
+        if (!sharedState.isLocked) return;
+        Debug.Log("Tentando hackear porta " + gameObject.name);
         UnlockDoor();
-
-        // Se houver porta pareada, não é necessário chamá-la separadamente, pois o estado é compartilhado
         timer?.ReduceTime(hackTimeReduction);
     }
 
     public void UnlockDoor()
     {
-        if (!sharedState.isLocked)
-            return;
-
+        if (!sharedState.isLocked) return;
         sharedState.isLocked = false;
         sharedState.isOpen = true;
-        Debug.Log($"[{gameObject.name}] Porta desbloqueada na sala {GetRoomCoord()} na direção {direction}");
+        Debug.Log($"Porta {gameObject.name} desbloqueada");
 
-        // Registra essa porta no GameManager usando as coordenadas da sala
         Room room = GetComponentInParent<Room>();
         if (room != null)
         {
@@ -168,12 +147,6 @@ public class DoorTrigger : MonoBehaviour
         {
             Debug.LogError("Room não encontrado ao desbloquear a porta!");
         }
-    }
-
-    Vector2Int GetRoomCoord()
-    {
-        Room room = GetComponentInParent<Room>();
-        return room != null ? room.GridCoord : new Vector2Int(-1, -1);
     }
 
     private Vector2 DirectionToVector(DoorDirection dir)
@@ -192,6 +165,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player entrou no alcance da porta " + gameObject.name);
             _isPlayerInRange = true;
             GameUI.Instance.ToggleInteractionText(true);
         }
@@ -201,6 +175,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player saiu do alcance da porta " + gameObject.name);
             _isPlayerInRange = false;
             GameUI.Instance.ToggleInteractionText(false);
         }

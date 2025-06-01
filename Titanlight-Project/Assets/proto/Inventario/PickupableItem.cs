@@ -1,65 +1,151 @@
+// PickupableItem.cs
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(Collider2D))] // obriga ter collider2D (pra detectar proximidade)
+[RequireComponent(typeof(Collider2D))]
 public class PickupableItem : MonoBehaviour
 {
-    [Tooltip("Distância máxima para interagir")]
-    public float interactRange = 1.5f; // alcance de coleta
-
+    [Tooltip("DistÃ¢ncia mÃ¡xima para interagir")]
+    public float interactRange = 1.5f;
     [Tooltip("Texto de dica (coloque um TextMeshPro no mundo ou na UI)")]
-    public TextMeshProUGUI promptText; // texto tipo "Aperte E"
+    public TextMeshProUGUI promptText;
 
-    private int amount = 1; // quantos itens vale (ex: 1 moeda, 5 moedas)
-    private Transform player; // referência do jogador
-    private bool inRange = false; // tá no alcance?
+    private int amount = 1;
+    private Transform player;
+    private bool inRange = false;
+    private bool promptVisible = false;
+    private bool _readyToCollect = false;
+    [SerializeField] private float activationDelay = 0.5f;
 
-    void Start()
+    private Rigidbody2D _rb;
+    private bool _isAttracting;
+
+    public ItemSO InventoryItem { get; private set; }
+    public int Quantity { get; private set; }
+
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform; // acha jogador pela tag
-        if (promptText != null)
-            promptText.gameObject.SetActive(false); // esconde texto inicialmente
+        _rb = GetComponent<Rigidbody2D>();
+        GetComponent<Collider2D>().enabled = false;
     }
 
-    void Update()
+    private void Start()
     {
-        if (player == null) return; // evita erro se não achar jogador
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (promptText != null)
+            promptText.gameObject.SetActive(false);
 
-        float dist = Vector2.Distance(player.position, transform.position); // calcula distância
-        bool nowInRange = dist <= interactRange; // verifica se tá no alcance
+        Invoke(nameof(EnableCollection), activationDelay);
+    }
 
-        // Ativa/desativa texto de prompt
-        if (nowInRange && !inRange) // entrou no alcance
+    private void EnableCollection()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        _readyToCollect = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_isAttracting && player != null)
         {
-            inRange = true;
-            if (promptText != null)
+            Vector2 direction = (player.position - transform.position).normalized;
+            _rb.linearVelocity = direction * interactRange;
+
+            if (Vector2.Distance(transform.position, player.position) <= 0.3f)
             {
-                promptText.text = "Pressione E para coletar";
-                promptText.gameObject.SetActive(true);
+                Collect();
             }
         }
-        else if (!nowInRange && inRange) // saiu do alcance
-        {
-            inRange = false;
-            if (promptText != null)
-                promptText.gameObject.SetActive(false);
-        }
-
-        if (inRange && Input.GetKeyDown(KeyCode.E)) // coletou
-            Collect();
     }
 
-    public void SetAmount(int amt) // muda valor do item (ex: de 1 pra 5 moedas)
+    public void Init(ItemSO so, int quantity = 1)
+    {
+        InventoryItem = so;
+        Quantity = quantity;
+        GetComponent<SpriteRenderer>().sprite = so.ItemImage;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!_readyToCollect) return;
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entrou no alcance do item " + gameObject.name);
+            inRange = true;
+            ShowPrompt();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player saiu do alcance do item " + gameObject.name);
+            inRange = false;
+            HidePrompt();
+        }
+    }
+
+    public void Interact()
+    {
+        Debug.Log("PickupableItem.Interact chamado em " + gameObject.name);
+        if (!inRange || !_readyToCollect)
+            return;
+
+        StartAttraction(player);
+    }
+
+    private void StartAttraction(Transform plyr)
+    {
+        _isAttracting = true;
+        player = plyr;
+
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
+        _rb.gravityScale = 0f;
+
+        HidePrompt();
+    }
+
+    private void Collect()
+    {
+        Debug.Log("Item coletado: " + gameObject.name);
+        PickUpSystem pickupSystem = player.GetComponent<PickUpSystem>();
+        if (pickupSystem != null)
+        {
+            pickupSystem.AddItem(InventoryItem, Quantity);
+        }
+        Destroy(gameObject);
+    }
+
+    public void SetAmount(int amt)
     {
         amount = amt;
     }
 
-    private void Collect() // ação de coletar
+    private void ShowPrompt()
     {
-        GameManager.Instance.RegisterScriptableObject(amount); // atualiza contador
+        if (promptText != null && !promptVisible)
+        {
+            promptText.text = "Pressione [Interact] para coletar";
+            promptText.gameObject.SetActive(true);
+            promptVisible = true;
+        }
+    }
 
-        if (promptText != null)
-            promptText.gameObject.SetActive(false); // esconde texto
-        Destroy(gameObject); // destroi o item cena
+    private void HidePrompt()
+    {
+        if (promptText != null && promptVisible)
+        {
+            promptText.gameObject.SetActive(false);
+            promptVisible = false;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, interactRange);
     }
 }

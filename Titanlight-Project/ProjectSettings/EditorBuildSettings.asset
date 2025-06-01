@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/proto/Scenes ofi/RunScene.unity
     guid: e8e5b4bacdcbad241889dd36f7320b8f
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 336852e1031cf0c488304f72867f9308, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: b5d9fcc83ccbb8c449ae7c15afd37fb4, type: 3}
   m_UseUCBPForAssetBundles: 0

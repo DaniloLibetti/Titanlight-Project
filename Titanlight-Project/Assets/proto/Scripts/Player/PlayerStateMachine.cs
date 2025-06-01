@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// PlayerStateMachine.cs
+using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using Player.Config;
@@ -10,35 +11,23 @@ namespace Player.StateMachine
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
     public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
-        [Header("Recoil Settings")]
-        public float baseRecoilForce = 2f;
+        public static PlayerStateMachine Instance2 { get; private set; }
 
-        [Header("Combo Settings")]
-        public float cooldownTimer;
+        [Header("Identification")]
+        [Tooltip("1 = Player1 (Instance), 2 = Player2 (Instance2)")]
+        [Range(1, 2)] public int playerIndex = 1;
 
-        [Header("Config Scriptable")]
-        public PlayerConfig config;
-
-        [Header("Dash Settings")]
-        public bool IsDashing { get; set; }
+        [Header("Recoil Settings")] public float baseRecoilForce = 2f;
+        [Header("Combo Settings")] public float cooldownTimer;
+        [Header("Config Scriptable")] public PlayerConfig config;
+        [Header("Dash Settings")] public bool IsDashing { get; set; }
         public Vector3 LastDashPosition { get; set; }
-
-        [Header("Invincibility")]
-        public float invincibleDuration = 2f;
+        [Header("Invincibility")] public float invincibleDuration = 2f;
         public float blinkInterval = 0.1f;
-
-        [Header("Movement Control")]
-        public bool CanMove { get; private set; } = true;
-        public void SetCanMove(bool v) => CanMove = v;
+        [Header("Movement Control")] public bool CanMove { get; private set; } = true;
         public bool CanDash { get; private set; } = true;
+        public void SetCanMove(bool v) => CanMove = v;
         public void SetCanDash(bool v) => CanDash = v;
-
-        [Header("Input Keys")]
-        public KeyCode shotgunKey = KeyCode.C;
-        public KeyCode machineGunKey = KeyCode.V;
-        public KeyCode dashKey = KeyCode.Space;
-        public KeyCode switchModeKey = KeyCode.Q;
-        public KeyCode meleeAttackKey = KeyCode.O;
 
         [Header("References")]
         public Transform firePoint;
@@ -48,21 +37,23 @@ namespace Player.StateMachine
         public Animator animator { get; private set; }
         public Rigidbody2D rb { get; private set; }
 
-        [Header("Shotgun Configuration")]
-        public int extraPelletsMultiplier = 2;
+        [Header("Shotgun Configuration")] public int extraPelletsMultiplier = 2;
         public float minShotgunSpreadAngle = 10f;
         public float maxShotgunLifetimeMultiplier = 2f;
 
-        [Header("Cooldowns")]
-        public float shotgunCooldown = 0.7f;
+        [Header("Cooldowns")] public float shotgunCooldown = 0.7f;
         public float machineGunCooldown = 0.2f;
 
-        [Header("Projectile Settings")]
-        public float projectileSpeed = 25f;
+        [Header("Projectile Settings")] public float projectileSpeed = 25f;
         public float projectileLifetime = 0.5f;
         public float shootPointDistance = 0.5f;
 
-        // Estados de máquina
+        [Header("Interact & Hack Settings")]
+        [Tooltip("Raio de alcance para interagir/hackear")]
+        [SerializeField] private float interactRadius = 1.5f;
+        [SerializeField] private LayerMask interactLayer;
+
+        // State Machine fields
         public PlayerBaseState IdleState { get; private set; }
         public PlayerBaseState MovingState { get; private set; }
         public PlayerBaseState DashState { get; private set; }
@@ -71,40 +62,40 @@ namespace Player.StateMachine
         public PlayerBaseState AttackState { get; private set; }
         public PlayerBaseState CurrentState { get; private set; }
 
-        // Input e mecânicas
+        // Mechanics fields
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
         public Vector2 lastDirection = Vector2.right;
         public float currentHeat;
         public bool overheated;
-        private bool isRangedMode = true;
         private Vector3 firePointInitialLocalPos;
         private Collider2D[] _colliders;
-        private float nextShotgunTime = 0f;
-        private float nextMachineGunTime = 0f;
-
-        // Arma atual
+        private float nextFireTime = 0f;
+        private bool isRangedMode = true;
         private RangedAttackType currentRangedType = RangedAttackType.MachineGun;
 
         protected override void Awake()
         {
-            base.Awake();
+            if (Instance == null)
+                base.Awake();
+            else if (Instance2 == null)
+                Instance2 = this;
+            else
+            {
+                Debug.LogError("Já existem duas instâncias de PlayerStateMachine!");
+                Destroy(gameObject);
+                return;
+            }
+
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
-            if (animator == null)
-                Debug.LogError("Animator não encontrado.");
-
-            if (firePoint != null)
-                firePointInitialLocalPos = firePoint.localPosition;
-
+            if (animator == null) Debug.LogError("Animator não encontrado.");
+            if (firePoint != null) firePointInitialLocalPos = firePoint.localPosition;
             _colliders = GetComponents<Collider2D>();
 
-            // Define estado inicial de arma
-            isRangedMode = true;
-            currentRangedType = RangedAttackType.MachineGun;
             animator.SetInteger("WeaponType", (int)currentRangedType);
 
-            // Inicializa estados
+            // Initialize states
             IdleState = new IdleState(this);
             MovingState = new MovingState(this);
             DashState = new DashState(this);
@@ -120,62 +111,13 @@ namespace Player.StateMachine
         {
             if (!CanMove) return;
 
-            // (Opcional: ignorar melee por enquanto)
-            if (Input.GetKeyDown(meleeAttackKey))
-            {
-                if (cooldownTimer <= 0 && CurrentState != AttackState)
-                    SwitchState(AttackState);
-            }
-
-            if (cooldownTimer > 0)
-                cooldownTimer -= Time.deltaTime;
-
-            // Troca de arma entre metralhadora e shotgun
-            if (Input.GetKeyDown(switchModeKey))
-            {
-                currentRangedType = currentRangedType == RangedAttackType.MachineGun
-                                    ? RangedAttackType.Shotgun
-                                    : RangedAttackType.MachineGun;
-                animator.SetInteger("WeaponType", (int)currentRangedType);
-            }
-
-            // Movimento
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            moveInput = new Vector2(h, v).normalized;
             if (moveInput != Vector2.zero)
                 lastDirection = moveInput;
 
             UpdateFirePointTransform();
 
-            // Disparo conforme arma selecionada
-            if (isRangedMode)
-            {
-                switch (currentRangedType)
-                {
-                    case RangedAttackType.Shotgun:
-                        if (Input.GetKeyDown(shotgunKey) && Time.time >= nextShotgunTime)
-                        {
-                            nextShotgunTime = Time.time + shotgunCooldown;
-                            SoundManager.PlaySound(SoundType.LASERSHOTGUN);
-                            StartCoroutine(ShotgunAttack());
-                        }
-                        break;
-
-                    case RangedAttackType.MachineGun:
-                        if (Input.GetKey(machineGunKey) && Time.time >= nextMachineGunTime && !overheated)
-                        {
-                            nextMachineGunTime = Time.time + machineGunCooldown;
-                            SoundManager.PlaySound(SoundType.HEATLASER);
-                            StartCoroutine(MachineGunAttack());
-                        }
-                        break;
-                }
-            }
-
-            // Dash
-            if (Input.GetKeyDown(dashKey) && CanDash && lastDirection != Vector2.zero)
-                SwitchState(DashState);
+            if (cooldownTimer > 0)
+                cooldownTimer -= Time.deltaTime;
 
             UpdateAnimations();
             CurrentState.UpdateState(this);
@@ -184,6 +126,106 @@ namespace Player.StateMachine
 
         void FixedUpdate() => CurrentState.FixedUpdateState(this);
 
+        public void OnMove(InputValue value)
+        {
+            moveInput = value.Get<Vector2>();
+        }
+
+        public void OnFire(InputValue value)
+        {
+            if (!isRangedMode) return;
+
+            if (currentRangedType == RangedAttackType.Shotgun)
+            {
+                if (value.isPressed && Time.time >= nextFireTime)
+                {
+                    nextFireTime = Time.time + shotgunCooldown;
+                    StartCoroutine(ShotgunAttack());
+                }
+            }
+            else if (currentRangedType == RangedAttackType.MachineGun)
+            {
+                if (value.isPressed && Time.time >= nextFireTime && !overheated)
+                {
+                    nextFireTime = Time.time + machineGunCooldown;
+                    StartCoroutine(MachineGunAttack());
+                }
+            }
+        }
+
+        public void OnSwitchWeapon(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                currentRangedType = (currentRangedType == RangedAttackType.MachineGun)
+                    ? RangedAttackType.Shotgun
+                    : RangedAttackType.MachineGun;
+                animator.SetInteger("WeaponType", (int)currentRangedType);
+            }
+        }
+
+        public void OnMelee(InputValue value)
+        {
+            if (value.isPressed && cooldownTimer <= 0 && CurrentState != AttackState)
+                SwitchState(AttackState);
+        }
+
+        public void OnDash(InputValue value)
+        {
+            if (value.isPressed && CanDash && moveInput != Vector2.zero)
+                SwitchState(DashState);
+        }
+
+        // ---------------------
+        // HACKACTION: desbloqueia porta, mas não atravessa
+        // ---------------------
+        public void OnHack(InputValue value)
+        {
+            Debug.Log($"OnHack chamado: isPressed={value.isPressed}, CanMove={CanMove}");
+            if (!value.isPressed || !CanMove) return;
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactLayer);
+            foreach (Collider2D col in hits)
+            {
+                DoorTrigger door = col.GetComponent<DoorTrigger>();
+                if (door != null)
+                {
+                    Debug.Log("Tentando hackear porta: " + door.gameObject.name);
+                    door.Hack(); // apenas desbloqueia
+                    return;
+                }
+            }
+        }
+
+        // ---------------------
+        // INTERACTACTION: atravessa porta (se aberta) OU coleta item
+        // ---------------------
+        public void OnInteract(InputValue value)
+        {
+            Debug.Log($"OnInteract chamado: isPressed={value.isPressed}, CanMove={CanMove}");
+            if (!value.isPressed || !CanMove) return;
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactLayer);
+            foreach (Collider2D col in hits)
+            {
+                DoorTrigger door = col.GetComponent<DoorTrigger>();
+                if (door != null)
+                {
+                    Debug.Log("Tentando atravessar porta: " + door.gameObject.name);
+                    door.Interact(); // atravessa somente se isOpen = true
+                    return;
+                }
+
+                PickupableItem item = col.GetComponent<PickupableItem>();
+                if (item != null)
+                {
+                    Debug.Log("Tentando coletar item: " + item.gameObject.name);
+                    item.Interact();
+                    return;
+                }
+            }
+        }
+
         public void SwitchState(PlayerBaseState newState)
         {
             CurrentState.ExitState(this);
@@ -191,15 +233,9 @@ namespace Player.StateMachine
             CurrentState.EnterState(this);
         }
 
-        public void SetCollidersTrigger(bool trigger)
-        {
-            foreach (var col in _colliders)
-                col.isTrigger = trigger;
-        }
-
         private void UpdateAnimations()
         {
-            Vector2 dir = moveInput != Vector2.zero ? moveInput : lastDirection;
+            Vector2 dir = (moveInput != Vector2.zero) ? moveInput : lastDirection;
             animator.SetBool("IsWalking", moveInput != Vector2.zero);
             animator.SetFloat("MoveX", dir.x);
             animator.SetFloat("MoveY", dir.y);
@@ -234,7 +270,7 @@ namespace Player.StateMachine
         private void ShootProjectile(GameObject prefab)
         {
             if (prefab == null || firePoint == null) return;
-            GameObject proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
+            var proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
             if (proj.TryGetComponent<Projectile>(out var comp))
             {
                 comp.Initialize(firePoint.right, projectileSpeed, projectileCollisionLayers);
@@ -253,8 +289,8 @@ namespace Player.StateMachine
             for (int i = 0; i < total; i++)
             {
                 float offset = -spread * 0.5f + spread * i / (total - 1);
-                Quaternion rot = firePoint.rotation * Quaternion.Euler(0, 0, offset);
-                GameObject pellet = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
+                var rot = firePoint.rotation * Quaternion.Euler(0, 0, offset);
+                var pellet = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
                 if (pellet.TryGetComponent<Projectile>(out var comp))
                 {
                     comp.Initialize(rot * Vector2.right, projectileSpeed, projectileCollisionLayers);
@@ -262,19 +298,17 @@ namespace Player.StateMachine
                 }
                 Destroy(pellet, life);
             }
+
             rb.AddForce(-lastDirection * baseRecoilForce * (t - 1f), ForceMode2D.Impulse);
         }
 
         private void UpdateHeat()
         {
-            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && Input.GetKey(machineGunKey) && !overheated)
+            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && moveInput != Vector2.zero)
             {
                 currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
                 overheated = currentHeat >= config.heatMax;
-                if (overheated)
-                {
-                    SoundManager.PlaySound(SoundType.OVERHEAT);
-                }
+                if (overheated) SoundManager.PlaySound(SoundType.OVERHEAT);
             }
             else
             {
@@ -295,6 +329,18 @@ namespace Player.StateMachine
             if (!IsDashing) return;
             if (other.CompareTag("Enemy") && other.TryGetComponent<Health>(out var health))
                 health.TakeDamage(config.dashDamage);
+        }
+
+        public void SetCollidersTrigger(bool trigger)
+        {
+            foreach (var col in _colliders)
+                col.isTrigger = trigger;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, interactRadius);
         }
     }
 }

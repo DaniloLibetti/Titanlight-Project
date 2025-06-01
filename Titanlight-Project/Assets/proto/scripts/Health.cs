@@ -63,4 +63,8 @@ public class Health : MonoBehaviour
         if (destroyOnDeath)
             Destroy(gameObject);
     }
+    void OnDestroy()
+    {
+        Debug.Log($"[PlayerController] {gameObject.name} OnDestroy was called");
+    }
 }
