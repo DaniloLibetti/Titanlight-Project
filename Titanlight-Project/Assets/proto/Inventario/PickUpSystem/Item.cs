@@ -14,27 +14,26 @@ public class Item : MonoBehaviour
     private Transform _player;
     private bool _isAttracting;
     private bool _readyToCollect;
+    private bool _hasTarget;
+    private Vector3 _playerPosition;
+    private float itemMoveSpeed = 3.5f;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        GetComponent<Collider2D>().enabled = false;
-    }
-
-    private void Start()
-    {
-        Invoke(nameof(EnableCollection), activationDelay);
-    }
-
-    private void EnableCollection()
-    {
-        GetComponent<Collider2D>().enabled = true;
-        _readyToCollect = true;
+        //GetComponent<Collider2D>().enabled = false;
     }
 
     private void FixedUpdate()
     {
-        if (_isAttracting && _player != null)
+        if (_hasTarget)
+        {
+            Vector2 targetDirection = (_playerPosition - transform.position).normalized;
+            _rb.linearVelocity = new Vector2(targetDirection.x, targetDirection.y) * itemMoveSpeed;
+        }
+
+
+        /*if (_isAttracting && _player != null)
         {
             // Movimento suave usando física
             Vector2 direction = (_player.position - transform.position).normalized;
@@ -45,7 +44,13 @@ public class Item : MonoBehaviour
             {
                 Collect();
             }
-        }
+        }*/
+    }
+
+    public void SetTarget(Vector3 position)
+    {
+        _playerPosition = position;
+        _hasTarget = true;
     }
 
     public void Init(ItemSO so, int quantity = 1)
@@ -55,7 +60,7 @@ public class Item : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = so.ItemImage;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (!_readyToCollect || _isAttracting) return;
 
@@ -74,7 +79,7 @@ public class Item : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
         _rb.angularVelocity = 0f;
         _rb.gravityScale = 0f;
-    }
+    */
 
     private void Collect()
     {

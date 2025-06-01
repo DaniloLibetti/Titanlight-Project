@@ -43,7 +43,10 @@ public class EquipmentMenuController : MonoBehaviour
 
     public int buttonValue;
 
-    
+    public void Player1Ready()
+    {
+        EventSystem.current.SetSelectedGameObject(range1OptionsP2);
+    }
 
     public void ShowRange1OptionsP1()
     {

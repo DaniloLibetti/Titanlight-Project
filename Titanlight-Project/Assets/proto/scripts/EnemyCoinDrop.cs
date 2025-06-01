@@ -32,7 +32,7 @@ public class EnemyCoinDrop : MonoBehaviour
             Item itemComp = item.GetComponent<Item>();
             itemComp.Init(possibleDrops[Random.Range(0, possibleDrops.Count)]);
 
-            ApplyDropForce(item);
+            //ApplyDropForce(item);
         }
     }
 
