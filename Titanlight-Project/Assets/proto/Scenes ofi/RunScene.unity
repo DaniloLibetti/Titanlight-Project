@@ -7325,7 +7325,7 @@ MonoBehaviour:
     roomPrefab: {fileID: 1591430054707244790, guid: fb1aca5380ed2fb44bbc371bf76dad52, type: 3}
     spawnChance: 32
   - roomName: normal 02
-    roomPrefab: {fileID: 1591430054707244790, guid: d16ac0af88303d243b54283c52d1d3f2, type: 3}
+    roomPrefab: {fileID: 1591430054707244790, guid: 10dbc1792962f11418ea0f0e86cc6647, type: 3}
     spawnChance: 18
   - roomName: normal 03
     roomPrefab: {fileID: 1591430054707244790, guid: 3005141875532ee4a8851f4093fe8080, type: 3}
@@ -7368,7 +7368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Prefab: {fileID: 3156739151878723861, guid: eb36917307a6afd419dde8e3f51793d9, type: 3}
-  player2Prefab: {fileID: 3156739151878723861, guid: b4cd4f966c17e3a4e992b025be4d68fc, type: 3}
+  player2Prefab: {fileID: 3156739151878723861, guid: f7d6358fcbed2c24ba02be85d6793cb2, type: 3}
   isMultiplayer: 1
 --- !u!1 &976288438
 GameObject:

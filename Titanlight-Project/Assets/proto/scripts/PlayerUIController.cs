@@ -2,12 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Player.StateMachine;
 
-/// <summary>
-/// Controla os sliders de UI automaticamente, encontrando os objetos na cena:
-/// - Vida do jogador
-/// - Energia para dash (0 a 100)
-/// - Heat da metralhadora
-/// </summary>
+
 public class PlayerUIController : MonoBehaviour
 {
     private Slider healthSlider;
@@ -94,9 +89,6 @@ public class PlayerUIController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Inicializa valores máximos e estado inicial dos sliders.
-    /// </summary>
     private void InitializeUI()
     {
         if (player == null)

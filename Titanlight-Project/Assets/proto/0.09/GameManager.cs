@@ -81,7 +81,7 @@ public class GameManager : Singleton<GameManager>
 
     // Contagem interna de itens coletados
     private int _collectedItems = 0;
-    // exposto para ShopMenu, RunSummary, etc.
+    // exposto para ShopMenu, RunSummary
     public int ScriptableObjectCount => _collectedItems;
 
     [Header("Leilão")]
@@ -316,7 +316,7 @@ public class GameManager : Singleton<GameManager>
         if (slotAuction != null)
             _mainCamera.transform.position = slotAuction.position + Vector3.back * 10f;
 
-        // mostra resumo e salva
+        // mostra resumo e salva                   preciso rever essa parte pois nao ta funcionando corretamente desde o multiplayer
         FindObjectOfType<RunSummary>()?.ShowSummary();
         SaveGame();
     }

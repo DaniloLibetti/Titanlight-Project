@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
 
     public UnityEvent onDeath;
     public UnityEvent<float> onDamageTaken;
-    // Novo evento para dropar moedas
     public UnityEvent onDropMoeda;
 
     // Propriedade pública para acessar o valor máximo de vida
@@ -22,7 +21,6 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        // Inicia a vida com o valor máximo
         CurrentHealth = maxHealth;
     }
 
@@ -31,7 +29,6 @@ public class Health : MonoBehaviour
         if (damage <= 0)
             return;
 
-        // Diminui a vida com base no dano recebido
         CurrentHealth -= damage;
         if (onDamageTaken != null)
             onDamageTaken.Invoke(damage);
@@ -45,7 +42,6 @@ public class Health : MonoBehaviour
         if (amount <= 0)
             return;
 
-        // Restaura a vida sem passar do máximo
         CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
     }
 
@@ -55,16 +51,11 @@ public class Health : MonoBehaviour
         if (onDeath != null)
             onDeath.Invoke();
 
-        // Chama o evento de drop de moedas (substituindo qualquer método anterior de drop)
         if (onDropMoeda != null)
             onDropMoeda.Invoke();
 
         // Destrói o objeto se estiver marcado para isso
         if (destroyOnDeath)
             Destroy(gameObject);
-    }
-    void OnDestroy()
-    {
-        Debug.Log($"[PlayerController] {gameObject.name} OnDestroy was called");
     }
 }

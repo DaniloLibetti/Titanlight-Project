@@ -53,20 +53,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 2
-  inputMode: 1
-  moveUpKey: 342
-  moveDownKey: 343
-  moveLeftKey: 344
-  moveRightKey: 345
-  shotgunKey: 332
-  machineGunKey: 332
-  meleeAttackKey: 0
-  dashKey: 335
-  switchModeKey: 333
-  interactKey: 330
-  hackKey: 331
-  horizontalAxis: Horizontal p2
-  verticalAxis: Vertical p2
   baseRecoilForce: 1
   cooldownTimer: 0
   config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
@@ -86,6 +72,10 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 1
   shootPointDistance: 0
+  interactRadius: 1.5
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8320
   moveInput: {x: 0, y: 0}
   currentSmoothVelocity: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
@@ -214,40 +204,8 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a3581522-5411-4553-b9e6-f7d65c8aa179
-    m_ActionName: 'Player/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dc11744f-4b69-4d4b-bbfa-7fff78fc859b
-    m_ActionName: 'Player/Melee[/Keyboard/l,/DualShock4GamepadHID/leftShoulder]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f1065a14-3a10-4c83-8ed8-00f7f9beb803
-    m_ActionName: 'Player/Dash[/Keyboard/space,/DualShock4GamepadHID/rightShoulder]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5d329ebe-561b-4027-85e5-27b84132ecc3
-    m_ActionName: 'Player/Fire[/Keyboard/z,/DualShock4GamepadHID/buttonWest]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2155f4e1-4970-42c2-b981-dad437ebc8fd
-    m_ActionName: 'Player/SwitchWeapon[/Keyboard/a,/DualShock4GamepadHID/buttonNorth]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9dae1c6b-3bdb-468d-9605-80966d494311
-    m_ActionName: 'Player/Interact[/Keyboard/s,/DualShock4GamepadHID/buttonSouth]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: da125894-50f8-4a23-b1a4-b814d1f829ac
-    m_ActionName: 'Player/Hack[/Keyboard/d,/DualShock4GamepadHID/buttonEast]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d0ef9fc1-5bd0-4f55-8605-a2ef801f4817
-    m_ActionName: 'Player/Pause[/Keyboard/enter,/DualShock4GamepadHID/start]'
-  m_NeverAutoSwitchControlSchemes: 0
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -398,7 +356,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -655947762359739907, guid: 722103c3fce2b3b428db4dc8d67676df, type: 3}
+  m_Sprite: {fileID: 876243558695791731, guid: d3eaa6ca1d777f340a284820d9402e30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -419,7 +377,7 @@ Animator:
   m_GameObject: {fileID: 4260499236814555331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f3eae38c1bded144ae8162f33be6658, type: 2}
+  m_Controller: {fileID: 9100000, guid: b8865192b81fab44faea191c73ff7129, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

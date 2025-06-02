@@ -1,6 +1,7 @@
 // PickupableItem.cs
 using UnityEngine;
 using TMPro;
+using Player.StateMachine; // para escutar InteractPressed
 
 [RequireComponent(typeof(Collider2D))]
 public class PickupableItem : MonoBehaviour
@@ -10,10 +11,9 @@ public class PickupableItem : MonoBehaviour
     [Tooltip("Texto de dica (coloque um TextMeshPro no mundo ou na UI)")]
     public TextMeshProUGUI promptText;
 
-    private int amount = 1;
-    private Transform player;
-    private bool inRange = false;
-    private bool promptVisible = false;
+    private Transform _playerTransform;
+    private bool _inRange = false;
+    private bool _promptVisible = false;
     private bool _readyToCollect = false;
     [SerializeField] private float activationDelay = 0.5f;
 
@@ -23,6 +23,17 @@ public class PickupableItem : MonoBehaviour
     public ItemSO InventoryItem { get; private set; }
     public int Quantity { get; private set; }
 
+    void OnEnable()
+    {
+        // Agora o delegate exige um método Action<PlayerStateMachine>
+        PlayerStateMachine.InteractPressed += HandleInteractPressed;
+    }
+
+    void OnDisable()
+    {
+        PlayerStateMachine.InteractPressed -= HandleInteractPressed;
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -31,7 +42,11 @@ public class PickupableItem : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        // Busca o transform do jogador (tag "Player")
+        var playerGO = GameObject.FindGameObjectWithTag("Player");
+        if (playerGO != null)
+            _playerTransform = playerGO.transform;
+
         if (promptText != null)
             promptText.gameObject.SetActive(false);
 
@@ -46,15 +61,13 @@ public class PickupableItem : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isAttracting && player != null)
+        if (_isAttracting && _playerTransform != null)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
+            Vector2 direction = (_playerTransform.position - transform.position).normalized;
             _rb.linearVelocity = direction * interactRange;
 
-            if (Vector2.Distance(transform.position, player.position) <= 0.3f)
-            {
+            if (Vector2.Distance(transform.position, _playerTransform.position) <= 0.3f)
                 Collect();
-            }
         }
     }
 
@@ -71,8 +84,7 @@ public class PickupableItem : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entrou no alcance do item " + gameObject.name);
-            inRange = true;
+            _inRange = true;
             ShowPrompt();
         }
     }
@@ -81,26 +93,24 @@ public class PickupableItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player saiu do alcance do item " + gameObject.name);
-            inRange = false;
+            _inRange = false;
             HidePrompt();
         }
     }
 
-    public void Interact()
+    // Agora recebe o PlayerStateMachine que disparou o evento
+    private void HandleInteractPressed(PlayerStateMachine player)
     {
-        Debug.Log("PickupableItem.Interact chamado em " + gameObject.name);
-        if (!inRange || !_readyToCollect)
+        // Garante que é o mesmo jogador que está no trigger
+        if (!_inRange || !_readyToCollect || player.transform != _playerTransform)
             return;
 
-        StartAttraction(player);
+        StartAttraction(_playerTransform);
     }
 
-    private void StartAttraction(Transform plyr)
+    private void StartAttraction(Transform player)
     {
         _isAttracting = true;
-        player = plyr;
-
         _rb.linearVelocity = Vector2.zero;
         _rb.angularVelocity = 0f;
         _rb.gravityScale = 0f;
@@ -110,36 +120,34 @@ public class PickupableItem : MonoBehaviour
 
     private void Collect()
     {
-        Debug.Log("Item coletado: " + gameObject.name);
-        PickUpSystem pickupSystem = player.GetComponent<PickUpSystem>();
+        var pickupSystem = _playerTransform.GetComponent<PickUpSystem>();
         if (pickupSystem != null)
-        {
             pickupSystem.AddItem(InventoryItem, Quantity);
-        }
+
         Destroy(gameObject);
     }
 
     public void SetAmount(int amt)
     {
-        amount = amt;
+        Quantity = amt;
     }
 
     private void ShowPrompt()
     {
-        if (promptText != null && !promptVisible)
+        if (promptText != null && !_promptVisible)
         {
             promptText.text = "Pressione [Interact] para coletar";
             promptText.gameObject.SetActive(true);
-            promptVisible = true;
+            _promptVisible = true;
         }
     }
 
     private void HidePrompt()
     {
-        if (promptText != null && promptVisible)
+        if (promptText != null && _promptVisible)
         {
             promptText.gameObject.SetActive(false);
-            promptVisible = false;
+            _promptVisible = false;
         }
     }
 

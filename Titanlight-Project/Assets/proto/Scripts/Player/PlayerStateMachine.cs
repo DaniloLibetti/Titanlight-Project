@@ -1,4 +1,4 @@
-﻿// PlayerStateMachine.cs
+﻿using System;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
@@ -13,8 +13,11 @@ namespace Player.StateMachine
     {
         public static PlayerStateMachine Instance2 { get; private set; }
 
+        public static event Action<PlayerStateMachine> HackPressed;
+        public static event Action<PlayerStateMachine> HackReleased;
+        public static event Action<PlayerStateMachine> InteractPressed;
+
         [Header("Identification")]
-        [Tooltip("1 = Player1 (Instance), 2 = Player2 (Instance2)")]
         [Range(1, 2)] public int playerIndex = 1;
 
         [Header("Recoil Settings")] public float baseRecoilForce = 2f;
@@ -49,7 +52,6 @@ namespace Player.StateMachine
         public float shootPointDistance = 0.5f;
 
         [Header("Interact & Hack Settings")]
-        [Tooltip("Raio de alcance para interagir/hackear")]
         [SerializeField] private float interactRadius = 1.5f;
         [SerializeField] private LayerMask interactLayer;
 
@@ -63,16 +65,19 @@ namespace Player.StateMachine
         public PlayerBaseState CurrentState { get; private set; }
 
         // Mechanics fields
+        private const float ANALOG_DEADZONE = 0.2f;
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
         public Vector2 lastDirection = Vector2.right;
         public float currentHeat;
         public bool overheated;
+
         private Vector3 firePointInitialLocalPos;
         private Collider2D[] _colliders;
         private float nextFireTime = 0f;
         private bool isRangedMode = true;
         private RangedAttackType currentRangedType = RangedAttackType.MachineGun;
+        private bool isFiringMachineGun = false;
 
         protected override void Awake()
         {
@@ -89,18 +94,16 @@ namespace Player.StateMachine
 
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
-            if (animator == null) Debug.LogError("Animator não encontrado.");
-            if (firePoint != null) firePointInitialLocalPos = firePoint.localPosition;
+            firePointInitialLocalPos = firePoint != null ? firePoint.localPosition : Vector3.zero;
             _colliders = GetComponents<Collider2D>();
 
             animator.SetInteger("WeaponType", (int)currentRangedType);
 
-            // Initialize states
-            IdleState = new IdleState(this);
-            MovingState = new MovingState(this);
-            DashState = new DashState(this);
-            StunnedState = new StunnedState(this);
-            AttackState = new AttackState(this);
+            IdleState       = new IdleState(this);
+            MovingState     = new MovingState(this);
+            DashState       = new DashState(this);
+            StunnedState    = new StunnedState(this);
+            AttackState     = new AttackState(this);
             InvincibleState = new InvincibleState(this, invincibleDuration, blinkInterval);
 
             CurrentState = IdleState;
@@ -111,12 +114,13 @@ namespace Player.StateMachine
         {
             if (!CanMove) return;
 
-            if (moveInput != Vector2.zero)
-                lastDirection = moveInput;
+            // Tiro contínuo da metralhadora ta dando BO
+            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun)
+                HandleMachineGunFire();
 
             UpdateFirePointTransform();
 
-            if (cooldownTimer > 0)
+            if (cooldownTimer > 0f)
                 cooldownTimer -= Time.deltaTime;
 
             UpdateAnimations();
@@ -128,27 +132,43 @@ namespace Player.StateMachine
 
         public void OnMove(InputValue value)
         {
-            moveInput = value.Get<Vector2>();
+            Vector2 raw = value.Get<Vector2>();
+            if (raw.magnitude < ANALOG_DEADZONE)
+                moveInput = Vector2.zero;
+            else
+            {
+                float angle   = Mathf.Atan2(raw.y, raw.x);
+                float step    = Mathf.PI / 4f;
+                float snapped = Mathf.Round(angle / step) * step;
+                moveInput     = new Vector2(Mathf.Cos(snapped), Mathf.Sin(snapped));
+                lastDirection = moveInput;
+            }
         }
 
+        
         public void OnFire(InputValue value)
         {
             if (!isRangedMode) return;
 
+            bool pressed = value.isPressed;
+
             if (currentRangedType == RangedAttackType.Shotgun)
             {
-                if (value.isPressed && Time.time >= nextFireTime)
+                if (pressed && Time.time >= nextFireTime)
                 {
                     nextFireTime = Time.time + shotgunCooldown;
                     StartCoroutine(ShotgunAttack());
                 }
             }
-            else if (currentRangedType == RangedAttackType.MachineGun)
+            else // MachineGun ta dando BO
             {
-                if (value.isPressed && Time.time >= nextFireTime && !overheated)
+                if (pressed && !overheated)
                 {
-                    nextFireTime = Time.time + machineGunCooldown;
-                    StartCoroutine(MachineGunAttack());
+                    isFiringMachineGun = true;
+                }
+                else if (!pressed)
+                {
+                    isFiringMachineGun = false;
                 }
             }
         }
@@ -157,7 +177,7 @@ namespace Player.StateMachine
         {
             if (value.isPressed)
             {
-                currentRangedType = (currentRangedType == RangedAttackType.MachineGun)
+                currentRangedType = currentRangedType == RangedAttackType.MachineGun
                     ? RangedAttackType.Shotgun
                     : RangedAttackType.MachineGun;
                 animator.SetInteger("WeaponType", (int)currentRangedType);
@@ -166,7 +186,7 @@ namespace Player.StateMachine
 
         public void OnMelee(InputValue value)
         {
-            if (value.isPressed && cooldownTimer <= 0 && CurrentState != AttackState)
+            if (value.isPressed && cooldownTimer <= 0f && CurrentState != AttackState)
                 SwitchState(AttackState);
         }
 
@@ -176,54 +196,17 @@ namespace Player.StateMachine
                 SwitchState(DashState);
         }
 
-        // ---------------------
-        // HACKACTION: desbloqueia porta, mas não atravessa
-        // ---------------------
         public void OnHack(InputValue value)
         {
-            Debug.Log($"OnHack chamado: isPressed={value.isPressed}, CanMove={CanMove}");
-            if (!value.isPressed || !CanMove) return;
-
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactLayer);
-            foreach (Collider2D col in hits)
-            {
-                DoorTrigger door = col.GetComponent<DoorTrigger>();
-                if (door != null)
-                {
-                    Debug.Log("Tentando hackear porta: " + door.gameObject.name);
-                    door.Hack(); // apenas desbloqueia
-                    return;
-                }
-            }
+            if (!CanMove) return;
+            if (value.isPressed)  HackPressed?.Invoke(this);
+            else                  HackReleased?.Invoke(this);
         }
 
-        // ---------------------
-        // INTERACTACTION: atravessa porta (se aberta) OU coleta item
-        // ---------------------
         public void OnInteract(InputValue value)
         {
-            Debug.Log($"OnInteract chamado: isPressed={value.isPressed}, CanMove={CanMove}");
-            if (!value.isPressed || !CanMove) return;
-
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactLayer);
-            foreach (Collider2D col in hits)
-            {
-                DoorTrigger door = col.GetComponent<DoorTrigger>();
-                if (door != null)
-                {
-                    Debug.Log("Tentando atravessar porta: " + door.gameObject.name);
-                    door.Interact(); // atravessa somente se isOpen = true
-                    return;
-                }
-
-                PickupableItem item = col.GetComponent<PickupableItem>();
-                if (item != null)
-                {
-                    Debug.Log("Tentando coletar item: " + item.gameObject.name);
-                    item.Interact();
-                    return;
-                }
-            }
+            if (value.isPressed)
+                InteractPressed?.Invoke(this);
         }
 
         public void SwitchState(PlayerBaseState newState)
@@ -233,9 +216,18 @@ namespace Player.StateMachine
             CurrentState.EnterState(this);
         }
 
+        private void HandleMachineGunFire()
+        {
+            if (isFiringMachineGun && Time.time >= nextFireTime && !overheated)
+            {
+                nextFireTime = Time.time + machineGunCooldown;
+                StartCoroutine(MachineGunAttack());
+            }
+        }
+
         private void UpdateAnimations()
         {
-            Vector2 dir = (moveInput != Vector2.zero) ? moveInput : lastDirection;
+            Vector2 dir = moveInput != Vector2.zero ? moveInput : lastDirection;
             animator.SetBool("IsWalking", moveInput != Vector2.zero);
             animator.SetFloat("MoveX", dir.x);
             animator.SetFloat("MoveY", dir.y);
@@ -281,16 +273,16 @@ namespace Player.StateMachine
 
         private void ShootShotgun()
         {
-            float t = 1f;
-            int total = config.shotgunPelletCount + Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
+            float t      = 1f;
+            int total    = config.shotgunPelletCount + Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
             float spread = Mathf.Lerp(minShotgunSpreadAngle, config.shotgunSpreadAngle, (t - 1f) / (config.chargeMultiplierMax - 1f));
-            float life = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, (t - 1f) / (config.chargeMultiplierMax - 1f));
+            float life   = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, (t - 1f) / (config.chargeMultiplierMax - 1f));
 
             for (int i = 0; i < total; i++)
             {
                 float offset = -spread * 0.5f + spread * i / (total - 1);
-                var rot = firePoint.rotation * Quaternion.Euler(0, 0, offset);
-                var pellet = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
+                var rot      = firePoint.rotation * Quaternion.Euler(0, 0, offset);
+                var pellet   = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
                 if (pellet.TryGetComponent<Projectile>(out var comp))
                 {
                     comp.Initialize(rot * Vector2.right, projectileSpeed, projectileCollisionLayers);
@@ -304,11 +296,15 @@ namespace Player.StateMachine
 
         private void UpdateHeat()
         {
-            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && moveInput != Vector2.zero)
+            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && isFiringMachineGun)
             {
                 currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
-                overheated = currentHeat >= config.heatMax;
-                if (overheated) SoundManager.PlaySound(SoundType.OVERHEAT);
+                if (currentHeat >= config.heatMax)
+                {
+                    overheated = true;
+                    isFiringMachineGun = false; // para tiro ao superaquecer
+                    SoundManager.PlaySound(SoundType.OVERHEAT);
+                }
             }
             else
             {

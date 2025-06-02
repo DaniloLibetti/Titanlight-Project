@@ -53,20 +53,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 1
-  inputMode: 0
-  moveUpKey: 273
-  moveDownKey: 274
-  moveLeftKey: 276
-  moveRightKey: 275
-  shotgunKey: 109
-  machineGunKey: 109
-  meleeAttackKey: 0
-  dashKey: 32
-  switchModeKey: 97
-  interactKey: 115
-  hackKey: 100
-  horizontalAxis: Horizontal2
-  verticalAxis: Vertical2
   baseRecoilForce: 1
   cooldownTimer: 0
   config: {fileID: 11400000, guid: 0db675e77c7052b44a6baef869e8a9d9, type: 2}
@@ -86,6 +72,10 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 1
   shootPointDistance: 0
+  interactRadius: 1.5
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8320
   moveInput: {x: 0, y: 0}
   currentSmoothVelocity: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
@@ -387,7 +377,7 @@ Animator:
   m_GameObject: {fileID: 4260499236814555331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8865192b81fab44faea191c73ff7129, type: 2}
+  m_Controller: {fileID: 9100000, guid: cf3f9b23b7f236443a47ebbb2cad9921, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
