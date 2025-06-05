@@ -302,6 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4173382345048747646}
   - component: {fileID: 2622405058638750071}
+  - component: {fileID: 8485945701573931227}
   m_Layer: 9
   m_Name: DamageHitbox
   m_TagString: Untagged
@@ -360,6 +361,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.26177105
+--- !u!114 &8485945701573931227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354392806302390262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2e6482ce2b41543b2b71e737384712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4260499236814555331
 GameObject:
   m_ObjectHideFlags: 0

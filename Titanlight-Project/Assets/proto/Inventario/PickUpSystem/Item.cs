@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class Item : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Item : MonoBehaviour
     private Vector3 _playerPosition;
     private float itemMoveSpeed = 3.5f;
 
+    public TextMeshProUGUI promptText; // texto tipo "Aperte E"
+    private int amount = 1; // quantos itens vale (ex: 1 moeda, 5 moedas)
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -30,6 +34,7 @@ public class Item : MonoBehaviour
         {
             Vector2 targetDirection = (_playerPosition - transform.position).normalized;
             _rb.linearVelocity = new Vector2(targetDirection.x, targetDirection.y) * itemMoveSpeed;
+            //Collect();
         }
 
 
@@ -81,13 +86,24 @@ public class Item : MonoBehaviour
         _rb.gravityScale = 0f;
     */
 
-    private void Collect()
+    public void SetAmount(int amt) // muda valor do item (ex: de 1 pra 5 moedas)
     {
-        PickUpSystem pickupSystem = _player.GetComponent<PickUpSystem>();
+        amount = amt;
+    }
+
+    public void Collect()
+    {
+        GameManager.Instance.RegisterScriptableObject(amount); // atualiza contador
+
+        if (promptText != null)
+            promptText.gameObject.SetActive(false); // esconde texto
+        Destroy(gameObject); // destroi o item cena
+
+        /*PickUpSystem pickupSystem = _player.GetComponent<PickUpSystem>();
         if (pickupSystem != null)
         {
             pickupSystem.AddItem(InventoryItem, Quantity);
         }
-        Destroy(gameObject);
+        Destroy(gameObject)*/
     }
 }
