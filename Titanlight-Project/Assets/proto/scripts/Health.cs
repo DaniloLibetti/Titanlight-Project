@@ -14,6 +14,8 @@ public class Health : MonoBehaviour
     // Novo evento para dropar moedas
     public UnityEvent onDropMoeda;
 
+    private SegmentedHealthBar healthBar;
+
     // Propriedade pública para acessar o valor máximo de vida
     public float MaxHealth
     {
@@ -38,6 +40,8 @@ public class Health : MonoBehaviour
 
         if (CurrentHealth <= 0)
             Die();
+
+        
     }
 
     public void Heal(float amount)

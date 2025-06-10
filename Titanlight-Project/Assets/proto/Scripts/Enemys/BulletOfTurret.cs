@@ -5,15 +5,19 @@ public class BulletOfTurret : MonoBehaviour
 {
     [Header("Configurações do Projétil")]
     [SerializeField] private float speed = 10f;
-    [SerializeField] private int damage = 10;
+    [SerializeField] private float damage = 4f;
     [SerializeField] private float lifeTime = 5f;
 
     private Rigidbody2D rb;
+
+    private SegmentedHealthBar healthBar;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifeTime);
+
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<SegmentedHealthBar>();
     }
 
     /// <summary>
@@ -33,7 +37,11 @@ public class BulletOfTurret : MonoBehaviour
         {
             var hp = other.GetComponent<Health>();
             if (hp != null)
+            {
                 hp.TakeDamage(damage);
+                healthBar.SetValue(damage);
+            }
+                
         }
 
         // Em qualquer colisão (player, parede, objetos), destrói o projétil

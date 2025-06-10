@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6681917003310802132}
   - component: {fileID: 1819582188136562393}
   - component: {fileID: 9220286952430648625}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: MagnetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9155eeda1c52147aefb80070f1fa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   destroyOnDeath: 1
   onDeath:
     m_PersistentCalls:

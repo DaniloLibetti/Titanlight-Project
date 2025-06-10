@@ -9,7 +9,7 @@ public class RobotEnemy : MonoBehaviour
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float cooldownTime = 2f;
     [SerializeField] private float activationDistance = 5f;
-    [SerializeField] private int attackDamage = 20;
+    [SerializeField] private float attackDamage = 4f;
 
     [Header("Drop de Moedas")]
     [SerializeField] private EnemyCoinDrop coinDrop; // referência ao seu componente de drop
@@ -25,6 +25,7 @@ public class RobotEnemy : MonoBehaviour
     private bool isDead = false;
     private Vector2 dashDirection;
     private Collider2D[] allColliders;
+
 
     void Awake()
     {

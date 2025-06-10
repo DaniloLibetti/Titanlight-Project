@@ -8,6 +8,7 @@ TagManager:
   - RoomBounds
   - Projectile
   - Itens
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - bullet
   - Itens
   - enemyBullet
-  - 
+  - magnet
   - 
   - 
   - 

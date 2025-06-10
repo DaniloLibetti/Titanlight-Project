@@ -21,7 +21,7 @@ public class PiratashinEnemy : MonoBehaviour
     public float meleeRange = 1.5f;
 
     [Header("Ataque Normal")]
-    public float normalAttackDamage = 10f;
+    public float normalAttackDamage = 4f;
     public float attackCooldown = 1f;
     public float normalChargeTime = 0.5f;
 
