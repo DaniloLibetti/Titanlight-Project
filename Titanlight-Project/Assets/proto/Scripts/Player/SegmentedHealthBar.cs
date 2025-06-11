@@ -24,11 +24,11 @@ public class SegmentedHealthBar : MonoBehaviour
 
     public void SetValue(float newValue)
     {
-        var targetWidth = newValue * maxRightMask / healthPlayer.MaxHealth;
+        var targetWidth = healthPlayer.CurrentHealth * maxRightMask / healthPlayer.MaxHealth;
         var newRightMask = maxRightMask + initialRightMask - targetWidth;
         var padding = mask.padding;
         padding.z = newRightMask;
         mask.padding = padding;
-
+        
     }
 }

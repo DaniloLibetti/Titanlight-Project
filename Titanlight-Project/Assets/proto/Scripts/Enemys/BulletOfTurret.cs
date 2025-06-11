@@ -35,11 +35,12 @@ public class BulletOfTurret : MonoBehaviour
         // Se for o player, aplica dano
         if (other.CompareTag("Player"))
         {
-            var hp = other.GetComponent<Health>();
+            var hp = other.GetComponentInParent<Health>();
             if (hp != null)
             {
                 hp.TakeDamage(damage);
                 healthBar.SetValue(damage);
+                
             }
                 
         }
