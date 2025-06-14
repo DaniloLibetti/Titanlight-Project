@@ -118,12 +118,12 @@ TextureImporter:
       name: Selected_Button_Exit_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 4
-        width: 146
-        height: 24
+        x: 20
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Selected_Button_Exit_1
       rect:
         serializedVersion: 2
-        x: 215
-        y: 3
-        width: 146
-        height: 26
+        x: 212
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Selected_Button_Exit_2
       rect:
         serializedVersion: 2
-        x: 407
-        y: 3
-        width: 146
-        height: 26
+        x: 404
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Selected_Button_Exit_3
       rect:
         serializedVersion: 2
-        x: 599
-        y: 3
-        width: 146
-        height: 26
+        x: 596
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Selected_Button_Exit_4
       rect:
         serializedVersion: 2
-        x: 791
-        y: 4
-        width: 146
-        height: 24
+        x: 788
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Selected_Button_Exit_5
       rect:
         serializedVersion: 2
-        x: 983
-        y: 4
-        width: 146
-        height: 24
+        x: 980
+        y: 2
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 89f678b08cd84db4cbd17e2c75a04764
     internalID: 0
     vertices: []
     indices: 

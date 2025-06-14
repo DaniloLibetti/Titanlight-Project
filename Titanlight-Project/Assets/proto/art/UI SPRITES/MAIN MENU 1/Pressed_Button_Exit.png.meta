@@ -157,12 +157,12 @@ TextureImporter:
       name: Pressed_Button_Exit_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 4
-        width: 146
-        height: 24
+        x: 20
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,12 +179,12 @@ TextureImporter:
       name: Pressed_Button_Exit_1
       rect:
         serializedVersion: 2
-        x: 213
-        y: 22
-        width: 7
-        height: 7
+        x: 212
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,12 +201,12 @@ TextureImporter:
       name: Pressed_Button_Exit_2
       rect:
         serializedVersion: 2
-        x: 215
-        y: 4
-        width: 146
-        height: 23
+        x: 404
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: Pressed_Button_Exit_3
       rect:
         serializedVersion: 2
-        x: 357
-        y: 23
-        width: 7
-        height: 7
+        x: 596
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: Pressed_Button_Exit_4
       rect:
         serializedVersion: 2
-        x: 404
-        y: 20
-        width: 10
-        height: 10
+        x: 788
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: Pressed_Button_Exit_5
       rect:
         serializedVersion: 2
-        x: 407
-        y: 4
-        width: 146
-        height: 23
+        x: 980
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: Pressed_Button_Exit_6
       rect:
         serializedVersion: 2
-        x: 548
-        y: 22
-        width: 8
-        height: 8
+        x: 1172
+        y: 1
+        width: 152
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,275 +307,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_7
-      rect:
-        serializedVersion: 2
-        x: 596
-        y: 24
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e94e8ba5a618190e0800000000000000
-      internalID: -2264886843802065762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_8
-      rect:
-        serializedVersion: 2
-        x: 599
-        y: 4
-        width: 146
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd489dc4e76398720800000000000000
-      internalID: 2848868155371652317
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_9
-      rect:
-        serializedVersion: 2
-        x: 743
-        y: 25
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3799ed04d03c96a80800000000000000
-      internalID: -8473026762230556301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_10
-      rect:
-        serializedVersion: 2
-        x: 788
-        y: 1
-        width: 152
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0abcc436868120730800000000000000
-      internalID: 3963757458661100448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_11
-      rect:
-        serializedVersion: 2
-        x: 983
-        y: 4
-        width: 146
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68da878a1d4c5d480800000000000000
-      internalID: -8874971085910004346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_12
-      rect:
-        serializedVersion: 2
-        x: 1175
-        y: 4
-        width: 146
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14b2001facd2f64b0800000000000000
-      internalID: -5445083074817676479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_13
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 1
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc12e473c43c4dff0800000000000000
-      internalID: -12170166862470709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_14
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 2
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28bbc6f40578b7e70800000000000000
-      internalID: 9114027049913990018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_15
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 1
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a52ec3db9f62a60d0800000000000000
-      internalID: -3428885312225615270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_16
-      rect:
-        serializedVersion: 2
-        x: 546
-        y: 1
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07c3d63fe5a5a3910800000000000000
-      internalID: 1817864763454864496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_17
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 0
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08f1522b6204c5810800000000000000
-      internalID: 1755348489709363072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pressed_Button_Exit_18
-      rect:
-        serializedVersion: 2
-        x: 742
-        y: 1
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb874dae38aa17f30800000000000000
-      internalID: 4571622580314994879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4c95ce1157660c74f99705f4b461f106
     internalID: 0
     vertices: []
     indices: 

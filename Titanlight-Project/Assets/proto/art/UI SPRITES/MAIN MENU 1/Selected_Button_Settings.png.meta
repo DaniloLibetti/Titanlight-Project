@@ -118,12 +118,12 @@ TextureImporter:
       name: Selected_Button_Settings_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 4
-        width: 117
-        height: 24
+        x: 36
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Selected_Button_Settings_1
       rect:
         serializedVersion: 2
-        x: 231
-        y: 3
-        width: 117
-        height: 26
+        x: 228
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Selected_Button_Settings_2
       rect:
         serializedVersion: 2
-        x: 423
-        y: 3
-        width: 117
-        height: 26
+        x: 420
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Selected_Button_Settings_3
       rect:
         serializedVersion: 2
-        x: 615
-        y: 3
-        width: 117
-        height: 26
+        x: 612
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Selected_Button_Settings_4
       rect:
         serializedVersion: 2
-        x: 807
-        y: 4
-        width: 117
-        height: 24
+        x: 804
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Selected_Button_Settings_5
       rect:
         serializedVersion: 2
-        x: 999
-        y: 4
-        width: 117
-        height: 24
+        x: 996
+        y: 2
+        width: 123
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f23ce27f018765249a713c6314b67657
     internalID: 0
     vertices: []
     indices: 
