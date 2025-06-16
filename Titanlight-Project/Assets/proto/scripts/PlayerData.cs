@@ -1,28 +1,31 @@
-using UnityEngine;
+using System;
 
 public static class PlayerData
 {
-    private static int money = 0;
-    private static int reputation = 0;
-
-    public static void AddMoney(int amount)
+    // Repasse de eventos
+    public static event Action OnStatsChanged
     {
-        money += amount;
-        Debug.Log($"Dinheiro adicionado: {amount}. Total: {money}");
+        add { PlayerRuntimeData.OnStatsChanged += value; }
+        remove { PlayerRuntimeData.OnStatsChanged -= value; }
+    }
+    public static event Action<int> OnMoneyChanged
+    {
+        add { PlayerRuntimeData.OnMoneyChanged += value; }
+        remove { PlayerRuntimeData.OnMoneyChanged -= value; }
+    }
+    public static event Action<int> OnReputationChanged
+    {
+        add { PlayerRuntimeData.OnReputationChanged += value; }
+        remove { PlayerRuntimeData.OnReputationChanged -= value; }
     }
 
-    public static void ChangeReputation(int amount)
-    {
-        reputation += amount;
-        Debug.Log($"Reputação alterada: {amount}. Total: {reputation}");
-    }
+    public static void AddMoney(int amount) => PlayerRuntimeData.AddMoney(amount);
+    public static bool SpendMoney(int amount) => PlayerRuntimeData.SpendMoney(amount);
+    public static int GetMoney() => PlayerRuntimeData.GetMoney();
 
-    public static int GetMoney() => money;
-    public static int GetReputation() => reputation;
+    public static void AddReputation(int amount) => PlayerRuntimeData.AddReputation(amount);
+    public static bool SpendReputation(int amount) => PlayerRuntimeData.SpendReputation(amount);
+    public static int GetReputation() => PlayerRuntimeData.GetReputation();
 
-    public static void Reset()
-    {
-        money = 0;
-        reputation = 0;
-    }
+    public static void Reset() => PlayerRuntimeData.Reset();
 }

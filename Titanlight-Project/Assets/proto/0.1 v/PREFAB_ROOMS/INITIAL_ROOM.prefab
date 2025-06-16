@@ -663,6 +663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8819853635550695457}
     m_Modifications:
+    - target: {fileID: 2561054915292507616, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
+      propertyPath: lockChance
+      value: 0.207
+      objectReference: {fileID: 0}
     - target: {fileID: 6773393939781664576, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
       propertyPath: m_Name
       value: Door LEFT
@@ -734,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8819853635550695457}
     m_Modifications:
+    - target: {fileID: 4205653800796841666, guid: 77dc4ff06b46d474e8a803e9d726153d, type: 3}
+      propertyPath: lockChance
+      value: 0.207
+      objectReference: {fileID: 0}
     - target: {fileID: 5314086617414070438, guid: 77dc4ff06b46d474e8a803e9d726153d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -812,6 +820,10 @@ PrefabInstance:
     - target: {fileID: 6823763654082575558, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526474463321511169, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
+      propertyPath: lockChance
+      value: 0.207
       objectReference: {fileID: 0}
     - target: {fileID: 8780651561486408868, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,6 +935,10 @@ PrefabInstance:
     - target: {fileID: 6763069826486181023, guid: 4c94e1ed86a229d44a45e5695836d2bb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864522590258375030, guid: 4c94e1ed86a229d44a45e5695836d2bb, type: 3}
+      propertyPath: lockChance
+      value: 0.207
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

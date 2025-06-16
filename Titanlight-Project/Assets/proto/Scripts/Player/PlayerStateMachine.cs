@@ -1,16 +1,19 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using Player.Config;
+using Player.StateMachine; // ajuste conforme seu namespace de estados
+// Note: garanta que Singleton<T> esteja no namespace correto.
 
 namespace Player.StateMachine
 {
     public enum RangedAttackType { Shotgun = 1, MachineGun = 0 }
 
-    [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput), typeof(Health))]
     public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
+        public static PlayerStateMachine Instance { get; private set; }
         public static PlayerStateMachine Instance2 { get; private set; }
 
         public static event Action<PlayerStateMachine> HackPressed;
@@ -20,14 +23,20 @@ namespace Player.StateMachine
         [Header("Identification")]
         [Range(1, 2)] public int playerIndex = 1;
 
-        [Header("Recoil Settings")] public float baseRecoilForce = 2f;
-        [Header("Combo Settings")] public float cooldownTimer;
-        [Header("Config Scriptable")] public PlayerConfig config;
-        [Header("Dash Settings")] public bool IsDashing { get; set; }
+        [Header("Recoil Settings")]
+        public float baseRecoilForce = 2f;
+        [Header("Combo Settings")]
+        public float cooldownTimer;
+        [Header("Config Scriptable")]
+        public PlayerConfig config;
+        [Header("Dash Settings")]
+        public bool IsDashing { get; set; }
         public Vector3 LastDashPosition { get; set; }
-        [Header("Invincibility")] public float invincibleDuration = 2f;
+        [Header("Invincibility")]
+        public float invincibleDuration = 2f;
         public float blinkInterval = 0.1f;
-        [Header("Movement Control")] public bool CanMove { get; private set; } = true;
+        [Header("Movement Control")]
+        public bool CanMove { get; private set; } = true;
         public bool CanDash { get; private set; } = true;
         public void SetCanMove(bool v) => CanMove = v;
         public void SetCanDash(bool v) => CanDash = v;
@@ -40,22 +49,25 @@ namespace Player.StateMachine
         public Animator animator { get; private set; }
         public Rigidbody2D rb { get; private set; }
 
-        [Header("Shotgun Configuration")] public int extraPelletsMultiplier = 2;
+        [Header("Shotgun Config")]
+        public int extraPelletsMultiplier = 2;
         public float minShotgunSpreadAngle = 10f;
         public float maxShotgunLifetimeMultiplier = 2f;
 
-        [Header("Cooldowns")] public float shotgunCooldown = 0.7f;
+        [Header("Cooldowns")]
+        public float shotgunCooldown = 0.7f;
         public float machineGunCooldown = 0.2f;
 
-        [Header("Projectile Settings")] public float projectileSpeed = 25f;
+        [Header("Projectile Settings")]
+        public float projectileSpeed = 25f;
         public float projectileLifetime = 0.5f;
         public float shootPointDistance = 0.5f;
 
-        [Header("Interact & Hack Settings")]
+        [Header("Interact & Hack")]
         [SerializeField] private float interactRadius = 1.5f;
         [SerializeField] private LayerMask interactLayer;
 
-        // State Machine fields
+        // State machine
         public PlayerBaseState IdleState { get; private set; }
         public PlayerBaseState MovingState { get; private set; }
         public PlayerBaseState DashState { get; private set; }
@@ -64,7 +76,7 @@ namespace Player.StateMachine
         public PlayerBaseState AttackState { get; private set; }
         public PlayerBaseState CurrentState { get; private set; }
 
-        // Mechanics fields
+        // Mechanics
         private const float ANALOG_DEADZONE = 0.2f;
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
@@ -75,21 +87,34 @@ namespace Player.StateMachine
         private Vector3 firePointInitialLocalPos;
         private Collider2D[] _colliders;
         private float nextFireTime = 0f;
-        private bool isRangedMode = true;
         private RangedAttackType currentRangedType = RangedAttackType.MachineGun;
-        private bool isFiringMachineGun = false;
+
+        // Health & death tracking
+        private Health _health;
+        private bool _handledDeath = false;
 
         protected override void Awake()
         {
-            if (Instance == null)
-                base.Awake();
-            else if (Instance2 == null)
-                Instance2 = this;
+            // Singleton setup para multiplayer local
+            if (playerIndex == 1)
+            {
+                if (Instance == null)
+                    base.Awake();
+                else
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+            }
             else
             {
-                Debug.LogError("Já existem duas instâncias de PlayerStateMachine!");
-                Destroy(gameObject);
-                return;
+                if (Instance2 == null)
+                    Instance2 = this;
+                else
+                {
+                    Destroy(gameObject);
+                    return;
+                }
             }
 
             rb = GetComponent<Rigidbody2D>();
@@ -97,32 +122,42 @@ namespace Player.StateMachine
             firePointInitialLocalPos = firePoint != null ? firePoint.localPosition : Vector3.zero;
             _colliders = GetComponents<Collider2D>();
 
-            animator.SetInteger("WeaponType", (int)currentRangedType);
+            // Inicializar LastDashPosition na posição inicial do player
+            LastDashPosition = transform.position;
 
-            IdleState       = new IdleState(this);
-            MovingState     = new MovingState(this);
-            DashState       = new DashState(this);
-            StunnedState    = new StunnedState(this);
-            AttackState     = new AttackState(this);
+            // state machine init
+            IdleState = new IdleState(this);
+            MovingState = new MovingState(this);
+            DashState = new DashState(this);
+            StunnedState = new StunnedState(this);
+            AttackState = new AttackState(this);
             InvincibleState = new InvincibleState(this, invincibleDuration, blinkInterval);
 
             CurrentState = IdleState;
             CurrentState.EnterState(this);
+
+            // health setup
+            _health = GetComponent<Health>();
+            if (_health != null)
+            {
+                _health.OnDeath += OnLocalPlayerDeath;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_health != null)
+            {
+                _health.OnDeath -= OnLocalPlayerDeath;
+            }
         }
 
         void Update()
         {
             if (!CanMove) return;
 
-            // Tiro contínuo da metralhadora ta dando BO
-            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun)
-                HandleMachineGunFire();
-
             UpdateFirePointTransform();
-
-            if (cooldownTimer > 0f)
-                cooldownTimer -= Time.deltaTime;
-
+            if (cooldownTimer > 0f) cooldownTimer -= Time.deltaTime;
             UpdateAnimations();
             CurrentState.UpdateState(this);
             UpdateHeat();
@@ -137,51 +172,42 @@ namespace Player.StateMachine
                 moveInput = Vector2.zero;
             else
             {
-                float angle   = Mathf.Atan2(raw.y, raw.x);
-                float step    = Mathf.PI / 4f;
+                float angle = Mathf.Atan2(raw.y, raw.x);
+                float step = Mathf.PI / 4f;
                 float snapped = Mathf.Round(angle / step) * step;
-                moveInput     = new Vector2(Mathf.Cos(snapped), Mathf.Sin(snapped));
+                moveInput = new Vector2(Mathf.Cos(snapped), Mathf.Sin(snapped));
                 lastDirection = moveInput;
             }
         }
 
-        
         public void OnFire(InputValue value)
         {
-            if (!isRangedMode) return;
-
-            bool pressed = value.isPressed;
-
             if (currentRangedType == RangedAttackType.Shotgun)
             {
-                if (pressed && Time.time >= nextFireTime)
+                if (value.isPressed && Time.time >= nextFireTime)
                 {
                     nextFireTime = Time.time + shotgunCooldown;
                     StartCoroutine(ShotgunAttack());
                 }
             }
-            else // MachineGun ta dando BO
+            else // MachineGun
             {
-                if (pressed && !overheated)
+                if (value.isPressed && Time.time >= nextFireTime && !overheated)
                 {
-                    isFiringMachineGun = true;
-                }
-                else if (!pressed)
-                {
-                    isFiringMachineGun = false;
+                    nextFireTime = Time.time + machineGunCooldown;
+                    StartCoroutine(MachineGunAttack());
                 }
             }
         }
 
         public void OnSwitchWeapon(InputValue value)
         {
-            if (value.isPressed)
-            {
-                currentRangedType = currentRangedType == RangedAttackType.MachineGun
-                    ? RangedAttackType.Shotgun
-                    : RangedAttackType.MachineGun;
+            if (!value.isPressed) return;
+            currentRangedType = currentRangedType == RangedAttackType.MachineGun
+                ? RangedAttackType.Shotgun
+                : RangedAttackType.MachineGun;
+            if (animator != null)
                 animator.SetInteger("WeaponType", (int)currentRangedType);
-            }
         }
 
         public void OnMelee(InputValue value)
@@ -193,20 +219,23 @@ namespace Player.StateMachine
         public void OnDash(InputValue value)
         {
             if (value.isPressed && CanDash && moveInput != Vector2.zero)
+            {
+                // Salva posição antes do dash para retorno em caso de buraco
+                LastDashPosition = transform.position;
                 SwitchState(DashState);
+            }
         }
 
         public void OnHack(InputValue value)
         {
             if (!CanMove) return;
-            if (value.isPressed)  HackPressed?.Invoke(this);
-            else                  HackReleased?.Invoke(this);
+            if (value.isPressed) HackPressed?.Invoke(this);
+            else HackReleased?.Invoke(this);
         }
 
         public void OnInteract(InputValue value)
         {
-            if (value.isPressed)
-                InteractPressed?.Invoke(this);
+            if (value.isPressed) InteractPressed?.Invoke(this);
         }
 
         public void SwitchState(PlayerBaseState newState)
@@ -216,17 +245,9 @@ namespace Player.StateMachine
             CurrentState.EnterState(this);
         }
 
-        private void HandleMachineGunFire()
-        {
-            if (isFiringMachineGun && Time.time >= nextFireTime && !overheated)
-            {
-                nextFireTime = Time.time + machineGunCooldown;
-                StartCoroutine(MachineGunAttack());
-            }
-        }
-
         private void UpdateAnimations()
         {
+            if (animator == null) return;
             Vector2 dir = moveInput != Vector2.zero ? moveInput : lastDirection;
             animator.SetBool("IsWalking", moveInput != Vector2.zero);
             animator.SetFloat("MoveX", dir.x);
@@ -247,14 +268,14 @@ namespace Player.StateMachine
 
         private IEnumerator ShotgunAttack()
         {
-            animator.SetTrigger("RangedAttack");
+            // animator.SetTrigger("RangedAttack");
             ShootShotgun();
             yield return new WaitForSeconds(shotgunCooldown);
         }
 
         private IEnumerator MachineGunAttack()
         {
-            animator.SetTrigger("RangedAttack");
+            // animator.SetTrigger("RangedAttack");
             ShootProjectile(machineGunBulletPrefab);
             yield return new WaitForSeconds(machineGunCooldown);
         }
@@ -273,16 +294,18 @@ namespace Player.StateMachine
 
         private void ShootShotgun()
         {
-            float t      = 1f;
-            int total    = config.shotgunPelletCount + Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
+            if (config == null) return;
+            // Exemplo de uso de config; ajuste conforme seu PlayerConfig
+            float t = 1f;
+            int total = config.shotgunPelletCount + Mathf.RoundToInt((t - 1f) * extraPelletsMultiplier);
             float spread = Mathf.Lerp(minShotgunSpreadAngle, config.shotgunSpreadAngle, (t - 1f) / (config.chargeMultiplierMax - 1f));
-            float life   = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, (t - 1f) / (config.chargeMultiplierMax - 1f));
+            float life = projectileLifetime * Mathf.Lerp(1f, maxShotgunLifetimeMultiplier, (t - 1f) / (config.chargeMultiplierMax - 1f));
 
             for (int i = 0; i < total; i++)
             {
-                float offset = -spread * 0.5f + spread * i / (total - 1);
-                var rot      = firePoint.rotation * Quaternion.Euler(0, 0, offset);
-                var pellet   = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
+                float offset = -spread * .5f + spread * i / (total - 1);
+                var rot = firePoint.rotation * Quaternion.Euler(0, 0, offset);
+                var pellet = Instantiate(shotgunBulletPrefab, firePoint.position, rot);
                 if (pellet.TryGetComponent<Projectile>(out var comp))
                 {
                     comp.Initialize(rot * Vector2.right, projectileSpeed, projectileCollisionLayers);
@@ -296,47 +319,63 @@ namespace Player.StateMachine
 
         private void UpdateHeat()
         {
-            if (isRangedMode && currentRangedType == RangedAttackType.MachineGun && isFiringMachineGun)
+            if (currentRangedType == RangedAttackType.MachineGun && Time.time < nextFireTime)
             {
-                currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
-                if (currentHeat >= config.heatMax)
+                if (config != null)
                 {
-                    overheated = true;
-                    isFiringMachineGun = false; // para tiro ao superaquecer
-                    SoundManager.PlaySound(SoundType.OVERHEAT);
+                    currentHeat = Mathf.Min(currentHeat + config.heatIncreaseRate * Time.deltaTime, config.heatMax);
+                    if (currentHeat >= config.heatMax) overheated = true;
                 }
             }
             else
             {
-                currentHeat = Mathf.Max(currentHeat - config.heatDecreaseRate * Time.deltaTime, 0f);
-                if (overheated && currentHeat <= config.overheatThreshold)
-                    overheated = false;
+                if (config != null)
+                {
+                    currentHeat = Mathf.Max(currentHeat - config.heatDecreaseRate * Time.deltaTime, 0f);
+                    if (overheated && currentHeat <= config.overheatThreshold) overheated = false;
+                }
             }
         }
 
         public void OnAttackAnimationEnd()
         {
-            if (CurrentState is AttackState attackState)
-                attackState.OnAnimationEnd(this);
+            if (CurrentState is AttackState a)
+                a.OnAnimationEnd(this);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!IsDashing) return;
             if (other.CompareTag("Enemy") && other.TryGetComponent<Health>(out var health))
-                health.TakeDamage(config.dashDamage);
+                health.TakeDamage(config != null ? config.dashDamage : 0);
         }
 
         public void SetCollidersTrigger(bool trigger)
         {
-            foreach (var col in _colliders)
-                col.isTrigger = trigger;
+            foreach (var c in _colliders) c.isTrigger = trigger;
         }
 
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, interactRadius);
+        }
+
+        /// <summary>
+        /// Chamado quando Health.OnDeath dispara. Trata estado de morte local e notifica GameManager.
+        /// </summary>
+        private void OnLocalPlayerDeath()
+        {
+            if (_handledDeath) return;
+            _handledDeath = true;
+
+            // Notifica GameManager de morte para contagem de runs/multiplayer
+            GameManager.Instance.NotifyPlayerDied();
+
+            // Transitar para estado de morte, se tiver um DeadState:
+            // Exemplo: SwitchState(DeadState);
+            // Se não tiver um estado de morte definido, mantenha em Idle ou outro estado adequado.
+            // animator.SetTrigger("Death"); // comente ou ajuste conforme sua animação
         }
     }
 }

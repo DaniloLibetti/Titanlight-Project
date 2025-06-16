@@ -95,6 +95,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1089653307777625570
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +351,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1591430054707244790
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +560,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2048230832117187100
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +824,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4069862804584864296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1144,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4577899442311834566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1491,9 @@ MonoBehaviour:
   invincibleDuration: 0.5
   blinkInterval: 0.1
   damage: 20
+  holeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8517029465321634314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door DOWN
       objectReference: {fileID: 0}
+    - target: {fileID: 6538097911382399588, guid: 4c94e1ed86a229d44a45e5695836d2bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6763069826486181023, guid: 4c94e1ed86a229d44a45e5695836d2bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1638,6 +1660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6864522590258375030, guid: 4c94e1ed86a229d44a45e5695836d2bb, type: 3}
+      propertyPath: lockChance
+      value: 0.678
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1661,6 +1687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6087753286063903751}
     m_Modifications:
+    - target: {fileID: 4205653800796841666, guid: 77dc4ff06b46d474e8a803e9d726153d, type: 3}
+      propertyPath: lockChance
+      value: 0.678
+      objectReference: {fileID: 0}
     - target: {fileID: 5314086617414070438, guid: 77dc4ff06b46d474e8a803e9d726153d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1705,6 +1735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door UP
       objectReference: {fileID: 0}
+    - target: {fileID: 7734075642953990289, guid: 77dc4ff06b46d474e8a803e9d726153d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1731,6 +1765,14 @@ PrefabInstance:
     - target: {fileID: 6823763654082575558, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
       propertyPath: m_Name
       value: Door RIGHT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823763654082575558, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526474463321511169, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
+      propertyPath: lockChance
+      value: 0.678
       objectReference: {fileID: 0}
     - target: {fileID: 8780651561486408868, guid: 373ee931223e4da4ea17667b0a0f138d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1795,9 +1837,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6087753286063903751}
     m_Modifications:
+    - target: {fileID: 2561054915292507616, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
+      propertyPath: lockChance
+      value: 0.678
+      objectReference: {fileID: 0}
     - target: {fileID: 6773393939781664576, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
       propertyPath: m_Name
       value: Door LEFT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773393939781664576, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7568496509375566188, guid: 37ce73da8d7f0884b937b39de0432307, type: 3}
       propertyPath: m_LocalPosition.x

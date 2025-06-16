@@ -1,11 +1,13 @@
 ﻿// DoorTrigger.cs
 using UnityEngine;
 using TMPro;
-using Player.StateMachine; // para usar PlayerStateMachine na inscrição de eventos
+using Player.StateMachine;  // Para eventos de Hack e Interact
 using System.Collections.Generic;
+using System;
 
 public enum DoorDirection { Up, Down, Left, Right }
 
+[RequireComponent(typeof(Collider2D))]
 public class DoorTrigger : MonoBehaviour
 {
     [Header("Door Settings")]
@@ -15,28 +17,32 @@ public class DoorTrigger : MonoBehaviour
     public CountdownTimer timer;
     public DoorTrigger pairedDoor;
 
-    [Tooltip("Arraste aqui o shader que faz a troca de cor (vermelho/verde/rainbow/esperando)")]
+    [Header("Lock Chance")]
+    [Range(0f, 1f)]
+    [Tooltip("Chance desta porta começar trancada")]
+    public float lockChance = 0.5f;
+
+    [Tooltip("Shader para troca de cor")]
     public Shader doorShader;
 
     [Tooltip("Texto de dica (TextMeshPro)")]
     public TextMeshProUGUI promptText;
 
-    private DoorState _state;
-    public DoorState sharedState;
+    private DoorState sharedState;
+    private bool _lockInitialized = false;
 
     private bool _isPlayerInRange;
     private bool _hackingInProgress;
     private float _hackTimer;
     private const float HACK_DURATION = 2f;
 
-    // Controla quais jogadores estão em alcance e prontos
-    private HashSet<PlayerStateMachine> _playersInRange = new HashSet<PlayerStateMachine>();
-    private HashSet<PlayerStateMachine> _playersReady = new HashSet<PlayerStateMachine>();
+    private HashSet<PlayerStateMachine> _playersInRange = new();
+    private HashSet<PlayerStateMachine> _playersReady = new();
 
     [Header("Pairing Settings")]
     public float pairingRadius = 2f;
 
-    // Render e material do shader
+    // Render
     private SpriteRenderer _spriteRenderer;
     private Material _doorMaterial;
 
@@ -57,18 +63,17 @@ public class DoorTrigger : MonoBehaviour
     void Awake()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        if (_spriteRenderer != null && doorShader != null)
+        if (doorShader != null && _spriteRenderer != null)
         {
+            // Cria material único para esta porta
             _doorMaterial = new Material(doorShader);
             _spriteRenderer.material = _doorMaterial;
+
+            // Inicializa flags
             _doorMaterial.SetFloat("_IsOpen", 0f);
             _doorMaterial.SetFloat("_IsHacking", 0f);
             _doorMaterial.SetFloat("_IsWaiting", 0f);
         }
-        else if (_spriteRenderer == null)
-            Debug.LogWarning($"[DoorTrigger] SpriteRenderer não encontrado em '{name}'.");
-        else
-            Debug.LogWarning($"[DoorTrigger] doorShader não atribuído em '{name}'.");
     }
 
     void Start()
@@ -76,33 +81,39 @@ public class DoorTrigger : MonoBehaviour
         if (timer == null)
             timer = FindObjectOfType<CountdownTimer>();
 
+        // Obtém DoorState da sala
         var room = GetComponentInParent<Room>();
-        if (room != null)
-        {
-            _state = room.GetDoorState(direction);
-            sharedState = _state;
-        }
-        else
-        {
-            Debug.LogError($"[DoorTrigger] Room não encontrado em '{name}'.");
-        }
+        sharedState = room != null
+            ? room.GetDoorState(direction)
+            : new DoorState();
 
-        PairDoorWithOverlap();
+        // Emparelha automaticamente se não definido
+        if (pairedDoor == null)
+            PairDoorWithOverlap();
 
+        // Sincroniza sharedState em ambas as portas
         if (pairedDoor != null)
-        {
-            if (pairedDoor.sharedState == null)
-                pairedDoor.sharedState = sharedState;
-            else
-                sharedState = pairedDoor.sharedState;
-        }
+            pairedDoor.sharedState = sharedState;
 
+        // Inicializa lock apenas uma vez
+        if (!_lockInitialized)
+            InitializeLock();
+
+        // Esconde prompt inicialmente
         if (promptText != null)
             promptText.gameObject.SetActive(false);
     }
 
     void Update()
     {
+        // Atualiza shader de acordo com estados
+        if (_doorMaterial != null)
+        {
+            _doorMaterial.SetFloat("_IsOpen", sharedState.isOpen ? 1f : 0f);
+            _doorMaterial.SetFloat("_IsHacking", _hackingInProgress ? 1f : 0f);
+            _doorMaterial.SetFloat("_IsWaiting", _playersReady.Count > 0 ? 1f : 0f);
+        }
+
         if (!_isPlayerInRange)
             return;
 
@@ -122,27 +133,18 @@ public class DoorTrigger : MonoBehaviour
 
     void UpdateInterface()
     {
-        if (promptText == null)
-            return;
+        if (promptText == null) return;
 
         if (sharedState.isLocked)
-        {
             promptText.text = _hackingInProgress
                 ? "Hackeando…"
                 : "Segure [Hack] por 2s para desbloquear";
-        }
         else if (!sharedState.isOpen)
-        {
             promptText.text = "Porta Quebrada";
-        }
         else if (!AllPlayersReady())
-        {
-            promptText.text = "Pressione [Interact] para entrar (aguarde outro jogador)";
-        }
+            promptText.text = "Pressione [Interact] para entrar";
         else
-        {
             promptText.text = "";
-        }
 
         promptText.gameObject.SetActive(true);
     }
@@ -151,154 +153,124 @@ public class DoorTrigger : MonoBehaviour
     {
         if (!_playersInRange.Contains(sender) || !sharedState.isLocked)
             return;
-
         _hackingInProgress = true;
         _hackTimer = 0f;
-        _doorMaterial?.SetFloat("_IsHacking", 1f);
     }
 
     private void HandleHackReleased(PlayerStateMachine sender)
     {
-        if (_hackingInProgress)
-        {
-            _hackingInProgress = false;
-            _hackTimer = 0f;
-            _doorMaterial?.SetFloat("_IsHacking", 0f);
-        }
+        if (!_hackingInProgress) return;
+        _hackingInProgress = false;
+        _hackTimer = 0f;
     }
 
     private void HandleInteractPressed(PlayerStateMachine sender)
     {
-        if (!_playersInRange.Contains(sender) || sharedState.isLocked || !sharedState.isOpen)
+        if (!_playersInRange.Contains(sender)
+            || sharedState.isLocked
+            || !sharedState.isOpen)
             return;
 
-        if (_playersReady.Contains(sender))
-            return;
-
-        _playersReady.Add(sender);
-
-        if (_playersReady.Count == 1)
-            _doorMaterial?.SetFloat("_IsWaiting", 1f);
-
-        if (AllPlayersReady())
+        if (_playersReady.Add(sender) &&
+            _playersReady.Count == (PlayerManager.Instance.isMultiplayer ? 2 : 1))
+        {
             TryPassThrough();
+        }
     }
 
     private bool AllPlayersReady()
     {
-        // Precisamos de exatamente 2 prontos, e ambos ainda em alcance
-        var p1 = PlayerStateMachine.Instance;
-        var p2 = PlayerStateMachine.Instance2;
-        return _playersReady.Count == 2
-            && p1 != null && p2 != null
-            && _playersReady.Contains(p1)
-            && _playersReady.Contains(p2);
+        if (!PlayerManager.Instance.isMultiplayer)
+            return _playersReady.Contains(PlayerStateMachine.Instance);
+
+        return _playersReady.Contains(PlayerStateMachine.Instance)
+            && _playersReady.Contains(PlayerStateMachine.Instance2);
     }
 
     private void TryPassThrough()
     {
-        _doorMaterial?.SetFloat("_IsHacking", 0f);
-        _doorMaterial?.SetFloat("_IsWaiting", 0f);
-        _doorMaterial?.SetFloat("_IsOpen", 1f);
-
         _playersReady.Clear();
-        GameManager.Instance.TryMoveThroughDoor(direction, moveDistance);
+        PlayerManager.Instance.TryMoveThroughDoor(direction, moveDistance);
         SoundManager.PlaySound(SoundType.DOOR);
     }
 
     public void UnlockDoor()
     {
-        if (!sharedState.isLocked)
-            return;
-
+        if (!sharedState.isLocked) return;
         sharedState.isLocked = false;
         sharedState.isOpen = true;
         timer?.ReduceTime(hackTimeReduction);
         SoundManager.PlaySound(SoundType.HACKING);
-
-        _doorMaterial?.SetFloat("_IsHacking", 0f);
-        _doorMaterial?.SetFloat("_IsWaiting", 0f);
-        _doorMaterial?.SetFloat("_IsOpen", 0f);
-    }
-
-    void PairDoorWithOverlap()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(
-            transform.position,
-            pairingRadius,
-            LayerMask.GetMask("Doors")
-        );
-        foreach (var hit in hits)
-        {
-            if (hit.gameObject == gameObject) continue;
-            var other = hit.GetComponent<DoorTrigger>();
-            if (other == null) continue;
-
-            Vector2 toOther = other.transform.position - transform.position;
-            Vector2 expected = DirectionToVector(direction);
-            if (Vector2.Dot(toOther.normalized, expected) > 0.5f)
-            {
-                pairedDoor = other;
-                other.pairedDoor = this;
-                if (other.sharedState == null)
-                    other.sharedState = sharedState;
-                else
-                    sharedState = other.sharedState;
-                break;
-            }
-        }
-    }
-
-    private Vector2 DirectionToVector(DoorDirection dir)
-    {
-        switch (dir)
-        {
-            case DoorDirection.Up: return Vector2.up;
-            case DoorDirection.Down: return Vector2.down;
-            case DoorDirection.Left: return Vector2.left;
-            case DoorDirection.Right: return Vector2.right;
-            default: return Vector2.zero;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
-        var psm = other.GetComponent<PlayerStateMachine>();
-        if (psm != null)
+        if (other.CompareTag("Player")
+            && other.TryGetComponent<PlayerStateMachine>(out var psm))
         {
             _playersInRange.Add(psm);
             _isPlayerInRange = true;
         }
-        if (promptText != null)
-            promptText.gameObject.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
-        var psm = other.GetComponent<PlayerStateMachine>();
-        if (psm != null)
+        if (other.CompareTag("Player")
+            && other.TryGetComponent<PlayerStateMachine>(out var psm))
         {
             _playersInRange.Remove(psm);
             _playersReady.Remove(psm);
         }
 
-        if (_playersReady.Count < 2)
-            _doorMaterial?.SetFloat("_IsWaiting", 0f);
+        if (_playersReady.Count == 0 && _doorMaterial != null)
+            _doorMaterial.SetFloat("_IsWaiting", 0f);
 
-        if (_playersInRange.Count == 0)
-        {
-            _isPlayerInRange = false;
-            if (promptText != null)
-                promptText.gameObject.SetActive(false);
-        }
-
-        // Atualiza cor final (aberta/fechada)
-        _doorMaterial?.SetFloat("_IsHacking", 0f);
-        _doorMaterial?.SetFloat("_IsWaiting", (_playersReady.Count >= 1 && _playersInRange.Count >= 1) ? 1f : 0f);
-        _doorMaterial?.SetFloat("_IsOpen", sharedState.isOpen ? 1f : 0f);
+        _isPlayerInRange = _playersInRange.Count > 0;
     }
+
+    private void InitializeLock()
+    {
+        _lockInitialized = true;
+        bool a = UnityEngine.Random.value < lockChance;
+        bool b = UnityEngine.Random.value < lockChance;
+        bool locked = (a == b) ? a : (UnityEngine.Random.value < 0.5f);
+        sharedState.isLocked = locked;
+        sharedState.isOpen = !locked;
+    }
+
+    private void PairDoorWithOverlap()
+    {
+        var hits = Physics2D.OverlapCircleAll(
+            transform.position,
+            pairingRadius,
+            LayerMask.GetMask("Doors")
+        );
+
+        foreach (var hit in hits)
+        {
+            if (hit.gameObject == gameObject) continue;
+            var dirVec = (hit.transform.position - transform.position).normalized;
+            if (Vector2.Dot(dirVec, DirectionToVector(direction)) < 0.5f)
+                continue;
+
+            var other = hit.GetComponent<DoorTrigger>();
+            if (other == null) continue;
+
+            pairedDoor = other;
+            other.pairedDoor = this;
+            other.sharedState = sharedState;
+            break;
+        }
+    }
+
+    private Vector2 DirectionToVector(DoorDirection dir) => dir switch
+    {
+        DoorDirection.Up => Vector2.up,
+        DoorDirection.Down => Vector2.down,
+        DoorDirection.Left => Vector2.left,
+        DoorDirection.Right => Vector2.right,
+        _ => Vector2.zero,
+    };
 
     private void OnDrawGizmosSelected()
     {

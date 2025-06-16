@@ -7,8 +7,11 @@ public class AlertScreenEffect : MonoBehaviour
     public static AlertScreenEffect Instance;
 
     [Header("Configurações do Overlay")]
-    [Tooltip("CanvasGroup que contém o overlay vermelho.")]
-    public CanvasGroup redOverlay;
+    [Tooltip("Canvas que contém a Image de overlay vermelho.")]
+    public Canvas redOverlayCanvas;
+
+    [Tooltip("Image dentro do Canvas que preenche toda a tela.")]
+    public Image redOverlayImage;
 
     [Tooltip("Duração total do efeito (fade out do overlay).")]
     public float flashDuration = 1f;
@@ -19,67 +22,91 @@ public class AlertScreenEffect : MonoBehaviour
     [Tooltip("Duração do tremor da câmera.")]
     public float shakeDuration = 0.5f;
 
+    private Coroutine currentAlertCoroutine;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            // Se desejar manter o objeto entre cenas, descomente a linha abaixo:
-            //DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject); se necessário
         }
         else
         {
             Destroy(gameObject);
+            return;
+        }
+
+        if (redOverlayCanvas != null)
+            redOverlayCanvas.enabled = false;
+
+        if (redOverlayImage != null)
+        {
+            Color c = redOverlayImage.color;
+            c.a = 0f;
+            redOverlayImage.color = c;
         }
     }
 
-    /// <summary>
-    /// Inicia o efeito de alerta na tela com uma mensagem de descrição.
-    /// </summary>
-    /// <param name="eventDescription">Descrição do evento que pode ser exibida em log ou UI.</param>
     public void TriggerAlert(string eventDescription)
     {
-        StartCoroutine(AlertSequence(eventDescription));
+        if (currentAlertCoroutine != null)
+            StopCoroutine(currentAlertCoroutine);
+        currentAlertCoroutine = StartCoroutine(AlertSequence(eventDescription));
     }
 
     private IEnumerator AlertSequence(string eventDescription)
     {
-        // Ativa o overlay vermelho
-        if (redOverlay != null)
+        if (redOverlayCanvas != null)
+            redOverlayCanvas.enabled = true;
+
+        if (redOverlayImage != null)
         {
-            redOverlay.alpha = 1f;
-            redOverlay.gameObject.SetActive(true);
+            Color baseColor = redOverlayImage.color;
+            baseColor.r = 1f; baseColor.g = 0f; baseColor.b = 0f; baseColor.a = 1f;
+            redOverlayImage.color = baseColor;
         }
 
-        // Efeito de shake na câmera
-        Transform cam = Camera.main.transform;
-        Vector3 originalPos = cam.position;
+        if (Camera.main != null)
+        {
+            Transform cam = Camera.main.transform;
+            Vector3 originalPos = cam.position;
+            float elapsedShake = 0f;
+            while (elapsedShake < shakeDuration)
+            {
+                float offsetX = Random.Range(-shakeAmount, shakeAmount) * 0.01f;
+                float offsetY = Random.Range(-shakeAmount, shakeAmount) * 0.01f;
+                cam.position = originalPos + new Vector3(offsetX, offsetY, 0);
+                elapsedShake += Time.deltaTime;
+                yield return null;
+            }
+            cam.position = originalPos;
+        }
+
         float elapsed = 0f;
-        while (elapsed < shakeDuration)
-        {
-            float offsetX = Random.Range(-shakeAmount, shakeAmount) * 0.01f;
-            float offsetY = Random.Range(-shakeAmount, shakeAmount) * 0.01f;
-            cam.position = originalPos + new Vector3(offsetX, offsetY, 0);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        cam.position = originalPos;
-
-        // Mantém o overlay por flashDuration e depois faz fade out
-        elapsed = 0f;
         while (elapsed < flashDuration)
         {
-            if (redOverlay != null)
-                redOverlay.alpha = Mathf.Lerp(1f, 0f, elapsed / flashDuration);
+            if (redOverlayImage != null)
+            {
+                float alpha = Mathf.Lerp(1f, 0f, elapsed / flashDuration);
+                Color c = redOverlayImage.color;
+                c.a = alpha;
+                redOverlayImage.color = c;
+            }
             elapsed += Time.deltaTime;
             yield return null;
         }
-        if (redOverlay != null)
+
+        if (redOverlayImage != null)
         {
-            redOverlay.alpha = 0f;
-            redOverlay.gameObject.SetActive(false);
+            Color c = redOverlayImage.color;
+            c.a = 0f;
+            redOverlayImage.color = c;
         }
+        if (redOverlayCanvas != null)
+            redOverlayCanvas.enabled = false;
 
         Debug.Log("Alerta: " + eventDescription);
+        currentAlertCoroutine = null;
     }
 }

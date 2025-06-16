@@ -11,9 +11,9 @@ namespace Player.StateMachine
             player.animator.SetBool("IsWalking", false);
             player.animator.SetBool("IsDashing", false);
 
-            player.animator.ResetTrigger("Attack");
+            /*player.animator.ResetTrigger("Attack");
             player.animator.ResetTrigger("RangedAttack");
-            player.animator.ResetTrigger("HeavyAttack");
+            player.animator.ResetTrigger("HeavyAttack");*/
 
             player.rb.linearVelocity = Vector2.zero;
         }
