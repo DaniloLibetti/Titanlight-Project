@@ -19,6 +19,10 @@ public class EquipmentMenuController : MonoBehaviour
     [SerializeField] GameObject granadeOptionsP1;
     [SerializeField] GameObject healOptionsP1;
     [SerializeField] Button button1, button2, button3;
+    [SerializeField] Animator animP1;
+
+    
+    
     /*[SerializeField] Image range1BorderP1;
     [SerializeField] Image range2BorderP1;
     [SerializeField] Image chip1BorderP1;
@@ -33,6 +37,9 @@ public class EquipmentMenuController : MonoBehaviour
     [SerializeField] GameObject chip2OptionsP2;
     [SerializeField] GameObject granadeOptionsP2;
     [SerializeField] GameObject healOptionsP2;
+    [SerializeField] Animator animP2;
+
+
     /*[SerializeField] Image range1BorderP2;
     [SerializeField] Image range2BorderP2;
     [SerializeField] Image chip1BorderP2;
@@ -42,10 +49,44 @@ public class EquipmentMenuController : MonoBehaviour
 
 
     public int buttonValue;
+    [SerializeField] Animator doorAnimator;
+
+    private void Start()
+    {
+        doorAnimator.Play("DoorOpening");
+    }
 
     public void Player1Ready()
     {
-        EventSystem.current.SetSelectedGameObject(range1OptionsP2);
+        
+        if (!animP1.GetBool("isReady"))
+        {
+            EventSystem.current.SetSelectedGameObject(range1OptionsP2);
+            animP1.SetBool("isReady", true);
+        }
+        else
+        {
+            //isUnReady = true;
+            EventSystem.current.SetSelectedGameObject(range1OptionsP1);
+            animP1.SetBool("isReady", false);
+
+        }
+    }
+    public void Player2Ready()
+    {
+
+        if (!animP2.GetBool("isReady2"))
+        {
+            EventSystem.current.SetSelectedGameObject(range1OptionsP2);
+            animP2.SetBool("isReady2", true);
+        }
+        else
+        {
+            //isUnReady = true;
+            EventSystem.current.SetSelectedGameObject(range1OptionsP1);
+            animP2.SetBool("isReady2", false);
+
+        }
     }
 
     public void ShowRange1OptionsP1()
