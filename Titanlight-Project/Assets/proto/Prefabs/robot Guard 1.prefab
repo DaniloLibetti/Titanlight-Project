@@ -55,7 +55,7 @@ MonoBehaviour:
   dashDuration: 0.42
   cooldownTime: 2
   activationDistance: 1.37
-  attackDamage: 20
+  attackDamage: 4
   coinDrop: {fileID: 0}
   rb: {fileID: 4457129325418156950}
   animator: {fileID: 8783324308042099954}

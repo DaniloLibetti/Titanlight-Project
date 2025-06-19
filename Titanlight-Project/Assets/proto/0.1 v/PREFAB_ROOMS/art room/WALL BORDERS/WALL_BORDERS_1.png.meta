@@ -110,9 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 223
-        width: 640
-        height: 193
+        y: 0
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 024e89e57fb90f680800000000000000
+      spriteID: 
       internalID: -8723300991470345184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WALL_BORDERS_1_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 289
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b43c95514c463ba0800000000000000
-      internalID: -6109612000988613453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WALL_BORDERS_1_2
-      rect:
-        serializedVersion: 2
-        x: 351
-        y: 0
-        width: 289
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6cf10c34e77666110800000000000000
-      internalID: 1253803338269466566
       vertices: []
       indices: 
       edges: []
@@ -186,8 +140,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       WALL_BORDERS_1_0: -8723300991470345184
-      WALL_BORDERS_1_1: -6109612000988613453
-      WALL_BORDERS_1_2: 1253803338269466566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

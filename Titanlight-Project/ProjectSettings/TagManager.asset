@@ -3,24 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Enemy
-  - RoomBounds
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - enemyLayer
+  - 
   - Water
   - UI
-  - Dashing
-  - Door
-  - Wall
-  - Player
-  - floordetect
-  - HoleFloor
-  - bullet
-  - Itens
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

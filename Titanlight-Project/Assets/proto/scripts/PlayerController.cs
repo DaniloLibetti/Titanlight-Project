@@ -127,6 +127,8 @@ public class PlayerController : MonoBehaviour
     public bool CanMove { get; set; } = true;
     public Vector3 LastDashPosition { get; private set; } = Vector3.zero;
 
+    
+
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
@@ -135,6 +137,7 @@ public class PlayerController : MonoBehaviour
         if (animator == null) animator = GetComponentInChildren<Animator>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         if (health == null) health = GetComponent<Health>();
+        
     }
 
     void Update()

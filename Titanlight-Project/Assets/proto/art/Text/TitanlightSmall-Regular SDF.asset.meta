@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Titanlight-Project/Assets/proto/art/Text/TitanlightSmall-Regular SDF.asset.meta
 guid: c7dabaaddf2f4ae4a8796409d6fa67a2
+========
+guid: 4149405a8e87e244ba213106848e4f6f
+>>>>>>>> Oak_Branch_V3:Titanlight-Project/Assets/proto/art/piret/PIRATE.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

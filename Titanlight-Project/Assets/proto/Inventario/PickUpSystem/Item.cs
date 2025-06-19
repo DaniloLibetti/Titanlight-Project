@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class Item : MonoBehaviour
 {
@@ -14,39 +15,47 @@ public class Item : MonoBehaviour
     private Transform _player;
     private bool _isAttracting;
     private bool _readyToCollect;
-    private bool _isPlayerInRange;
+    private bool _hasTarget;
+    private Vector3 _playerPosition;
+    private float itemMoveSpeed = 3.5f;
+
+    public TextMeshProUGUI promptText; // texto tipo "Aperte E"
+    private int amount = 1; // quantos itens vale (ex: 1 moeda, 5 moedas)
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        GetComponent<Collider2D>().enabled = false;
-    }
-
-    private void Start()
-    {
-        Invoke(nameof(EnableCollection), activationDelay);
-    }
-
-    private void EnableCollection()
-    {
-        GetComponent<Collider2D>().enabled = true;
-        _readyToCollect = true;
+        //GetComponent<Collider2D>().enabled = false;
     }
 
     private void FixedUpdate()
     {
-        if (_isAttracting && _player != null)
+        if (_hasTarget)
         {
-            // Movimento suave em direção ao jogador
+            Vector2 targetDirection = (_playerPosition - transform.position).normalized;
+            _rb.linearVelocity = new Vector2(targetDirection.x, targetDirection.y) * itemMoveSpeed;
+            //Collect();
+        }
+
+
+        /*if (_isAttracting && _player != null)
+        {
+            // Movimento suave usando física
             Vector2 direction = (_player.position - transform.position).normalized;
             _rb.linearVelocity = direction * attractionSpeed;
 
-            // Se chegarmos perto o suficiente, completar coleta
+            // Verifica distância para coleta
             if (Vector2.Distance(transform.position, _player.position) <= collectDistance)
             {
                 Collect();
             }
-        }
+        }*/
+    }
+
+    public void SetTarget(Vector3 position)
+    {
+        _playerPosition = position;
+        _hasTarget = true;
     }
 
     public void Init(ItemSO so, int quantity = 1)
@@ -56,36 +65,14 @@ public class Item : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = so.ItemImage;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_readyToCollect) return;
+        if (!_readyToCollect || _isAttracting) return;
 
         if (other.CompareTag("Player"))
         {
-            _isPlayerInRange = true;
-            GameUI.Instance.ToggleInteractionText(true); // exibe “Pressione [Interact] para coletar”
+            StartAttraction(other.transform);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            _isPlayerInRange = false;
-            GameUI.Instance.ToggleInteractionText(false);
-        }
-    }
-
-    /// <summary>
-    /// Chamado pelo PlayerStateMachine quando o jogador aperta o botão Interact
-    /// e este item está no alcance (_isPlayerInRange == true).
-    /// </summary>
-    public void Interact()
-    {
-        if (!_isPlayerInRange || !_readyToCollect)
-            return;
-
-        StartAttraction(_player);
     }
 
     private void StartAttraction(Transform player)
@@ -93,23 +80,30 @@ public class Item : MonoBehaviour
         _player = player;
         _isAttracting = true;
 
-        // Anula todas as forças físicas para começar a atrair
+        // Para todas as forças físicas
         _rb.linearVelocity = Vector2.zero;
         _rb.angularVelocity = 0f;
         _rb.gravityScale = 0f;
+    */
 
-        GameUI.Instance.ToggleInteractionText(false);
+    public void SetAmount(int amt) // muda valor do item (ex: de 1 pra 5 moedas)
+    {
+        amount = amt;
     }
 
-    private void Collect()
+    public void Collect()
     {
-        if (_player == null) return;
+        GameManager.Instance.RegisterScriptableObject(amount); // atualiza contador
 
-        PickUpSystem pickupSystem = _player.GetComponent<PickUpSystem>();
+        if (promptText != null)
+            promptText.gameObject.SetActive(false); // esconde texto
+        Destroy(gameObject); // destroi o item cena
+
+        /*PickUpSystem pickupSystem = _player.GetComponent<PickUpSystem>();
         if (pickupSystem != null)
         {
             pickupSystem.AddItem(InventoryItem, Quantity);
         }
-        Destroy(gameObject);
+        Destroy(gameObject)*/
     }
 }

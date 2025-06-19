@@ -109,32 +109,10 @@ TextureImporter:
       name: WALLS_V1_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 287
-        width: 578
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a145e490fa347070800000000000000
-      internalID: 8103166434510979497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WALLS_V1_1
-      rect:
-        serializedVersion: 2
         x: 0
-        y: 159
-        width: 33
-        height: 66
+        y: 0
+        width: 0
+        height: 0
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,30 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2601716ae4f720a0800000000000000
-      internalID: -6906282216055044562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WALLS_V1_2
-      rect:
-        serializedVersion: 2
-        x: 607
-        y: 159
-        width: 33
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d303f45facca2f2e0800000000000000
-      internalID: -2093420889074880451
+      spriteID: 
+      internalID: 8103166434510979497
       vertices: []
       indices: 
       edges: []
@@ -186,8 +142,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       WALLS_V1_0: 8103166434510979497
-      WALLS_V1_1: -6906282216055044562
-      WALLS_V1_2: -2093420889074880451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

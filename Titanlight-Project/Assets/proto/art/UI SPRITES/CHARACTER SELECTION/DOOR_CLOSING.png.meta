@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 95997f9085903af43b2f12bd6cddaa7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5313699340205783119
+    second: DOOR_CLOSING_0
+  - first:
+      213: 4714552635991575255
+    second: DOOR_CLOSING_1
+  - first:
+      213: -1702562925687796746
+    second: DOOR_CLOSING_2
+  - first:
+      213: -5849413682083076414
+    second: DOOR_CLOSING_3
+  - first:
+      213: -4352547325138078223
+    second: DOOR_CLOSING_4
+  - first:
+      213: -5449222848752359783
+    second: DOOR_CLOSING_5
+  - first:
+      213: 2701949587739031626
+    second: DOOR_CLOSING_6
+  - first:
+      213: -8208516646796160643
+    second: DOOR_CLOSING_7
+  - first:
+      213: 3350605907362448977
+    second: DOOR_CLOSING_8
+  - first:
+      213: 1709053870879965699
+    second: DOOR_CLOSING_9
+  - first:
+      213: -2332233000558180914
+    second: DOOR_CLOSING_10
+  - first:
+      213: 8829051645888033900
+    second: DOOR_CLOSING_11
+  - first:
+      213: -4073273818610995348
+    second: DOOR_CLOSING_12
+  - first:
+      213: 6584529138878094450
+    second: DOOR_CLOSING_13
+  - first:
+      213: 8828961801331301097
+    second: DOOR_CLOSING_14
+  - first:
+      213: 7463047682740280154
+    second: DOOR_CLOSING_15
+  - first:
+      213: 7977398619491700502
+    second: DOOR_CLOSING_16
+  - first:
+      213: -4678860934354814396
+    second: DOOR_CLOSING_17
+  - first:
+      213: 3315930109295582051
+    second: DOOR_CLOSING_18
+  - first:
+      213: 5411239666667148266
+    second: DOOR_CLOSING_19
+  - first:
+      213: 54602951921002821
+    second: DOOR_CLOSING_20
+  - first:
+      213: -5706525415922473704
+    second: DOOR_CLOSING_21
+  - first:
+      213: 8734965479277320424
+    second: DOOR_CLOSING_22
+  - first:
+      213: -8455858734269932522
+    second: DOOR_CLOSING_23
+  - first:
+      213: 1354795858041580044
+    second: DOOR_CLOSING_24
+  - first:
+      213: -5358231894503456176
+    second: DOOR_CLOSING_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DOOR_CLOSING_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 213
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f487130956d0eb940800000000000000
+      internalID: 5313699340205783119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 213
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dac827c4a47d6140800000000000000
+      internalID: 4714552635991575255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 6
+        width: 12
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb01a62a084f58e0800000000000000
+      internalID: -1702562925687796746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 6
+        width: 12
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6e0276f35b2dea0800000000000000
+      internalID: -5849413682083076414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_4
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 6
+        width: 14
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f57111c445a893c0800000000000000
+      internalID: -4352547325138078223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_5
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 6
+        width: 14
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9966c26b0b87064b0800000000000000
+      internalID: -5449222848752359783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_6
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 6
+        width: 17
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48b232a5d04f7520800000000000000
+      internalID: 2701949587739031626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_7
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 6
+        width: 17
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7195dea99d751e80800000000000000
+      internalID: -8208516646796160643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_8
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 6
+        width: 43
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1560aaa025ebf7e20800000000000000
+      internalID: 3350605907362448977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_9
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 6
+        width: 43
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3028ecbc077c7b710800000000000000
+      internalID: 1709053870879965699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_10
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 6
+        width: 59
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec54944517e32afd0800000000000000
+      internalID: -2332233000558180914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_11
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 6
+        width: 59
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64fbb091b7178a70800000000000000
+      internalID: 8829051645888033900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_12
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 6
+        width: 73
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6feac80b03d877c0800000000000000
+      internalID: -4073273818610995348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_13
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 6
+        width: 73
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c99009d52f06b50800000000000000
+      internalID: 6584529138878094450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_14
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea58dffaf5c68a70800000000000000
+      internalID: 8828961801331301097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_15
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b59879352129760800000000000000
+      internalID: 7463047682740280154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_16
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f8e7247c965be60800000000000000
+      internalID: 7977398619491700502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_17
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a345615c8511fb0800000000000000
+      internalID: -4678860934354814396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_18
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36bd598addc840e20800000000000000
+      internalID: 3315930109295582051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_19
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 6
+        width: 148
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3d23e8ec5981b40800000000000000
+      internalID: 5411239666667148266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 168
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54960f0781df1c000800000000000000
+      internalID: 54602951921002821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 168
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815e3326e595ec0b0800000000000000
+      internalID: -5706525415922473704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 53
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8df95d2d4d83970800000000000000
+      internalID: 8734965479277320424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 53
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61cd4f04841c6aa80800000000000000
+      internalID: -8455858734269932522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_24
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a2db5a7a33dc210800000000000000
+      internalID: 1354795858041580044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR_CLOSING_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 8
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05204f72b7cb3a5b0800000000000000
+      internalID: -5358231894503456176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DOOR_CLOSING_0: 5313699340205783119
+      DOOR_CLOSING_1: 4714552635991575255
+      DOOR_CLOSING_10: -2332233000558180914
+      DOOR_CLOSING_11: 8829051645888033900
+      DOOR_CLOSING_12: -4073273818610995348
+      DOOR_CLOSING_13: 6584529138878094450
+      DOOR_CLOSING_14: 8828961801331301097
+      DOOR_CLOSING_15: 7463047682740280154
+      DOOR_CLOSING_16: 7977398619491700502
+      DOOR_CLOSING_17: -4678860934354814396
+      DOOR_CLOSING_18: 3315930109295582051
+      DOOR_CLOSING_19: 5411239666667148266
+      DOOR_CLOSING_2: -1702562925687796746
+      DOOR_CLOSING_20: 54602951921002821
+      DOOR_CLOSING_21: -5706525415922473704
+      DOOR_CLOSING_22: 8734965479277320424
+      DOOR_CLOSING_23: -8455858734269932522
+      DOOR_CLOSING_24: 1354795858041580044
+      DOOR_CLOSING_25: -5358231894503456176
+      DOOR_CLOSING_3: -5849413682083076414
+      DOOR_CLOSING_4: -4352547325138078223
+      DOOR_CLOSING_5: -5449222848752359783
+      DOOR_CLOSING_6: 2701949587739031626
+      DOOR_CLOSING_7: -8208516646796160643
+      DOOR_CLOSING_8: 3350605907362448977
+      DOOR_CLOSING_9: 1709053870879965699
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

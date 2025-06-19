@@ -1,85 +1,70 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider2D))]
 public class Health : MonoBehaviour
 {
     [Header("Configurações de Vida")]
     [SerializeField] private float maxHealth = 100f;
-    [Tooltip("Se verdadeiro, destrói o GameObject imediatamente em Die(). Caso precise tocar animação, use false e destrua manualmente após animação.")]
-    [SerializeField] private bool destroyOnDeath = false;
+    [SerializeField] private bool destroyOnDeath = true;
 
     public float CurrentHealth { get; private set; }
-    public float MaxHealth => maxHealth;
 
-    private bool isDead = false;
-
-    public event Action OnDeath;
-    public event Action<float, float> OnHealthChanged; // (current, max)
-
-    [Header("Eventos (UnityEvent)")]
     public UnityEvent onDeath;
     public UnityEvent<float> onDamageTaken;
-    public UnityEvent<float, float> onHealthChangedUnity;
+    // Novo evento para dropar moedas
     public UnityEvent onDropMoeda;
+
+    private SegmentedHealthBar healthBar;
+
+    // Propriedade pública para acessar o valor máximo de vida
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+    }
 
     void Awake()
     {
+        // Inicia a vida com o valor máximo
         CurrentHealth = maxHealth;
-        isDead = false;
     }
 
     public void TakeDamage(float damage)
     {
-        if (isDead) return;
-        if (damage <= 0f) return;
+        if (damage <= 0)
+            return;
 
+        // Diminui a vida com base no dano recebido
         CurrentHealth -= damage;
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, maxHealth);
+        if (onDamageTaken != null)
+            onDamageTaken.Invoke(damage);
 
-        onDamageTaken?.Invoke(damage);
-        OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
-        onHealthChangedUnity?.Invoke(CurrentHealth, maxHealth);
-
-        if (CurrentHealth <= 0f)
+        if (CurrentHealth <= 0)
             Die();
+
+        
     }
 
     public void Heal(float amount)
     {
-        if (isDead) return;
-        if (amount <= 0f) return;
+        if (amount <= 0)
+            return;
 
+        // Restaura a vida sem passar do máximo
         CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
-        OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
-        onHealthChangedUnity?.Invoke(CurrentHealth, maxHealth);
     }
 
     private void Die()
     {
-        if (isDead) return;
-        isDead = true;
+        // Chama o evento de morte
+        if (onDeath != null)
+            onDeath.Invoke();
 
-        OnDeath?.Invoke();
-        onDeath?.Invoke();
-        onDropMoeda?.Invoke();
+        // Chama o evento de drop de moedas (substituindo qualquer método anterior de drop)
+        if (onDropMoeda != null)
+            onDropMoeda.Invoke();
 
+        // Destrói o objeto se estiver marcado para isso
         if (destroyOnDeath)
             Destroy(gameObject);
-    }
-
-    public void DestroyAfterDeathAnimation()
-    {
-        if (isDead && gameObject != null)
-            Destroy(gameObject);
-    }
-
-    public void ResetHealth()
-    {
-        isDead = false;
-        CurrentHealth = maxHealth;
-        OnHealthChanged?.Invoke(CurrentHealth, maxHealth);
-        onHealthChangedUnity?.Invoke(CurrentHealth, maxHealth);
     }
 }
