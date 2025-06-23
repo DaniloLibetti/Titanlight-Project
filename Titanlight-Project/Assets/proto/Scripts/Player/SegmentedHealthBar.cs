@@ -15,7 +15,9 @@ public class SegmentedHealthBar : MonoBehaviour
 
     private Health healthPlayer;
     private float maxRightMask;
+    private float maxLeftMask;
     private float initialRightMask;
+    private float initialLeftMask;
     private float barWidth;
 
     private void Start()
@@ -32,16 +34,21 @@ public class SegmentedHealthBar : MonoBehaviour
 
     private void SetupHealthBar()
     {
-        if (barRect != null && mask != null)
+        if (barRect != null && mask != null && playerIndex == 1)
         {
             barWidth = barRect.rect.width;
             initialRightMask = mask.padding.z;
             maxRightMask = barWidth - mask.padding.x - initialRightMask;
         }
-        else
+
+
+        if (barRect != null && mask != null && playerIndex == 2)
         {
-            Debug.LogError("UI references missing!", this);
+            barWidth = barRect.rect.width;
+            initialLeftMask = mask.padding.z;
+            maxLeftMask = barWidth + mask.padding.x - initialLeftMask;
         }
+
     }
 
     private void FindPlayer()
@@ -134,10 +141,21 @@ public class SegmentedHealthBar : MonoBehaviour
 
         float healthPercent = Mathf.Clamp01(healthPlayer.CurrentHealth / healthPlayer.MaxHealth);
         float targetRightMask = maxRightMask * (1 - healthPercent) + initialRightMask;
+        float targetLeftMask = maxLeftMask * (1 - healthPercent) + initialLeftMask;
 
         var padding = mask.padding;
-        padding.z = targetRightMask;
-        mask.padding = padding;
+        
+        if (playerIndex == 1)
+        {
+            padding.z = targetRightMask;
+            mask.padding = padding;
+        }
+
+        if (playerIndex == 2)
+        {
+            padding.z = targetLeftMask;
+            mask.padding = padding;
+        }
     }
 
     private void OnPlayerDeath()

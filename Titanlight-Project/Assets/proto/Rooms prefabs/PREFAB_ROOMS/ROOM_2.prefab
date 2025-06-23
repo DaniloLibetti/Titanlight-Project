@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 649215311068328041}
   - component: {fileID: 2281328258049965179}
   - component: {fileID: 5315087333953766118}
-  m_Layer: 3
+  m_Layer: 19
   m_Name: ponto de bau (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 8196139667494289276}
   - component: {fileID: 7427587585329083246}
   - component: {fileID: 3566300865444367859}
-  m_Layer: 3
+  m_Layer: 19
   m_Name: ponto de bau
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 5777928013514171576}
   - component: {fileID: 5081693147270113450}
   - component: {fileID: 1220423606883620407}
-  m_Layer: 3
+  m_Layer: 19
   m_Name: ponto de bau (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 5546832336353547283}
   - component: {fileID: 6507930757352708097}
   - component: {fileID: 881241770594543260}
-  m_Layer: 3
+  m_Layer: 19
   m_Name: ponto de bau (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

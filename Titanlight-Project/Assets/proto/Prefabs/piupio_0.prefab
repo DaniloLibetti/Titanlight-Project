@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca72e24157b7834eb084c3bfb5d540f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 2
   speed: 5.82
-  damage: 4
-  lifeTime: 5
+  direction: {x: 1, y: 0}
 --- !u!212 &6814573408717443173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 8593235595649452036, guid: eed117155f0f3624e9db3a4a09fad412, type: 3}
+  m_Sprite: {fileID: -9011078295136077317, guid: 72b1e996016c03b4fb3eab3e17fed6ab, type: 3}
   m_Color: {r: 0.8805031, g: 0.19659024, b: 0.36635402, a: 1}
   m_FlipX: 0
   m_FlipY: 0

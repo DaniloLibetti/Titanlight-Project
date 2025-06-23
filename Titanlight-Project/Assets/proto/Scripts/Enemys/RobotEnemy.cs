@@ -25,7 +25,7 @@ public class RobotEnemy : MonoBehaviour
     private bool isDead = false;
     private Vector2 dashDirection;
     private Collider2D[] allColliders;
-
+    private SegmentedHealthBar healthBar;
 
     void Awake()
     {
@@ -33,6 +33,8 @@ public class RobotEnemy : MonoBehaviour
         health = GetComponent<Health>();
         health.onDamageTaken.AddListener(OnDamageTaken);
         health.onDeath.AddListener(OnDeath);
+        
+        healthBar = GetComponent<SegmentedHealthBar>();
 
         // cache dos colliders para intangibilidade
         allColliders = GetComponents<Collider2D>();
@@ -96,7 +98,11 @@ public class RobotEnemy : MonoBehaviour
         {
             var playerHealth = other.GetComponent<Health>();
             if (playerHealth != null)
+            {
                 playerHealth.TakeDamage(attackDamage);
+                //healthBar.UpdateHealthBar(attackDamage);
+            }
+                
         }
     }
 

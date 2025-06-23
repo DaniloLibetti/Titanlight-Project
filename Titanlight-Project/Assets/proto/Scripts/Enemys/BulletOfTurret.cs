@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class BulletOfTurret : MonoBehaviour
 {
-    public int damage = 10;
+    public float damage = 4f;
     public float speed = 10f;
     public Vector2 direction = Vector2.right;
 
     private Rigidbody2D _rb;
 
+    private SegmentedHealthBar healthBar;
+
+    private void Awake()
+    {
+        healthBar = GetComponent<SegmentedHealthBar>();
+    }
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.linearVelocity = direction * speed;
+
         Destroy(gameObject, 5f);
     }
 
@@ -23,6 +31,7 @@ public class BulletOfTurret : MonoBehaviour
             if (health != null)
             {
                 health.TakeDamage(damage);
+                //healthBar.UpdateHealthBar(damage);
             }
             Destroy(gameObject);
         }

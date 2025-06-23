@@ -146,7 +146,7 @@ MonoBehaviour:
   machineGunBulletPrefab: {fileID: 6118543610015448874, guid: 78c5fdc1858dd014a8784e89b7e5ab48, type: 3}
   projectileCollisionLayers:
     serializedVersion: 2
-    m_Bits: 409
+    m_Bits: 131481
   extraPelletsMultiplier: 2
   minShotgunSpreadAngle: 10
   maxShotgunLifetimeMultiplier: 2

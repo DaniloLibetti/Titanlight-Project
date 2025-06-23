@@ -153,6 +153,7 @@ namespace Player.StateMachine
             if (_health != null && _health.CurrentHealth <= 0 && !_handledDeath)
             {
                 OnLocalPlayerDeath();
+                animator.Play("Death Down");
             }
 
             if (firePoint != null)

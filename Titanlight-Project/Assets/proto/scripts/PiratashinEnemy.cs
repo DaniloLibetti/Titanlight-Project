@@ -35,6 +35,8 @@ public class PiratashinEnemy : MonoBehaviour
     [SerializeField] private float maxHealth = 50f;
     private float currentHealth;
 
+    private SegmentedHealthBar healthBar;
+
     // Estados internos
     private Transform player;
     private AIState currentState = AIState.Idle;
@@ -48,6 +50,8 @@ public class PiratashinEnemy : MonoBehaviour
         coinDrop = GetComponent<EnemyCoinDrop>();
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+        healthBar = GetComponent<SegmentedHealthBar>();
     }
 
     void Start()
@@ -170,7 +174,11 @@ public class PiratashinEnemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > meleeRange)
             return;
         if (player.TryGetComponent<PlayerController>(out var pc))
+        {
             pc.TakeDamage(damage);
+            //healthBar.UpdateHealthBar(normalAttackDamage);
+        }
+            
     }
 
     public void TakeDamage(float dmg)

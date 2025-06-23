@@ -347,7 +347,7 @@ public class GameManager : Singleton<GameManager>
     {
         customizationCanvas?.SetActive(false);
         auctionCanvas?.SetActive(false);
-        if (timerCanvas != null) timerCanvas.SetActive(true);
+        
 
         CleanupPreviousRun();
         SetupGrid();
@@ -358,6 +358,7 @@ public class GameManager : Singleton<GameManager>
         EnsurePlayerManagerExists();
         SpawnPlayers();
         ShowBar();
+        if (timerCanvas != null) timerCanvas.SetActive(true);
 
         // RESETA valores da run
         _collectedItems = 0;
@@ -643,8 +644,8 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            healthBarObject1.SetActive(true);
-            healthBarObject2.SetActive(true);
+            healthBarObject1.SetActive(false);
+            healthBarObject2.SetActive(false);
         }
     }
 
