@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SegmentedHealthBar : MonoBehaviour
 {
-    /*[Header("Player Settings")]
+    [Header("Player Settings")]
     [Tooltip("Player index (1 or 2)")]
     public int playerIndex = 1;
 
@@ -162,5 +162,5 @@ public class SegmentedHealthBar : MonoBehaviour
             healthBarObject.SetActive(false);
             Debug.Log($"[HealthBar] Player {playerIndex} bar hidden");
         }
-    }*/
+    }
 }

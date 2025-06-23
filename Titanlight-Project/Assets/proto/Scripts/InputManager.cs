@@ -37,13 +37,13 @@ public class InputManager : MonoBehaviour
         }
 
         // Busca a ação de navegação no InputActionAsset
-        _navigateAction = _playerInput.actions.FindAction("Navigate", true);
+        /*_navigateAction = _playerInput.actions.FindAction("Navigate", true);
         if (_navigateAction == null)
         {
             Debug.LogError("[InputManager] Ação 'Navigate' não encontrada no Input Actions.");
             enabled = false;
             return;
-        }
+        }*/
 
         // Seleciona o primeiro botão do menu de P1, se existir
         if (EventSystem.current == null)

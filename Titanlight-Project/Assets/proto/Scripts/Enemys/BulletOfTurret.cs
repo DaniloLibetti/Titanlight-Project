@@ -26,7 +26,7 @@ public class BulletOfTurret : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (!other.CompareTag("Enemy") && !other.CompareTag("Trigger"))
+        else if (!other.CompareTag("Enemy") && !other.CompareTag("Projectile"))
         {
             Destroy(gameObject);
         }

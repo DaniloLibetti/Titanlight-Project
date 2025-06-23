@@ -354,6 +354,7 @@ namespace Player.StateMachine
             {
                 projectileComp.Initialize(firePoint.right, projectileSpeed, projectileCollisionLayers);
                 projectileComp.damageMultiplier = 1f;
+                SoundManager.PlaySound(SoundType.HEATLASER);
             }
 
             Destroy(proj, projectileLifetime);
@@ -387,6 +388,7 @@ namespace Player.StateMachine
             }
 
             rb.AddForce(-lastDirection * baseRecoilForce * (t - 1f), ForceMode2D.Impulse);
+            SoundManager.PlaySound(SoundType.LASERSHOTGUN);
         }
 
         private void UpdateHeat()
@@ -399,6 +401,7 @@ namespace Player.StateMachine
                 if (currentHeat >= config.heatMax)
                 {
                     overheated = true;
+                    SoundManager.PlaySound(SoundType.OVERHEAT);
                 }
             }
             else
