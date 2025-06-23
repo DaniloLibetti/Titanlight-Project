@@ -1,0 +1,1405 @@
+fileFormatVersion: 2
+guid: 130bed364491ca045a83e4712402cfc3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7018471828338042515
+    second: Alert_Time_Out_0
+  - first:
+      213: -6789888689033648418
+    second: Alert_Time_Out_1
+  - first:
+      213: 575560136737896607
+    second: Alert_Time_Out_2
+  - first:
+      213: -7725849354561287062
+    second: Alert_Time_Out_3
+  - first:
+      213: 7282337706685887728
+    second: Alert_Time_Out_4
+  - first:
+      213: -9142557551893964116
+    second: Alert_Time_Out_5
+  - first:
+      213: -6864909547536965046
+    second: Alert_Time_Out_6
+  - first:
+      213: -9076230951255192216
+    second: Alert_Time_Out_7
+  - first:
+      213: -5191643634473959078
+    second: Alert_Time_Out_8
+  - first:
+      213: -408264557534671753
+    second: Alert_Time_Out_9
+  - first:
+      213: -669729749392101401
+    second: Alert_Time_Out_10
+  - first:
+      213: -1567485236302846453
+    second: Alert_Time_Out_11
+  - first:
+      213: -6216078306982018456
+    second: Alert_Time_Out_12
+  - first:
+      213: -875553890449995860
+    second: Alert_Time_Out_13
+  - first:
+      213: 3930492869034293851
+    second: Alert_Time_Out_14
+  - first:
+      213: -3153279386266607044
+    second: Alert_Time_Out_15
+  - first:
+      213: 5676720367839894149
+    second: Alert_Time_Out_16
+  - first:
+      213: 7075809667774185312
+    second: Alert_Time_Out_17
+  - first:
+      213: -2910474588813788053
+    second: Alert_Time_Out_18
+  - first:
+      213: 5108564510155569843
+    second: Alert_Time_Out_19
+  - first:
+      213: -6588538101981368789
+    second: Alert_Time_Out_20
+  - first:
+      213: -118190328061828654
+    second: Alert_Time_Out_21
+  - first:
+      213: -7812119831910440569
+    second: Alert_Time_Out_22
+  - first:
+      213: 878755293770185457
+    second: Alert_Time_Out_23
+  - first:
+      213: 6224235235495607505
+    second: Alert_Time_Out_24
+  - first:
+      213: -1384248252507433803
+    second: Alert_Time_Out_25
+  - first:
+      213: -3812006315632565808
+    second: Alert_Time_Out_26
+  - first:
+      213: 4308575157590311861
+    second: Alert_Time_Out_27
+  - first:
+      213: 8082828195991625829
+    second: Alert_Time_Out_28
+  - first:
+      213: 7210854490505511846
+    second: Alert_Time_Out_29
+  - first:
+      213: -8767324745750763709
+    second: Alert_Time_Out_30
+  - first:
+      213: -1867431812041829928
+    second: Alert_Time_Out_31
+  - first:
+      213: -1614535925282453342
+    second: Alert_Time_Out_32
+  - first:
+      213: 7920611518729144114
+    second: Alert_Time_Out_33
+  - first:
+      213: 2232152208238805033
+    second: Alert_Time_Out_34
+  - first:
+      213: -9091042356360242647
+    second: Alert_Time_Out_35
+  - first:
+      213: -5088562647810182001
+    second: Alert_Time_Out_36
+  - first:
+      213: 2817206178472182557
+    second: Alert_Time_Out_37
+  - first:
+      213: -7537900943750653310
+    second: Alert_Time_Out_38
+  - first:
+      213: -2376198747929158449
+    second: Alert_Time_Out_39
+  - first:
+      213: 6961627820752203413
+    second: Alert_Time_Out_40
+  - first:
+      213: 8911621874579355824
+    second: Alert_Time_Out_41
+  - first:
+      213: 7502183975315587021
+    second: Alert_Time_Out_42
+  - first:
+      213: -4751050742204406856
+    second: Alert_Time_Out_43
+  - first:
+      213: -4389583314031650742
+    second: Alert_Time_Out_44
+  - first:
+      213: -2595996890788803476
+    second: Alert_Time_Out_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Alert_Time_Out_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6913ddbe01699e90800000000000000
+      internalID: -7018471828338042515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6e4b1363875c1a0800000000000000
+      internalID: -6789888689033648418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98332915ecccf700800000000000000
+      internalID: 575560136737896607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c813102f448c490800000000000000
+      internalID: -7725849354561287062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4f17d8f8f001560800000000000000
+      internalID: 7282337706685887728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa9bcc885c1f1180800000000000000
+      internalID: -9142557551893964116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a422fdb6321fab0a0800000000000000
+      internalID: -6864909547536965046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d470ba900ca0280800000000000000
+      internalID: -9076230951255192216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5103c6fe9393f7b0800000000000000
+      internalID: -5191643634473959078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c83c94c8d855af0800000000000000
+      internalID: -408264557534671753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efe8ff5754a4b6f0800000000000000
+      internalID: -669729749392101401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06ef738b7c2f3ae0800000000000000
+      internalID: -1567485236302846453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8624358c6bd0cb9a0800000000000000
+      internalID: -6216078306982018456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca74402206869d3f0800000000000000
+      internalID: -875553890449995860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5abef2907aeb8630800000000000000
+      internalID: 3930492869034293851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c326400ea1d4d34d0800000000000000
+      internalID: -3153279386266607044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_16
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a52561913c7ce40800000000000000
+      internalID: 5676720367839894149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_17
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f74f15763523260800000000000000
+      internalID: 7075809667774185312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_18
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6cf3f528caeb97d0800000000000000
+      internalID: -2910474588813788053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_19
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba7dfb0b5445e640800000000000000
+      internalID: 5108564510155569843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_20
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e264af08fc094a0800000000000000
+      internalID: -6588538101981368789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_21
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1ecf7d58a1c5ef0800000000000000
+      internalID: -118190328061828654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_22
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781a13c3766c59390800000000000000
+      internalID: -7812119831910440569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_23
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa7aa9a847f13c00800000000000000
+      internalID: 878755293770185457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_24
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc7f2228fce06650800000000000000
+      internalID: 6224235235495607505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4d6546c892acce0800000000000000
+      internalID: -1384248252507433803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1ec2be378091bc0800000000000000
+      internalID: -3812006315632565808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b34e3c27422bcb30800000000000000
+      internalID: 4308575157590311861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_28
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560a79a6b69fb2070800000000000000
+      internalID: 8082828195991625829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_29
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a38c9154f9121460800000000000000
+      internalID: 7210854490505511846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347a8035894345680800000000000000
+      internalID: -8767324745750763709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_31
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d19bf839ac8516e0800000000000000
+      internalID: -1867431812041829928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_32
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8ce6051240899e0800000000000000
+      internalID: -1614535925282453342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237c7b9063aabed60800000000000000
+      internalID: 7920611518729144114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_34
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9208da06b923afe10800000000000000
+      internalID: 2232152208238805033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_35
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a1e1fa42126d180800000000000000
+      internalID: -9091042356360242647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_36
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84f3ff6b3bc169b0800000000000000
+      internalID: -5088562647810182001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_37
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13ced6d71ab81720800000000000000
+      internalID: 2817206178472182557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_38
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a19a7770ff36790800000000000000
+      internalID: -7537900943750653310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_39
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc54f114db060fd0800000000000000
+      internalID: -2376198747929158449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_40
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e69626e9bac9060800000000000000
+      internalID: 6961627820752203413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_41
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b837ee01e07cab70800000000000000
+      internalID: 8911621874579355824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_42
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf3058c39c1d1860800000000000000
+      internalID: 7502183975315587021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_43
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3ec09a580e01eb0800000000000000
+      internalID: -4751050742204406856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_44
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48592f9b311513c0800000000000000
+      internalID: -4389583314031650742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_45
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cc38ef49a29fbd0800000000000000
+      internalID: -2595996890788803476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_46
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa088d66e3f7a142b2211766b357cba
+      internalID: 550387967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_47
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4525b6b8c2c01bc45befaf60e62adb9a
+      internalID: -656565961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_48
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48025ad46b03d94598f4345668db000
+      internalID: -1988986859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alert_Time_Out_49
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5bd3856b8ca67f46b1781b5343fd5d3
+      internalID: -1248218992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4c3a517b252182645a0c97693f49e968
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Alert_Time_Out_0: -7018471828338042515
+      Alert_Time_Out_1: -6789888689033648418
+      Alert_Time_Out_10: -669729749392101401
+      Alert_Time_Out_11: -1567485236302846453
+      Alert_Time_Out_12: -6216078306982018456
+      Alert_Time_Out_13: -875553890449995860
+      Alert_Time_Out_14: 3930492869034293851
+      Alert_Time_Out_15: -3153279386266607044
+      Alert_Time_Out_16: 5676720367839894149
+      Alert_Time_Out_17: 7075809667774185312
+      Alert_Time_Out_18: -2910474588813788053
+      Alert_Time_Out_19: 5108564510155569843
+      Alert_Time_Out_2: 575560136737896607
+      Alert_Time_Out_20: -6588538101981368789
+      Alert_Time_Out_21: -118190328061828654
+      Alert_Time_Out_22: -7812119831910440569
+      Alert_Time_Out_23: 878755293770185457
+      Alert_Time_Out_24: 6224235235495607505
+      Alert_Time_Out_25: -1384248252507433803
+      Alert_Time_Out_26: -3812006315632565808
+      Alert_Time_Out_27: 4308575157590311861
+      Alert_Time_Out_28: 8082828195991625829
+      Alert_Time_Out_29: 7210854490505511846
+      Alert_Time_Out_3: -7725849354561287062
+      Alert_Time_Out_30: -8767324745750763709
+      Alert_Time_Out_31: -1867431812041829928
+      Alert_Time_Out_32: -1614535925282453342
+      Alert_Time_Out_33: 7920611518729144114
+      Alert_Time_Out_34: 2232152208238805033
+      Alert_Time_Out_35: -9091042356360242647
+      Alert_Time_Out_36: -5088562647810182001
+      Alert_Time_Out_37: 2817206178472182557
+      Alert_Time_Out_38: -7537900943750653310
+      Alert_Time_Out_39: -2376198747929158449
+      Alert_Time_Out_4: 7282337706685887728
+      Alert_Time_Out_40: 6961627820752203413
+      Alert_Time_Out_41: 8911621874579355824
+      Alert_Time_Out_42: 7502183975315587021
+      Alert_Time_Out_43: -4751050742204406856
+      Alert_Time_Out_44: -4389583314031650742
+      Alert_Time_Out_45: -2595996890788803476
+      Alert_Time_Out_46: 550387967
+      Alert_Time_Out_47: -656565961
+      Alert_Time_Out_48: -1988986859
+      Alert_Time_Out_49: -1248218992
+      Alert_Time_Out_5: -9142557551893964116
+      Alert_Time_Out_6: -6864909547536965046
+      Alert_Time_Out_7: -9076230951255192216
+      Alert_Time_Out_8: -5191643634473959078
+      Alert_Time_Out_9: -408264557534671753
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: 65dc880c480b3554988b2ebc07721e11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -123739153135448764
+    second: PIRATES_IDLE_0
+  - first:
+      213: -6949051311323600952
+    second: PIRATES_IDLE_1
+  - first:
+      213: 1161853234082351905
+    second: PIRATES_IDLE_2
+  - first:
+      213: 5449126059238688342
+    second: PIRATES_IDLE_3
+  - first:
+      213: -5991041984525843143
+    second: PIRATES_IDLE_4
+  - first:
+      213: -1962066231751866840
+    second: PIRATES_IDLE_5
+  - first:
+      213: -378970708885921913
+    second: PIRATES_IDLE_6
+  - first:
+      213: 2655251129687166471
+    second: PIRATES_IDLE_7
+  - first:
+      213: -8740428717098934424
+    second: PIRATES_IDLE_8
+  - first:
+      213: -272979505560133368
+    second: PIRATES_IDLE_9
+  - first:
+      213: 7680039920418402114
+    second: PIRATES_IDLE_10
+  - first:
+      213: -6442956141855262122
+    second: PIRATES_IDLE_11
+  - first:
+      213: 4042899218755371359
+    second: PIRATES_IDLE_12
+  - first:
+      213: -8690183617909320651
+    second: PIRATES_IDLE_13
+  - first:
+      213: -6835219271224157777
+    second: PIRATES_IDLE_14
+  - first:
+      213: -3948177521436227105
+    second: PIRATES_IDLE_15
+  - first:
+      213: -5989869894557534600
+    second: PIRATES_IDLE_16
+  - first:
+      213: -2089712066714160257
+    second: PIRATES_IDLE_17
+  - first:
+      213: -6109279131918449973
+    second: PIRATES_IDLE_18
+  - first:
+      213: 8606029572981639628
+    second: PIRATES_IDLE_19
+  - first:
+      213: -2565454360548438865
+    second: PIRATES_IDLE_20
+  - first:
+      213: -4945416980433666171
+    second: PIRATES_IDLE_21
+  - first:
+      213: 2383291172968126897
+    second: PIRATES_IDLE_22
+  - first:
+      213: 9039581195150003528
+    second: PIRATES_IDLE_23
+  - first:
+      213: -1382620121602852620
+    second: PIRATES_IDLE_24
+  - first:
+      213: -543287829708119004
+    second: PIRATES_IDLE_25
+  - first:
+      213: 7029393555254752626
+    second: PIRATES_IDLE_26
+  - first:
+      213: 3046297129822144447
+    second: PIRATES_IDLE_27
+  - first:
+      213: -1085822377896011966
+    second: PIRATES_IDLE_28
+  - first:
+      213: -8615385028492056600
+    second: PIRATES_IDLE_29
+  - first:
+      213: -2124894433751500855
+    second: PIRATES_IDLE_30
+  - first:
+      213: -7202973069384998196
+    second: PIRATES_IDLE_31
+  - first:
+      213: -1751301688014816535
+    second: PIRATES_IDLE_32
+  - first:
+      213: -1615658445747051743
+    second: PIRATES_IDLE_33
+  - first:
+      213: -1202686537269640165
+    second: PIRATES_IDLE_34
+  - first:
+      213: -8482265147545444445
+    second: PIRATES_IDLE_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PIRATES_IDLE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44dcd8455e3684ef0800000000000000
+      internalID: -123739153135448764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7289666a2009f90800000000000000
+      internalID: -6949051311323600952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b0e925c5bbf1010800000000000000
+      internalID: 1161853234082351905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6560f39b74f2f9b40800000000000000
+      internalID: 5449126059238688342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935c2e59e0b8bdca0800000000000000
+      internalID: -5991041984525843143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 188
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82604ae582755c4e0800000000000000
+      internalID: -1962066231751866840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f939ce520adbaf0800000000000000
+      internalID: -378970708885921913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_7
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e457695d859d420800000000000000
+      internalID: 2655251129687166471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86fd1bcf362c3b680800000000000000
+      internalID: -8740428717098934424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8016024069e263cf0800000000000000
+      internalID: -272979505560133368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24fab55fd9bf49a60800000000000000
+      internalID: 7680039920418402114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 141
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65abb4576850696a0800000000000000
+      internalID: -6442956141855262122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f514e945b634b1830800000000000000
+      internalID: 4042899218755371359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5349895ca04466780800000000000000
+      internalID: -8690183617909320651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa997c0994c6421a0800000000000000
+      internalID: -6835219271224157777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd98c9c66714539c0800000000000000
+      internalID: -3948177521436227105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876771c0115bfdca0800000000000000
+      internalID: -5989869894557534600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_17
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 94
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73b7a472f9dff2e0800000000000000
+      internalID: -2089712066714160257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc24b447ffa773ba0800000000000000
+      internalID: -6109279131918449973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_19
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9c318cc42ce6770800000000000000
+      internalID: 8606029572981639628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac8808f9dca56cd0800000000000000
+      internalID: -2565454360548438865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ff01f45795e5bb0800000000000000
+      internalID: -4945416980433666171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9d611d1b6231120800000000000000
+      internalID: 2383291172968126897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 47
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d8737043b037d70800000000000000
+      internalID: 9039581195150003528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8fd882352ffcce0800000000000000
+      internalID: -1382620121602852620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_25
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424647be89ad578f0800000000000000
+      internalID: -543287829708119004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2753167f13c6d8160800000000000000
+      internalID: 7029393555254752626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_27
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7475f791f964a20800000000000000
+      internalID: 3046297129822144447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_IDLE_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247965cdc426ee0f0800000000000000
+      internalID: -1085822377896011966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4134956620b8d3441952615b9ec6666a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PIRATES_IDLE_0: -123739153135448764
+      PIRATES_IDLE_1: -6949051311323600952
+      PIRATES_IDLE_10: 7680039920418402114
+      PIRATES_IDLE_11: -6442956141855262122
+      PIRATES_IDLE_12: 4042899218755371359
+      PIRATES_IDLE_13: -8690183617909320651
+      PIRATES_IDLE_14: -6835219271224157777
+      PIRATES_IDLE_15: -3948177521436227105
+      PIRATES_IDLE_16: -5989869894557534600
+      PIRATES_IDLE_17: -2089712066714160257
+      PIRATES_IDLE_18: -6109279131918449973
+      PIRATES_IDLE_19: 8606029572981639628
+      PIRATES_IDLE_2: 1161853234082351905
+      PIRATES_IDLE_20: -2565454360548438865
+      PIRATES_IDLE_21: -4945416980433666171
+      PIRATES_IDLE_22: 2383291172968126897
+      PIRATES_IDLE_23: 9039581195150003528
+      PIRATES_IDLE_24: -1382620121602852620
+      PIRATES_IDLE_25: -543287829708119004
+      PIRATES_IDLE_26: 7029393555254752626
+      PIRATES_IDLE_27: 3046297129822144447
+      PIRATES_IDLE_28: -1085822377896011966
+      PIRATES_IDLE_3: 5449126059238688342
+      PIRATES_IDLE_4: -5991041984525843143
+      PIRATES_IDLE_5: -1962066231751866840
+      PIRATES_IDLE_6: -378970708885921913
+      PIRATES_IDLE_7: 2655251129687166471
+      PIRATES_IDLE_8: -8740428717098934424
+      PIRATES_IDLE_9: -272979505560133368
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

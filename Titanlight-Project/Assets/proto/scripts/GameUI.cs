@@ -23,7 +23,7 @@ public class GameUI : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnRoomChanged += UpdateRoomName;
-            // agora existe GetCurrentRoomCoord
+          
             UpdateRoomName(GameManager.Instance.GetCurrentRoomCoord());
         }
         ToggleInteractionText(false);

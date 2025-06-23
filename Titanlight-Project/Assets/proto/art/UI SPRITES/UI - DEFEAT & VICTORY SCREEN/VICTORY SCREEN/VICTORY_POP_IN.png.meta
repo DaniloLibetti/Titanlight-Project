@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 3200
-        height: 2080
+        y: 1664
+        width: 640
+        height: 416
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,11 +121,539 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1664
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35dea9e4ae1a944c9e6bf398de26fad
+      internalID: 812463487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1664
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d7d9dc2d840614a8c7f99756c393f7
+      internalID: 2109020797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1664
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e856ab9914edf5b43977e5d010e892ac
+      internalID: 99222329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1664
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63991f047fd6da24490a52bbd850405c
+      internalID: 1173607968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725ae0efc877a3344b5993f2dbe575b6
+      internalID: -1558556018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34cbe97708e350b42a816523379c755f
+      internalID: 55361462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_7
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27620c6d44935dc4e828fbfc537fdbe0
+      internalID: -745596563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_8
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be92cc2c769784b49850abf5c32cedd2
+      internalID: -1670427695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_9
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c748b2706693a43be3b077c766bdda
+      internalID: -355916588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959d1aa49b1dd454c9ecef20fa35c8cf
+      internalID: -2026553217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_11
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758cdcc44fc01364a83726681f6c3758
+      internalID: -1353878348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_12
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d02b0d5f4a66a9448486477ca98bc4b
+      internalID: -1163359325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_13
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee71a20338b2c140a8d206998fa39d5
+      internalID: -363273446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_14
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bfb7ad00e2a0345b6494af431865cb
+      internalID: -1702994581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3846409645a4541ae83640f3bb8a4d
+      internalID: 716057068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_16
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a87e5f95a416a343bfb0fa39e893e17
+      internalID: -1236574391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_17
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48752c6eced44fe4da54468bcf360665
+      internalID: 367222445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_18
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c9ae182bdef6242a386e082dadcd09
+      internalID: 1562964915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_19
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061e9b08f59dcf8438543055dcc5174f
+      internalID: 1137798461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec1501a0368424459d20a17df3737c8
+      internalID: 401307824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cd389b24eca6249b9ab7f2380df3f3
+      internalID: 961919043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_22
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3453549f2e8b14942895c0f92aedf4f7
+      internalID: 880448325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_23
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78b6ac92ad88a14189f80e7a8bc8876
+      internalID: 1569362683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_IN_24
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e93fb791b7f65468608feb37e2a8a0
+      internalID: 708014473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f9470964de5fc584798369c529c012b8
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +664,30 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       VICTORY_POP_IN_0: -9201305185401988703
+      VICTORY_POP_IN_1: 812463487
+      VICTORY_POP_IN_10: -2026553217
+      VICTORY_POP_IN_11: -1353878348
+      VICTORY_POP_IN_12: -1163359325
+      VICTORY_POP_IN_13: -363273446
+      VICTORY_POP_IN_14: -1702994581
+      VICTORY_POP_IN_15: 716057068
+      VICTORY_POP_IN_16: -1236574391
+      VICTORY_POP_IN_17: 367222445
+      VICTORY_POP_IN_18: 1562964915
+      VICTORY_POP_IN_19: 1137798461
+      VICTORY_POP_IN_2: 2109020797
+      VICTORY_POP_IN_20: 401307824
+      VICTORY_POP_IN_21: 961919043
+      VICTORY_POP_IN_22: 880448325
+      VICTORY_POP_IN_23: 1569362683
+      VICTORY_POP_IN_24: 708014473
+      VICTORY_POP_IN_3: 99222329
+      VICTORY_POP_IN_4: 1173607968
+      VICTORY_POP_IN_5: -1558556018
+      VICTORY_POP_IN_6: 55361462
+      VICTORY_POP_IN_7: -745596563
+      VICTORY_POP_IN_8: -1670427695
+      VICTORY_POP_IN_9: -355916588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

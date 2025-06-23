@@ -12,24 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fb87a2e47d8714fb53e60ed195c460, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  comboWindow: 0.5
   maxCombo: 3
+  comboWindow: 0.5
   comboDamage:
   - 10
   - 15
   - 20
-  moveSpeed: 2
-  acceleration: 20
-  deceleration: 20
-  dashSpeed: 4
+  moveSpeed: 5
+  accelerationTime: 0.1
+  decelerationTime: 0.05
+  mass: 10
+  linearDrag: 5
+  angularDrag: 0.05
+  dashSpeed: 5
   dashDuration: 0.3
   dashCooldown: 1
   dashHitRadius: 2
-  dashDamage: 200
+  dashDamage: 10
   meleeAttackDistance: 1
   meleeAttackRadius: 0.5
-  meleeDamage: 10
-  meleeCooldown: 0.5
   attackCooldown: 0.5
   isRangedMode: 0
   normalBulletSpeed: 10

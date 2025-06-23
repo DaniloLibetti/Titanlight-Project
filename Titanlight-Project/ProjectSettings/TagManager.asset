@@ -3,27 +3,34 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - Itens
+  - Projectile
+  - HealthBar
+  - player 1
+  - player 2
+  - Chest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - enemyLayer
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Dashing
+  - Door
+  - Wall
+  - Player
+  - floordetect
+  - HoleFloor
+  - bullet
+  - Itens
+  - enemyBullet
+  - magnet
+  - Player2
+  - enemyFlying
+  - HitBoxPlayer
   - 
   - 
   - 

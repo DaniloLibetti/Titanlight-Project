@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -160,10 +160,10 @@ TextureImporter:
       name: PLAYERS UI_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 93
-        height: 30
+        x: 0
+        y: 64
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: PLAYERS UI_1
       rect:
         serializedVersion: 2
-        x: 98
-        y: 65
-        width: 93
-        height: 30
+        x: 96
+        y: 64
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: PLAYERS UI_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 48
-        width: 6
-        height: 8
+        x: 0
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: PLAYERS UI_3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 48
-        width: 6
-        height: 8
+        x: 96
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: PLAYERS UI_4
       rect:
         serializedVersion: 2
-        x: 13
-        y: 49
-        width: 7
-        height: 7
+        x: 0
+        y: 0
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: PLAYERS UI_5
       rect:
         serializedVersion: 2
-        x: 29
-        y: 48
-        width: 63
-        height: 8
+        x: 96
+        y: 0
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,319 +288,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_6
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 48
-        width: 63
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0367a8933e4c4dc00800000000000000
-      internalID: 924580303719790128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_7
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 49
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68aa53b470b4eee90800000000000000
-      internalID: -6994570676561139066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_8
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 48
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4c9bbbaee3703e10800000000000000
-      internalID: 2175366088940559437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_9
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 48
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 810283f523d1f6e20800000000000000
-      internalID: 3345925150342651928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_10
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 40
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d927e4e9a7c9810c0800000000000000
-      internalID: -4604758568530447715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_11
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 40
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ca1fe9d61b210210800000000000000
-      internalID: 1297365544805014210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_12
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 40
-        width: 43
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07223c1e10d224190800000000000000
-      internalID: -7979766103641218448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_13
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 40
-        width: 43
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4cbb26f9f088bbb90800000000000000
-      internalID: -7225031576505893948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_14
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 40
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23a2d59581904a380800000000000000
-      internalID: -8961027358377301454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_15
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 40
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da9481d6253a1c5a0800000000000000
-      internalID: -6502736812533331539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_16
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 16
-        width: 63
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 455cba996ef33ae60800000000000000
-      internalID: 7972286025029109076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_17
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 16
-        width: 63
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27374c871971da220800000000000000
-      internalID: 2498679281824330610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_18
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 8
-        width: 43
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dde6ec2ddd707d370800000000000000
-      internalID: 8347149083660414685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PLAYERS UI_19
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 8
-        width: 43
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17881fc041bd223b0800000000000000
-      internalID: -5538623712549304207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fd4948dc97ee86742aa359be8c4dd533
     internalID: 0
     vertices: []
     indices: 
@@ -609,7 +301,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PLAYERS UI_0: 1870672216467715136
+      PLAYERS UI_1: 5460961726710075838
+      PLAYERS UI_2: 6170745033990802327
+      PLAYERS UI_3: 4738887179394408123
+      PLAYERS UI_4: 3511632230237424740
+      PLAYERS UI_5: -7172203267678681074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,10 +112,10 @@ TextureImporter:
       name: Button_Exit_PopIN_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 9
-        width: 338
-        height: 14
+        x: 0
+        y: 0
+        width: 144
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Button_Exit_PopIN_1
       rect:
         serializedVersion: 2
-        x: 407
-        y: 4
-        width: 146
-        height: 26
+        x: 144
+        y: 0
+        width: 144
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: Button_Exit_PopIN_2
       rect:
         serializedVersion: 2
-        x: 599
-        y: 3
-        width: 146
-        height: 24
+        x: 288
+        y: 0
+        width: 144
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Button_Exit_PopIN_3
       rect:
         serializedVersion: 2
-        x: 791
-        y: 4
-        width: 146
-        height: 24
+        x: 432
+        y: 0
+        width: 144
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,11 +196,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Button_Exit_PopIN_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8ec677ec121884bad1c8b91c91c737
+      internalID: 679770313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Exit_PopIN_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 144
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536d164842a281e4cb374a49a323ad7d
+      internalID: -756752141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7f5d480e8728e854bb70c4cd4ccd8b68
     internalID: 0
     vertices: []
     indices: 
@@ -214,6 +258,8 @@ TextureImporter:
       Button_Exit_PopIN_1: 5127596493572916063
       Button_Exit_PopIN_2: -8895628951831318360
       Button_Exit_PopIN_3: -713603955353623931
+      Button_Exit_PopIN_4: 679770313
+      Button_Exit_PopIN_5: -756752141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

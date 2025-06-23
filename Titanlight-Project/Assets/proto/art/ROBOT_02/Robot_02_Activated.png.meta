@@ -184,12 +184,12 @@ TextureImporter:
       name: Robot_02_Activated_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 225
+        x: 0
+        y: 0
         width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Robot_02_Activated_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 225
+        x: 32
+        y: 0
         width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Robot_02_Activated_2
       rect:
         serializedVersion: 2
-        x: 224
-        y: 225
+        x: 64
+        y: 0
         width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,12 +250,12 @@ TextureImporter:
       name: Robot_02_Activated_3
       rect:
         serializedVersion: 2
-        x: 320
-        y: 225
+        x: 96
+        y: 0
         width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,12 +272,12 @@ TextureImporter:
       name: Robot_02_Activated_4
       rect:
         serializedVersion: 2
-        x: 416
-        y: 225
+        x: 128
+        y: 0
         width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Robot_02_Activated_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 225
+        x: 160
+        y: 0
         width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,12 +316,12 @@ TextureImporter:
       name: Robot_02_Activated_6
       rect:
         serializedVersion: 2
-        x: 608
-        y: 225
+        x: 192
+        y: 0
         width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,12 +338,12 @@ TextureImporter:
       name: Robot_02_Activated_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 224
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -360,12 +360,12 @@ TextureImporter:
       name: Robot_02_Activated_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 161
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 256
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -382,12 +382,12 @@ TextureImporter:
       name: Robot_02_Activated_9
       rect:
         serializedVersion: 2
-        x: 224
-        y: 161
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,11 +405,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 161
-        width: 33
+        y: 0
+        width: 32
         height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -426,12 +426,12 @@ TextureImporter:
       name: Robot_02_Activated_11
       rect:
         serializedVersion: 2
-        x: 416
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 352
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -448,12 +448,12 @@ TextureImporter:
       name: Robot_02_Activated_12
       rect:
         serializedVersion: 2
-        x: 512
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -470,12 +470,12 @@ TextureImporter:
       name: Robot_02_Activated_13
       rect:
         serializedVersion: 2
-        x: 608
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 416
+        y: 0
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -488,319 +488,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_14
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52fe8052089c84800800000000000000
-      internalID: 596948502840930085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_15
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 97
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f99a20805c72c6c0800000000000000
-      internalID: -4124597623528449552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_16
-      rect:
-        serializedVersion: 2
-        x: 223
-        y: 97
-        width: 33
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d9a42962fd13a380800000000000000
-      internalID: -8961285906553853487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_17
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 97
-        width: 33
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3b0c729c0d8915c0800000000000000
-      internalID: -4244206088683254982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_18
-      rect:
-        serializedVersion: 2
-        x: 415
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b609f7b0523cae5f0800000000000000
-      internalID: -726553825992798101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_19
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79166e67494bf05c0800000000000000
-      internalID: -4246977373844119145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_20
-      rect:
-        serializedVersion: 2
-        x: 607
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1636c1b05fe5f5f90800000000000000
-      internalID: -6962742092345089183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_21
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 351d68ef634fd89f0800000000000000
-      internalID: -464446669513633453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_22
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 33
-        width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c57ea42f93d27810800000000000000
-      internalID: 1761703084723959236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_23
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 33
-        width: 32
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7f842b70a42995100800000000000000
-      internalID: 97269713619536119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_24
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 33
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5c77d7c1b679b030800000000000000
-      internalID: 3510967890446089306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_25
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0bf838ac4e637c210800000000000000
-      internalID: 1353110569326186416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_26
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 92c5e1a4d4ae11860800000000000000
-      internalID: 7499032472225471529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Activated_27
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 389eb41c006a60280800000000000000
-      internalID: -9077385476745467517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e091ac05a80fc0d47b79f20686a7cf81
     internalID: 0
     vertices: []
     indices: 
@@ -816,21 +508,7 @@ TextureImporter:
       Robot_02_Activated_11: 3299827831229774139
       Robot_02_Activated_12: 2096459722068826302
       Robot_02_Activated_13: 8378240714549768131
-      Robot_02_Activated_14: 596948502840930085
-      Robot_02_Activated_15: -4124597623528449552
-      Robot_02_Activated_16: -8961285906553853487
-      Robot_02_Activated_17: -4244206088683254982
-      Robot_02_Activated_18: -726553825992798101
-      Robot_02_Activated_19: -4246977373844119145
       Robot_02_Activated_2: 1546136060455868024
-      Robot_02_Activated_20: -6962742092345089183
-      Robot_02_Activated_21: -464446669513633453
-      Robot_02_Activated_22: 1761703084723959236
-      Robot_02_Activated_23: 97269713619536119
-      Robot_02_Activated_24: 3510967890446089306
-      Robot_02_Activated_25: 1353110569326186416
-      Robot_02_Activated_26: 7499032472225471529
-      Robot_02_Activated_27: -9077385476745467517
       Robot_02_Activated_3: 1179968812948890970
       Robot_02_Activated_4: 4554968881928638446
       Robot_02_Activated_5: 1679168275577921760

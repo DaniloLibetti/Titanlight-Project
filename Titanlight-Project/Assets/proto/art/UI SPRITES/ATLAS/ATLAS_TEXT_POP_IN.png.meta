@@ -1,0 +1,867 @@
+fileFormatVersion: 2
+guid: cff0f20bb2f09a04bb7cbac5de5cc5d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 967781750548178435
+    second: ATLAS_TEXT_POP_IN_0
+  - first:
+      213: 3165450052248583213
+    second: ATLAS_TEXT_POP_IN_1
+  - first:
+      213: 6049181591397192804
+    second: ATLAS_TEXT_POP_IN_2
+  - first:
+      213: -4858066210090868248
+    second: ATLAS_TEXT_POP_IN_3
+  - first:
+      213: 5471844922858414399
+    second: ATLAS_TEXT_POP_IN_4
+  - first:
+      213: 454051970158761528
+    second: ATLAS_TEXT_POP_IN_5
+  - first:
+      213: -6804707615866809395
+    second: ATLAS_TEXT_POP_IN_6
+  - first:
+      213: -8921182834519532741
+    second: ATLAS_TEXT_POP_IN_7
+  - first:
+      213: -4477814129209380586
+    second: ATLAS_TEXT_POP_IN_8
+  - first:
+      213: -7410649979023579173
+    second: ATLAS_TEXT_POP_IN_9
+  - first:
+      213: -1249274501792246137
+    second: ATLAS_TEXT_POP_IN_10
+  - first:
+      213: 679846422982977539
+    second: ATLAS_TEXT_POP_IN_11
+  - first:
+      213: -4347718388110492565
+    second: ATLAS_TEXT_POP_IN_12
+  - first:
+      213: 5815137970820588218
+    second: ATLAS_TEXT_POP_IN_13
+  - first:
+      213: 2837258086187206006
+    second: ATLAS_TEXT_POP_IN_14
+  - first:
+      213: -3302570718184275577
+    second: ATLAS_TEXT_POP_IN_15
+  - first:
+      213: -8688318323343172708
+    second: ATLAS_TEXT_POP_IN_16
+  - first:
+      213: -6222252753075855497
+    second: ATLAS_TEXT_POP_IN_17
+  - first:
+      213: 3201804744161582500
+    second: ATLAS_TEXT_POP_IN_18
+  - first:
+      213: 4904824719404399627
+    second: ATLAS_TEXT_POP_IN_19
+  - first:
+      213: -2997238194666593214
+    second: ATLAS_TEXT_POP_IN_20
+  - first:
+      213: 5018136027732510575
+    second: ATLAS_TEXT_POP_IN_21
+  - first:
+      213: -691896263356560628
+    second: ATLAS_TEXT_POP_IN_22
+  - first:
+      213: -6286880996744258318
+    second: ATLAS_TEXT_POP_IN_23
+  - first:
+      213: -6989864276399262626
+    second: ATLAS_TEXT_POP_IN_24
+  - first:
+      213: 6893902537321414971
+    second: ATLAS_TEXT_POP_IN_25
+  - first:
+      213: 3445764663137155847
+    second: ATLAS_TEXT_POP_IN_26
+  - first:
+      213: -5200292227813802910
+    second: ATLAS_TEXT_POP_IN_27
+  - first:
+      213: 8025867672721243378
+    second: ATLAS_TEXT_POP_IN_28
+  - first:
+      213: 8177307199971054064
+    second: ATLAS_TEXT_POP_IN_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306a785ef504e6d00800000000000000
+      internalID: 967781750548178435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2cb48e1d00fdeb20800000000000000
+      internalID: 3165450052248583213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 40
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464df018b9203f350800000000000000
+      internalID: 6049181591397192804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1a434658ea49cb0800000000000000
+      internalID: -4858066210090868248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31200d57f5efeb40800000000000000
+      internalID: 5471844922858414399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 36
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83611e67cdd1d4600800000000000000
+      internalID: 454051970158761528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_6
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc31ddbe972d091a0800000000000000
+      internalID: -6804707615866809395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_7
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b962c7a77913480800000000000000
+      internalID: -8921182834519532741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_8
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 40
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611ff3226cb9bd1c0800000000000000
+      internalID: -4477814129209380586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd72b8d7b15182990800000000000000
+      internalID: -7410649979023579173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_10
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78658b5a57fa9aee0800000000000000
+      internalID: -1249274501792246137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 36
+        width: 128
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30868bf38bc4f6900800000000000000
+      internalID: 679846422982977539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_12
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c7d35492dc9a3c0800000000000000
+      internalID: -4347718388110492565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_13
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2a5aeac2583b050800000000000000
+      internalID: 5815137970820588218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_14
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 40
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6750b4b6237ff5720800000000000000
+      internalID: 2837258086187206006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7810509fd69ea22d0800000000000000
+      internalID: -3302570718184275577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9bdc918484ec6780800000000000000
+      internalID: -8688318323343172708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 36
+        width: 128
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f9736861e16a9a0800000000000000
+      internalID: -6222252753075855497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_18
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad59ef63781f6c20800000000000000
+      internalID: 3201804744161582500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_19
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c77ad6810711440800000000000000
+      internalID: 4904824719404399627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_20
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 40
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2442aa3fdbba766d0800000000000000
+      internalID: -2997238194666593214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f670697412004a540800000000000000
+      internalID: 5018136027732510575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_22
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b4639a304e566f0800000000000000
+      internalID: -691896263356560628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_23
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 36
+        width: 128
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc97e3fa0380c8a0800000000000000
+      internalID: -6286880996744258318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_24
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54770979730ffe90800000000000000
+      internalID: -6989864276399262626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_25
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31053d05df0caf50800000000000000
+      internalID: 6893902537321414971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_26
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 40
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b32e564b0d1df20800000000000000
+      internalID: 3445764663137155847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_27
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 45
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cfee865c9d4d7b0800000000000000
+      internalID: -5200292227813802910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_28
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc37de102c916f60800000000000000
+      internalID: 8025867672721243378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATLAS_TEXT_POP_IN_29
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 36
+        width: 128
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1d489b291ab7170800000000000000
+      internalID: 8177307199971054064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,45 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Player.StateMachine;
-
+using Player.StateMachine; // Adicionando a referência necessária
 
 public class PlayerUIController : MonoBehaviour
 {
     private Slider healthSlider;
-    private Slider dashEnergySlider;
-    private Slider heatSlider;
-
-    private PlayerStateMachine player;
     private Health playerHealth;
 
-    private bool lastCanDash;
-    private float dashStartTime;
+    [Header("Player Settings")]
+    [Range(1, 2)] public int playerIndex = 1;
 
     void Awake()
     {
-        // Encontrar sliders na cena pelo nome
+        // Encontra o slider de saúde na cena
         var sliders = FindObjectsOfType<Slider>();
         foreach (var s in sliders)
         {
-            string lower = s.gameObject.name.ToLower();
-            if (lower.Contains("health"))
+            if (s.gameObject.name.ToLower().Contains("health"))
+            {
                 healthSlider = s;
-            else if (lower.Contains("dash"))
-                dashEnergySlider = s;
-            else if (lower.Contains("heat"))
-                heatSlider = s;
+                break;
+            }
         }
 
         if (healthSlider == null)
             Debug.LogWarning("[UI] Health slider não encontrado.");
-        if (dashEnergySlider == null)
-            Debug.LogWarning("[UI] Dash energy slider não encontrado.");
-        if (heatSlider == null)
-            Debug.LogWarning("[UI] Heat slider não encontrado.");
-
-        player = PlayerStateMachine.Instance;
-        if (player != null)
-            playerHealth = player.GetComponent<Health>();
     }
 
     void Start()
@@ -49,73 +34,52 @@ public class PlayerUIController : MonoBehaviour
 
     void Update()
     {
-        // Caso o player seja instanciado depois
-        if (player == null)
-        {
-            player = PlayerStateMachine.Instance;
-            if (player != null)
-                playerHealth = player.GetComponent<Health>();
-            else
-                return;
-        }
-
-        // Atualiza vida
+        // Atualiza o valor do slider de vida
         if (healthSlider != null && playerHealth != null)
+        {
             healthSlider.value = playerHealth.CurrentHealth;
-
-        // Atualiza dash energy (0 a 100)
-        if (dashEnergySlider != null)
-        {
-            float dashCd = player.config.dashCooldown;
-            dashEnergySlider.maxValue = 100f;
-
-            // Detecta início do consumo
-            if (lastCanDash && !player.CanDash)
-                dashStartTime = Time.time;
-            lastCanDash = player.CanDash;
-
-            float percent = player.CanDash
-                ? 1f
-                : Mathf.Clamp((Time.time - dashStartTime) / dashCd, 0f, 1f);
-
-            dashEnergySlider.value = percent * 100f;
         }
-
-        // Atualiza heat
-        if (heatSlider != null)
+        else
         {
-            heatSlider.maxValue = player.config.heatMax;
-            heatSlider.value = player.currentHeat;
+            // Tenta re-inicializar se as referências estiverem perdidas
+            InitializeUI();
         }
     }
 
     private void InitializeUI()
     {
-        if (player == null)
-            player = PlayerStateMachine.Instance;
-        if (player == null)
+        // Verifica se o PlayerManager está disponível
+        if (PlayerManager.Instance == null)
+        {
+            Debug.LogWarning("PlayerManager não encontrado");
             return;
+        }
 
-        playerHealth = player.GetComponent<Health>();
+        // Obtém a referência ao jogador correto
+        GameObject playerObject = playerIndex == 1 ?
+            PlayerManager.Instance.Player1 :
+            PlayerManager.Instance.Player2;
 
-        if (healthSlider != null && playerHealth != null)
+        if (playerObject == null)
+        {
+            Debug.LogWarning($"Jogador {playerIndex} não encontrado");
+            return;
+        }
+
+        // Obtém o componente Health diretamente
+        playerHealth = playerObject.GetComponent<Health>();
+
+        if (playerHealth == null)
+        {
+            Debug.LogWarning($"Componente Health não encontrado no jogador {playerIndex}");
+            return;
+        }
+
+        // Configura o slider de vida
+        if (healthSlider != null)
         {
             healthSlider.maxValue = playerHealth.MaxHealth;
             healthSlider.value = playerHealth.CurrentHealth;
-        }
-
-        if (dashEnergySlider != null)
-        {
-            dashEnergySlider.maxValue = 100f;
-            dashEnergySlider.value = player.CanDash ? 100f : 0f;
-            lastCanDash = player.CanDash;
-            dashStartTime = Time.time - (player.CanDash ? player.config.dashCooldown : 0f);
-        }
-
-        if (heatSlider != null)
-        {
-            heatSlider.maxValue = player.config.heatMax;
-            heatSlider.value = player.currentHeat;
         }
     }
 }

@@ -96,9 +96,10 @@ GameObject:
   - component: {fileID: 4926012572293533425}
   - component: {fileID: 8690328119778389521}
   - component: {fileID: 4426126718819554260}
+  - component: {fileID: 4805515753670364706}
   m_Layer: 9
   m_Name: player (A)
-  m_TagString: Player
+  m_TagString: player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +155,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 1
   shootPointDistance: 0
-  interactRadius: 1.5
+  interactRadius: 0.5
   interactLayer:
     serializedVersion: 2
     m_Bits: 8320
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e26f77ee6dacbc4fa6d3b55c9955e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIndex: 1
 --- !u!50 &4926012572293533425
 Rigidbody2D:
   serializedVersion: 5
@@ -292,6 +294,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4805515753670364706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156739151878723861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c2233c40755f747b9ae82be122e49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3354392806302390262
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,9 +315,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173382345048747646}
-  - component: {fileID: 2622405058638750071}
+  - component: {fileID: 3208753399814551702}
   - component: {fileID: 8485945701573931227}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: DamageHitbox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -325,8 +339,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2153313099290992887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2622405058638750071
-CircleCollider2D:
+--- !u!70 &3208753399814551702
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -355,12 +369,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.26177105
+  m_Offset: {x: -0.008521229, y: 0.03126648}
+  m_Size: {x: 0.18312013, y: 0.3808391}
+  m_Direction: 0
 --- !u!114 &8485945701573931227
 MonoBehaviour:
   m_ObjectHideFlags: 0

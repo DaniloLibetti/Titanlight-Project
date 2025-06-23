@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using System;
 using System.IO;
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Player.StateMachine; // ajuste conforme seu namespace de PlayerManager, PlayerStateMachine
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     #region Input Configuration
     [Header("Input Keys")]
-    [Tooltip("Tecla para encerrar a run (pressionar e segurar)")]
     public KeyCode endRunKey = KeyCode.LeftShift;
+    private const float SHIFT_HOLD_DURATION = 2f;
+    private float _shiftHoldTimer = 0f;
     #endregion
 
     #region Auxiliar: Salvamento
@@ -19,14 +22,12 @@ public class GameManager : Singleton<GameManager>
     {
         public int savedMoney;
         public int savedReputation;
-        public string lastSaveTime; // opcional
-        // Você pode estender com playerName, achievements, inventory etc.
+        public string lastSaveTime;
     }
     private string saveFileName = "savegame.json";
     #endregion
 
     #region Grid e Geração de Mapa
-    [Header("Configuração do Grid")]
     [SerializeField]
     private Vector2Int[] _gridPresets = {
         new Vector2Int(7, 6),
@@ -36,342 +37,39 @@ public class GameManager : Singleton<GameManager>
         new Vector2Int(4, 3)
     };
     public Vector2Int GridSize { get; private set; }
-
     [Header("Dimensões da Sala")]
     public float roomWidth = 7f;
     public float roomHeight = 3.93f;
-
     private Vector3 _gridOffset;
-
     [Header("Salas")]
     public GameObject initialRoomPrefab;
     [Serializable]
     public class RoomOption { public string roomName; public GameObject roomPrefab; [Range(0, 100)] public float spawnChance; }
     public List<RoomOption> roomOptions = new List<RoomOption>();
-
     private Dictionary<Vector2Int, Room> _rooms = new Dictionary<Vector2Int, Room>();
     private Vector2Int _initialRoomCoord;
     private Vector2Int _currentRoomCoord;
     #endregion
 
-    #region Portas
+    #region Doors & Navigation
     private Dictionary<Vector2Int, HashSet<DoorDirection>> _doors = new Dictionary<Vector2Int, HashSet<DoorDirection>>();
-    #endregion
+    private Dictionary<Vector2Int, Dictionary<DoorDirection, DoorState>> _doorStates = new Dictionary<Vector2Int, Dictionary<DoorDirection, DoorState>>();
 
-    #region UI / HUD
-    [Header("UI Inicial")]
-    public GameObject customizationCanvas;  // UI de customização antes da run
-
-    [Header("HUD dos Jogadores")]
-    public GameObject player1Canvas;
-    public GameObject player2Canvas;
-
-    [Header("Itens Coletados")]
-    public TextMeshProUGUI[] itemCountTexts; // index 0 = player1, 1 = player2
-
-    [Header("Dinheiro e Reputação (compartilhados)")]
-    public TextMeshProUGUI[] moneyTexts;
-    public TextMeshProUGUI[] reputationTexts;
-
-    private int _collectedItems = 0;
-    public int ScriptableObjectCount => _collectedItems;
-
-    [Header("Leilão")]
-    public Transform slotAuction;
-    public GameObject auctionCanvas;
-
-    [Header("Moonbox Slot")]
-    [Tooltip("Transform que indica onde a câmera deve ir após o leilão, antes de nova run.")]
-    public Transform slotMoonbox;
-    #endregion
-
-    #region Câmera
-    private Camera _mainCamera;
-    #endregion
-
-    #region Controles de Tempo
-    private float _shiftHoldTimer = 0f;
-    private const float SHIFT_HOLD_DURATION = 2f;
-    #endregion
-
-    #region Contador de Jogadores Vivos
-    private int _remainingPlayers = 0;
-    private bool _isRunEnding = false;
-    #endregion
-
-    #region Singleton & Inicialização
-    protected override void Awake()
-    {
-        base.Awake();
-
-        // Se quiser persistir entre cenas, mas se tudo está na mesma cena, pode não ser necessário.
-        DontDestroyOnLoad(gameObject);
-
-        _mainCamera = Camera.main;
-
-        // Logs de salvamento
-        Debug.Log($"[GameManager] PersistentDataPath: {Application.persistentDataPath}");
-        Debug.Log($"[GameManager] Save file: {SavePath}");
-
-        // Verifica referências de UI para evitar NullReferenceException
-        if (customizationCanvas == null) Debug.LogWarning("[GameManager] customizationCanvas não atribuído no Inspector!");
-        if (player1Canvas == null) Debug.LogWarning("[GameManager] player1Canvas não atribuído no Inspector!");
-        if (player2Canvas == null) Debug.LogWarning("[GameManager] player2Canvas não atribuído no Inspector!");
-        if (auctionCanvas == null) Debug.LogWarning("[GameManager] auctionCanvas não atribuído no Inspector!");
-        if (slotAuction == null) Debug.LogWarning("[GameManager] slotAuction não atribuído no Inspector!");
-        if (slotMoonbox == null) Debug.LogWarning("[GameManager] slotMoonbox não atribuído no Inspector!");
-        if (itemCountTexts == null) Debug.LogWarning("[GameManager] itemCountTexts array não atribuído no Inspector!");
-        else
-        {
-            for (int i = 0; i < itemCountTexts.Length; i++)
-                if (itemCountTexts[i] == null)
-                    Debug.LogWarning($"[GameManager] itemCountTexts[{i}] não atribuído no Inspector!");
-        }
-        if (moneyTexts == null) Debug.LogWarning("[GameManager] moneyTexts array não atribuído no Inspector!");
-        else
-        {
-            for (int i = 0; i < moneyTexts.Length; i++)
-                if (moneyTexts[i] == null)
-                    Debug.LogWarning($"[GameManager] moneyTexts[{i}] não atribuído no Inspector!");
-        }
-        if (reputationTexts == null) Debug.LogWarning("[GameManager] reputationTexts array não atribuído no Inspector!");
-        else
-        {
-            for (int i = 0; i < reputationTexts.Length; i++)
-                if (reputationTexts[i] == null)
-                    Debug.LogWarning($"[GameManager] reputationTexts[{i}] não atribuído no Inspector!");
-        }
-
-        // Carrega dados persistentes
-        LoadGame();
-
-        // UI inicial antes de run
-        if (customizationCanvas != null) customizationCanvas.SetActive(true);
-        if (player1Canvas != null) player1Canvas.SetActive(false);
-        if (player2Canvas != null) player2Canvas.SetActive(false);
-        if (auctionCanvas != null) auctionCanvas.SetActive(false);
-
-        if (itemCountTexts != null)
-        {
-            for (int i = 0; i < itemCountTexts.Length; i++)
-                if (itemCountTexts[i] != null)
-                    itemCountTexts[i].text = "0";
-        }
-
-        UpdatePersistentStatsUI();
-    }
-    #endregion
-
-    #region Cleanup de Run
-    /// <summary>
-    /// Limpa todo estado residual da run anterior: salas, portas, jogadores, etc.
-    /// Deve ser chamado antes de StartRun.
-    /// </summary>
-    private void CleanupPreviousRun()
-    {
-        Debug.Log("[GameManager] CleanupPreviousRun: limpando salas e estado de run anterior.");
-
-        // Destrói salas restantes
-        foreach (var r in _rooms.Values)
-        {
-            if (r != null)
-                Destroy(r.gameObject);
-        }
-        _rooms.Clear();
-        _doors.Clear();
-
-        // Destrói jogadores
-        if (PlayerManager.Instance != null)
-            PlayerManager.Instance.DestroyAllPlayers();
-
-        // Reset flags e contadores
-        _isRunEnding = false;
-        _shiftHoldTimer = 0f;
-        _collectedItems = 0;
-
-        // Opcional: recapturar câmera
-        if (_mainCamera == null) _mainCamera = Camera.main;
-    }
-    #endregion
-
-    #region StartRun
-    /// <summary>
-    /// Inicia a run: limpa estado anterior, gera novo mapa, spawna player e ajusta câmera.
-    /// Deve ser chamado quando o jogador escolher “iniciar nova run” (por ex. em UI de moonbox ou botão).
-    /// </summary>
-    public void StartRun()
-    {
-        Debug.Log("[GameManager] StartRun chamado");
-
-        // Limpeza
-        CleanupPreviousRun();
-
-        // UI: esconde customização, mostra HUD de players
-        if (customizationCanvas != null) customizationCanvas.SetActive(false);
-        if (player1Canvas != null) player1Canvas.SetActive(true);
-        if (player2Canvas != null) player2Canvas.SetActive(true);
-        if (auctionCanvas != null) auctionCanvas.SetActive(false);
-
-        // Inicializa contador de jogadores vivos
-        int inicialCount = PlayerManager.Instance != null && PlayerManager.Instance.isMultiplayer ? 2 : 1;
-        _remainingPlayers = inicialCount;
-        Debug.Log($"[GameManager] Iniciando run com {_remainingPlayers} jogador(es).");
-
-        // Geração do mundo
-        SetupGrid();
-        GenerateWorld();
-        PairDoors();
-        SetCurrentRoom(_initialRoomCoord);
-
-        // Spawn players
-        Room startRoom = GetRoom(_initialRoomCoord);
-        if (startRoom != null)
-        {
-            Vector3 spawnPos = startRoom.GetPlayerSpawnPoint();
-            spawnPos.z = 0f;
-            if (PlayerManager.Instance != null)
-                PlayerManager.Instance.SpawnPlayer(spawnPos);
-            else
-                Debug.LogWarning("[GameManager] StartRun: PlayerManager.Instance é null, não spawna player.");
-        }
-        else
-        {
-            Debug.LogWarning($"[GameManager] StartRun: startRoom é null para coord {_initialRoomCoord}");
-        }
-
-        // Atualiza UI de itens e stats
-        if (itemCountTexts != null)
-        {
-            for (int i = 0; i < itemCountTexts.Length; i++)
-                if (itemCountTexts[i] != null)
-                    itemCountTexts[i].text = "0";
-        }
-        UpdatePersistentStatsUI();
-    }
-    #endregion
-
-    #region Update (Shift para encerrar)
-    private void Update()
-    {
-        if (_isRunEnding) return;
-
-        if (Input.GetKey(endRunKey))
-        {
-            _shiftHoldTimer += Time.deltaTime;
-            if (_shiftHoldTimer >= SHIFT_HOLD_DURATION)
-            {
-                _shiftHoldTimer = 0f;
-                _isRunEnding = true;
-                Debug.Log("[GameManager] Run encerrada manualmente pelo jogador.");
-                EndRunAndAuction();
-            }
-        }
-        else
-        {
-            _shiftHoldTimer = 0f;
-        }
-    }
-    #endregion
-
-    #region Grid & Salas
-    private void SetupGrid()
-    {
-        if (_gridPresets == null || _gridPresets.Length == 0)
-        {
-            Debug.LogWarning("[GameManager] SetupGrid: _gridPresets vazio, usando padrão (5x5).");
-            GridSize = new Vector2Int(5, 5);
-        }
-        else
-        {
-            GridSize = _gridPresets[UnityEngine.Random.Range(0, _gridPresets.Length)];
-        }
-        _gridOffset = new Vector3(
-            -(GridSize.x * roomWidth) / 2f + roomWidth / 2f,
-            -(GridSize.y * roomHeight) / 2f + roomHeight / 2f,
-            0f
-        );
-        Debug.Log($"[GameManager] SetupGrid: GridSize={GridSize}, Offset={_gridOffset}");
-    }
-
-    private void GenerateWorld()
-    {
-        _initialRoomCoord = new Vector2Int(
-            UnityEngine.Random.Range(0, GridSize.x),
-            UnityEngine.Random.Range(0, GridSize.y)
-        );
-        Debug.Log($"[GameManager] GenerateWorld: initialRoomCoord={_initialRoomCoord}");
-
-        float totalChance = 0f;
-        if (roomOptions != null)
-        {
-            foreach (var o in roomOptions) totalChance += o.spawnChance;
-        }
-        else
-        {
-            Debug.LogWarning("[GameManager] GenerateWorld: roomOptions é null ou vazio!");
-        }
-
-        for (int x = 0; x < GridSize.x; x++)
-        {
-            for (int y = 0; y < GridSize.y; y++)
-            {
-                CreateRoom(new Vector2Int(x, y), totalChance);
-            }
-        }
-    }
-
-    private void CreateRoom(Vector2Int coord, float totalChance)
-    {
-        Vector3 pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0f) + _gridOffset;
-        GameObject prefab = (coord == _initialRoomCoord) ? initialRoomPrefab : SelectRandomRoomPrefab(totalChance);
-        if (prefab == null)
-        {
-            Debug.LogWarning($"[GameManager] CreateRoom: prefab null para coord {coord}");
-            return;
-        }
-        GameObject go = Instantiate(prefab, pos, Quaternion.identity);
-        Room room = go.GetComponent<Room>();
-        if (room == null)
-        {
-            Debug.LogWarning($"[GameManager] CreateRoom: prefab em coord {coord} não tem componente Room.");
-            return;
-        }
-        room.Initialize(coord, roomWidth, roomHeight);
-        _rooms.Add(coord, room);
-    }
-
-    private GameObject SelectRandomRoomPrefab(float totalChance)
-    {
-        if (roomOptions == null || roomOptions.Count == 0)
-        {
-            Debug.LogWarning("[GameManager] SelectRandomRoomPrefab: roomOptions vazio, retornando null.");
-            return null;
-        }
-        float rnd = UnityEngine.Random.Range(0f, totalChance);
-        float cum = 0f;
-        foreach (var opt in roomOptions)
-        {
-            cum += opt.spawnChance;
-            if (rnd <= cum)
-            {
-                if (opt.roomPrefab == null)
-                    Debug.LogWarning($"[GameManager] SelectRandomRoomPrefab: roomPrefab null para opção {opt.roomName}");
-                return opt.roomPrefab;
-            }
-        }
-        // fallback
-        if (roomOptions[0].roomPrefab == null)
-            Debug.LogWarning("[GameManager] SelectRandomRoomPrefab: fallback roomPrefab null.");
-        return roomOptions[0].roomPrefab;
-    }
-    #endregion
-
-    #region Portas
     public void RegisterDoor(Vector2Int coord, DoorDirection dir)
     {
-        if (!_doors.ContainsKey(coord))
-            _doors[coord] = new HashSet<DoorDirection>();
+        if (!_doors.ContainsKey(coord)) _doors[coord] = new HashSet<DoorDirection>();
         _doors[coord].Add(dir);
+        if (!_doorStates.ContainsKey(coord)) _doorStates[coord] = new Dictionary<DoorDirection, DoorState>();
+        if (!_doorStates[coord].ContainsKey(dir)) _doorStates[coord][dir] = new DoorState();
+    }
+
+    public DoorState GetDoorState(Vector2Int coord, DoorDirection dir)
+    {
+        if (_doorStates.TryGetValue(coord, out var dict) && dict.TryGetValue(dir, out var state)) return state;
+        if (!_doorStates.ContainsKey(coord)) _doorStates[coord] = new Dictionary<DoorDirection, DoorState>();
+        var newState = new DoorState();
+        _doorStates[coord][dir] = newState;
+        return newState;
     }
 
     private void PairDoors()
@@ -387,151 +85,596 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void TryPair(Room room, Vector2Int coord, DoorDirection dir, Vector2Int off, DoorDirection opp)
+    private void TryPair(Room room, Vector2Int coord, DoorDirection dir, Vector2Int offset, DoorDirection opposite)
     {
         var d = room.GetDoorTrigger(dir);
-        var neighborRoom = GetRoom(coord + off);
-        if (d == null || neighborRoom == null) return;
-        var n = neighborRoom.GetDoorTrigger(opp);
-        if (n == null) return;
-        d.pairedDoor = n;
-        n.pairedDoor = d;
+        var nr = GetRoom(coord + offset);
+        if (d == null || nr == null) return;
+        var nd = nr.GetDoorTrigger(opposite);
+        if (nd == null) return;
+        d.pairedDoor = nd;
+        nd.pairedDoor = d;
+        var state = GetDoorState(coord, dir);
+        d.sharedState = state;
+        nd.sharedState = state;
     }
 
-    public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir)
-        => _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
-    #endregion
+    public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir) => _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
+    public Room GetRoom(Vector2Int coord) { _rooms.TryGetValue(coord, out var room); return room; }
 
-    #region Sala Atual & Câmera
-    public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
-    public Room GetRoom(Vector2Int coord) => _rooms.TryGetValue(coord, out var r) ? r : null;
-
-    public void SetCurrentRoom(Vector2Int coord)
+    public void SetCurrentRoom(Vector2Int coord, DoorDirection entryDirection)
     {
         _currentRoomCoord = coord;
-        if (_rooms.TryGetValue(coord, out var room))
-        {
-            room.SetActiveDoors(true);
-            if (_mainCamera != null && room.cameraSlot != null)
-                _mainCamera.transform.position = room.cameraSlot.position + Vector3.back * 10f;
-        }
+        _currentRoomPirates.Clear();
         OnRoomChanged?.Invoke(coord);
+        var room = GetRoom(coord);
+        if (room != null)
+        {
+            if (Camera.main != null && room.cameraSlot != null)
+                Camera.main.transform.position = room.cameraSlot.position + Vector3.back * 10f;
+            var spawn = room.GetSpawnPointByDoorDirection(entryDirection);
+            PlayerManager.Instance.MoveAllPlayers(spawn);
+        }
     }
-
-    public event Action<Vector2Int> OnRoomChanged;
     #endregion
 
-    #region Notificação de Morte de Jogador
+    #region UI / Ready / Run Flow
+    [Header("UI Inicial (Customização/Moonbox)")]
+    public GameObject customizationCanvas;
+    public GameObject player1Canvas;
+    public GameObject player2Canvas;
+    [Header("Ready/Start UI")]
+    public Button p1ReadyButton;
+    public Animator p1ReadyAnimator;
+    public Button p2ReadyButton;
+    public Animator p2ReadyAnimator;
+    public Button startButton;
+    public TextMeshProUGUI startHintText;
+    private bool player1Ready = false;
+    private bool player2Ready = false;
+    #endregion
+
+    [Header("Leilão")]
+    public GameObject auctionCanvas;
+    public Transform slotAuction;
+    public Transform slotMoonbox;
+    public TextMeshProUGUI auctionValueText;
+    public TextMeshProUGUI reputationValueText;
+
+    [Header("Finalização de Run")]
+    public GameObject runEndCanvas;
+    public GameObject victoryPanel;
+    public GameObject defeatPanel;
+    public Button victoryToAuctionButton;
+    public Button defeatToMoonboxButton;
+    public Button defeatToMainMenuButton;
+    public Button defeatQuitButton;
+
+    [Header("Pirate Spawn")]
+    public GameObject piratePrefab;
+    public float initialSpawnDelay = 5f;
+    public float spawnInterval = 10f;
+    public int maxPiratesPerRoom = 6;
+    public int initialPirateGroupSize = 3;
+    public CountdownTimer pirateTimer;
+    private bool isMultiplayer;
+    public bool IsMultiplayer => isMultiplayer;
+    private bool _isRunEnding = false;
+    private int _remainingPlayers;
+    private bool _victoryEnding = false;
+    private List<GameObject> _currentRoomPirates = new List<GameObject>();
+    private Coroutine _pirateSpawnRoutine;
+    public event Action<Vector2Int> OnRoomChanged;
+
+    [Header("Run Summary")]
+    public RunSummary runSummary;
+
+    public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
+    public int ScriptableObjectCount => _collectedItems;
+
+    public void CompleteAuction()
+    {
+        auctionCanvas?.SetActive(false);
+        customizationCanvas?.SetActive(true);
+
+        // RESETA contagem de itens após leilão
+        _collectedItems = 0;
+        ResetStatsUI();
+
+        // Reposiciona a câmera no moonbox após o leilão
+        if (slotMoonbox != null && Camera.main != null)
+        {
+            Camera.main.transform.position = slotMoonbox.position + Vector3.back * 10f;
+        }
+    }
+
+    #region [TIMER UI]
+    [Header("Timer UI")]
+    public GameObject timerCanvas;
+    #endregion
+
+    #region Singleton & Inicialização
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+
+        isMultiplayer = PlayerPrefs.GetInt("IsMultiplayer", 0) == 1;
+        SetupCustomizationUI();
+        SetupReadyUI();
+        SetupRunEndUI();
+
+        if (pirateTimer == null)
+        {
+            Debug.LogWarning("[GameManager] pirateTimer NÃO atribuído no Inspector!");
+        }
+        else
+        {
+            pirateTimer.Invasion.RemoveAllListeners();
+            pirateTimer.Invasion.AddListener(OnInvasionTimerEnded);
+        }
+
+        LoadGame();
+        UpdatePersistentStatsUI();
+        EnsurePlayerManagerExists();
+    }
+
+    private void EnsurePlayerManagerExists()
+    {
+        if (PlayerManager.Instance == null)
+        {
+            var pmObj = new GameObject("PlayerManager");
+            pmObj.AddComponent<PlayerManager>();
+        }
+    }
+    #endregion
+
+    private void OnInvasionTimerEnded()
+    {
+        if (_pirateSpawnRoutine != null) StopCoroutine(_pirateSpawnRoutine);
+        _pirateSpawnRoutine = StartCoroutine(PirateInvasionRoutine());
+    }
+
+    private IEnumerator PirateInvasionRoutine()
+    {
+        if (initialSpawnDelay > 0f) yield return new WaitForSeconds(initialSpawnDelay);
+
+        while (!_isRunEnding)
+        {
+            if (_currentRoomPirates.Count < maxPiratesPerRoom)
+            {
+                SpawnPirateInCurrentRoom();
+            }
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    private void SetupCustomizationUI()
+    {
+        customizationCanvas?.SetActive(true);
+        auctionCanvas?.SetActive(false);
+        ResetStatsUI();
+        if (pirateTimer != null) pirateTimer.gameObject.SetActive(false);
+        if (timerCanvas != null) timerCanvas.SetActive(false);
+
+        // Reposiciona a câmera no moonbox
+        if (slotMoonbox != null && Camera.main != null)
+        {
+            Camera.main.transform.position = slotMoonbox.position + Vector3.back * 10f;
+        }
+    }
+
+    private void SetupReadyUI()
+    {
+        player1Ready = player2Ready = false;
+        p1ReadyAnimator?.SetBool("isReady", false);
+        p2ReadyAnimator?.SetBool("isReady", false);
+
+        if (p1ReadyButton != null) p1ReadyButton.onClick.AddListener(OnP1ReadyToggled);
+        if (p2ReadyButton != null) p2ReadyButton.gameObject.SetActive(isMultiplayer);
+        if (isMultiplayer && p2ReadyButton != null) p2ReadyButton.onClick.AddListener(OnP2ReadyToggled);
+        if (player2Canvas != null) player2Canvas.SetActive(isMultiplayer);
+        if (startButton != null) startButton.onClick.AddListener(OnStartPressed);
+        if (startHintText != null) startHintText.text = "";
+
+        UpdateStartButtonUI();
+    }
+
+    private void SetupRunEndUI()
+    {
+        if (runEndCanvas != null) runEndCanvas.SetActive(false);
+        if (victoryPanel != null) victoryPanel.SetActive(false);
+        if (defeatPanel != null) defeatPanel.SetActive(false);
+
+        if (victoryToAuctionButton != null) victoryToAuctionButton.onClick.AddListener(OnVictoryToAuction);
+        if (defeatToMoonboxButton != null) defeatToMoonboxButton.onClick.AddListener(OnDefeatToMoonbox);
+        if (defeatToMainMenuButton != null) defeatToMainMenuButton.onClick.AddListener(OnDefeatToMainMenu);
+        if (defeatQuitButton != null) defeatQuitButton.onClick.AddListener(OnDefeatQuit);
+    }
+
+    #region Ready/Start Callbacks
+    private void OnP1ReadyToggled() => SetPlayerReady(1, !player1Ready);
+    private void OnP2ReadyToggled() => SetPlayerReady(2, !player2Ready);
+
+    public void SetPlayerReady(int index, bool ready)
+    {
+        if (index == 1) player1Ready = ready;
+        else if (index == 2) player2Ready = ready;
+
+        if (p1ReadyAnimator != null) p1ReadyAnimator.SetBool("isReady", player1Ready);
+        if (p2ReadyAnimator != null) p2ReadyAnimator.SetBool("isReady", player2Ready);
+
+        UpdateStartButtonUI();
+    }
+
+    public void UpdateStartButtonUI()
+    {
+        bool canStart = player1Ready && (!isMultiplayer || player2Ready);
+        if (startButton != null)
+        {
+            startButton.interactable = canStart;
+            if (startButton.image != null)
+                startButton.image.color = canStart ? Color.green : Color.red;
+        }
+        if (startHintText != null) startHintText.text = "";
+    }
+
+    private void OnStartPressed()
+    {
+        if (player1Ready && (!isMultiplayer || player2Ready))
+        {
+            BeginRun();
+        }
+        else
+        {
+            if (startHintText != null)
+                startHintText.text = !player1Ready ? "Jogador 1 não está pronto" : "Jogador 2 não está pronto";
+        }
+    }
+    #endregion
+
+    #region Run Flow
+    private void BeginRun() => StartRun();
+
+    public void StartRun()
+    {
+        customizationCanvas?.SetActive(false);
+        auctionCanvas?.SetActive(false);
+        if (timerCanvas != null) timerCanvas.SetActive(true);
+
+        CleanupPreviousRun();
+        SetupGrid();
+        GenerateWorld();
+        PairDoors();
+        SetCurrentRoom(_initialRoomCoord, DoorDirection.Up);
+        _remainingPlayers = IsMultiplayer ? 2 : 1;
+        EnsurePlayerManagerExists();
+        SpawnPlayers();
+
+        // RESETA valores da run
+        _collectedItems = 0;
+        ResetStatsUI();
+
+        if (pirateTimer != null)
+        {
+            pirateTimer.gameObject.SetActive(true);
+            pirateTimer.ResetTimer();
+        }
+
+        UpdatePersistentStatsUI();
+        player1Ready = player2Ready = false;
+        UpdateStartButtonUI();
+    }
+
+    private void Update()
+    {
+        if (_isRunEnding) return;
+
+        // Verificação adicional de jogadores vivos
+        if (_remainingPlayers <= 0)
+        {
+            _isRunEnding = true;
+            EndRun();
+            return;
+        }
+
+        if (Input.GetKey(endRunKey))
+        {
+            _shiftHoldTimer += Time.deltaTime;
+            if (_shiftHoldTimer >= SHIFT_HOLD_DURATION)
+            {
+                _isRunEnding = true;
+                _victoryEnding = true;
+                EndRun();
+            }
+        }
+        else if (_shiftHoldTimer > 0f)
+        {
+            _shiftHoldTimer = 0f;
+        }
+    }
+
+    private void SpawnPirateInCurrentRoom()
+    {
+        var room = GetRoom(_currentRoomCoord);
+        if (room == null || piratePrefab == null) return;
+
+        var spawnPos = GetSafeSpawnPosition(room);
+        var pirate = Instantiate(piratePrefab, spawnPos, Quaternion.identity);
+        _currentRoomPirates.Add(pirate);
+
+        var chase = pirate.GetComponent<ChasingEnemy>();
+        if (chase != null) chase.ActivateInRoom(room.roomCollider);
+
+        var health = pirate.GetComponent<Health>();
+        if (health != null) health.onDeath.AddListener(() => OnPirateDeath(pirate));
+    }
+
+    private Vector3 GetSafeSpawnPosition(Room room)
+    {
+        var bounds = room.roomCollider.bounds;
+        for (int i = 0; i < 50; i++)
+        {
+            var pos = new Vector3(
+                UnityEngine.Random.Range(bounds.min.x + 1f, bounds.max.x - 1f),
+                UnityEngine.Random.Range(bounds.min.y + 1f, bounds.max.y - 1f),
+                0f);
+            if (Physics2D.OverlapCircle(pos, 0.4f, LayerMask.GetMask("HoleFloor")) == null) return pos;
+        }
+        return bounds.center;
+    }
+
+    private void OnPirateDeath(GameObject pirate)
+    {
+        if (_currentRoomPirates.Contains(pirate))
+        {
+            _currentRoomPirates.Remove(pirate);
+        }
+    }
+    #endregion
+
+    #region Map Generation & Cleanup
+    private void CleanupPreviousRun()
+    {
+        // Destruir todas as salas
+        foreach (var r in _rooms.Values)
+        {
+            if (r != null && r.gameObject != null)
+            {
+                Destroy(r.gameObject);
+            }
+        }
+        _rooms.Clear();
+
+        // Resetar PlayerManager completamente
+        PlayerManager.Instance?.DestroyAllPlayers(true);
+
+        // Destruir piratas
+        foreach (var p in _currentRoomPirates)
+        {
+            if (p != null)
+            {
+                Destroy(p);
+            }
+        }
+        _currentRoomPirates.Clear();
+
+        // Resetar estados da run
+        _remainingPlayers = IsMultiplayer ? 2 : 1;
+        _isRunEnding = false;
+        _victoryEnding = false;
+        _shiftHoldTimer = 0f;
+        UpdateDoorRequirements();
+
+        // Parar rotina de spawn
+        if (_pirateSpawnRoutine != null)
+        {
+            StopCoroutine(_pirateSpawnRoutine);
+            _pirateSpawnRoutine = null;
+        }
+
+        // Desativar timers
+        if (pirateTimer != null) pirateTimer.gameObject.SetActive(false);
+        if (timerCanvas != null) timerCanvas.SetActive(false);
+    }
+
+    private void SetupGrid()
+    {
+        GridSize = (_gridPresets.Length > 0)
+            ? _gridPresets[UnityEngine.Random.Range(0, _gridPresets.Length)]
+            : new Vector2Int(5, 5);
+        _gridOffset = new Vector3(
+            -(GridSize.x * roomWidth) / 2f + roomWidth / 2f,
+            -(GridSize.y * roomHeight) / 2f + roomHeight / 2f,
+            0f);
+    }
+
+    private void GenerateWorld()
+    {
+        float totalChance = 0f;
+        foreach (var opt in roomOptions) totalChance += opt.spawnChance;
+        _initialRoomCoord = new Vector2Int(
+            UnityEngine.Random.Range(0, GridSize.x),
+            UnityEngine.Random.Range(0, GridSize.y));
+
+        for (int x = 0; x < GridSize.x; x++)
+            for (int y = 0; y < GridSize.y; y++)
+                CreateRoom(new Vector2Int(x, y), totalChance);
+    }
+
+    private void CreateRoom(Vector2Int coord, float totalChance)
+    {
+        GameObject prefab = coord == _initialRoomCoord ?
+            initialRoomPrefab :
+            ChoosePrefab(totalChance);
+
+        if (prefab == null) return;
+
+        var pos = new Vector3(coord.x * roomWidth, coord.y * roomHeight, 0f) + _gridOffset;
+        var go = Instantiate(prefab, pos, Quaternion.identity);
+        var comp = go.GetComponent<Room>();
+        if (comp != null)
+        {
+            comp.Initialize(coord, roomWidth, roomHeight);
+            _rooms[coord] = comp;
+        }
+        else Destroy(go);
+    }
+
+    private GameObject ChoosePrefab(float total)
+    {
+        float r = UnityEngine.Random.Range(0f, total), sum = 0f;
+        foreach (var opt in roomOptions)
+        {
+            sum += opt.spawnChance;
+            if (r <= sum && opt.roomPrefab != null) return opt.roomPrefab;
+        }
+        return roomOptions.Count > 0 ? roomOptions[0].roomPrefab : null;
+    }
+    #endregion
+
+    public void SpawnPlayers()
+    {
+        var room = GetRoom(_initialRoomCoord);
+        var baseSpawn = room != null ?
+            room.GetPlayerSpawnPoint() :
+            Vector3.zero;
+
+        PlayerManager.Instance.SpawnPlayers(baseSpawn);
+
+        // Força estado inicial correto
+        _remainingPlayers = IsMultiplayer ? 2 : 1;
+        UpdateDoorRequirements();
+    }
+
+    public void RegisterPlayer(int playerIndex, bool isActive)
+    {
+        Debug.Log($"[GameManager] Player {playerIndex} registered (active: {isActive})");
+    }
+
+    public void MoveAllPlayers(Vector3 position)
+    {
+        PlayerManager.Instance.MoveAllPlayers(position);
+    }
+
+    // Sistema de portas adaptativo
+    public void UpdateDoorRequirements()
+    {
+        bool singlePlayerAlive = (_remainingPlayers == 1);
+
+        foreach (var room in _doorStates)
+        {
+            foreach (var door in room.Value)
+            {
+                door.Value.requiresTwoPlayers = !singlePlayerAlive;
+            }
+        }
+    }
+
     public void NotifyPlayerDied()
     {
         if (_isRunEnding) return;
 
         _remainingPlayers--;
-        Debug.Log($"[GameManager] Um player morreu. Jogadores restantes: {_remainingPlayers}");
+        Debug.Log($"Jogador morreu. Restam: {_remainingPlayers} jogadores");
+
+        // Atualiza requisitos das portas IMEDIATAMENTE
+        UpdateDoorRequirements();
 
         if (_remainingPlayers <= 0)
         {
             _isRunEnding = true;
-            Debug.Log("[GameManager] Todos os jogadores morreram. Encerrando run.");
-            EndRunAndAuction();
+            _victoryEnding = false;
+            EndRun();
         }
     }
-    #endregion
 
-    #region EndRun & Auction
-    public void EndRunAndAuction()
+    public void EndRun()
     {
-        if (!_isRunEnding)
+        CleanupPreviousRun();
+
+        if (runEndCanvas != null) runEndCanvas.SetActive(true);
+
+        if (_victoryEnding && victoryPanel != null)
         {
-            _isRunEnding = true;
-            Debug.Log("[GameManager] EndRunAndAuction chamado diretamente.");
+            victoryPanel.SetActive(true);
+            // Não chamamos StartAuction aqui, pois agora o botão de vitória vai chamar o RunSummary
         }
-        // Destrói e limpa salas
-        foreach (var r in _rooms.Values)
-            if (r != null)
-                Destroy(r.gameObject);
-        _rooms.Clear();
-        _doors.Clear();
+        else if (defeatPanel != null) defeatPanel.SetActive(true);
 
-        // Destrói jogadores
-        if (PlayerManager.Instance != null)
-            PlayerManager.Instance.DestroyAllPlayers();
-
-        // Move câmera para slot de leilão e ativa UI de leilão
-        if (auctionCanvas != null) auctionCanvas.SetActive(true);
-        if (_mainCamera != null && slotAuction != null)
-            _mainCamera.transform.position = slotAuction.position + Vector3.back * 10f;
-
-        // Mostra resumo de run
-        FindObjectOfType<RunSummary>()?.ShowSummary();
-
-        // Salva progresso
         SaveGame();
+        if (timerCanvas != null) timerCanvas.SetActive(false);
     }
 
-    public void CompleteAuction()
+    private void StartAuction()
     {
-        // Fechar UI de leilão
-        if (auctionCanvas != null) auctionCanvas.SetActive(false);
-
-        // Move câmera para slotMoonbox
-        if (_mainCamera != null && slotMoonbox != null)
-            _mainCamera.transform.position = slotMoonbox.position + Vector3.back * 10f;
-
-        // Ativar UI de customização para próxima run
-        if (customizationCanvas != null) customizationCanvas.SetActive(true);
-
-        UpdatePersistentStatsUI();
-
-        // Agora a UI de customização pode ter botão que chama StartRun()
-        SaveGame();
+        // Este método não é mais necessário, mantido para compatibilidade
+        // A lógica de leilão agora é tratada pelo RunSummary
     }
-    #endregion
 
-    #region UI Atualização
+    private void OnVictoryToAuction()
+    {
+        runEndCanvas?.SetActive(false);
+        victoryPanel?.SetActive(false);
+
+        // Ativa o RunSummary para mostrar as ofertas baseadas nos itens coletados
+        if (runSummary != null)
+        {
+            runSummary.ShowSummary();
+        }
+        else
+        {
+            Debug.LogError("RunSummary não atribuído no GameManager!");
+        }
+    }
+
+    private void OnDefeatToMoonbox()
+    {
+        runEndCanvas?.SetActive(false);
+        defeatPanel?.SetActive(false);
+        customizationCanvas?.SetActive(true);
+
+        // Reposiciona a câmera no moonbox
+        if (slotMoonbox != null && Camera.main != null)
+        {
+            Camera.main.transform.position = slotMoonbox.position + Vector3.back * 10f;
+        }
+    }
+
+    private void OnDefeatToMainMenu() => SceneManager.LoadScene("MainMenu");
+
+    private void OnDefeatQuit()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    #region Persistent UI & Stats
+    public TextMeshProUGUI[] moneyTexts;
+    public TextMeshProUGUI[] reputationTexts;
+    public TextMeshProUGUI[] itemCountTexts;
+    private int _collectedItems;
+
     public void UpdatePersistentStatsUI()
     {
-        int money = PlayerRuntimeData.GetMoney();
-        int rep = PlayerRuntimeData.GetReputation();
+        var m = PlayerRuntimeData.GetMoney().ToString();
+        var r = PlayerRuntimeData.GetReputation().ToString();
+        foreach (var t in moneyTexts) if (t) t.text = m;
+        foreach (var t in reputationTexts) if (t) t.text = r;
+    }
 
-        Debug.Log($"[GameManager] Atualizando UI de stats: Money={money}, Reputation={rep}");
-
-        string m = money.ToString();
-        string r = rep.ToString();
-        if (moneyTexts != null)
-        {
-            for (int i = 0; i < moneyTexts.Length; i++)
-            {
-                if (moneyTexts[i] != null)
-                    moneyTexts[i].text = m;
-                else
-                    Debug.LogWarning($"[GameManager] moneyTexts[{i}] é null em UpdatePersistentStatsUI.");
-            }
-        }
-        if (reputationTexts != null)
-        {
-            for (int i = 0; i < reputationTexts.Length; i++)
-            {
-                if (reputationTexts[i] != null)
-                    reputationTexts[i].text = r;
-                else
-                    Debug.LogWarning($"[GameManager] reputationTexts[{i}] é null em UpdatePersistentStatsUI.");
-            }
-        }
+    private void ResetStatsUI()
+    {
+        _collectedItems = 0;
+        foreach (var t in itemCountTexts) if (t) t.text = "0";
     }
 
     public void RegisterScriptableObject(int amount)
     {
         _collectedItems += amount;
-        string count = _collectedItems.ToString();
-        if (itemCountTexts != null)
-        {
-            for (int i = 0; i < itemCountTexts.Length; i++)
-            {
-                if (itemCountTexts[i] != null)
-                    itemCountTexts[i].text = count;
-            }
-        }
+        foreach (var t in itemCountTexts) if (t) t.text = _collectedItems.ToString();
     }
     #endregion
 
@@ -546,46 +689,49 @@ public class GameManager : Singleton<GameManager>
             {
                 savedMoney = PlayerRuntimeData.GetMoney(),
                 savedReputation = PlayerRuntimeData.GetReputation(),
-                lastSaveTime = DateTime.UtcNow.ToString("o"),
+                lastSaveTime = DateTime.UtcNow.ToString("o")
             };
-            string json = JsonUtility.ToJson(data, true);
-            File.WriteAllText(SavePath, json);
-            Debug.Log($"[GameManager] Game Saved to {SavePath} | Money: {data.savedMoney} | Rep: {data.savedReputation}");
-            Debug.Log($"[GameManager] Conteúdo salvo (JSON): {json}");
+            File.WriteAllText(SavePath, JsonUtility.ToJson(data, true));
         }
         catch (Exception ex)
         {
-            Debug.LogError($"[GameManager] Erro ao salvar jogo em {SavePath}: {ex}");
+            Debug.LogWarning("[GameManager] Falha ao salvar jogo: " + ex.Message);
         }
     }
 
     public void LoadGame()
     {
-        try
+        if (File.Exists(SavePath))
         {
-            if (File.Exists(SavePath))
+            try
             {
-                string json = File.ReadAllText(SavePath);
-                Debug.Log($"[GameManager] LoadGame: encontrado arquivo. Conteúdo JSON: {json}");
-                var data = JsonUtility.FromJson<PlayerSaveData>(json);
-                Debug.Log($"[GameManager] Valores carregados: Money={data.savedMoney}, Rep={data.savedReputation}");
+                var data = JsonUtility.FromJson<PlayerSaveData>(File.ReadAllText(SavePath));
                 PlayerRuntimeData.Initialize(data.savedMoney, data.savedReputation);
             }
-            else
+            catch (Exception ex)
             {
-                Debug.Log($"[GameManager] LoadGame: nenhum arquivo encontrado em {SavePath}. Iniciando novo jogo com valores padrão.");
                 PlayerRuntimeData.Reset();
             }
         }
-        catch (Exception ex)
+        else
         {
-            Debug.LogError($"[GameManager] Erro ao carregar jogo de {SavePath}: {ex}. Usando valores padrão.");
             PlayerRuntimeData.Reset();
         }
     }
     #endregion
+}
 
-    #region Eventos e outros métodos
-   
-    #endregion
+[System.Serializable]
+public class DoorState
+{
+    public bool requiresTwoPlayers = true;
+    public bool isOpen = false;
+    public event Action<DoorState> OnStateChanged;
+
+    public void SetOpen(bool open)
+    {
+        if (isOpen == open) return;
+        isOpen = open;
+        OnStateChanged?.Invoke(this);
+    }
 }

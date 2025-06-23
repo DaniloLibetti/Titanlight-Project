@@ -67,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -124,10 +124,10 @@ TextureImporter:
       name: DOOR_OPENED_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 213
-        width: 10
-        height: 35
+        x: 0
+        y: 0
+        width: 192
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,165 +142,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 213
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a440ac620eb66240800000000000000
-      internalID: 4784720571749385381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_2
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 168
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e96a261ad50299e0800000000000000
-      internalID: -1616222882039698967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_3
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 168
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f498a6c41f05baa0800000000000000
-      internalID: -6145989534570474254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_4
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 53
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: abcba0d2ff2ddeed0800000000000000
-      internalID: -2383016634394952518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 53
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73be139add2807f80800000000000000
-      internalID: -8110839040356259017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_6
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 8
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd2e5866bf4a3ec00800000000000000
-      internalID: 928767347832251100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOOR_OPENED_7
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 8
-        width: 10
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b421d71947bc3010800000000000000
-      internalID: 1170011527769564345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 778b93225ac1550469700fcb173ffb90
     internalID: 0
     vertices: []
     indices: 
@@ -311,13 +157,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       DOOR_OPENED_0: -7235831002156876362
-      DOOR_OPENED_1: 4784720571749385381
-      DOOR_OPENED_2: -1616222882039698967
-      DOOR_OPENED_3: -6145989534570474254
-      DOOR_OPENED_4: -2383016634394952518
-      DOOR_OPENED_5: -8110839040356259017
-      DOOR_OPENED_6: 928767347832251100
-      DOOR_OPENED_7: 1170011527769564345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

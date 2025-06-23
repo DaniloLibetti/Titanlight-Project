@@ -13,8 +13,7 @@ namespace Player.StateMachine
 
         public override void UpdateState(PlayerStateMachine player)
         {
-            // Use player.moveInput (n�o player.moveInput)
-            if (player.moveInput == Vector2.zero) // Corrigido
+            if (player.moveInput == Vector2.zero)
             {
                 player.SwitchState(player.IdleState);
             }
@@ -22,16 +21,15 @@ namespace Player.StateMachine
 
         public override void FixedUpdateState(PlayerStateMachine player)
         {
-            // Use player.moveInput e player.currentSmoothVelocity
-            Vector2 targetVel = player.moveInput * player.config.moveSpeed; // Corrigido
+            Vector2 targetVel = player.moveInput * player.config.moveSpeed;
             float smoothTime = player.moveInput.magnitude > 0
-                ? 1f / player.config.acceleration
-                : 1f / player.config.deceleration;
+                ? player.config.accelerationTime
+                : player.config.decelerationTime;
 
             player.rb.linearVelocity = Vector2.SmoothDamp(
                 player.rb.linearVelocity,
                 targetVel,
-                ref player.currentSmoothVelocity, // Corrigido
+                ref player.currentSmoothVelocity,
                 smoothTime
             );
         }

@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,10 +118,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 7
-        width: 98
-        height: 18
+        x: 0
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_1
       rect:
         serializedVersion: 2
-        x: 143
-        y: 7
-        width: 98
-        height: 18
+        x: 128
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_2
       rect:
         serializedVersion: 2
-        x: 271
-        y: 6
-        width: 98
-        height: 18
+        x: 256
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_3
       rect:
         serializedVersion: 2
-        x: 399
-        y: 8
-        width: 98
-        height: 20
+        x: 384
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_4
       rect:
         serializedVersion: 2
-        x: 527
-        y: 11
-        width: 98
-        height: 10
+        x: 512
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: CONTINUE_BUTTON_DISAPPEAR_5
       rect:
         serializedVersion: 2
-        x: 655
-        y: 13
-        width: 226
-        height: 6
+        x: 640
+        y: 0
+        width: 128
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,11 +246,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CONTINUE_BUTTON_DISAPPEAR_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc6c31c1c1d34a4fa0649d2198e6b94
+      internalID: -577829327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3d9c2d6e4e595e74687fe73da8d4b498
     internalID: 0
     vertices: []
     indices: 
@@ -266,6 +288,7 @@ TextureImporter:
       CONTINUE_BUTTON_DISAPPEAR_3: -6604214541180249084
       CONTINUE_BUTTON_DISAPPEAR_4: 7850859193084416657
       CONTINUE_BUTTON_DISAPPEAR_5: -4370111843364227395
+      CONTINUE_BUTTON_DISAPPEAR_6: -577829327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

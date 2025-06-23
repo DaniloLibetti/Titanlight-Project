@@ -1,0 +1,1247 @@
+fileFormatVersion: 2
+guid: 0daae5ea321f3f3479915c85ca483c45
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6179859120454454243
+    second: Sprite Sheet  menu titan_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb45a4b02543c550800000000000000
+      internalID: 6179859120454454243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_1
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab7be38a34f235419529fc263d20d03
+      internalID: 1286824611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_2
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315a5ab743b27854ba78d14f97c334bc
+      internalID: -338094939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_3
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027c3f08ae3742549b459c2de569eea1
+      internalID: -1950421535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_4
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d559f83da09cc24fa1b32ad399a5e27
+      internalID: 322389012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_5
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47802a13fc818ac4db03262fc52fc4bc
+      internalID: -1919069514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_6
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 336
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0ddb8f10a10894ba9bf47af726380a
+      internalID: -828796077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420e2eda17cf51642bfe9a1443d238b5
+      internalID: -1786371965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_8
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112f9e70cade0754d901dc746bc29c11
+      internalID: -2097754346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_9
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b6d196663f3bd4fb428b9d87df1a4d
+      internalID: 1728565441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_10
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69026db41561bbd4782ee35bd2df016c
+      internalID: -1513140071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_11
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ed66669471e1a4e97718ce307c5168
+      internalID: 712101200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_12
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8277780d8620b342b7334172088e73f
+      internalID: -841727455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_13
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 280
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69238ddd1de7c5e47965a7797cb77926
+      internalID: 1071719619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff295c63405af5498855e01f2a8a1b1
+      internalID: -837117339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_15
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5a8a2c0423fc8419398dd3524194cd
+      internalID: -640147841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_16
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de83a336b496f2644aa39aebdb056296
+      internalID: -1871164453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_17
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f50257d6a1010a4db4befd0525f2c09
+      internalID: -2136987483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_18
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d546e673ca5062145bf268840a0ba837
+      internalID: 1105415668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_19
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f867ba5e0f32549b1519950d236b68
+      internalID: -516320432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_20
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 224
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4796ee213e2ab41a797bf576858860
+      internalID: -537634118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d01f0112b58f7144a75bee3d3c5ede4
+      internalID: -1385824337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_22
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240f95c7990560c478bee0a506377482
+      internalID: 463779072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_23
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e758545042705419ecf89d8024edb4
+      internalID: 517805515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_24
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45595f5e8e41b34c8cae502940d54d7
+      internalID: 424155396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_25
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131f94859826cf2448e7ea1a05eb0eaf
+      internalID: -869515856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_26
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b3537f9995d6a468ca45ce21adf6a5
+      internalID: 1153575575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_27
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 168
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebc248ee554f8a47ae677232aba88f1
+      internalID: 922882858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d21b7cef9f23147999cbf923db8911
+      internalID: -350528157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_29
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd54ca2d01bad114a9377845759b3955
+      internalID: 1813969166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_30
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b054597d81785f84f8d0f987a7a5b4f7
+      internalID: -17512786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_31
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45992400ec1ff148a5b29bdeec5e5af
+      internalID: 908966148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_32
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6444b8c36e36554f8ec68f405b99f9c
+      internalID: -1482414253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_33
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087788d168eeebc4aba1606c8f87f4a5
+      internalID: -1281748836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_34
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 112
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c721c60252a0d46a52e3b6d9b825c6
+      internalID: 673163060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29573cde6e3911549a5c9f064a18ecbb
+      internalID: 1166820629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_36
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9885a608675147640a7266ffcf650c6f
+      internalID: -2084162009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_37
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0d34ee65bfdc448867b1c8a2fbbbee
+      internalID: -2008598776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_38
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266a8614c2adac2409fb880a58142427
+      internalID: -2081201037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_39
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd3f8d58e7b8f54296f1abe54876079
+      internalID: -2006145979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_40
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06ed51b7b129fa44873736971be551e
+      internalID: -605646408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_41
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 56
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482b7f50cdb4ab447bc6c32062f23cbc
+      internalID: 449750613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647d1ec10f81c164aab8530e953241c9
+      internalID: 484345349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_43
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0072079908f9dc5418ee2079e7471d4a
+      internalID: -2028908045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_44
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f839470ed165531479692d4cacf0f05d
+      internalID: -1453959209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_45
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbfac5d4403aa24a912a8c02061d8bb
+      internalID: -362288587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_46
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69371e552e29a145af2fc0e3f396bb5
+      internalID: 1731260572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_47
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a66d7c2a9f9ee43971ef2aa27ad982
+      internalID: 467844392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet  menu titan_48
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 0
+        width: 444
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281492a2c7f6c334a95a99c3d0b8d470
+      internalID: -1310652503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a41831fa42ee6b0459a384e66f98545d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sprite Sheet  menu titan_0: 6179859120454454243
+      Sprite Sheet  menu titan_1: 1286824611
+      Sprite Sheet  menu titan_10: -1513140071
+      Sprite Sheet  menu titan_11: 712101200
+      Sprite Sheet  menu titan_12: -841727455
+      Sprite Sheet  menu titan_13: 1071719619
+      Sprite Sheet  menu titan_14: -837117339
+      Sprite Sheet  menu titan_15: -640147841
+      Sprite Sheet  menu titan_16: -1871164453
+      Sprite Sheet  menu titan_17: -2136987483
+      Sprite Sheet  menu titan_18: 1105415668
+      Sprite Sheet  menu titan_19: -516320432
+      Sprite Sheet  menu titan_2: -338094939
+      Sprite Sheet  menu titan_20: -537634118
+      Sprite Sheet  menu titan_21: -1385824337
+      Sprite Sheet  menu titan_22: 463779072
+      Sprite Sheet  menu titan_23: 517805515
+      Sprite Sheet  menu titan_24: 424155396
+      Sprite Sheet  menu titan_25: -869515856
+      Sprite Sheet  menu titan_26: 1153575575
+      Sprite Sheet  menu titan_27: 922882858
+      Sprite Sheet  menu titan_28: -350528157
+      Sprite Sheet  menu titan_29: 1813969166
+      Sprite Sheet  menu titan_3: -1950421535
+      Sprite Sheet  menu titan_30: -17512786
+      Sprite Sheet  menu titan_31: 908966148
+      Sprite Sheet  menu titan_32: -1482414253
+      Sprite Sheet  menu titan_33: -1281748836
+      Sprite Sheet  menu titan_34: 673163060
+      Sprite Sheet  menu titan_35: 1166820629
+      Sprite Sheet  menu titan_36: -2084162009
+      Sprite Sheet  menu titan_37: -2008598776
+      Sprite Sheet  menu titan_38: -2081201037
+      Sprite Sheet  menu titan_39: -2006145979
+      Sprite Sheet  menu titan_4: 322389012
+      Sprite Sheet  menu titan_40: -605646408
+      Sprite Sheet  menu titan_41: 449750613
+      Sprite Sheet  menu titan_42: 484345349
+      Sprite Sheet  menu titan_43: -2028908045
+      Sprite Sheet  menu titan_44: -1453959209
+      Sprite Sheet  menu titan_45: -362288587
+      Sprite Sheet  menu titan_46: 1731260572
+      Sprite Sheet  menu titan_47: 467844392
+      Sprite Sheet  menu titan_48: -1310652503
+      Sprite Sheet  menu titan_5: -1919069514
+      Sprite Sheet  menu titan_6: -828796077
+      Sprite Sheet  menu titan_7: -1786371965
+      Sprite Sheet  menu titan_8: -2097754346
+      Sprite Sheet  menu titan_9: 1728565441
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

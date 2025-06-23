@@ -1,0 +1,569 @@
+fileFormatVersion: 2
+guid: c05354b2a5dc9094f9ef7e1c6eb2ce84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5487445529237295725
+    second: P1_RESPAWN 1_0
+  - first:
+      213: 2442746818396807273
+    second: P1_RESPAWN 1_1
+  - first:
+      213: -2304270411833122749
+    second: P1_RESPAWN 1_2
+  - first:
+      213: 6534123743359794649
+    second: P1_RESPAWN 1_3
+  - first:
+      213: 8453055486827611267
+    second: P1_RESPAWN 1_4
+  - first:
+      213: -721804981598777009
+    second: P1_RESPAWN 1_5
+  - first:
+      213: 8978739469399097110
+    second: P1_RESPAWN 1_6
+  - first:
+      213: 9218320421358503108
+    second: P1_RESPAWN 1_7
+  - first:
+      213: -459442735956280753
+    second: P1_RESPAWN 1_8
+  - first:
+      213: 9158962220848535492
+    second: P1_RESPAWN 1_9
+  - first:
+      213: 4081199608101692918
+    second: P1_RESPAWN 1_10
+  - first:
+      213: 7311217176328827785
+    second: P1_RESPAWN 1_11
+  - first:
+      213: -5243577548804301652
+    second: P1_RESPAWN 1_12
+  - first:
+      213: 142881073240663593
+    second: P1_RESPAWN 1_13
+  - first:
+      213: 2572350742739955172
+    second: P1_RESPAWN 1_14
+  - first:
+      213: 6100803021963921606
+    second: P1_RESPAWN 1_15
+  - first:
+      213: 6780515831551627824
+    second: P1_RESPAWN 1_16
+  - first:
+      213: 7703954169363309304
+    second: P1_RESPAWN 1_17
+  - first:
+      213: -4283245321001365283
+    second: P1_RESPAWN 1_18
+  - first:
+      213: 1378348070205431659
+    second: P1_RESPAWN 1_19
+  - first:
+      213: -3534175606495106678
+    second: P1_RESPAWN 1_20
+  - first:
+      213: -6245795984680477142
+    second: P1_RESPAWN 1_21
+  - first:
+      213: -5326607602953942247
+    second: P1_RESPAWN 1_22
+  - first:
+      213: 7855063993350985591
+    second: P1_RESPAWN 1_23
+  - first:
+      213: 6393393352779366989
+    second: P1_RESPAWN 1_24
+  - first:
+      213: 2020621078001827560
+    second: P1_RESPAWN 1_25
+  - first:
+      213: 2345371973678206490
+    second: P1_RESPAWN 1_26
+  - first:
+      213: -2806106643147934429
+    second: P1_RESPAWN 1_27
+  - first:
+      213: 8046664247365901140
+    second: P1_RESPAWN 1_28
+  - first:
+      213: 5565373880332082871
+    second: P1_RESPAWN 1_29
+  - first:
+      213: 5298657164093689082
+    second: P1_RESPAWN 1_30
+  - first:
+      213: -4550862730946303580
+    second: P1_RESPAWN 1_31
+  - first:
+      213: -5926603330530012568
+    second: P1_RESPAWN 1_32
+  - first:
+      213: -7589161998490715980
+    second: P1_RESPAWN 1_33
+  - first:
+      213: 4195126573440331857
+    second: P1_RESPAWN 1_34
+  - first:
+      213: -7135466939967181690
+    second: P1_RESPAWN 1_35
+  - first:
+      213: -3298007635605642191
+    second: P1_RESPAWN 1_36
+  - first:
+      213: -7565932037085743086
+    second: P1_RESPAWN 1_37
+  - first:
+      213: 3387238835806985520
+    second: P1_RESPAWN 1_38
+  - first:
+      213: 8905714691677988584
+    second: P1_RESPAWN 1_39
+  - first:
+      213: 3496726277625680999
+    second: P1_RESPAWN 1_40
+  - first:
+      213: 9217671815721686935
+    second: P1_RESPAWN 1_41
+  - first:
+      213: -9041132630781464840
+    second: P1_RESPAWN 1_42
+  - first:
+      213: 1112597400000865956
+    second: P1_RESPAWN 1_43
+  - first:
+      213: -8090745654205319007
+    second: P1_RESPAWN 1_44
+  - first:
+      213: 2634422872949452420
+    second: P1_RESPAWN 1_45
+  - first:
+      213: -8438159079239389658
+    second: P1_RESPAWN 1_46
+  - first:
+      213: -2082321490073335928
+    second: P1_RESPAWN 1_47
+  - first:
+      213: -698229125841142628
+    second: P1_RESPAWN 1_48
+  - first:
+      213: -936604876985229205
+    second: P1_RESPAWN 1_49
+  - first:
+      213: -9014375986071114181
+    second: P1_RESPAWN 1_50
+  - first:
+      213: -1205745034198514123
+    second: P1_RESPAWN 1_51
+  - first:
+      213: -2011635453905479629
+    second: P1_RESPAWN 1_52
+  - first:
+      213: -5949768453165977058
+    second: P1_RESPAWN 1_53
+  - first:
+      213: 3041908107229205395
+    second: P1_RESPAWN 1_54
+  - first:
+      213: 3820084706274788655
+    second: P1_RESPAWN 1_55
+  - first:
+      213: 5070800526925995189
+    second: P1_RESPAWN 1_56
+  - first:
+      213: -7224558460127368492
+    second: P1_RESPAWN 1_57
+  - first:
+      213: 9007868665661668047
+    second: P1_RESPAWN 1_58
+  - first:
+      213: -6811586243887515291
+    second: P1_RESPAWN 1_59
+  - first:
+      213: 7074183242958077273
+    second: P1_RESPAWN 1_60
+  - first:
+      213: -140613553309185604
+    second: P1_RESPAWN 1_61
+  - first:
+      213: 2193254095867770820
+    second: P1_RESPAWN 1_62
+  - first:
+      213: -2244926656850073823
+    second: P1_RESPAWN 1_63
+  - first:
+      213: 9139970316801964313
+    second: P1_RESPAWN 1_64
+  - first:
+      213: -566463324097095221
+    second: P1_RESPAWN 1_65
+  - first:
+      213: 3373175420374215226
+    second: P1_RESPAWN 1_66
+  - first:
+      213: -5788561442534193221
+    second: P1_RESPAWN 1_67
+  - first:
+      213: 8155759069467442499
+    second: P1_RESPAWN 1_68
+  - first:
+      213: 5607786911799031160
+    second: P1_RESPAWN 1_69
+  - first:
+      213: 4049274489216957610
+    second: P1_RESPAWN 1_70
+  - first:
+      213: -8709061532621266144
+    second: P1_RESPAWN 1_71
+  - first:
+      213: 6829873847307005752
+    second: P1_RESPAWN 1_72
+  - first:
+      213: -6465618737982938628
+    second: P1_RESPAWN 1_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d629e7692a2572c40800000000000000
+      internalID: 5487445529237295725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960e1c20a4166e120800000000000000
+      internalID: 2442746818396807273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3406e3cd4469500e0800000000000000
+      internalID: -2304270411833122749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ddf761eceeddaa50800000000000000
+      internalID: 6534123743359794649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384c607dd294f4570800000000000000
+      internalID: 8453055486827611267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4192ba8132abf5f0800000000000000
+      internalID: -721804981598777009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fff4cd9f3ea9c70800000000000000
+      internalID: 8978739469399097110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c48dcc159d0eef70800000000000000
+      internalID: 9218320421358503108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a31b0144bbf99f0800000000000000
+      internalID: -459442735956280753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_RESPAWN 1_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c756e41d9b2b1f70800000000000000
+      internalID: 9158962220848535492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e609ad1e17d23d4fb030d53d28649fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P1_RESPAWN 1_0: 5487445529237295725
+      P1_RESPAWN 1_1: 2442746818396807273
+      P1_RESPAWN 1_2: -2304270411833122749
+      P1_RESPAWN 1_3: 6534123743359794649
+      P1_RESPAWN 1_4: 8453055486827611267
+      P1_RESPAWN 1_5: -721804981598777009
+      P1_RESPAWN 1_6: 8978739469399097110
+      P1_RESPAWN 1_7: 9218320421358503108
+      P1_RESPAWN 1_8: -459442735956280753
+      P1_RESPAWN 1_9: 9158962220848535492
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

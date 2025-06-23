@@ -256,12 +256,12 @@ TextureImporter:
       name: Robot_02_Alerted_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 225
+        x: 0
+        y: 108
         width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: Robot_02_Alerted_1
       rect:
         serializedVersion: 2
-        x: 129
-        y: 225
+        x: 30
+        y: 108
         width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: Robot_02_Alerted_2
       rect:
         serializedVersion: 2
-        x: 225
-        y: 225
+        x: 60
+        y: 108
         width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: Robot_02_Alerted_3
       rect:
         serializedVersion: 2
-        x: 321
-        y: 225
+        x: 90
+        y: 108
         width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: Robot_02_Alerted_4
       rect:
         serializedVersion: 2
-        x: 417
-        y: 225
+        x: 0
+        y: 54
         width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: Robot_02_Alerted_5
       rect:
         serializedVersion: 2
-        x: 513
-        y: 225
+        x: 30
+        y: 54
         width: 30
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: Robot_02_Alerted_6
       rect:
         serializedVersion: 2
-        x: 608
-        y: 225
-        width: 32
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 60
+        y: 54
+        width: 30
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,12 +410,12 @@ TextureImporter:
       name: Robot_02_Alerted_7
       rect:
         serializedVersion: 2
-        x: 705
-        y: 225
+        x: 90
+        y: 54
         width: 30
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,12 +432,12 @@ TextureImporter:
       name: Robot_02_Alerted_8
       rect:
         serializedVersion: 2
-        x: 800
-        y: 225
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 30
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,12 +454,12 @@ TextureImporter:
       name: Robot_02_Alerted_9
       rect:
         serializedVersion: 2
-        x: 896
-        y: 225
-        width: 32
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 30
+        y: 0
+        width: 30
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,12 +476,12 @@ TextureImporter:
       name: Robot_02_Alerted_10
       rect:
         serializedVersion: 2
-        x: 992
-        y: 225
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 60
+        y: 0
+        width: 30
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,12 +498,12 @@ TextureImporter:
       name: Robot_02_Alerted_11
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 225
-        width: 32
+        x: 90
+        y: 0
+        width: 30
         height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -516,891 +516,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_12
-      rect:
-        serializedVersion: 2
-        x: 1184
-        y: 225
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa661e0319e2c7050800000000000000
-      internalID: 5799561621271570095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_13
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 161
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23fd30feb4f26aa90800000000000000
-      internalID: -7303097742555619534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_14
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 161
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86ecfb61b5bdc0410800000000000000
-      internalID: 1444770764749262440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_15
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 161
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e880047548bd7c20800000000000000
-      internalID: 3205921118196107497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_16
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 161
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71241c275d4025990800000000000000
-      internalID: -7398845923016490473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_17
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 161
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a743e7517efd2b830800000000000000
-      internalID: 4085573995569493114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_18
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 161
-        width: 30
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4524ee01840901ba0800000000000000
-      internalID: -6120233254400409004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_19
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 161
-        width: 30
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e88a3adc403220a0800000000000000
-      internalID: -6907905771796002591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_20
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 161
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b16857a1b38867df0800000000000000
-      internalID: -182808947433568741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_21
-      rect:
-        serializedVersion: 2
-        x: 801
-        y: 161
-        width: 30
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e48d08fee52a6750800000000000000
-      internalID: 6298888737125139685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_22
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 161
-        width: 31
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e448c7999835a79b0800000000000000
-      internalID: -5081657379083484082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_23
-      rect:
-        serializedVersion: 2
-        x: 992
-        y: 161
-        width: 31
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fffe4946820d3ebf0800000000000000
-      internalID: -296164278571569153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_24
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59d591d6ef2589e50800000000000000
-      internalID: 6816289288730795413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_25
-      rect:
-        serializedVersion: 2
-        x: 1184
-        y: 161
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5840c1f3ca7a23550800000000000000
-      internalID: 6139153600294421637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_26
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 97
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac6e41e235b2beff0800000000000000
-      internalID: -5863338255522102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_27
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 97
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea50a9022ae7bd9a0800000000000000
-      internalID: -6207228426603330130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_28
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 97
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dcd2d740649d05f10800000000000000
-      internalID: 2256542308058869197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_29
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 97
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64696b420f7a02b90800000000000000
-      internalID: -7268625148726045114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_30
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 97
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23b6893e0b465ece0800000000000000
-      internalID: -1376583400196379854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_31
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 97
-        width: 30
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9cd878cd4eb49620800000000000000
-      internalID: 2780056111279561883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_32
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 97
-        width: 30
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f02241a9569e0c7b0800000000000000
-      internalID: -5205904546654313969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_33
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 97
-        width: 30
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c37c987c75314a10800000000000000
-      internalID: 1891852127188054976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_34
-      rect:
-        serializedVersion: 2
-        x: 801
-        y: 97
-        width: 30
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58469022ce0df38f0800000000000000
-      internalID: -558498116168751995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_35
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 97
-        width: 31
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db95148c81fc68a90800000000000000
-      internalID: -7311929239643530819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_36
-      rect:
-        serializedVersion: 2
-        x: 993
-        y: 97
-        width: 31
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 954169b890c998e60800000000000000
-      internalID: 7965068980791940185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_37
-      rect:
-        serializedVersion: 2
-        x: 1087
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 746903b02311d1fc0800000000000000
-      internalID: -3522640426900089273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_38
-      rect:
-        serializedVersion: 2
-        x: 1183
-        y: 97
-        width: 33
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce263cc83f66d9110800000000000000
-      internalID: 1269283866213049068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_39
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 33
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ebf2bc6421ffa6a60800000000000000
-      internalID: 7668221769513906110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_40
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 33
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 771dc7ada56cbdfb0800000000000000
-      internalID: -4621882499050712713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_41
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 33
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78cb92b7e14508e10800000000000000
-      internalID: 2197849108048886919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_42
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 33
-        width: 30
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eafa93b88314f6e70800000000000000
-      internalID: 9110572282303590318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_43
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 33
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b124c5515850ca1e0800000000000000
-      internalID: -2185365650034376165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_44
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 33
-        width: 30
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e521e86da9ca6ded0800000000000000
-      internalID: -2389532771248893346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_45
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 33
-        width: 32
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ee765103ec2a2fd0800000000000000
-      internalID: -2366029300738130199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_46
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 33
-        width: 30
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a9bc5bfd920efc6e0800000000000000
-      internalID: -1814985654355506278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_47
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 33
-        width: 32
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 237e394071fa0e470800000000000000
-      internalID: 8421923816578737970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_48
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 33
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95cbcaafc1d60ad40800000000000000
-      internalID: 5593590708426292313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_49
-      rect:
-        serializedVersion: 2
-        x: 992
-        y: 33
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 059a44076b6880710800000000000000
-      internalID: 1659724580811745616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_50
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 33
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5bdbd8de88cad2230800000000000000
-      internalID: 3615735779949395381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robot_02_Alerted_51
-      rect:
-        serializedVersion: 2
-        x: 1184
-        y: 33
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cbc0191af864d730800000000000000
-      internalID: 4022955790520339395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 82ba822bf34389c41927107227fef20e
     internalID: 0
     vertices: []
     indices: 
@@ -1414,50 +534,10 @@ TextureImporter:
       Robot_02_Alerted_1: 7929218282093512705
       Robot_02_Alerted_10: 3393361856794064770
       Robot_02_Alerted_11: -4763502114603606313
-      Robot_02_Alerted_12: 5799561621271570095
-      Robot_02_Alerted_13: -7303097742555619534
-      Robot_02_Alerted_14: 1444770764749262440
-      Robot_02_Alerted_15: 3205921118196107497
-      Robot_02_Alerted_16: -7398845923016490473
-      Robot_02_Alerted_17: 4085573995569493114
-      Robot_02_Alerted_18: -6120233254400409004
-      Robot_02_Alerted_19: -6907905771796002591
       Robot_02_Alerted_2: -8349930501873765182
-      Robot_02_Alerted_20: -182808947433568741
-      Robot_02_Alerted_21: 6298888737125139685
-      Robot_02_Alerted_22: -5081657379083484082
-      Robot_02_Alerted_23: -296164278571569153
-      Robot_02_Alerted_24: 6816289288730795413
-      Robot_02_Alerted_25: 6139153600294421637
-      Robot_02_Alerted_26: -5863338255522102
-      Robot_02_Alerted_27: -6207228426603330130
-      Robot_02_Alerted_28: 2256542308058869197
-      Robot_02_Alerted_29: -7268625148726045114
       Robot_02_Alerted_3: 3557939366018721943
-      Robot_02_Alerted_30: -1376583400196379854
-      Robot_02_Alerted_31: 2780056111279561883
-      Robot_02_Alerted_32: -5205904546654313969
-      Robot_02_Alerted_33: 1891852127188054976
-      Robot_02_Alerted_34: -558498116168751995
-      Robot_02_Alerted_35: -7311929239643530819
-      Robot_02_Alerted_36: 7965068980791940185
-      Robot_02_Alerted_37: -3522640426900089273
-      Robot_02_Alerted_38: 1269283866213049068
-      Robot_02_Alerted_39: 7668221769513906110
       Robot_02_Alerted_4: -1751405026745913894
-      Robot_02_Alerted_40: -4621882499050712713
-      Robot_02_Alerted_41: 2197849108048886919
-      Robot_02_Alerted_42: 9110572282303590318
-      Robot_02_Alerted_43: -2185365650034376165
-      Robot_02_Alerted_44: -2389532771248893346
-      Robot_02_Alerted_45: -2366029300738130199
-      Robot_02_Alerted_46: -1814985654355506278
-      Robot_02_Alerted_47: 8421923816578737970
-      Robot_02_Alerted_48: 5593590708426292313
-      Robot_02_Alerted_49: 1659724580811745616
       Robot_02_Alerted_5: 8886039477850145429
-      Robot_02_Alerted_50: 3615735779949395381
-      Robot_02_Alerted_51: 4022955790520339395
       Robot_02_Alerted_6: 3109376056993302467
       Robot_02_Alerted_7: -4292951200936086776
       Robot_02_Alerted_8: 8272282015584047995

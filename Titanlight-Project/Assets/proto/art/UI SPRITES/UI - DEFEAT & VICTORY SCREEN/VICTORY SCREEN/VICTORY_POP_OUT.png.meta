@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2560
-        height: 1664
+        y: 1248
+        width: 640
+        height: 416
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,11 +121,275 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844f696d6c0725648b0e1f8c57f4ad8b
+      internalID: 1577937699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b755d7490404cb44dbdf4f3e02ac2022
+      internalID: -1857004458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1248
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f684f1fef81e77a45abf09287b9487a2
+      internalID: -476827790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045b2902c93da114280591cbb3bf73ea
+      internalID: -793258259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc613ec22244f245bc48cacf7534c95
+      internalID: 759350643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_6
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ad5b4102837b04ca44bb511cd4a863
+      internalID: 820519052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_7
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 832
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b521da31595987c47aeabc385f96e0d7
+      internalID: -1836086252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904a9401fa4dffc4692dff1b7ba32d29
+      internalID: -1549719933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_9
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2129d3bee9e958946a17eb31c7062926
+      internalID: -274461402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c246ff0ca53a2ad498247b1d1d86c232
+      internalID: 89783594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_11
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 416
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33182ea0418abb941a62f6f930d9ff4b
+      internalID: 1280795213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VICTORY_POP_OUT_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5206f87e618d5e4e83c2378c0d9844a
+      internalID: 1128773442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7dcce2c4525ec754791ae19470d35176
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +400,18 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       VICTORY_POP_OUT_0: 6726898169542593444
+      VICTORY_POP_OUT_1: 1577937699
+      VICTORY_POP_OUT_10: 89783594
+      VICTORY_POP_OUT_11: 1280795213
+      VICTORY_POP_OUT_12: 1128773442
+      VICTORY_POP_OUT_2: -1857004458
+      VICTORY_POP_OUT_3: -476827790
+      VICTORY_POP_OUT_4: -793258259
+      VICTORY_POP_OUT_5: 759350643
+      VICTORY_POP_OUT_6: 820519052
+      VICTORY_POP_OUT_7: -1836086252
+      VICTORY_POP_OUT_8: -1549719933
+      VICTORY_POP_OUT_9: -274461402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

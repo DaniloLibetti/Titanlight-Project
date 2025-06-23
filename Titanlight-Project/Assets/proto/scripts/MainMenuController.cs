@@ -1,94 +1,115 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenuController : MonoBehaviour
 {
-    // Painéis configuráveis pelo inspetor
     [Header("Painéis do Menu")]
-    [SerializeField] private GameObject mainMenuPanel;    // Painel com Start, Options e Quit
-    [SerializeField] private GameObject optionsPanel;     // Painel de opções
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject modeSelectPanel;
+    [SerializeField] private GameObject creditsPanel; // Novo painel de créditos
 
-    // Nome da cena para iniciar o jogo (defina no inspetor ou altere aqui)
     [Header("Configurações de Cena")]
-    [SerializeField] private string gameSceneName = "GameScene";
+    [SerializeField] private string runSceneName = "RunScene";
 
-    // Quando o jogo inicia, mostra o menu principal
     void Start()
     {
         ShowMainMenu();
     }
 
-    // Método chamado pelo botão Start para carregar a próxima cena
+    // Inicia seleção de modo
     public void StartGame()
     {
         SoundManager.PlaySound(SoundType.BUTTON);
-        SceneManager.LoadScene(gameSceneName);
-        MusicaManager.PlayMusic();
+        ShowModeSelection();
     }
 
-    // Método chamado pelo botão Options para abrir o menu de opções
+    public void OnSinglePlayerChosen()
+    {
+        SoundManager.PlaySound(SoundType.BUTTON);
+        PlayerPrefs.SetInt(GameSettings.MultiplayerKey, 0);
+        LoadRunScene();
+    }
+
+    public void OnMultiplayerChosen()
+    {
+        SoundManager.PlaySound(SoundType.BUTTON);
+        PlayerPrefs.SetInt(GameSettings.MultiplayerKey, 1);
+        LoadRunScene();
+    }
+
+    private void LoadRunScene()
+    {
+        MusicaManager.PlayMusic();
+        SceneManager.LoadScene(runSceneName);
+    }
+
+    // Abre menu de opções
     public void OpenOptions()
     {
-        if (mainMenuPanel != null)
-        {
-            SoundManager.PlaySound(SoundType.BUTTON);
-            mainMenuPanel.SetActive(false);
-        }
-            
-
-        if (optionsPanel != null)
-        {
-            SoundManager.PlaySound(SoundType.BUTTON);
-            optionsPanel.SetActive(true);
-        }
+        SoundManager.PlaySound(SoundType.BUTTON);
+        HideAllPanels();
+        optionsPanel.SetActive(true);
     }
 
     public void CloseOptions()
     {
-        if(optionsPanel != null)
-        {
-            SoundManager.PlaySound(SoundType.BUTTON);
-            optionsPanel.SetActive(false);
-            mainMenuPanel.SetActive(true);
-        }
+        SoundManager.PlaySound(SoundType.BUTTON);
+        ShowMainMenu();
     }
 
-    // Método chamado pelo botão Back, no menu de opções, para voltar ao menu principal
-    public void BackToMainMenu()
+    // Botão de voltar de seleção de modo
+    public void BackFromModeSelection()
     {
-        if (optionsPanel != null)
-        {
-            SoundManager.PlaySound(SoundType.BUTTON);
-            optionsPanel.SetActive(false);
-        }
-            
-        if (mainMenuPanel != null)
-        {
-            SoundManager.PlaySound(SoundType.BUTTON);
-            mainMenuPanel.SetActive(true);
-        }
-        
+        SoundManager.PlaySound(SoundType.BUTTON);
+        ShowMainMenu();
     }
 
-    // Método chamado pelo botão Quit para fechar o jogo
+    // Exibe créditos
+    public void OpenCredits()
+    {
+        SoundManager.PlaySound(SoundType.BUTTON);
+        HideAllPanels();
+        creditsPanel.SetActive(true);
+    }
+
+    // Botão de voltar de créditos
+    public void BackFromCredits()
+    {
+        SoundManager.PlaySound(SoundType.BUTTON);
+        ShowMainMenu();
+    }
+
     public void QuitGame()
     {
         SoundManager.PlaySound(SoundType.BUTTON);
         Application.Quit();
-
-        // Se estiver executando na Unity Editor, encerra o modo de jogo.
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
 
-    // Exibe o menu principal e garante que as opções estejam fechadas
+    // Mostra apenas painel principal
     private void ShowMainMenu()
     {
-        if (mainMenuPanel != null)
-            mainMenuPanel.SetActive(true);
+        HideAllPanels();
+        mainMenuPanel.SetActive(true);
+    }
 
-        if (optionsPanel != null)
-            optionsPanel.SetActive(false);
+    // Exibe seleção de modo
+    private void ShowModeSelection()
+    {
+        HideAllPanels();
+        modeSelectPanel.SetActive(true);
+    }
+
+    // Esconde todos os paineis
+    private void HideAllPanels()
+    {
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        modeSelectPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 }

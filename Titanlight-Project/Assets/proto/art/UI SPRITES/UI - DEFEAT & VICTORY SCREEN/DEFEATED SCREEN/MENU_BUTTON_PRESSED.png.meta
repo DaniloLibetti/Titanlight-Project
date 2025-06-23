@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,10 +118,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 38
-        width: 66
-        height: 18
+        x: 0
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_1
       rect:
         serializedVersion: 2
-        x: 111
-        y: 38
-        width: 66
-        height: 18
+        x: 96
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_2
       rect:
         serializedVersion: 2
-        x: 206
-        y: 37
-        width: 68
-        height: 20
+        x: 192
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_3
       rect:
         serializedVersion: 2
-        x: 13
-        y: 5
-        width: 70
-        height: 22
+        x: 0
+        y: 0
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_4
       rect:
         serializedVersion: 2
-        x: 111
-        y: 7
-        width: 66
-        height: 18
+        x: 96
+        y: 0
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: MENU_BUTTON_PRESSED_5
       rect:
         serializedVersion: 2
-        x: 205
-        y: 5
-        width: 70
-        height: 22
+        x: 192
+        y: 0
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 76ee07adf500db944a14c88f74ef817d
     internalID: 0
     vertices: []
     indices: 

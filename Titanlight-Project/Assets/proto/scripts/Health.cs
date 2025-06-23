@@ -11,60 +11,37 @@ public class Health : MonoBehaviour
 
     public UnityEvent onDeath;
     public UnityEvent<float> onDamageTaken;
-    // Novo evento para dropar moedas
     public UnityEvent onDropMoeda;
 
-    private SegmentedHealthBar healthBar;
-
-    // Propriedade pública para acessar o valor máximo de vida
-    public float MaxHealth
-    {
-        get { return maxHealth; }
-    }
+    public float MaxHealth => maxHealth;
 
     void Awake()
     {
-        // Inicia a vida com o valor máximo
         CurrentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        if (damage <= 0)
-            return;
+        if (damage <= 0) return;
 
-        // Diminui a vida com base no dano recebido
         CurrentHealth -= damage;
-        if (onDamageTaken != null)
-            onDamageTaken.Invoke(damage);
+        onDamageTaken?.Invoke(damage);
 
-        if (CurrentHealth <= 0)
-            Die();
-
-        
+        if (CurrentHealth <= 0) Die();
     }
 
     public void Heal(float amount)
     {
-        if (amount <= 0)
-            return;
+        if (amount <= 0) return;
 
-        // Restaura a vida sem passar do máximo
         CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
     }
 
     private void Die()
     {
-        // Chama o evento de morte
-        if (onDeath != null)
-            onDeath.Invoke();
+        onDeath?.Invoke();
+        onDropMoeda?.Invoke();
 
-        // Chama o evento de drop de moedas (substituindo qualquer método anterior de drop)
-        if (onDropMoeda != null)
-            onDropMoeda.Invoke();
-
-        // Destrói o objeto se estiver marcado para isso
-        if (destroyOnDeath)
-            Destroy(gameObject);
+        if (destroyOnDeath) Destroy(gameObject);
     }
 }

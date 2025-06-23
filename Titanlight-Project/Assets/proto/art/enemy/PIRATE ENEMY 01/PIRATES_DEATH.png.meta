@@ -1,0 +1,1042 @@
+fileFormatVersion: 2
+guid: 8eb2f657ea6c73847bb22821256f8142
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2494740233840711133
+    second: PIRATES_DEATH_0
+  - first:
+      213: 2189140418428642594
+    second: PIRATES_DEATH_1
+  - first:
+      213: 4847707257878442058
+    second: PIRATES_DEATH_2
+  - first:
+      213: -2504944999481732603
+    second: PIRATES_DEATH_3
+  - first:
+      213: -5879793490691155705
+    second: PIRATES_DEATH_4
+  - first:
+      213: 3197044480806348125
+    second: PIRATES_DEATH_5
+  - first:
+      213: -6793565999090032500
+    second: PIRATES_DEATH_6
+  - first:
+      213: 6083397895269743923
+    second: PIRATES_DEATH_7
+  - first:
+      213: 4644482297815055839
+    second: PIRATES_DEATH_8
+  - first:
+      213: -8178171141907652616
+    second: PIRATES_DEATH_9
+  - first:
+      213: -7852194999747823402
+    second: PIRATES_DEATH_10
+  - first:
+      213: 4515587410503604693
+    second: PIRATES_DEATH_11
+  - first:
+      213: 5540855364674234225
+    second: PIRATES_DEATH_12
+  - first:
+      213: 2820084111152403529
+    second: PIRATES_DEATH_13
+  - first:
+      213: -409659724655278974
+    second: PIRATES_DEATH_14
+  - first:
+      213: 8561425710378411604
+    second: PIRATES_DEATH_15
+  - first:
+      213: -7790086655400189857
+    second: PIRATES_DEATH_16
+  - first:
+      213: -1334466162680202285
+    second: PIRATES_DEATH_17
+  - first:
+      213: 9137398218708630147
+    second: PIRATES_DEATH_18
+  - first:
+      213: -2387873630464662436
+    second: PIRATES_DEATH_19
+  - first:
+      213: 3027850522838765239
+    second: PIRATES_DEATH_20
+  - first:
+      213: -8446917720013560851
+    second: PIRATES_DEATH_21
+  - first:
+      213: -2085098680694427748
+    second: PIRATES_DEATH_22
+  - first:
+      213: -9040509167058708576
+    second: PIRATES_DEATH_23
+  - first:
+      213: -3216298684847911801
+    second: PIRATES_DEATH_24
+  - first:
+      213: -6646735648056878659
+    second: PIRATES_DEATH_25
+  - first:
+      213: -7256791321199932005
+    second: PIRATES_DEATH_26
+  - first:
+      213: -4093849229941547107
+    second: PIRATES_DEATH_27
+  - first:
+      213: -4984867148282801226
+    second: PIRATES_DEATH_28
+  - first:
+      213: 1917252765124630930
+    second: PIRATES_DEATH_29
+  - first:
+      213: -5996991770758965415
+    second: PIRATES_DEATH_30
+  - first:
+      213: 7209978017494657102
+    second: PIRATES_DEATH_31
+  - first:
+      213: -6469904798113428688
+    second: PIRATES_DEATH_32
+  - first:
+      213: -3005489556905172303
+    second: PIRATES_DEATH_33
+  - first:
+      213: -1463586300640723615
+    second: PIRATES_DEATH_34
+  - first:
+      213: 3550788733361807244
+    second: PIRATES_DEATH_35
+  - first:
+      213: -862351331005737065
+    second: PIRATES_DEATH_36
+  - first:
+      213: 2117451229096218442
+    second: PIRATES_DEATH_37
+  - first:
+      213: 5748099481881075470
+    second: PIRATES_DEATH_38
+  - first:
+      213: 7617279801244649124
+    second: PIRATES_DEATH_39
+  - first:
+      213: -1566734457605100325
+    second: PIRATES_DEATH_40
+  - first:
+      213: -6915905294508521903
+    second: PIRATES_DEATH_41
+  - first:
+      213: -6509450331785061216
+    second: PIRATES_DEATH_42
+  - first:
+      213: 4796206179086149132
+    second: PIRATES_DEATH_43
+  - first:
+      213: -6738904617721909115
+    second: PIRATES_DEATH_44
+  - first:
+      213: 7311940919226452370
+    second: PIRATES_DEATH_45
+  - first:
+      213: -2189437726116625742
+    second: PIRATES_DEATH_46
+  - first:
+      213: -8567024135857467223
+    second: PIRATES_DEATH_47
+  - first:
+      213: 1883812388573947577
+    second: PIRATES_DEATH_48
+  - first:
+      213: 2288527908331940658
+    second: PIRATES_DEATH_49
+  - first:
+      213: 6081864120559284514
+    second: PIRATES_DEATH_50
+  - first:
+      213: 3109098444380043550
+    second: PIRATES_DEATH_51
+  - first:
+      213: 7779911941526533799
+    second: PIRATES_DEATH_52
+  - first:
+      213: -3574830095988678914
+    second: PIRATES_DEATH_53
+  - first:
+      213: 7783276938067539929
+    second: PIRATES_DEATH_54
+  - first:
+      213: -3129766843666525956
+    second: PIRATES_DEATH_55
+  - first:
+      213: -4132316455560826388
+    second: PIRATES_DEATH_56
+  - first:
+      213: 8045072568464604759
+    second: PIRATES_DEATH_57
+  - first:
+      213: -4816729347608913570
+    second: PIRATES_DEATH_58
+  - first:
+      213: -160278087065212934
+    second: PIRATES_DEATH_59
+  - first:
+      213: 3009442895023617527
+    second: PIRATES_DEATH_60
+  - first:
+      213: 2136371006799562706
+    second: PIRATES_DEATH_61
+  - first:
+      213: -8880957774032829838
+    second: PIRATES_DEATH_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PIRATES_DEATH_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd553f466091f9220800000000000000
+      internalID: 2494740233840711133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225a3ebac93616e10800000000000000
+      internalID: 2189140418428642594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a407de81114864340800000000000000
+      internalID: 4847707257878442058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50210047bc5ac3dd0800000000000000
+      internalID: -2504944999481732603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70913b209f6c66ea0800000000000000
+      internalID: -5879793490691155705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55e591440f2e5c20800000000000000
+      internalID: 3197044480806348125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80211ab7b768b1a0800000000000000
+      internalID: -6793565999090032500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d79ee87229c6450800000000000000
+      internalID: 6083397895269743923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd3bd6da04847040800000000000000
+      internalID: 4644482297815055839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff5e3e1dac418e80800000000000000
+      internalID: -8178171141907652616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8beec1046670390800000000000000
+      internalID: -7852194999747823402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d91b4343d69aae30800000000000000
+      internalID: 4515587410503604693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177a933f89215ec40800000000000000
+      internalID: 5540855364674234225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94456f1ce83f22720800000000000000
+      internalID: 2820084111152403529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2844321a6a8905af0800000000000000
+      internalID: -409659724655278974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456600eb25b40d670800000000000000
+      internalID: 8561425710378411604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f506c57e57d04e390800000000000000
+      internalID: -7790086655400189857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbfaa868160b7de0800000000000000
+      internalID: -1334466162680202285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a3a65944f8ece70800000000000000
+      internalID: 9137398218708630147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54a1a7a5919cded0800000000000000
+      internalID: -2387873630464662436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be09ce1206150a20800000000000000
+      internalID: 3027850522838765239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3a3ab561586ca80800000000000000
+      internalID: -8446917720013560851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9fa2971ccd3013e0800000000000000
+      internalID: -2085098680694427748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a79dccafc8a98280800000000000000
+      internalID: -9040509167058708576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c851603696d53d0800000000000000
+      internalID: -3216298684847911801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9d4add42d02c3a0800000000000000
+      internalID: -6646735648056878659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d8db2ddb2ba4b90800000000000000
+      internalID: -7256791321199932005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9fd355c0d9bf27c0800000000000000
+      internalID: -4093849229941547107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3d6165db132dab0800000000000000
+      internalID: -4984867148282801226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29993e95b337b9a10800000000000000
+      internalID: 1917252765124630930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95798f602c766cca0800000000000000
+      internalID: -5996991770758965415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIRATES_DEATH_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48e42b8eccfe0460800000000000000
+      internalID: 7209978017494657102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 05edcdf1087b4c54ca6a3fc9e70ffcee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PIRATES_DEATH_0: 2494740233840711133
+      PIRATES_DEATH_1: 2189140418428642594
+      PIRATES_DEATH_10: -7852194999747823402
+      PIRATES_DEATH_11: 4515587410503604693
+      PIRATES_DEATH_12: 5540855364674234225
+      PIRATES_DEATH_13: 2820084111152403529
+      PIRATES_DEATH_14: -409659724655278974
+      PIRATES_DEATH_15: 8561425710378411604
+      PIRATES_DEATH_16: -7790086655400189857
+      PIRATES_DEATH_17: -1334466162680202285
+      PIRATES_DEATH_18: 9137398218708630147
+      PIRATES_DEATH_19: -2387873630464662436
+      PIRATES_DEATH_2: 4847707257878442058
+      PIRATES_DEATH_20: 3027850522838765239
+      PIRATES_DEATH_21: -8446917720013560851
+      PIRATES_DEATH_22: -2085098680694427748
+      PIRATES_DEATH_23: -9040509167058708576
+      PIRATES_DEATH_24: -3216298684847911801
+      PIRATES_DEATH_25: -6646735648056878659
+      PIRATES_DEATH_26: -7256791321199932005
+      PIRATES_DEATH_27: -4093849229941547107
+      PIRATES_DEATH_28: -4984867148282801226
+      PIRATES_DEATH_29: 1917252765124630930
+      PIRATES_DEATH_3: -2504944999481732603
+      PIRATES_DEATH_30: -5996991770758965415
+      PIRATES_DEATH_31: 7209978017494657102
+      PIRATES_DEATH_4: -5879793490691155705
+      PIRATES_DEATH_5: 3197044480806348125
+      PIRATES_DEATH_6: -6793565999090032500
+      PIRATES_DEATH_7: 6083397895269743923
+      PIRATES_DEATH_8: 4644482297815055839
+      PIRATES_DEATH_9: -8178171141907652616
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,3 @@
-// MimicChestTurret.cs
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(Health))]
@@ -19,6 +18,7 @@ public class MimicChestTurret : MonoBehaviour
     [SerializeField] private Transform firePointRight1;
     [SerializeField] private Transform firePointRight2;
     [SerializeField] private float fireCooldown = 1f;
+    [SerializeField] private AudioClip laserSound;
 
     [Header("Drop")]
     [SerializeField] private EnemyCoinDrop coinDrop;
@@ -29,6 +29,7 @@ public class MimicChestTurret : MonoBehaviour
     private bool isRevealed, isDead;
     private float fireTimer;
     private int currentBarrel;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -36,6 +37,14 @@ public class MimicChestTurret : MonoBehaviour
         health = GetComponent<Health>();
         health.onDamageTaken.AddListener(_ => animator.SetTrigger("Damage"));
         health.onDeath.AddListener(OnDeath);
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 1f;
+            audioSource.volume = 0.7f;
+        }
     }
 
     void Update()
@@ -54,7 +63,6 @@ public class MimicChestTurret : MonoBehaviour
             return;
         }
 
-        // already revealed
         fireTimer += Time.deltaTime;
         AimAtPlayer();
 
@@ -67,7 +75,10 @@ public class MimicChestTurret : MonoBehaviour
 
     public void LaserSound()
     {
-        SoundManager.PlaySound(SoundType.ENEMYLASER);
+        if (laserSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(laserSound);
+        }
     }
 
     void AimAtPlayer()
@@ -80,7 +91,6 @@ public class MimicChestTurret : MonoBehaviour
         animator.SetFloat("Vertical", y);
     }
 
-    // Called by two Animation Events in your shooting clip:
     public void Fire1() => FireFromBarrel(1);
     public void Fire2()
     {
@@ -91,29 +101,34 @@ public class MimicChestTurret : MonoBehaviour
     void FireFromBarrel(int barrel)
     {
         if (isDead || player == null) return;
-        // pick the correct firePoint based on animator values and barrel index
+
         float x = animator.GetFloat("Horizontal"), y = animator.GetFloat("Vertical");
         Transform fp = null;
+
         if (y > 0) fp = barrel == 1 ? firePointUp1 : firePointUp2;
         else if (y < 0) fp = barrel == 1 ? firePointDown1 : firePointDown2;
         else if (x > 0) fp = barrel == 1 ? firePointRight1 : firePointRight2;
         else if (x < 0) fp = barrel == 1 ? firePointLeft1 : firePointLeft2;
 
         if (fp == null || projectilePrefab == null) return;
+
         var projGO = Instantiate(projectilePrefab, fp.position, Quaternion.identity);
         if (projGO.TryGetComponent<BulletOfTurret>(out var b))
-            b.SetDirection(new Vector2(x, y));
+            b.direction = new Vector2(x, y).normalized; 
     }
 
     void OnDeath()
     {
         isDead = true;
         animator.SetTrigger("Die");
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().simulated = false;
+
+        var collider = GetComponent<Collider2D>();
+        if (collider != null) collider.enabled = false;
+
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.simulated = false;
     }
 
-    // Animation Event on last frame of death clip
     public void DestroySelf()
     {
         if (coinDrop != null) coinDrop.DropItems();

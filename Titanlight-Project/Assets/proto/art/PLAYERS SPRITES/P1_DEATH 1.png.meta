@@ -1,0 +1,1721 @@
+fileFormatVersion: 2
+guid: a7eddf166d1ac114b8f9ab20ed133ae5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4107745630102447850
+    second: P1_DEATH 1_0
+  - first:
+      213: -3473553782311344236
+    second: P1_DEATH 1_1
+  - first:
+      213: -441157126070794620
+    second: P1_DEATH 1_2
+  - first:
+      213: -8633010362629666353
+    second: P1_DEATH 1_3
+  - first:
+      213: 2980010982731089076
+    second: P1_DEATH 1_4
+  - first:
+      213: 5649200596417913110
+    second: P1_DEATH 1_5
+  - first:
+      213: -8301446033048028999
+    second: P1_DEATH 1_6
+  - first:
+      213: 6238863932993818494
+    second: P1_DEATH 1_7
+  - first:
+      213: 5756207702467947685
+    second: P1_DEATH 1_8
+  - first:
+      213: -7291384932372085572
+    second: P1_DEATH 1_9
+  - first:
+      213: 25007642513690728
+    second: P1_DEATH 1_10
+  - first:
+      213: -5069123194641962235
+    second: P1_DEATH 1_11
+  - first:
+      213: 1749603121220732000
+    second: P1_DEATH 1_12
+  - first:
+      213: 753251627422591523
+    second: P1_DEATH 1_13
+  - first:
+      213: -4484214983516417615
+    second: P1_DEATH 1_14
+  - first:
+      213: -4262443194034898982
+    second: P1_DEATH 1_15
+  - first:
+      213: -477811129624968394
+    second: P1_DEATH 1_16
+  - first:
+      213: -540656512869383787
+    second: P1_DEATH 1_17
+  - first:
+      213: -172754195633174352
+    second: P1_DEATH 1_18
+  - first:
+      213: -2944604063388133585
+    second: P1_DEATH 1_19
+  - first:
+      213: 6727166382490570593
+    second: P1_DEATH 1_20
+  - first:
+      213: 8913908688565247392
+    second: P1_DEATH 1_21
+  - first:
+      213: -593022446163749880
+    second: P1_DEATH 1_22
+  - first:
+      213: 2463331324894763116
+    second: P1_DEATH 1_23
+  - first:
+      213: 7224367799682458385
+    second: P1_DEATH 1_24
+  - first:
+      213: 923490551432757126
+    second: P1_DEATH 1_25
+  - first:
+      213: 5580002948509818877
+    second: P1_DEATH 1_26
+  - first:
+      213: 2062973037576017984
+    second: P1_DEATH 1_27
+  - first:
+      213: -1812030737616982265
+    second: P1_DEATH 1_28
+  - first:
+      213: -1230540033876445817
+    second: P1_DEATH 1_29
+  - first:
+      213: -5943619599392382044
+    second: P1_DEATH 1_30
+  - first:
+      213: 5432774714555675887
+    second: P1_DEATH 1_31
+  - first:
+      213: -6427475534542109003
+    second: P1_DEATH 1_32
+  - first:
+      213: -5780045435790894583
+    second: P1_DEATH 1_33
+  - first:
+      213: 6777361096139163618
+    second: P1_DEATH 1_34
+  - first:
+      213: 6643941391577957574
+    second: P1_DEATH 1_35
+  - first:
+      213: -8271288090912749875
+    second: P1_DEATH 1_36
+  - first:
+      213: 6777114003320573533
+    second: P1_DEATH 1_37
+  - first:
+      213: -2156720847978999675
+    second: P1_DEATH 1_38
+  - first:
+      213: 1350955176117893010
+    second: P1_DEATH 1_39
+  - first:
+      213: -4516687036218496376
+    second: P1_DEATH 1_40
+  - first:
+      213: -382623521388161101
+    second: P1_DEATH 1_41
+  - first:
+      213: -4878301435320802019
+    second: P1_DEATH 1_42
+  - first:
+      213: -945309057326936458
+    second: P1_DEATH 1_43
+  - first:
+      213: 1486528102086630770
+    second: P1_DEATH 1_44
+  - first:
+      213: 69877617710906919
+    second: P1_DEATH 1_45
+  - first:
+      213: -6176171802423293592
+    second: P1_DEATH 1_46
+  - first:
+      213: -8623876494120744401
+    second: P1_DEATH 1_47
+  - first:
+      213: -5545944823937825403
+    second: P1_DEATH 1_48
+  - first:
+      213: -8945570877437227519
+    second: P1_DEATH 1_49
+  - first:
+      213: -4614079543077508798
+    second: P1_DEATH 1_50
+  - first:
+      213: -9010149164091014630
+    second: P1_DEATH 1_51
+  - first:
+      213: -4377307061530046008
+    second: P1_DEATH 1_52
+  - first:
+      213: -2656314648286451669
+    second: P1_DEATH 1_53
+  - first:
+      213: 5605561107889476778
+    second: P1_DEATH 1_54
+  - first:
+      213: -5342230964226863641
+    second: P1_DEATH 1_55
+  - first:
+      213: 7885939715349798158
+    second: P1_DEATH 1_56
+  - first:
+      213: 1893234795503427192
+    second: P1_DEATH 1_57
+  - first:
+      213: 1349857395098530786
+    second: P1_DEATH 1_58
+  - first:
+      213: 5262068120569672903
+    second: P1_DEATH 1_59
+  - first:
+      213: 53508152925472651
+    second: P1_DEATH 1_60
+  - first:
+      213: -1224455319650217162
+    second: P1_DEATH 1_61
+  - first:
+      213: 347009708371617342
+    second: P1_DEATH 1_62
+  - first:
+      213: 1130156171639523027
+    second: P1_DEATH 1_63
+  - first:
+      213: 3856940290783685621
+    second: P1_DEATH 1_64
+  - first:
+      213: 1689350105811575551
+    second: P1_DEATH 1_65
+  - first:
+      213: -8929282331151227196
+    second: P1_DEATH 1_66
+  - first:
+      213: 1990166395172725233
+    second: P1_DEATH 1_67
+  - first:
+      213: -1382856072585625286
+    second: P1_DEATH 1_68
+  - first:
+      213: 8365319490258891026
+    second: P1_DEATH 1_69
+  - first:
+      213: 8814220386494573078
+    second: P1_DEATH 1_70
+  - first:
+      213: -1883593353454063131
+    second: P1_DEATH 1_71
+  - first:
+      213: 4923108341851335176
+    second: P1_DEATH 1_72
+  - first:
+      213: -614912337328576183
+    second: P1_DEATH 1_73
+  - first:
+      213: 1783671318268411620
+    second: P1_DEATH 1_74
+  - first:
+      213: 2997849422809220146
+    second: P1_DEATH 1_75
+  - first:
+      213: -5281465732087108632
+    second: P1_DEATH 1_76
+  - first:
+      213: -1206321899177325374
+    second: P1_DEATH 1_77
+  - first:
+      213: -2860550266555752412
+    second: P1_DEATH 1_78
+  - first:
+      213: -133295959204335814
+    second: P1_DEATH 1_79
+  - first:
+      213: -8336085853449997404
+    second: P1_DEATH 1_80
+  - first:
+      213: -1609017622574562688
+    second: P1_DEATH 1_81
+  - first:
+      213: -2745467068281741635
+    second: P1_DEATH 1_82
+  - first:
+      213: -3094860513046540456
+    second: P1_DEATH 1_83
+  - first:
+      213: 6380490449912374690
+    second: P1_DEATH 1_84
+  - first:
+      213: 8970927884557635455
+    second: P1_DEATH 1_85
+  - first:
+      213: 2118024343227733436
+    second: P1_DEATH 1_86
+  - first:
+      213: 5294434299364596203
+    second: P1_DEATH 1_87
+  - first:
+      213: -1408898227276039639
+    second: P1_DEATH 1_88
+  - first:
+      213: 3224544507457549870
+    second: P1_DEATH 1_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1_DEATH 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae66be503e4a10930800000000000000
+      internalID: 4107745630102447850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4972e191d357bcfc0800000000000000
+      internalID: -3473553782311344236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4860b626ee1b0e9f0800000000000000
+      internalID: -441157126070794620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9413990d2613880800000000000000
+      internalID: -8633010362629666353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4037433302b5920800000000000000
+      internalID: 2980010982731089076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6112a6ef20ef56e40800000000000000
+      internalID: 5649200596417913110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8b81ed0d65bcc80800000000000000
+      internalID: -8301446033048028999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7fc71031b5e49650800000000000000
+      internalID: 6238863932993818494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac28fe586822ef40800000000000000
+      internalID: 5756207702467947685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb48351190ccfca90800000000000000
+      internalID: -7291384932372085572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860d2b08158d85000800000000000000
+      internalID: 25007642513690728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b2ca4df4bd6a9b0800000000000000
+      internalID: -5069123194641962235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064c64ad4c6d74810800000000000000
+      internalID: 1749603121220732000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 192
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a220f3d56147a00800000000000000
+      internalID: 753251627422591523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1150b1b3ed4c1c0800000000000000
+      internalID: -4484214983516417615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7b4489f72c8d4c0800000000000000
+      internalID: -4262443194034898982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633c9f42f497e59f0800000000000000
+      internalID: -477811129624968394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_17
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5914bec14c33f78f0800000000000000
+      internalID: -540656512869383787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b883df69f04a9df0800000000000000
+      internalID: -172754195633174352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_19
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27149d943aa227d0800000000000000
+      internalID: -2944604063388133585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fcc4dce22bb5d50800000000000000
+      internalID: 6727166382490570593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad133e69b094bb70800000000000000
+      internalID: 8913908688565247392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80493982a3925c7f0800000000000000
+      internalID: -593022446163749880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_23
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c68d178e9c28f2220800000000000000
+      internalID: 2463331324894763116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113e7dacc3c124460800000000000000
+      internalID: 7224367799682458385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_25
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f349f73c5e0dc00800000000000000
+      internalID: 923490551432757126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_26
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff5f871e17207d40800000000000000
+      internalID: 5580002948509818877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_27
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 128
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0485ded2c0721ac10800000000000000
+      internalID: 2062973037576017984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f204a05af5ad6e0800000000000000
+      internalID: -1812030737616982265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785b5eedb5e3ceee0800000000000000
+      internalID: -1230540033876445817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3ea2a0775048da0800000000000000
+      internalID: -5943619599392382044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4b0dd91d7156b40800000000000000
+      internalID: 5432774714555675887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_32
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b68a193e050dc6a0800000000000000
+      internalID: -6427475534542109003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_33
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ad016dc4729cfa0800000000000000
+      internalID: -5780045435790894583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_34
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e74de942060e0e50800000000000000
+      internalID: 6777361096139163618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_35
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4c4899e75043c50800000000000000
+      internalID: 6643941391577957574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_36
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc60a32fd4b763d80800000000000000
+      internalID: -8271288090912749875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_37
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e8f3287452d0e50800000000000000
+      internalID: 6777114003320573533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_38
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5805888c0d9c112e0800000000000000
+      internalID: -2156720847978999675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_39
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2977bf3339e8fb210800000000000000
+      internalID: 1350955176117893010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_40
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88aa59c22118151c0800000000000000
+      internalID: -4516687036218496376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_41
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b713fc3fe5a0baf0800000000000000
+      internalID: -382623521388161101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_42
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 64
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15ec60e0bacc4cb0800000000000000
+      internalID: -4878301435320802019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e811bbb6691e2f0800000000000000
+      internalID: -945309057326936458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d5281de6531a410800000000000000
+      internalID: 1486528102086630770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_45
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72eb865b25148f000800000000000000
+      internalID: 69877617710906919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86986cce774d94aa0800000000000000
+      internalID: -6176171802423293592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_47
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a87151506d15880800000000000000
+      internalID: -8623876494120744401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_48
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5850549f098d803b0800000000000000
+      internalID: -5545944823937825403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_49
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e4641cea2fad380800000000000000
+      internalID: -8945570877437227519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_50
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249e77d1a1f77ffb0800000000000000
+      internalID: -4614079543077508798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_51
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a128215b21585f280800000000000000
+      internalID: -9010149164091014630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_52
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c151b46b6ea043c0800000000000000
+      internalID: -4377307061530046008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_53
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b282831b6efd22bd0800000000000000
+      internalID: -2656314648286451669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_54
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6109e15a590b528418419ec38697b6ad
+      internalID: 5605561107889476778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_55
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f0333fb5e30d2458f50970fa1a377b
+      internalID: -5342230964226863641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_56
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f981d45ad6168144a88d87c9633c682f
+      internalID: 7885939715349798158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1_DEATH 1_57
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c248dd78016c9334997b476a6b5c1c93
+      internalID: 1893234795503427192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42175c4a774d6c945826af3cfe04e1e7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      P1_DEATH 1_0: 4107745630102447850
+      P1_DEATH 1_1: -3473553782311344236
+      P1_DEATH 1_10: 25007642513690728
+      P1_DEATH 1_11: -5069123194641962235
+      P1_DEATH 1_12: 1749603121220732000
+      P1_DEATH 1_13: 753251627422591523
+      P1_DEATH 1_14: -4484214983516417615
+      P1_DEATH 1_15: -4262443194034898982
+      P1_DEATH 1_16: -477811129624968394
+      P1_DEATH 1_17: -540656512869383787
+      P1_DEATH 1_18: -172754195633174352
+      P1_DEATH 1_19: -2944604063388133585
+      P1_DEATH 1_2: -441157126070794620
+      P1_DEATH 1_20: 6727166382490570593
+      P1_DEATH 1_21: 8913908688565247392
+      P1_DEATH 1_22: -593022446163749880
+      P1_DEATH 1_23: 2463331324894763116
+      P1_DEATH 1_24: 7224367799682458385
+      P1_DEATH 1_25: 923490551432757126
+      P1_DEATH 1_26: 5580002948509818877
+      P1_DEATH 1_27: 2062973037576017984
+      P1_DEATH 1_28: -1812030737616982265
+      P1_DEATH 1_29: -1230540033876445817
+      P1_DEATH 1_3: -8633010362629666353
+      P1_DEATH 1_30: -5943619599392382044
+      P1_DEATH 1_31: 5432774714555675887
+      P1_DEATH 1_32: -6427475534542109003
+      P1_DEATH 1_33: -5780045435790894583
+      P1_DEATH 1_34: 6777361096139163618
+      P1_DEATH 1_35: 6643941391577957574
+      P1_DEATH 1_36: -8271288090912749875
+      P1_DEATH 1_37: 6777114003320573533
+      P1_DEATH 1_38: -2156720847978999675
+      P1_DEATH 1_39: 1350955176117893010
+      P1_DEATH 1_4: 2980010982731089076
+      P1_DEATH 1_40: -4516687036218496376
+      P1_DEATH 1_41: -382623521388161101
+      P1_DEATH 1_42: -4878301435320802019
+      P1_DEATH 1_43: -945309057326936458
+      P1_DEATH 1_44: 1486528102086630770
+      P1_DEATH 1_45: 69877617710906919
+      P1_DEATH 1_46: -6176171802423293592
+      P1_DEATH 1_47: -8623876494120744401
+      P1_DEATH 1_48: -5545944823937825403
+      P1_DEATH 1_49: -8945570877437227519
+      P1_DEATH 1_5: 5649200596417913110
+      P1_DEATH 1_50: -4614079543077508798
+      P1_DEATH 1_51: -9010149164091014630
+      P1_DEATH 1_52: -4377307061530046008
+      P1_DEATH 1_53: -2656314648286451669
+      P1_DEATH 1_54: 5605561107889476778
+      P1_DEATH 1_55: -5342230964226863641
+      P1_DEATH 1_56: 7885939715349798158
+      P1_DEATH 1_57: 1893234795503427192
+      P1_DEATH 1_6: -8301446033048028999
+      P1_DEATH 1_7: 6238863932993818494
+      P1_DEATH 1_8: 5756207702467947685
+      P1_DEATH 1_9: -7291384932372085572
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
