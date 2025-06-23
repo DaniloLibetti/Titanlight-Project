@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7061562372304893053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PP1
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5397393729692683797}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PP2
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -206,6 +206,9 @@ MonoBehaviour:
   lockChance: 0.707
   doorShader: {fileID: -6465566751694194690, guid: 3b89b82ad94c3a8488837985ccaca545, type: 3}
   promptText: {fileID: 0}
+  sharedState:
+    requiresTwoPlayers: 1
+    isOpen: 0
   pairingRadius: 1.5
 --- !u!61 &575949287773275082
 BoxCollider2D:

@@ -12,7 +12,7 @@ public class HoleTrigger : MonoBehaviour
     public float damage = 20f;
 
     [Header("Hole Detection")]
-    public LayerMask holeLayerMask; // Deve incluir a layer HoleFloor
+    public LayerMask holeLayerMask;
 
     public bool IsFalling { get; private set; }
 

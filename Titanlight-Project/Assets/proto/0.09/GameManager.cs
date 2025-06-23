@@ -169,6 +169,13 @@ public class GameManager : Singleton<GameManager>
     [Header("Run Summary")]
     public RunSummary runSummary;
 
+    [Header("Player Settings")]
+    [Tooltip("Player index (1 or 2)")]
+    public int playerIndex = 1;
+
+    [SerializeField] private GameObject healthBarObject1;
+    [SerializeField] private GameObject healthBarObject2;
+
     public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
     public int ScriptableObjectCount => _collectedItems;
 
@@ -350,6 +357,7 @@ public class GameManager : Singleton<GameManager>
         _remainingPlayers = IsMultiplayer ? 2 : 1;
         EnsurePlayerManagerExists();
         SpawnPlayers();
+        ShowBar();
 
         // RESETA valores da run
         _collectedItems = 0;
@@ -581,7 +589,7 @@ public class GameManager : Singleton<GameManager>
         // Atualiza requisitos das portas IMEDIATAMENTE
         UpdateDoorRequirements();
 
-        if (_remainingPlayers <= 0)
+        if (_remainingPlayers >= 0)
         {
             _isRunEnding = true;
             _victoryEnding = false;
@@ -604,12 +612,40 @@ public class GameManager : Singleton<GameManager>
 
         SaveGame();
         if (timerCanvas != null) timerCanvas.SetActive(false);
+        HideBar();
     }
 
     private void StartAuction()
     {
         // Este método não é mais necessário, mantido para compatibilidade
         // A lógica de leilão agora é tratada pelo RunSummary
+    }
+
+    private void ShowBar()
+    {
+        if (healthBarObject1 != null & !isMultiplayer)
+        {
+            healthBarObject1.SetActive(true);
+        }
+        else
+        {
+            healthBarObject1.SetActive(true);    
+            healthBarObject2.SetActive(true);
+
+        }
+    }
+
+    private void HideBar()
+    {
+        if (healthBarObject1 != null & !isMultiplayer)
+        {
+            healthBarObject1.SetActive(false);
+        }
+        else
+        {
+            healthBarObject1.SetActive(true);
+            healthBarObject2.SetActive(true);
+        }
     }
 
     private void OnVictoryToAuction()

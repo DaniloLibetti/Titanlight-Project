@@ -5552,7 +5552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544501638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6654,10 +6654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d9f84fd1406b640af6f841fd7a9c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
-  barRect: {fileID: 0}
-  mask: {fileID: 0}
-  healthBarObject: {fileID: 0}
+  playerIndex: 2
+  barRect: {fileID: 220977052}
+  mask: {fileID: 442622154}
+  healthBarObject: {fileID: 629236242}
 --- !u!1 &635444644
 GameObject:
   m_ObjectHideFlags: 0
@@ -9087,7 +9087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f27c8d9b08a65744a62efa04a6b1858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 5
+  startTime: 300
   timerText: {fileID: 70923439}
   Invasion:
     m_PersistentCalls:
@@ -9117,19 +9117,22 @@ MonoBehaviour:
   roomOptions:
   - roomName: normal 01
     roomPrefab: {fileID: 1591430054707244790, guid: fb1aca5380ed2fb44bbc371bf76dad52, type: 3}
-    spawnChance: 32
+    spawnChance: 0
   - roomName: normal 02
     roomPrefab: {fileID: 1591430054707244790, guid: 10dbc1792962f11418ea0f0e86cc6647, type: 3}
-    spawnChance: 18
+    spawnChance: 0
   - roomName: normal 03
     roomPrefab: {fileID: 1591430054707244790, guid: 3005141875532ee4a8851f4093fe8080, type: 3}
-    spawnChance: 22
+    spawnChance: 0
   - roomName: normal 04
     roomPrefab: {fileID: 1591430054707244790, guid: cddabf08e6808a6458818227af12192f, type: 3}
-    spawnChance: 28
+    spawnChance: 0
   - roomName: normal 05
     roomPrefab: {fileID: 1591430054707244790, guid: e456dcc67418b1248a562180876e7375, type: 3}
-    spawnChance: 28
+    spawnChance: 0
+  - roomName: gambiarar
+    roomPrefab: {fileID: 1591430054707244790, guid: 10dbc1792962f11418ea0f0e86cc6647, type: 3}
+    spawnChance: 100
   customizationCanvas: {fileID: 1859575847}
   player1Canvas: {fileID: 985877357}
   player2Canvas: {fileID: 309639379}
@@ -9158,6 +9161,9 @@ MonoBehaviour:
   initialPirateGroupSize: 2
   pirateTimer: {fileID: 967779389}
   runSummary: {fileID: 210431925}
+  playerIndex: 1
+  healthBarObject1: {fileID: 544501637}
+  healthBarObject2: {fileID: 629236242}
   timerCanvas: {fileID: 545289153}
   moneyTexts:
   - {fileID: 221407110}

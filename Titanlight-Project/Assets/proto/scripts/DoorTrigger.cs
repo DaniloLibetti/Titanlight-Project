@@ -2,6 +2,7 @@
 using TMPro;
 using Player.StateMachine;
 using System.Collections.Generic;
+using DungeonSystem;
 
 public enum DoorDirection { Up, Down, Left, Right }
 
@@ -75,6 +76,7 @@ public class DoorTrigger : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void Start()
     {
         if (timer == null)
@@ -260,14 +262,16 @@ public class DoorTrigger : MonoBehaviour
         }
     }
 
-    private DoorDirection GetOppositeDirection(DoorDirection dir) => dir switch
+    private DoorDirection GetOppositeDirection(DoorDirection dir)
     {
-        DoorDirection.Up => DoorDirection.Down,
-        DoorDirection.Down => DoorDirection.Up,
-        DoorDirection.Left => DoorDirection.Right,
-        DoorDirection.Right => DoorDirection.Left,
-        _ => DoorDirection.Up,
-    };
+        return dir switch
+        {
+            DoorDirection.Up => DoorDirection.Down,
+            DoorDirection.Down => DoorDirection.Up,
+            DoorDirection.Left => DoorDirection.Right,
+            DoorDirection.Right => DoorDirection.Left,
+        };
+    }
 
     public void UnlockDoor()
     {
