@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Player.StateMachine;
+using DungeonSystem;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
@@ -102,7 +103,7 @@ public class PlayerManager : Singleton<PlayerManager>
         }
 
         Player1 = Instantiate(player1Prefab, position, Quaternion.identity);
-        Player1.tag = "Player";
+        Player1.tag = "player 1";
         Debug.Log($"[PlayerManager] Player1 spawned at {position}");
 
         AddDestructionProtection(Player1);
@@ -120,7 +121,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
         Vector3 player2Position = FindSafeSpawnPosition(basePosition);
         Player2 = Instantiate(player2Prefab, player2Position, Quaternion.identity);
-        Player2.tag = "Player";
+        Player2.tag = "player 2";
         Debug.Log($"[PlayerManager] Player2 spawned at SAFE POSITION: {player2Position}");
 
         AddDestructionProtection(Player2);
@@ -392,6 +393,20 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         if (Player1 != null) Player1.transform.position = position;
         if (Player2 != null) Player2.transform.position = position;
+    }
+
+    // Método público para registrar jogadores (resolvendo o erro de acesso)
+    public void RegisterPlayer(GameObject player, int playerIndex)
+    {
+        if (playerIndex == 1)
+        {
+            Player1 = player;
+        }
+        else if (playerIndex == 2)
+        {
+            Player2 = player;
+        }
+        Debug.Log($"[PlayerManager] Player {playerIndex} registered: {player.name}");
     }
 }
 

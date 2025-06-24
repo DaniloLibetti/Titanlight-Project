@@ -34,12 +34,6 @@ public class Room : MonoBehaviour
 
     private List<GameObject> spawnedChests = new List<GameObject>();
 
-    [Header("Door Spawn Positions")]
-    public Transform doorUpSpawn;
-    public Transform doorDownSpawn;
-    public Transform doorLeftSpawn;
-    public Transform doorRightSpawn;
-
     [Header("Collider da Sala")]
     [SerializeField] public Collider2D roomCollider;
 
@@ -72,6 +66,10 @@ public class Room : MonoBehaviour
         if (trigger != null)
         {
             trigger.direction = direction;
+
+            // Configuração simplificada - pontos de spawn já devem estar no prefab
+            Debug.Log($"Porta {direction} na sala {RoomCoord} ativada com spawn points: " +
+                      $"P1: {trigger.player1SpawnPoint}, P2: {trigger.player2SpawnPoint}");
         }
 
         GameManager.Instance.RegisterDoor(RoomCoord, direction);
@@ -168,7 +166,7 @@ public class Room : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player 1") || other.CompareTag("player 2"))
         {
             SetEnemiesActive(true);
             foreach (GameObject chest in spawnedChests)
@@ -180,7 +178,7 @@ public class Room : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player 1") || other.CompareTag("player 2"))
         {
             SetEnemiesActive(false);
             foreach (GameObject chest in spawnedChests)
@@ -221,19 +219,11 @@ public class Room : MonoBehaviour
 
     private Vector3 GetDoorSpawnPosition(DoorDirection dir)
     {
-        switch (dir)
-        {
-            case DoorDirection.Up:
-                return doorUpSpawn != null ? doorUpSpawn.position : transform.position;
-            case DoorDirection.Down:
-                return doorDownSpawn != null ? doorDownSpawn.position : transform.position;
-            case DoorDirection.Left:
-                return doorLeftSpawn != null ? doorLeftSpawn.position : transform.position;
-            case DoorDirection.Right:
-                return doorRightSpawn != null ? doorRightSpawn.position : transform.position;
-            default:
-                return GetPlayerSpawnPoint();
-        }
+        DoorTrigger door = GetDoorTrigger(dir);
+        if (door != null && door.player1SpawnPoint != null)
+            return door.player1SpawnPoint.position;
+
+        return GetPlayerSpawnPoint();
     }
 
     public Vector3 GetRandomPositionInRoom()

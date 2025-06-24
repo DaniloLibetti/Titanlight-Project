@@ -74,29 +74,99 @@ public class GameManager : Singleton<GameManager>
 
     private void PairDoors()
     {
-        foreach (var kv in _rooms)
+        // Pareamento bidirecional entre portas adjacentes
+        foreach (var coord in _rooms.Keys)
         {
-            var coord = kv.Key;
-            var room = kv.Value;
-            TryPair(room, coord, DoorDirection.Up, Vector2Int.up, DoorDirection.Down);
-            TryPair(room, coord, DoorDirection.Right, Vector2Int.right, DoorDirection.Left);
-            TryPair(room, coord, DoorDirection.Down, Vector2Int.down, DoorDirection.Up);
-            TryPair(room, coord, DoorDirection.Left, Vector2Int.left, DoorDirection.Right);
-        }
-    }
+            Room room = _rooms[coord];
 
-    private void TryPair(Room room, Vector2Int coord, DoorDirection dir, Vector2Int offset, DoorDirection opposite)
-    {
-        var d = room.GetDoorTrigger(dir);
-        var nr = GetRoom(coord + offset);
-        if (d == null || nr == null) return;
-        var nd = nr.GetDoorTrigger(opposite);
-        if (nd == null) return;
-        d.pairedDoor = nd;
-        nd.pairedDoor = d;
-        var state = GetDoorState(coord, dir);
-        d.sharedState = state;
-        nd.sharedState = state;
+            // Pareamento porta UP
+            if (room.GetDoorTrigger(DoorDirection.Up) != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.up;
+                if (_rooms.TryGetValue(neighborCoord, out Room neighborRoom))
+                {
+                    DoorTrigger neighborDoor = neighborRoom.GetDoorTrigger(DoorDirection.Down);
+                    if (neighborDoor != null)
+                    {
+                        room.GetDoorTrigger(DoorDirection.Up).pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = room.GetDoorTrigger(DoorDirection.Up);
+
+                        // Inicializa com estado compartilhado
+                        DoorState sharedState = GetDoorState(coord, DoorDirection.Up);
+                        room.GetDoorTrigger(DoorDirection.Up).Initialize(sharedState);
+                        neighborDoor.Initialize(sharedState);
+
+                        Debug.Log($"Portas pareadas: {coord} (Up) com {neighborCoord} (Down)");
+                    }
+                }
+            }
+
+            // Pareamento porta RIGHT
+            if (room.GetDoorTrigger(DoorDirection.Right) != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.right;
+                if (_rooms.TryGetValue(neighborCoord, out Room neighborRoom))
+                {
+                    DoorTrigger neighborDoor = neighborRoom.GetDoorTrigger(DoorDirection.Left);
+                    if (neighborDoor != null)
+                    {
+                        room.GetDoorTrigger(DoorDirection.Right).pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = room.GetDoorTrigger(DoorDirection.Right);
+
+                        // Inicializa com estado compartilhado
+                        DoorState sharedState = GetDoorState(coord, DoorDirection.Right);
+                        room.GetDoorTrigger(DoorDirection.Right).Initialize(sharedState);
+                        neighborDoor.Initialize(sharedState);
+
+                        Debug.Log($"Portas pareadas: {coord} (Right) com {neighborCoord} (Left)");
+                    }
+                }
+            }
+
+            // Pareamento porta DOWN
+            if (room.GetDoorTrigger(DoorDirection.Down) != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.down;
+                if (_rooms.TryGetValue(neighborCoord, out Room neighborRoom))
+                {
+                    DoorTrigger neighborDoor = neighborRoom.GetDoorTrigger(DoorDirection.Up);
+                    if (neighborDoor != null)
+                    {
+                        room.GetDoorTrigger(DoorDirection.Down).pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = room.GetDoorTrigger(DoorDirection.Down);
+
+                        // Inicializa com estado compartilhado
+                        DoorState sharedState = GetDoorState(coord, DoorDirection.Down);
+                        room.GetDoorTrigger(DoorDirection.Down).Initialize(sharedState);
+                        neighborDoor.Initialize(sharedState);
+
+                        Debug.Log($"Portas pareadas: {coord} (Down) com {neighborCoord} (Up)");
+                    }
+                }
+            }
+
+            // Pareamento porta LEFT
+            if (room.GetDoorTrigger(DoorDirection.Left) != null)
+            {
+                Vector2Int neighborCoord = coord + Vector2Int.left;
+                if (_rooms.TryGetValue(neighborCoord, out Room neighborRoom))
+                {
+                    DoorTrigger neighborDoor = neighborRoom.GetDoorTrigger(DoorDirection.Right);
+                    if (neighborDoor != null)
+                    {
+                        room.GetDoorTrigger(DoorDirection.Left).pairedDoor = neighborDoor;
+                        neighborDoor.pairedDoor = room.GetDoorTrigger(DoorDirection.Left);
+
+                        // Inicializa com estado compartilhado
+                        DoorState sharedState = GetDoorState(coord, DoorDirection.Left);
+                        room.GetDoorTrigger(DoorDirection.Left).Initialize(sharedState);
+                        neighborDoor.Initialize(sharedState);
+
+                        Debug.Log($"Portas pareadas: {coord} (Left) com {neighborCoord} (Right)");
+                    }
+                }
+            }
+        }
     }
 
     public bool IsDoorAccessible(Vector2Int coord, DoorDirection dir) => _doors.ContainsKey(coord) && _doors[coord].Contains(dir);
@@ -170,11 +240,13 @@ public class GameManager : Singleton<GameManager>
     public RunSummary runSummary;
 
     [Header("Player Settings")]
-    [Tooltip("Player index (1 or 2)")]
+    [Tooltip("player index (1 or 2)")]
     public int playerIndex = 1;
 
     [SerializeField] private GameObject healthBarObject1;
     [SerializeField] private GameObject healthBarObject2;
+
+    [SerializeField] private string startSceneName = "MainMenu";
 
     public Vector2Int GetCurrentRoomCoord() => _currentRoomCoord;
     public int ScriptableObjectCount => _collectedItems;
@@ -343,6 +415,13 @@ public class GameManager : Singleton<GameManager>
     #region Run Flow
     private void BeginRun() => StartRun();
 
+    public void LoadStartScene()
+    {
+        MusicaManager.BackToMenu();
+        SceneManager.LoadScene(startSceneName);
+    }
+
+
     public void StartRun()
     {
         customizationCanvas?.SetActive(false);
@@ -352,7 +431,7 @@ public class GameManager : Singleton<GameManager>
         CleanupPreviousRun();
         SetupGrid();
         GenerateWorld();
-        PairDoors();
+        PairDoors(); // Pareamento feito APÓS gerar todas as salas
         SetCurrentRoom(_initialRoomCoord, DoorDirection.Up);
         _remainingPlayers = IsMultiplayer ? 2 : 1;
         EnsurePlayerManagerExists();
@@ -590,7 +669,7 @@ public class GameManager : Singleton<GameManager>
         // Atualiza requisitos das portas IMEDIATAMENTE
         UpdateDoorRequirements();
 
-        if (_remainingPlayers >= 0)
+        if (_remainingPlayers <= 0)
         {
             _isRunEnding = true;
             _victoryEnding = false;
@@ -607,46 +686,32 @@ public class GameManager : Singleton<GameManager>
         if (_victoryEnding && victoryPanel != null)
         {
             victoryPanel.SetActive(true);
-            // Não chamamos StartAuction aqui, pois agora o botão de vitória vai chamar o RunSummary
         }
         else if (defeatPanel != null) defeatPanel.SetActive(true);
 
         SaveGame();
         if (timerCanvas != null) timerCanvas.SetActive(false);
         HideBar();
-    }
 
-    private void StartAuction()
-    {
-        // Este método não é mais necessário, mantido para compatibilidade
-        // A lógica de leilão agora é tratada pelo RunSummary
     }
 
     private void ShowBar()
     {
-        if (healthBarObject1 != null & !isMultiplayer)
+        if (healthBarObject1 != null && !isMultiplayer)
         {
             healthBarObject1.SetActive(true);
         }
-        else
+        else if (isMultiplayer)
         {
-            healthBarObject1.SetActive(true);    
-            healthBarObject2.SetActive(true);
-
+            if (healthBarObject1 != null) healthBarObject1.SetActive(true);
+            if (healthBarObject2 != null) healthBarObject2.SetActive(true);
         }
     }
 
     private void HideBar()
     {
-        if (healthBarObject1 != null & !isMultiplayer)
-        {
-            healthBarObject1.SetActive(false);
-        }
-        else
-        {
-            healthBarObject1.SetActive(false);
-            healthBarObject2.SetActive(false);
-        }
+        if (healthBarObject1 != null) healthBarObject1.SetActive(false);
+        if (healthBarObject2 != null) healthBarObject2.SetActive(false);
     }
 
     private void OnVictoryToAuction()
@@ -654,7 +719,6 @@ public class GameManager : Singleton<GameManager>
         runEndCanvas?.SetActive(false);
         victoryPanel?.SetActive(false);
 
-        // Ativa o RunSummary para mostrar as ofertas baseadas nos itens coletados
         if (runSummary != null)
         {
             runSummary.ShowSummary();
@@ -671,7 +735,6 @@ public class GameManager : Singleton<GameManager>
         defeatPanel?.SetActive(false);
         customizationCanvas?.SetActive(true);
 
-        // Reposiciona a câmera no moonbox
         if (slotMoonbox != null && Camera.main != null)
         {
             Camera.main.transform.position = slotMoonbox.position + Vector3.back * 10f;

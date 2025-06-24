@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: ad48d87250a34e14ba4c65d05ac024e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7562106087382386332
+    second: CONTROLS_POP IN_0
+  - first:
+      213: -3001456809926580522
+    second: CONTROLS_POP IN_1
+  - first:
+      213: -3222152803124416234
+    second: CONTROLS_POP IN_2
+  - first:
+      213: 865810647906926752
+    second: CONTROLS_POP IN_3
+  - first:
+      213: -3548776111949941250
+    second: CONTROLS_POP IN_4
+  - first:
+      213: -2436968312849243538
+    second: CONTROLS_POP IN_5
+  - first:
+      213: -3173216446915313449
+    second: CONTROLS_POP IN_6
+  - first:
+      213: 3079337902242760282
+    second: CONTROLS_POP IN_7
+  - first:
+      213: 8927441014203917833
+    second: CONTROLS_POP IN_8
+  - first:
+      213: 3415172581773179617
+    second: CONTROLS_POP IN_9
+  - first:
+      213: -6918669926755179048
+    second: CONTROLS_POP IN_10
+  - first:
+      213: -3993754855053132119
+    second: CONTROLS_POP IN_11
+  - first:
+      213: 8505135655473989808
+    second: CONTROLS_POP IN_12
+  - first:
+      213: -8648738132208584945
+    second: CONTROLS_POP IN_13
+  - first:
+      213: 6394003500731037613
+    second: CONTROLS_POP IN_14
+  - first:
+      213: 1051547321975013707
+    second: CONTROLS_POP IN_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_0
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 1407
+        width: 8
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c960f34bb6ff1f860800000000000000
+      internalID: 7562106087382386332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_1
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1340
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d626ab0feea856d0800000000000000
+      internalID: -3001456809926580522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_2
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1346
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6117db5e81d9843d0800000000000000
+      internalID: -3222152803124416234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1337
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a04e3f623af30c00800000000000000
+      internalID: 865810647906926752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_4
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 963
+        width: 6
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5f4dbade630cec0800000000000000
+      internalID: -3548776111949941250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_5
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 961
+        width: 8
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62ecb72b362e2ed0800000000000000
+      internalID: -2436968312849243538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_6
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 961
+        width: 10
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d08f26347876f3d0800000000000000
+      internalID: -3173216446915313449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_7
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 949
+        width: 258
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56839ec1810cba20800000000000000
+      internalID: 3079337902242760282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 502
+        width: 450
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906a0e48d44a4eb70800000000000000
+      internalID: 8927441014203917833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_9
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 503
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea7e376e51256f20800000000000000
+      internalID: 3415172581773179617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_10
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 503
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d56499bb52fbff90800000000000000
+      internalID: -6918669926755179048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_11
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 503
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aef0908e155398c0800000000000000
+      internalID: -3993754855053132119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 87
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8490701df480670800000000000000
+      internalID: 8505135655473989808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_13
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 87
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f07f452ed7289f780800000000000000
+      internalID: -8648738132208584945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_14
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 87
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da77da99e401cb850800000000000000
+      internalID: 6394003500731037613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CONTROLS_POP IN_15
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 87
+        width: 514
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4185dec7b8d79e00800000000000000
+      internalID: 1051547321975013707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CONTROLS_POP IN_0: 7562106087382386332
+      CONTROLS_POP IN_1: -3001456809926580522
+      CONTROLS_POP IN_10: -6918669926755179048
+      CONTROLS_POP IN_11: -3993754855053132119
+      CONTROLS_POP IN_12: 8505135655473989808
+      CONTROLS_POP IN_13: -8648738132208584945
+      CONTROLS_POP IN_14: 6394003500731037613
+      CONTROLS_POP IN_15: 1051547321975013707
+      CONTROLS_POP IN_2: -3222152803124416234
+      CONTROLS_POP IN_3: 865810647906926752
+      CONTROLS_POP IN_4: -3548776111949941250
+      CONTROLS_POP IN_5: -2436968312849243538
+      CONTROLS_POP IN_6: -3173216446915313449
+      CONTROLS_POP IN_7: 3079337902242760282
+      CONTROLS_POP IN_8: 8927441014203917833
+      CONTROLS_POP IN_9: 3415172581773179617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

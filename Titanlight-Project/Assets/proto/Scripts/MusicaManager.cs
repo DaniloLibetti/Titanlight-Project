@@ -31,10 +31,10 @@ public class MusicaManager : MonoBehaviour
         instance.musicAudioSource.Play();
     }
 
-    public void BackToMenu()
+    public static void BackToMenu()
     {
         instance.musicAudioSource.Stop();
-        musicAudioSource.clip = menuMusic;
-        musicAudioSource.Play();
+        instance.musicAudioSource.clip = instance.menuMusic;
+        instance.musicAudioSource.Play();
     }
 }

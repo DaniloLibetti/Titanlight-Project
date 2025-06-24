@@ -16,8 +16,8 @@ public class DoorTrigger : MonoBehaviour
     public DoorTrigger pairedDoor;
 
     [Header("Spawn Points")]
-    public Transform player1SpawnPoint;
-    public Transform player2SpawnPoint;
+    public Transform player1SpawnPoint; // Deve ser filho da porta no prefab
+    public Transform player2SpawnPoint; // Deve ser filho da porta no prefab
 
     [Header("Lock Chance")]
     [Range(0f, 1f)]
@@ -33,7 +33,6 @@ public class DoorTrigger : MonoBehaviour
     [HideInInspector]
     public DoorState sharedState;
 
-    private bool _lockInitialized = false;
     private bool _isPlayerInRange;
     private bool _hackingInProgress;
     private float _hackTimer;
@@ -42,9 +41,6 @@ public class DoorTrigger : MonoBehaviour
 
     private HashSet<PlayerStateMachine> _playersInRange = new HashSet<PlayerStateMachine>();
     private HashSet<PlayerStateMachine> _playersReady = new HashSet<PlayerStateMachine>();
-
-    [Header("Pairing Settings")]
-    public float pairingRadius = 2f;
 
     private SpriteRenderer _spriteRenderer;
     private Material _doorMaterial;
@@ -74,35 +70,27 @@ public class DoorTrigger : MonoBehaviour
             _doorMaterial.SetFloat("_IsHacking", 0f);
             _doorMaterial.SetFloat("_IsWaiting", 0f);
         }
+
+        // Garante que temos referência aos pontos de spawn
+        if (player1SpawnPoint == null || player2SpawnPoint == null)
+        {
+            Debug.LogWarning($"Pontos de spawn não configurados na porta {direction}!");
+        }
     }
 
-    [System.Obsolete]
     void Start()
     {
         if (timer == null)
             timer = FindObjectOfType<CountdownTimer>();
 
-        var room = GetComponentInParent<Room>();
-        if (room != null)
-        {
-            sharedState = GameManager.Instance.GetDoorState(room.RoomCoord, direction);
-        }
-        else
-        {
-            sharedState = new DoorState();
-        }
-
-        if (pairedDoor == null)
-            PairDoorWithOverlap();
-
-        if (pairedDoor != null)
-            pairedDoor.sharedState = sharedState;
-
-        if (!_lockInitialized)
-            InitializeLock();
-
         if (promptText != null)
             promptText.gameObject.SetActive(false);
+    }
+
+    public void Initialize(DoorState state)
+    {
+        sharedState = state;
+        _isLocked = !state.isOpen;
     }
 
     void Update()
@@ -211,12 +199,6 @@ public class DoorTrigger : MonoBehaviour
             return;
         }
 
-        if (pairedDoor.player1SpawnPoint == null)
-        {
-            Debug.LogError("Paired door has no spawn point for Player 1!");
-            return;
-        }
-
         var targetRoom = pairedDoor.GetComponentInParent<Room>();
         if (targetRoom == null)
         {
@@ -225,31 +207,43 @@ public class DoorTrigger : MonoBehaviour
         }
 
         var entryDirection = GetOppositeDirection(pairedDoor.direction);
-
         GameManager.Instance.SetCurrentRoom(targetRoom.RoomCoord, entryDirection);
 
-        var player1 = PlayerManager.Instance.Player1;
-        if (player1 != null)
+        // Teleporta apenas jogadores que existem
+        if (PlayerManager.Instance.Player1 != null)
         {
-            player1.transform.position = pairedDoor.player1SpawnPoint.position;
-            ResetPlayerPhysics(player1);
+            TeleportPlayer(PlayerManager.Instance.Player1, true);
         }
 
-        if (GameManager.Instance.IsMultiplayer)
+        if (GameManager.Instance.IsMultiplayer && PlayerManager.Instance.Player2 != null)
         {
-            var player2 = PlayerManager.Instance.Player2;
-            if (player2 != null)
-            {
-                var player2Position = pairedDoor.player2SpawnPoint != null
-                    ? pairedDoor.player2SpawnPoint.position
-                    : pairedDoor.player1SpawnPoint.position + new Vector3(1.5f, 0f, 0f);
-
-                player2.transform.position = player2Position;
-                ResetPlayerPhysics(player2);
-            }
+            TeleportPlayer(PlayerManager.Instance.Player2, false);
         }
 
         SoundManager.PlaySound(SoundType.DOOR);
+    }
+
+    private void TeleportPlayer(GameObject player, bool isPlayer1)
+    {
+        if (player == null) return;
+
+        // Usa diretamente os pontos de spawn da porta pareada
+        Transform spawnPoint = isPlayer1 ?
+            pairedDoor.player1SpawnPoint :
+            pairedDoor.player2SpawnPoint;
+
+        // Se não encontrou, usa a posição da própria porta pareada
+        Vector3 spawnPosition = spawnPoint != null ?
+            spawnPoint.position :
+            pairedDoor.transform.position;
+
+        // Ajuste de posição para evitar colisões
+        spawnPosition += new Vector3(0, 0.1f, 0);
+
+        player.transform.position = spawnPosition;
+        ResetPlayerPhysics(player);
+
+        Debug.Log($"Teleportado {player.name} para {spawnPosition} na sala {pairedDoor.GetComponentInParent<Room>().RoomCoord}");
     }
 
     private void ResetPlayerPhysics(GameObject player)
@@ -292,7 +286,8 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent<PlayerStateMachine>(out var psm))
+        if ((other.CompareTag("player 1") || other.CompareTag("player 2")) &&
+            other.TryGetComponent<PlayerStateMachine>(out var psm))
         {
             _playersInRange.Add(psm);
             _isPlayerInRange = true;
@@ -301,7 +296,8 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent<PlayerStateMachine>(out var psm))
+        if ((other.CompareTag("player 1") || other.CompareTag("player 2")) &&
+            other.TryGetComponent<PlayerStateMachine>(out var psm))
         {
             _playersInRange.Remove(psm);
             _playersReady.Remove(psm);
@@ -313,64 +309,8 @@ public class DoorTrigger : MonoBehaviour
         _isPlayerInRange = _playersInRange.Count > 0;
     }
 
-    private void InitializeLock()
-    {
-        _lockInitialized = true;
-        bool a = Random.value < lockChance;
-        bool b = Random.value < lockChance;
-        bool locked = (a == b) ? a : (Random.value < 0.5f);
-
-        _isLocked = locked;
-        sharedState.isOpen = !locked;
-
-        // Sincronizar com porta pareada
-        if (pairedDoor != null)
-        {
-            pairedDoor._isLocked = _isLocked;
-            pairedDoor.sharedState.isOpen = !_isLocked;
-            pairedDoor._lockInitialized = true;
-        }
-    }
-
-    private void PairDoorWithOverlap()
-    {
-        var hits = Physics2D.OverlapCircleAll(
-            transform.position,
-            pairingRadius,
-            LayerMask.GetMask("Doors")
-        );
-
-        foreach (var hit in hits)
-        {
-            if (hit.gameObject == gameObject) continue;
-            var dirVec = (hit.transform.position - transform.position).normalized;
-            if (Vector2.Dot(dirVec, DirectionToVector(direction)) < 0.5f)
-                continue;
-
-            var other = hit.GetComponent<DoorTrigger>();
-            if (other == null) continue;
-
-            pairedDoor = other;
-            other.pairedDoor = this;
-            other.sharedState = sharedState;
-            break;
-        }
-    }
-
-    private Vector2 DirectionToVector(DoorDirection dir) => dir switch
-    {
-        DoorDirection.Up => Vector2.up,
-        DoorDirection.Down => Vector2.down,
-        DoorDirection.Left => Vector2.left,
-        DoorDirection.Right => Vector2.right,
-        _ => Vector2.zero,
-    };
-
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, pairingRadius);
-
         if (player1SpawnPoint != null)
         {
             Gizmos.color = Color.green;

@@ -68,11 +68,11 @@ namespace Player.StateMachine
         [SerializeField] private float interactRadius = 1.5f;
         [SerializeField] private LayerMask interactLayer;
 
-        
+
         private Chest _nearbyChest;
         private bool _canInteract = true;
 
-       
+
         public PlayerBaseState IdleState { get; private set; }
         public PlayerBaseState MovingState { get; private set; }
         public PlayerBaseState DashState { get; private set; }
@@ -81,7 +81,7 @@ namespace Player.StateMachine
         public PlayerBaseState AttackState { get; private set; }
         public PlayerBaseState CurrentState { get; private set; }
 
-        
+
         private const float ANALOG_DEADZONE = 0.2f;
         public Vector2 moveInput;
         public Vector2 currentSmoothVelocity;
@@ -142,7 +142,11 @@ namespace Player.StateMachine
         {
             if (_health != null)
             {
-               
+                // Registrar jogador no PlayerManager usando o novo método
+                if (PlayerManager.Instance != null)
+                {
+                    PlayerManager.Instance.RegisterPlayer(gameObject, playerIndex);
+                }
             }
         }
 
@@ -153,7 +157,6 @@ namespace Player.StateMachine
             if (_health != null && _health.CurrentHealth <= 0 && !_handledDeath)
             {
                 OnLocalPlayerDeath();
-                animator.Play("Death Down");
             }
 
             if (firePoint != null)
@@ -203,7 +206,7 @@ namespace Player.StateMachine
                     StartCoroutine(ShotgunAttack());
                 }
             }
-            else 
+            else
             {
                 if (value.isPressed && Time.time >= nextFireTime && !overheated)
                 {
